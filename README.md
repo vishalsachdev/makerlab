@@ -49,6 +49,7 @@ makerlab/
 ✅ **45 Complete Pages** - All content from original site
 ✅ **291 Blog Posts** - Full blog archive from 2012-2025
 ✅ **Responsive Design** - Mobile-friendly layout
+✅ **Illinois Brand Toolkit** - Integrated with official campus toolkit (v3.x)
 ✅ **Illinois Branding** - Official orange (#FF5F05) and blue (#13294B) colors
 ✅ **Accessible Navigation** - Sticky header with mobile menu
 ✅ **Clean Modern Design** - Card layouts, smooth transitions
@@ -60,6 +61,23 @@ makerlab/
 - **CSS3** - Modern styling with CSS Grid and Flexbox
 - **Vanilla JavaScript** - No dependencies
 - **Responsive Design** - Mobile-first approach
+- **Illinois Campus Brand Toolkit** - Official UI components and styling (v3.x)
+
+## Brand Toolkit Integration
+
+The site integrates the official [University of Illinois Campus Brand Toolkit](https://builder3.toolkit.illinois.edu/) to ensure campus-wide visual consistency and accessibility standards.
+
+**Integrated Resources:**
+- Toolkit CSS: `//cdn.toolkit.illinois.edu/3/toolkit.css`
+- Toolkit JS: `//cdn.toolkit.illinois.edu/3/toolkit.js`
+
+**Brand Compliance:**
+- ✅ Official Illinois Orange (#FF5F05) and Blue (#13294B)
+- ✅ Toolkit components available for future enhancements
+- ✅ Accessibility best practices
+- 📋 Typography update planned (Montserrat/Source Sans Pro)
+
+For detailed integration documentation, see [BRAND_TOOLKIT_INTEGRATION.md](BRAND_TOOLKIT_INTEGRATION.md)
 
 ## Pages Included
 

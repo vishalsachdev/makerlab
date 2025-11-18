@@ -2,6 +2,10 @@
 
 A complete replica of the Illinois MakerLab website (https://makerlab.illinois.edu/) built with static HTML, CSS, and JavaScript.
 
+**🚀 Live Site**: [https://vishalsachdev.github.io/makerlab/](https://vishalsachdev.github.io/makerlab/)
+
+> 📖 **New to GitHub Pages?** See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed step-by-step deployment instructions.
+
 ## About
 
 The Illinois MakerLab is the world's first business school 3D printing lab at the University of Illinois at Urbana-Champaign. This website showcases:
@@ -91,16 +95,34 @@ makerlab/
 
 ## Deployment
 
-### GitHub Pages
+### GitHub Pages (Recommended)
 
-This site is ready to deploy to GitHub Pages:
+This site is configured for automatic deployment to GitHub Pages using GitHub Actions:
 
-1. Push to your repository
-2. Go to Settings → Pages
-3. Select branch (main) and root folder
-4. Save and wait for deployment
+#### Setup Instructions:
 
-Your site will be available at: `https://[username].github.io/makerlab/`
+1. **Push your changes** to the `main` branch
+2. **Enable GitHub Pages**:
+   - Go to your repository on GitHub
+   - Navigate to **Settings** → **Pages**
+   - Under "Build and deployment":
+     - Source: Select **"GitHub Actions"**
+   - Click **Save**
+3. **Automatic Deployment**:
+   - The GitHub Actions workflow (`.github/workflows/static.yml`) will automatically deploy your site
+   - Check the **Actions** tab to monitor deployment progress
+   - Once complete, your site will be live!
+
+Your site will be available at: `https://vishalsachdev.github.io/makerlab/`
+
+#### Manual Trigger:
+You can also manually trigger deployment from the **Actions** tab by running the "Deploy static content to Pages" workflow.
+
+#### Custom Domain (Optional):
+To use a custom domain:
+1. Add a `CNAME` file with your domain name to the repository root
+2. Configure your domain's DNS settings to point to GitHub Pages
+3. In GitHub Settings → Pages, enter your custom domain
 
 ### Other Hosting
 

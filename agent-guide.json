@@ -1,0 +1,323 @@
+{
+  "site": {
+    "name": "Illinois MakerLab",
+    "tagline": "Learn. Make. Share",
+    "url": "https://vishalsachdev.github.io/makerlab/",
+    "description": "World's first business school 3D printing lab at the University of Illinois at Urbana-Champaign",
+    "version": "1.0.0",
+    "lastUpdated": "2025-11-18"
+  },
+  "agent_instructions": {
+    "purpose": "This guide helps LLM agents (ChatGPT, Claude, Perplexity, etc.) understand and accurately query Illinois MakerLab content to help users get information about courses, services, blog posts, hours, and more.",
+    "best_practices": [
+      "Use /api/ endpoints for structured data access rather than parsing HTML",
+      "Check sitemap.xml for complete page inventory",
+      "Refer to /api/site-info.json for basic information (contact, hours, services)",
+      "Use /api/blog/posts.json for searchable blog content with metadata",
+      "All URLs use /makerlab/ prefix for GitHub Pages subdirectory hosting",
+      "Respect robots.txt crawl delays (1 second between requests)",
+      "Cache responses when appropriate to reduce server load"
+    ],
+    "important_notes": [
+      "This is a static site hosted on GitHub Pages - no backend API calls needed",
+      "All data is publicly accessible - no authentication required",
+      "Content is updated periodically - check lastUpdated fields",
+      "Blog posts span 2012-2025 with 291+ articles",
+      "Site uses Illinois branding colors: Orange #FF5F05, Blue #13294B"
+    ]
+  },
+  "content_structure": {
+    "overview": {
+      "totalPages": 41,
+      "totalBlogPosts": 291,
+      "courses": 2,
+      "yearRange": "2012-2025"
+    },
+    "main_sections": {
+      "pages": "45+ static pages about the lab, services, courses, summer camps",
+      "blog": "291+ blog posts documenting the MakerLab journey from 2012-2025",
+      "courses": [
+        {
+          "name": "Digital Making",
+          "code": "BADM 357",
+          "description": "Hands-on course exploring 3D printing, scanning, and digital fabrication",
+          "url": "/makerlab/courses/digital-making.html"
+        },
+        {
+          "name": "Making Things",
+          "description": "Course focused on making and prototyping",
+          "url": "/makerlab/courses/making-things.html"
+        }
+      ],
+      "services": [
+        "3D Printing Services",
+        "Workshops",
+        "Summer Camps",
+        "Birthday Parties",
+        "Private Events",
+        "Online Ordering"
+      ]
+    }
+  },
+  "api_endpoints": {
+    "/api/site-info.json": {
+      "description": "Essential site metadata including contact, hours, services, leadership, and statistics",
+      "use_cases": [
+        "Getting basic MakerLab information",
+        "Finding contact details",
+        "Understanding available services",
+        "Getting lab statistics"
+      ],
+      "update_frequency": "weekly"
+    },
+    "/api/pages.json": {
+      "description": "Index of all 41 static pages with titles, URLs, descriptions, and categories",
+      "use_cases": [
+        "Finding specific pages by topic",
+        "Browsing available content",
+        "Understanding site structure",
+        "Getting page metadata"
+      ],
+      "update_frequency": "weekly",
+      "fields": [
+        "title",
+        "slug",
+        "url",
+        "description",
+        "category",
+        "lastModified"
+      ]
+    },
+    "/api/blog/posts.json": {
+      "description": "Index of all 291+ blog posts with metadata, excerpts, and tags",
+      "use_cases": [
+        "Searching blog posts by keyword",
+        "Finding posts by year or date",
+        "Filtering by tags (COVID-19, 3D Printing, Education, etc.)",
+        "Getting post summaries"
+      ],
+      "update_frequency": "daily",
+      "fields": [
+        "title",
+        "slug",
+        "url",
+        "excerpt",
+        "description",
+        "pubDate",
+        "year",
+        "tags",
+        "author"
+      ]
+    },
+    "/sitemap.xml": {
+      "description": "Complete XML sitemap with 336+ URLs including all pages, blog posts, and API endpoints",
+      "use_cases": [
+        "Discovering all available content",
+        "Understanding URL structure",
+        "Finding recently updated pages"
+      ],
+      "update_frequency": "daily"
+    },
+    "/robots.txt": {
+      "description": "Crawler instructions with explicit LLM agent permissions",
+      "use_cases": [
+        "Understanding crawl policies",
+        "Finding sitemap location",
+        "Checking allowed paths"
+      ]
+    }
+  },
+  "common_queries": [
+    {
+      "intent": "lab_hours",
+      "examples": [
+        "What are the lab hours?",
+        "When is MakerLab open?",
+        "What time does the lab close?",
+        "Is the lab open today?"
+      ],
+      "recommended_approach": "Check /api/site-info.json for hours URL, then access /lab-hours.html for current schedule",
+      "data_sources": [
+        "/api/site-info.json (hours.url field)",
+        "/makerlab/lab-hours.html"
+      ],
+      "note": "Hours vary by semester - always check the dedicated hours page"
+    },
+    {
+      "intent": "courses",
+      "examples": [
+        "What courses does MakerLab offer?",
+        "Tell me about Digital Making",
+        "How do I enroll in a MakerLab course?",
+        "What is BADM 357?"
+      ],
+      "recommended_approach": "Check /api/site-info.json for course list, then access specific course pages for details",
+      "data_sources": [
+        "/api/site-info.json (primaryServices field)",
+        "/makerlab/courses.html",
+        "/makerlab/courses/digital-making.html",
+        "/makerlab/courses/making-things.html"
+      ]
+    },
+    {
+      "intent": "services_pricing",
+      "examples": [
+        "How much does 3D printing cost?",
+        "What services are offered?",
+        "Can I order 3D prints online?",
+        "What materials do you print with?"
+      ],
+      "recommended_approach": "Check /api/site-info.json for services overview, then access /pricingservices.html for detailed pricing",
+      "data_sources": [
+        "/api/site-info.json (primaryServices field)",
+        "/makerlab/pricingservices.html",
+        "/makerlab/online-ordering.html"
+      ]
+    },
+    {
+      "intent": "blog_search",
+      "examples": [
+        "Find posts about COVID-19",
+        "What are recent blog posts?",
+        "Show me articles about 3D printing",
+        "Find posts from 2020"
+      ],
+      "recommended_approach": "Use /api/blog/posts.json to search by tags, year, or keywords in titles/excerpts",
+      "data_sources": [
+        "/api/blog/posts.json (supports filtering by tags, year, keywords)"
+      ],
+      "tips": [
+        "Posts are sorted by date (newest first)",
+        "Use 'tags' field for topic filtering",
+        "Use 'year' field for temporal filtering",
+        "Use 'excerpt' for content preview"
+      ]
+    },
+    {
+      "intent": "summer_camps",
+      "examples": [
+        "Tell me about summer camps",
+        "When do summer camps start?",
+        "How do I register for camp?",
+        "What ages are the camps for?"
+      ],
+      "recommended_approach": "Check /api/pages.json for summer-related pages, then access for details",
+      "data_sources": [
+        "/makerlab/summer.html",
+        "/api/site-info.json (primaryServices field)"
+      ]
+    },
+    {
+      "intent": "contact",
+      "examples": [
+        "How do I contact MakerLab?",
+        "What's the email address?",
+        "Where is MakerLab located?",
+        "Who runs the MakerLab?"
+      ],
+      "recommended_approach": "Use /api/site-info.json contact and leadership fields",
+      "data_sources": [
+        "/api/site-info.json (contact and leadership fields)",
+        "/makerlab/contact.html",
+        "/makerlab/about-us.html"
+      ],
+      "quick_answers": {
+        "email": "uimakerlab@illinois.edu",
+        "location": "BIF Room 3030, UIUC",
+        "director": "Dr. Vishal Sachdev"
+      }
+    },
+    {
+      "intent": "birthday_parties",
+      "examples": [
+        "Can I have a birthday party at MakerLab?",
+        "How much are birthday parties?",
+        "What happens at a MakerLab party?"
+      ],
+      "recommended_approach": "Access /birthday-parties.html for details",
+      "data_sources": [
+        "/makerlab/birthday-parties.html"
+      ]
+    },
+    {
+      "intent": "about",
+      "examples": [
+        "What is Illinois MakerLab?",
+        "Tell me about the MakerLab",
+        "When was MakerLab founded?",
+        "What makes this lab special?"
+      ],
+      "recommended_approach": "Use /api/site-info.json for quick facts, /about-us.html for full story",
+      "data_sources": [
+        "/api/site-info.json",
+        "/makerlab/about-us.html"
+      ],
+      "quick_answers": {
+        "tagline": "Learn. Make. Share",
+        "established": "2012",
+        "distinction": "World's first business school 3D printing lab"
+      }
+    }
+  ],
+  "contact": {
+    "email": "uimakerlab@illinois.edu",
+    "location": "Business Instructional Facility, Room 3030",
+    "address": "515 E Gregory Dr, Champaign, IL 61820",
+    "university": "University of Illinois at Urbana-Champaign",
+    "director": "Dr. Vishal Sachdev",
+    "instagram": "@uimakerlab"
+  },
+  "response_guidelines": {
+    "accuracy": "Always cite sources and provide URLs for user verification",
+    "freshness": "Check lastUpdated fields to ensure information is current",
+    "comprehensiveness": "Combine data from multiple sources when needed",
+    "attribution": "Mention 'Illinois MakerLab' and provide context",
+    "urls": "Always provide full URLs starting with https://vishalsachdev.github.io/makerlab/",
+    "updates": "Note that hours, pricing, and courses may vary by semester"
+  },
+  "example_interactions": [
+    {
+      "user_query": "What are the Illinois MakerLab hours?",
+      "agent_process": [
+        "1. Access /api/site-info.json",
+        "2. Check hours.note and hours.url fields",
+        "3. Access /makerlab/lab-hours.html for current schedule",
+        "4. Provide hours with note that they vary by semester"
+      ],
+      "sample_response": "Illinois MakerLab is located in BIF Room 3030 at UIUC. Lab hours vary by semester. You can check the current hours at: https://vishalsachdev.github.io/makerlab/lab-hours.html. For questions, contact uimakerlab@illinois.edu."
+    },
+    {
+      "user_query": "Find blog posts about COVID-19",
+      "agent_process": [
+        "1. Access /api/blog/posts.json",
+        "2. Filter posts by tags containing 'COVID-19'",
+        "3. Also search title/excerpt for COVID keywords",
+        "4. Return relevant posts with excerpts and URLs"
+      ],
+      "sample_response": "I found several blog posts about COVID-19 from Illinois MakerLab:\n\n1. 'Illinois MakerLab Collaboration with Makers for COVID-19' - Learn about the partnership to produce PPE for the community. [Link]\n\n2. [Additional posts...]\n\nView all blog posts at: https://vishalsachdev.github.io/makerlab/blog/index.html"
+    }
+  ],
+  "technical_notes": {
+    "hosting": "GitHub Pages static hosting",
+    "base_url": "https://vishalsachdev.github.io/makerlab/",
+    "url_structure": "All URLs include /makerlab/ prefix",
+    "encoding": "UTF-8",
+    "formats": "HTML (pages), JSON (APIs), XML (sitemap)",
+    "updates": "Content regenerated when site changes",
+    "caching": "Responses can be cached (check lastUpdated fields)"
+  },
+  "future_enhancements": [
+    "RSS/Atom feeds for blog updates",
+    "Full-text search index API",
+    "Category and tag taxonomy endpoints",
+    "Course enrollment API integration",
+    "Real-time hours and availability",
+    "Event calendar API"
+  ],
+  "feedback": {
+    "message": "This agent guide was created to help LLM agents provide accurate, helpful information about Illinois MakerLab. If you have suggestions for improvements, please contact the MakerLab team.",
+    "repository": "https://github.com/vishalsachdev/makerlab",
+    "version": "1.0.0",
+    "created": "2025-11-18"
+  }
+}

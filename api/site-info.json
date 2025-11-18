@@ -1,0 +1,200 @@
+{
+  "site": {
+    "name": "Illinois MakerLab",
+    "tagline": "Learn. Make. Share",
+    "url": "https://vishalsachdev.github.io/makerlab/",
+    "description": "The world's first business school 3D printing lab at the University of Illinois at Urbana-Champaign",
+    "established": "2012",
+    "lastUpdated": "2025-11-18",
+    "version": "1.0.0"
+  },
+  "contact": {
+    "email": "uimakerlab@illinois.edu",
+    "location": "Business Instructional Facility, Room 3030",
+    "address": "515 E Gregory Dr, Champaign, IL 61820",
+    "university": "University of Illinois at Urbana-Champaign",
+    "building": "Business Instructional Facility (BIF)",
+    "room": "3030"
+  },
+  "leadership": {
+    "director": {
+      "name": "Dr. Vishal Sachdev",
+      "title": "Director",
+      "profile": "about.me/vishalsachdev"
+    },
+    "executiveDirector": {
+      "name": "Dr. Aric Rindfleisch",
+      "title": "Executive Director"
+    }
+  },
+  "hours": {
+    "note": "Lab hours vary by semester. Check the lab hours page for current schedule.",
+    "url": "/makerlab/lab-hours.html",
+    "page": "lab-hours.html"
+  },
+  "statistics": {
+    "totalPages": 45,
+    "totalBlogPosts": 291,
+    "courses": 2,
+    "blogYearRange": "2012-2025",
+    "printers": "Multiple 3D printers available",
+    "studentsTrained": "Thousands since 2012"
+  },
+  "primaryServices": [
+    {
+      "name": "3D Printing Services",
+      "description": "Professional 3D printing for students, faculty, and community",
+      "url": "/makerlab/pricingservices.html"
+    },
+    {
+      "name": "Digital Making Course",
+      "description": "Hands-on course exploring 3D printing, scanning, and digital fabrication",
+      "url": "/makerlab/courses/digital-making.html",
+      "code": "BADM 357"
+    },
+    {
+      "name": "Making Things Course",
+      "description": "Course focused on making and prototyping",
+      "url": "/makerlab/courses/making-things.html"
+    },
+    {
+      "name": "Summer Camps",
+      "description": "Week-long digital making camps for youth",
+      "url": "/makerlab/summer.html"
+    },
+    {
+      "name": "Workshops",
+      "description": "Regular workshops on 3D printing and digital making",
+      "url": "/makerlab/workshops.html"
+    },
+    {
+      "name": "Birthday Parties",
+      "description": "3D printing-themed birthday parties for kids",
+      "url": "/makerlab/birthday-parties.html"
+    },
+    {
+      "name": "Private Events",
+      "description": "Custom events and team building activities",
+      "url": "/makerlab/private-events.html"
+    }
+  ],
+  "navigation": [
+    {
+      "title": "Home",
+      "url": "/makerlab/index.html",
+      "description": "MakerLab homepage with latest news and quick links"
+    },
+    {
+      "title": "About",
+      "url": "/makerlab/about-us.html",
+      "description": "Learn about the Illinois MakerLab history and mission"
+    },
+    {
+      "title": "What We Offer",
+      "url": "/makerlab/pricingservices.html",
+      "description": "Services, pricing, and capabilities"
+    },
+    {
+      "title": "Courses",
+      "url": "/makerlab/courses.html",
+      "description": "Academic courses offered at the MakerLab"
+    },
+    {
+      "title": "Blog",
+      "url": "/makerlab/blog/index.html",
+      "description": "291+ blog posts from 2012-2025"
+    },
+    {
+      "title": "Resources",
+      "url": "/makerlab/resources.html",
+      "description": "Learning resources and helpful links"
+    },
+    {
+      "title": "Contact",
+      "url": "/makerlab/contact.html",
+      "description": "Get in touch with the MakerLab team"
+    }
+  ],
+  "socialMedia": {
+    "instagram": {
+      "url": "https://www.instagram.com/uimakerlab/",
+      "handle": "@uimakerlab"
+    }
+  },
+  "branding": {
+    "colors": {
+      "illinoisOrange": "#FF5F05",
+      "illinoisBlue": "#13294B",
+      "description": "Official University of Illinois colors"
+    },
+    "mission": "Learn. Make. Share.",
+    "description": "World's first business school 3D printing lab"
+  },
+  "technologies": {
+    "printing": [
+      "3D Printing",
+      "FDM (Fused Deposition Modeling)",
+      "Multiple printer types"
+    ],
+    "tools": [
+      "3D Scanners",
+      "3D Modeling Software",
+      "Arduino",
+      "Microcontrollers",
+      "E-textiles"
+    ]
+  },
+  "apiEndpoints": {
+    "/api/site-info.json": "This file - basic site information and metadata",
+    "/api/pages.json": "Index of all static pages with metadata",
+    "/api/blog/posts.json": "Index of all blog posts with searchable metadata",
+    "/sitemap.xml": "Complete sitemap for crawlers",
+    "/agent-guide.json": "Guide for LLM agents on how to use this site"
+  },
+  "commonQuestions": [
+    {
+      "question": "What are the lab hours?",
+      "answer": "Lab hours vary by semester. Check /lab-hours.html for current schedule.",
+      "url": "/makerlab/lab-hours.html"
+    },
+    {
+      "question": "How much does 3D printing cost?",
+      "answer": "Pricing varies by service and material. See our pricing page for details.",
+      "url": "/makerlab/pricingservices.html"
+    },
+    {
+      "question": "What courses does MakerLab offer?",
+      "answer": "We offer two main courses: Digital Making (BADM 357) and Making Things. Both focus on hands-on digital fabrication and prototyping.",
+      "url": "/makerlab/courses.html"
+    },
+    {
+      "question": "Do you offer summer camps?",
+      "answer": "Yes! We offer week-long summer camps for youth focused on digital making and 3D printing.",
+      "url": "/makerlab/summer.html"
+    },
+    {
+      "question": "Can I host a birthday party at MakerLab?",
+      "answer": "Yes! We offer 3D printing-themed birthday parties. Contact us for details.",
+      "url": "/makerlab/birthday-parties.html"
+    },
+    {
+      "question": "How do I contact MakerLab?",
+      "answer": "Email us at uimakerlab@illinois.edu or visit BIF Room 3030.",
+      "url": "/makerlab/contact.html"
+    }
+  ],
+  "achievements": [
+    "World's first business school 3D printing lab",
+    "Thousands of students trained since 2012",
+    "291+ blog posts documenting the maker journey",
+    "Partnership with Makers for COVID-19 for PPE production",
+    "Multiple award-winning student projects",
+    "Active community engagement and outreach"
+  ],
+  "metadata": {
+    "generatedBy": "Illinois MakerLab Site Generator",
+    "apiVersion": "1.0.0",
+    "lastGenerated": "2025-11-18",
+    "contentManagementSystem": "Custom Python Static Site Generator"
+  }
+}

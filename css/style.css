@@ -734,7 +734,7 @@ img {
   }
 }
 
-/* Feature Cards */
+/* Feature Cards - Alternative style for other pages */
 .feature-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -742,21 +742,24 @@ img {
   margin: var(--spacing-lg) 0;
 }
 
-.feature-card {
+.feature-cards .feature-card {
   background: var(--white);
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   transition: all 0.3s ease;
   text-align: center;
+  position: relative;
+  min-height: auto;
 }
 
-.feature-card:hover {
+.feature-cards .feature-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
-.feature-card-image {
+.feature-cards .feature-card-image {
+  position: relative;
   width: 100%;
   height: 250px;
   object-fit: cover;
@@ -766,13 +769,13 @@ img {
   padding: var(--spacing-md);
 }
 
-.feature-card h2 {
+.feature-cards .feature-card h2 {
   font-size: 1.75rem;
   margin-bottom: var(--spacing-sm);
   color: var(--illinois-blue);
 }
 
-.feature-card p {
+.feature-cards .feature-card p {
   color: var(--text-light);
   margin-bottom: var(--spacing-md);
   line-height: 1.6;

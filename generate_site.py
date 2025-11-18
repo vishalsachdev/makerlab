@@ -15,14 +15,13 @@ posts = data['posts']
 
 # Navigation items (main pages)
 nav_items = [
-    {'title': 'Home', 'url': '/index.html'},
-    {'title': 'About', 'url': '/about-us.html'},
-    {'title': 'What We Offer', 'url': '/pricingservices.html'},
-    {'title': 'Courses', 'url': '/courses.html'},
-    {'title': 'Summer', 'url': '/summer.html'},
-    {'title': 'Blog', 'url': '/blog/index.html'},
-    {'title': 'Resources', 'url': '/resources.html'},
-    {'title': 'Contact', 'url': '/contact.html'}
+    {'title': 'Home', 'url': '/makerlab/index.html'},
+    {'title': 'About', 'url': '/makerlab/about-us.html'},
+    {'title': 'What We Offer', 'url': '/makerlab/pricingservices.html'},
+    {'title': 'Courses', 'url': '/makerlab/courses.html'},
+    {'title': 'Blog', 'url': '/makerlab/blog/index.html'},
+    {'title': 'Resources', 'url': '/makerlab/resources.html'},
+    {'title': 'Contact', 'url': '/makerlab/contact.html'}
 ]
 
 def create_html_template(title, content, current_page=''):
@@ -40,14 +39,14 @@ def create_html_template(title, content, current_page=''):
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="{site_info['description']}">
   <title>{title} - {site_info['title']}</title>
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/makerlab/css/style.css">
 </head>
 <body>
   <header class="site-header">
     <div class="container">
       <div class="header-content">
         <div class="site-branding">
-          <a href="/index.html" class="site-logo">{site_info['title']}</a>
+          <a href="/makerlab/index.html" class="site-logo">{site_info['title']}</a>
           <div class="site-tagline">{site_info['description']}</div>
         </div>
         <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
@@ -74,23 +73,22 @@ def create_html_template(title, content, current_page=''):
         </div>
         <div class="footer-section">
           <h3>Quick Links</h3>
-          <a href="/about-us.html">About Us</a>
-          <a href="/pricingservices.html">What We Offer</a>
-          <a href="/courses.html">Courses</a>
-          <a href="/lab-hours.html">Lab Hours</a>
+          <a href="/makerlab/about-us.html">About Us</a>
+          <a href="/makerlab/pricingservices.html">What We Offer</a>
+          <a href="/makerlab/courses.html">Courses</a>
+          <a href="/makerlab/lab-hours.html">Lab Hours</a>
         </div>
         <div class="footer-section">
           <h3>Resources</h3>
-          <a href="/resources.html">Resources</a>
-          <a href="/faq.html">FAQ</a>
-          <a href="/workshops.html">Workshops</a>
-          <a href="/blog/index.html">Blog</a>
+          <a href="/makerlab/resources.html">Resources</a>
+          <a href="/makerlab/faq.html">FAQ</a>
+          <a href="/makerlab/blog/index.html">Blog</a>
         </div>
         <div class="footer-section">
           <h3>Connect</h3>
           <a href="https://www.instagram.com/uimakerlab/" target="_blank">Instagram</a>
           <a href="https://www.facebook.com/uimakerlab/" target="_blank">Facebook</a>
-          <a href="/contact.html">Contact Us</a>
+          <a href="/makerlab/contact.html">Contact Us</a>
         </div>
       </div>
       <div class="footer-bottom">
@@ -99,7 +97,7 @@ def create_html_template(title, content, current_page=''):
     </div>
   </footer>
 
-  <script src="/js/main.js"></script>
+  <script src="/makerlab/js/main.js"></script>
 </body>
 </html>"""
 
@@ -176,7 +174,7 @@ Path('blog').mkdir(exist_ok=True)
 blog_list_html = '<div class="blog-posts">\n'
 for post in posts:
     post_slug = post['slug']
-    post_url = f"/blog/{post_slug}.html"
+    post_url = f"/makerlab/blog/{post_slug}.html"
 
     # Extract excerpt (first 200 chars of content without HTML)
     content_text = re.sub(r'<[^>]+>', '', post['content'] or '')
@@ -233,7 +231,7 @@ for post in posts:
             </div>
             {content}
             <div class="mt-3">
-              <a href="/blog/index.html" class="btn btn-secondary">← Back to Blog</a>
+              <a href="/makerlab/blog/index.html" class="btn btn-secondary">← Back to Blog</a>
             </div>
           </article>
         </div>

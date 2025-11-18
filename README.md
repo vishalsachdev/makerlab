@@ -2,6 +2,10 @@
 
 A complete replica of the Illinois MakerLab website (https://makerlab.illinois.edu/) built with static HTML, CSS, and JavaScript.
 
+**🚀 Live Site**: [https://vishalsachdev.github.io/makerlab/](https://vishalsachdev.github.io/makerlab/)
+
+> 📖 **New to GitHub Pages?** See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed step-by-step deployment instructions.
+
 ## About
 
 The Illinois MakerLab is the world's first business school 3D printing lab at the University of Illinois at Urbana-Champaign. This website showcases:

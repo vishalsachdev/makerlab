@@ -1,0 +1,172 @@
+# Illinois MakerLab Website
+
+A complete replica of the Illinois MakerLab website (https://makerlab.illinois.edu/) built with static HTML, CSS, and JavaScript.
+
+## About
+
+The Illinois MakerLab is the world's first business school 3D printing lab at the University of Illinois at Urbana-Champaign. This website showcases:
+
+- **Learn. Make. Share.** - Our core philosophy
+- Information about our 3D printing services and equipment
+- Course offerings (on-campus and online)
+- Summer camps for youth
+- Blog with 291+ posts from 2012-2025
+- Resources, workshops, and tutorials
+
+## Project Structure
+
+```
+makerlab/
+├── index.html              # Homepage
+├── about-us.html          # About page
+├── courses.html           # Courses overview
+├── pricingservices.html   # Services & pricing
+├── resources.html         # 3D printing resources
+├── contact.html           # Contact information
+├── lab-hours.html         # Lab hours
+├── [40+ more pages]       # Additional pages
+├── blog/
+│   ├── index.html        # Blog listing page
+│   └── [291 posts].html  # Individual blog posts
+├── courses/
+│   ├── digital-making.html
+│   └── making-things.html
+├── summer/
+│   └── [camp pages].html
+├── css/
+│   └── style.css         # Main stylesheet
+├── js/
+│   └── main.js          # JavaScript functionality
+└── images/              # Image assets
+```
+
+## Features
+
+✅ **45 Complete Pages** - All content from original site
+✅ **291 Blog Posts** - Full blog archive from 2012-2025
+✅ **Responsive Design** - Mobile-friendly layout
+✅ **Illinois Branding** - Official orange (#FF5F05) and blue (#13294B) colors
+✅ **Accessible Navigation** - Sticky header with mobile menu
+✅ **Clean Modern Design** - Card layouts, smooth transitions
+✅ **SEO Friendly** - Semantic HTML, meta tags
+
+## Technologies Used
+
+- **HTML5** - Semantic markup
+- **CSS3** - Modern styling with CSS Grid and Flexbox
+- **Vanilla JavaScript** - No dependencies
+- **Responsive Design** - Mobile-first approach
+
+## Pages Included
+
+### Main Pages
+- Home
+- About Us
+- What We Offer
+- Courses (Digital Making, Making Things, Online Courses)
+- Summer Camps
+- Blog
+- Resources
+- Lab Hours
+- Contact
+- FAQ
+- Workshops
+- Gallery
+- Lab Staff
+- Partners
+
+### Additional Pages
+- Online Ordering
+- Birthday Parties
+- 3D Printing Conference
+- Free Print Wednesdays
+- Internship Database
+- Practicum
+- Certificate Program
+- Volunteer Information
+- Give to MakerLab
+- Summer Jobs
+- COVID-19 Response
+- And more...
+
+## Deployment
+
+### GitHub Pages
+
+This site is ready to deploy to GitHub Pages:
+
+1. Push to your repository
+2. Go to Settings → Pages
+3. Select branch (main) and root folder
+4. Save and wait for deployment
+
+Your site will be available at: `https://[username].github.io/makerlab/`
+
+### Other Hosting
+
+This is a static site and can be hosted anywhere:
+- Netlify
+- Vercel
+- AWS S3
+- Any web server
+
+Simply upload all files maintaining the directory structure.
+
+## Local Development
+
+To view locally, you can use any static server:
+
+```bash
+# Python 3
+python3 -m http.server 8000
+
+# Node.js
+npx http-server
+
+# PHP
+php -S localhost:8000
+```
+
+Then visit `http://localhost:8000` in your browser.
+
+## Content Source
+
+Content was exported from the original Squarespace site on 11/18/2025 using the WordPress export format (WXR). All content, including images, is preserved from the original site.
+
+## Images
+
+Images are currently hosted on Squarespace's CDN. For production use, you may want to:
+1. Download all images from the CDN
+2. Store them in the `/images` directory
+3. Update image paths in the HTML
+
+## Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+- Mobile browsers (iOS Safari, Chrome Mobile)
+
+## Credits
+
+**Original Site:** Illinois MakerLab
+**Executive Director:** Dr. Aric Rindfleisch
+**Director:** Dr. Vishal Sachdev
+**Location:** Business Instructional Facility, Room 3030, UIUC
+
+## License
+
+Content © Illinois MakerLab. All rights reserved.
+
+## Contact
+
+For questions about the MakerLab:
+- Email: uimakerlab@illinois.edu
+- Location: Room 3030, Business Instructional Facility, 515 East Gregory Drive, Champaign, IL 61820
+- Instagram: [@uimakerlab](https://www.instagram.com/uimakerlab/)
+- Facebook: [Illinois MakerLab](https://www.facebook.com/uimakerlab/)
+
+---
+
+**Built with ❤️ for the Maker Movement**

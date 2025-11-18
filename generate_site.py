@@ -257,3 +257,20 @@ print(f"✓ Generated {len(pages)} pages")
 print(f"✓ Generated {len(posts)} blog posts")
 print(f"✓ Generated 1 blog index")
 print("="*60)
+
+# Generate LLM Agent-Friendly API files
+print("\n" + "="*60)
+print("Generating LLM Agent-Friendly Files...")
+print("="*60)
+import subprocess
+try:
+    result = subprocess.run(['python3', 'generate_agent_apis.py'],
+                          capture_output=True, text=True, check=True)
+    print(result.stdout)
+except subprocess.CalledProcessError as e:
+    print(f"Warning: Agent API generation failed: {e}")
+    print(e.stdout)
+    print(e.stderr)
+except FileNotFoundError:
+    print("Warning: generate_agent_apis.py not found - skipping agent API generation")
+    print("Run 'python3 generate_agent_apis.py' manually to generate agent-friendly files")

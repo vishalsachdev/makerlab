@@ -1,0 +1,53 @@
+# Illinois MakerLab - LLM Agent Friendly
+# Updated: 2025-11-18
+# Learn. Make. Share.
+
+# Allow all robots by default
+User-agent: *
+Allow: /
+
+# LLM Agent User-Agents - Explicitly allowed
+User-agent: GPTBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: ChatGPT-User
+Allow: /
+Crawl-delay: 1
+
+User-agent: Claude-Web
+Allow: /
+Crawl-delay: 1
+
+User-agent: anthropic-ai
+Allow: /
+Crawl-delay: 1
+
+User-agent: Google-Extended
+Allow: /
+Crawl-delay: 1
+
+User-agent: GoogleOther
+Allow: /
+Crawl-delay: 1
+
+User-agent: PerplexityBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: YouBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Applebot-Extended
+Allow: /
+Crawl-delay: 1
+
+# Important discovery files for agents
+# These contain structured data for easy access
+Allow: /sitemap.xml
+Allow: /api/
+Allow: /agent-guide.json
+
+# Sitemap location
+Sitemap: https://vishalsachdev.github.io/makerlab/sitemap.xml

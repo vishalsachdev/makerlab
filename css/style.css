@@ -493,22 +493,24 @@ img {
 
 .instagram-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 2rem auto 0;
 }
 
 .instagram-item {
   display: block;
   aspect-ratio: 1;
   overflow: hidden;
+  border-radius: 8px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .instagram-item:hover {
-  transform: scale(1.05);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(255, 95, 5, 0.3);
   z-index: 10;
 }
 
@@ -727,7 +729,8 @@ img {
   }
 
   .instagram-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
   /* Other Heroes */

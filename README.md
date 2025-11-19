@@ -4,7 +4,7 @@ A complete replica of the Illinois MakerLab website (https://makerlab.illinois.e
 
 **🚀 Live Site**: [https://vishalsachdev.github.io/makerlab/](https://vishalsachdev.github.io/makerlab/)
 
-> 📖 **New to GitHub Pages?** See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed step-by-step deployment instructions.
+> 📖 **New to GitHub Pages?** See [docs/deployment/DEPLOYMENT.md](docs/deployment/DEPLOYMENT.md) for detailed step-by-step deployment instructions.
 
 ## About
 
@@ -77,7 +77,7 @@ The site integrates the official [University of Illinois Campus Brand Toolkit](h
 - ✅ Accessibility best practices
 - 📋 Typography update planned (Montserrat/Source Sans Pro)
 
-For detailed integration documentation, see [BRAND_TOOLKIT_INTEGRATION.md](BRAND_TOOLKIT_INTEGRATION.md). Run `python3 add_toolkit.py` whenever you regenerate or add HTML so every page continues to load the toolkit CSS/JS before the MakerLab assets.
+For detailed integration documentation, see [docs/integration/BRAND_TOOLKIT_INTEGRATION.md](docs/integration/BRAND_TOOLKIT_INTEGRATION.md). Run `python3 add_toolkit.py` whenever you regenerate or add HTML so every page continues to load the toolkit CSS/JS before the MakerLab assets.
 
 ## Pages Included
 
@@ -175,10 +175,14 @@ Content was exported from the original Squarespace site on 11/18/2025 using the 
 
 ## Images
 
-Images are currently hosted on Squarespace's CDN. For production use, you may want to:
-1. Download all images from the CDN
-2. Store them in the `/images` directory
-3. Update image paths in the HTML
+Images are now hosted locally in the `/images` directory, organized by category:
+- `images/blog/` - Blog post images (737 images)
+- `images/general/` - General site images
+- `images/summer/` - Summer camp images
+- `images/events/` - Event and workshop images
+- `images/staff/` - Staff photos
+
+All Squarespace CDN URLs have been replaced with local GitHub paths.
 
 ## Browser Support
 

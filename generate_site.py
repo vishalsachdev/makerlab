@@ -4,6 +4,7 @@ import os
 import re
 from pathlib import Path
 from html import unescape
+from datetime import datetime
 
 # Load content data
 with open('content_data.json', 'r', encoding='utf-8') as f:
@@ -12,6 +13,48 @@ with open('content_data.json', 'r', encoding='utf-8') as f:
 site_info = data['site']
 pages = data['pages']
 posts = data['posts']
+
+# Sort posts by date in descending order (newest first)
+# Handle various date formats and missing dates
+def parse_date(date_str):
+    """Parse date string and return datetime object for sorting"""
+    if not date_str:
+        return None
+    try:
+        # Try common date formats
+        formats = [
+            '%a, %d %b %Y %H:%M:%S %z',  # Wed, 12 Nov 2020 10:00:00 +0000
+            '%Y-%m-%d %H:%M:%S',          # 2020-11-12 10:00:00
+            '%Y-%m-%d',                   # 2020-11-12
+            '%d %b %Y',                    # 12 Nov 2020
+            '%b %d, %Y',                   # Nov 12, 2020
+        ]
+        for fmt in formats:
+            try:
+                return datetime.strptime(date_str[:19], fmt)
+            except:
+                continue
+        # If no format works, try to extract year
+        year_match = re.search(r'(\d{4})', date_str)
+        if year_match:
+            year = int(year_match.group(1))
+            # If year is clearly wrong (like 1461), return None to sort to end
+            if year < 2000 or year > 2030:
+                return None
+            return datetime(year, 1, 1)
+    except:
+        pass
+    return None
+
+# Sort posts: newest first, posts with invalid/missing dates go to end
+posts_sorted = sorted(
+    posts,
+    key=lambda p: (
+        parse_date(p.get('pubDate', '')) or datetime(1900, 1, 1)
+    ),
+    reverse=True
+)
+posts = posts_sorted
 
 # Navigation items (main pages) - using relative paths from root
 nav_items_base = [

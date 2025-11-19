@@ -210,31 +210,52 @@ img {
 /* Feature Cards Section */
 .feature-cards-section {
   background-color: var(--white);
-  padding: 0;
+  padding: var(--spacing-xl) 0;
 }
 
 .feature-cards-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-md);
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .feature-card {
   position: relative;
-  min-height: 400px;
+  min-height: 350px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
   overflow: hidden;
+  border-radius: 12px;
+  padding: var(--spacing-lg);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .feature-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
   z-index: 10;
+}
+
+.feature-card:hover::before {
+  opacity: 1;
 }
 
 .feature-card-image {
@@ -271,24 +292,74 @@ img {
   letter-spacing: 0.1em;
 }
 
+.feature-card-icon {
+  font-size: 4rem;
+  margin-bottom: var(--spacing-sm);
+  opacity: 0.9;
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.feature-card:hover .feature-card-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
 .feature-card-title-large {
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 700;
   color: var(--white);
   text-align: center;
   line-height: 1.2;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  margin: 0;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  margin: var(--spacing-sm) 0;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+  position: relative;
+  z-index: 2;
+}
+
+.feature-card-subtitle {
+  font-size: 1rem;
+  color: var(--white);
+  text-align: center;
+  margin-top: var(--spacing-sm);
+  opacity: 0.95;
+  font-weight: 500;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 2;
+}
+
+.feature-card-arrow {
+  font-size: 2rem;
+  color: var(--white);
+  margin-top: var(--spacing-md);
+  opacity: 0.8;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.feature-card:hover .feature-card-arrow {
+  transform: translateX(10px);
+  opacity: 1;
 }
 
 .feature-card-orange {
-  background-color: var(--illinois-orange);
+  background: linear-gradient(135deg, var(--illinois-orange) 0%, #e6550a 100%);
+}
+
+.feature-card-orange:hover {
+  background: linear-gradient(135deg, #ff6f15 0%, var(--illinois-orange) 100%);
 }
 
 .feature-card-blue {
-  background-color: var(--illinois-blue);
+  background: linear-gradient(135deg, var(--illinois-blue) 0%, #0d1f35 100%);
+}
+
+.feature-card-blue:hover {
+  background: linear-gradient(135deg, #1a3a5c 0%, var(--illinois-blue) 100%);
 }
 
 /* Old Hero Section (for other pages) */
@@ -444,8 +515,29 @@ img {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
+}
+
+/* Tablet breakpoint - 2 columns */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .news-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .feature-cards-grid {
+    gap: var(--spacing-sm);
+  }
+
+  .feature-card {
+    min-height: 320px;
+    padding: var(--spacing-md);
+  }
+
+  .feature-card-title-large {
+    font-size: 2.5rem;
+  }
 }
 
 .news-card {
@@ -712,14 +804,24 @@ img {
   /* Feature Cards */
   .feature-cards-grid {
     grid-template-columns: 1fr;
+    gap: var(--spacing-md);
   }
 
   .feature-card {
-    min-height: 300px;
+    min-height: 280px;
+    padding: var(--spacing-md);
+  }
+
+  .feature-card-icon {
+    font-size: 3rem;
   }
 
   .feature-card-title-large {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
+  }
+
+  .feature-card-subtitle {
+    font-size: 0.9rem;
   }
 
   /* News and Instagram */

@@ -7,26 +7,26 @@
   <title>Learn. Make. Share. - Illinois MakerLab</title>
     <link rel="stylesheet" href="//cdn.toolkit.illinois.edu/3/toolkit.css">
 
-  <link rel="stylesheet" href="/makerlab/css/style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header class="site-header">
     <div class="container">
       <div class="header-content">
         <div class="site-branding">
-          <a href="/makerlab/index.html" class="site-logo">Illinois MakerLab</a>
+          <a href="index.html" class="site-logo">Illinois MakerLab</a>
           <div class="site-tagline">Learn. Make. Share</div>
         </div>
         <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
         <nav class="main-nav">
           <ul>
-        <li><a href="/makerlab/index.html">Home</a></li>
-        <li><a href="/makerlab/about-us.html">About</a></li>
-        <li><a href="/makerlab/pricingservices.html">What We Offer</a></li>
-        <li><a href="/makerlab/courses.html">Courses</a></li>
-        <li><a href="/makerlab/blog/index.html">Blog</a></li>
-        <li><a href="/makerlab/resources.html">Resources</a></li>
-        <li><a href="/makerlab/contact.html">Contact</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about-us.html">About</a></li>
+        <li><a href="pricingservices.html">What We Offer</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="blog/index.html">Blog</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
         </nav>
       </div>
@@ -49,13 +49,19 @@
         <div class="feature-cards-grid">
 
           <!-- Lab Hours Card -->
-          <a href="/makerlab/lab-hours.html" class="feature-card feature-card-orange">
+          <a href="lab-hours.html" class="feature-card feature-card-orange">
+            <div class="feature-card-icon">🕐</div>
             <h2 class="feature-card-title-large">LAB<br>HOURS</h2>
+            <p class="feature-card-subtitle">Visit us during open hours</p>
+            <span class="feature-card-arrow">→</span>
           </a>
 
           <!-- Online Ordering Card -->
-          <a href="/makerlab/online-ordering.html" class="feature-card feature-card-blue">
+          <a href="online-ordering.html" class="feature-card feature-card-blue">
+            <div class="feature-card-icon">🛒</div>
             <h2 class="feature-card-title-large">ORDER<br>HERE</h2>
+            <p class="feature-card-subtitle">Place your 3D printing order online</p>
+            <span class="feature-card-arrow">→</span>
           </a>
 
         </div>
@@ -69,37 +75,25 @@
 
         <div class="news-grid">
           <!-- News Item 1 -->
-          <div class="card">
-            <a href="https://makerlab.illinois.edu/blog/2020/11/11/illinois-makerlab-collaboration-with-makers-for-covid-19">
-              <img src="/makerlab/images/general/IMG_8347.jpg" alt="Makers for COVID-19" class="card-image"/>
-            </a>
-            <div class="card-content">
-              <h3 class="card-title">
-                <a href="https://makerlab.illinois.edu/blog/2020/11/11/illinois-makerlab-collaboration-with-makers-for-covid-19">Makers for COVID-19 Partnership!</a>
-              </h3>
-              <p>Learn about our collaboration with Makers for COVID-19 to support the community during the pandemic.</p>
+          <a href="https://makerlab.illinois.edu/blog/2020/11/11/illinois-makerlab-collaboration-with-makers-for-covid-19" class="news-card" target="_blank" rel="noopener noreferrer">
+            <div class="news-card-image">
+              <img src="images/general/IMG_8347.jpg" alt="Makers for COVID-19">
             </div>
             <h3 class="news-card-title">MAKERS FOR COVID-19 PARTNERSHIP!</h3>
           </a>
 
           <!-- News Item 2 -->
-          <div class="card">
-            <a href="https://makerlab.illinois.edu/blog/2020/8/20/illinois-makerlab-launches-1-to-1-virtual-tutoring">
-              <img src="/makerlab/images/general/wheel.PNG" alt="Virtual Tutoring" class="card-image"/>
-            </a>
-            <div class="card-content">
-              <h3 class="card-title">
-                <a href="https://makerlab.illinois.edu/blog/2020/8/20/illinois-makerlab-launches-1-to-1-virtual-tutoring">Launching 1-1 Virtual Tutoring</a>
-              </h3>
-              <p>We're excited to offer personalized virtual tutoring sessions for 3D printing and digital making.</p>
+          <a href="https://makerlab.illinois.edu/blog/2020/8/20/illinois-makerlab-launches-1-to-1-virtual-tutoring" class="news-card" target="_blank" rel="noopener noreferrer">
+            <div class="news-card-image">
+              <img src="images/general/wheel.PNG" alt="Virtual Tutoring">
             </div>
             <h3 class="news-card-title">LAUNCHING 1-1 VIRTUAL TUTORING</h3>
           </a>
 
           <!-- News Item 3 -->
-          <a href="/makerlab/blog/illinois-makerlab-collaborated-with-thera-solutions-functionalhand.html" class="news-card">
+          <a href="blog/illinois-makerlab-collaborated-with-thera-solutions-functionalhand.html" class="news-card">
             <div class="news-card-image">
-              <img src="/makerlab/images/blog/Henry_with_Functional_Hand-20.jpg" alt="Functional Hand">
+              <img src="images/blog/Henry_with_Functional_Hand-20.jpg" alt="Functional Hand">
             </div>
             <h3 class="news-card-title">ILLINOIS MAKERLAB X FUNCTIONAL HAND</h3>
           </a>
@@ -112,17 +106,18 @@
       <div class="container">
         <h2 class="section-title">Keep Up With Our <a href="https://www.instagram.com/uimakerlab/?hl=en" target="_blank" rel="noopener noreferrer">Instagram</a>!</h2>
 
-        <div class="instagram-grid">
+        <div class="instagram-grid" id="instagram-feed">
+          <!-- Fallback posts (shown if API fails) -->
           <a href="https://www.instagram.com/p/CLTDNYFLLkA/" class="instagram-item" target="_blank" rel="noopener noreferrer">
-            <img src="/makerlab/images/general/image_d68c9fbc24a7.jpeg" alt="Need something to hold your phone up? Check out these cute prints that you can make at the Illinois MakerLab! Stop by and print one out! #3dprinting #animals" />
+            <img src="images/general/image_d68c9fbc24a7.jpeg" alt="Need something to hold your phone up? Check out these cute prints that you can make at the Illinois MakerLab! Stop by and print one out! #3dprinting #animals" />
           </a>
 
           <a href="https://www.instagram.com/p/CLDrKwYLVUE/" class="instagram-item" target="_blank" rel="noopener noreferrer">
-            <img src="/makerlab/images/general/image_25f38f0b7c19.jpeg" alt="Did you enjoy last night's Super Bowl? We sure did! Let's remember the memory with a 3D print. You can find this print on Thingiverse! Come to the lab to print one out for yourself or as a gift." />
+            <img src="images/general/image_25f38f0b7c19.jpeg" alt="Did you enjoy last night's Super Bowl? We sure did! Let's remember the memory with a 3D print. You can find this print on Thingiverse! Come to the lab to print one out for yourself or as a gift." />
           </a>
 
           <a href="https://www.instagram.com/p/CKpCwXwrGLU/" class="instagram-item" target="_blank" rel="noopener noreferrer">
-            <img src="/makerlab/images/general/image_7eaa4035b251.jpeg" alt="Hope everyone's first week went well! We will be OPEN this semester so check out our website for more info and to make a reservation!" />
+            <img src="images/general/image_7eaa4035b251.jpeg" alt="Hope everyone's first week went well! We will be OPEN this semester so check out our website for more info and to make a reservation!" />
           </a>
         </div>
       </div>
@@ -142,22 +137,22 @@
         </div>
         <div class="footer-section">
           <h3>Quick Links</h3>
-          <a href="/makerlab/about-us.html">About Us</a>
-          <a href="/makerlab/pricingservices.html">What We Offer</a>
-          <a href="/makerlab/courses.html">Courses</a>
-          <a href="/makerlab/lab-hours.html">Lab Hours</a>
+          <a href="about-us.html">About Us</a>
+          <a href="pricingservices.html">What We Offer</a>
+          <a href="courses.html">Courses</a>
+          <a href="lab-hours.html">Lab Hours</a>
         </div>
         <div class="footer-section">
           <h3>Resources</h3>
-          <a href="/makerlab/resources.html">Resources</a>
-          <a href="/makerlab/faq.html">FAQ</a>
-          <a href="/makerlab/blog/index.html">Blog</a>
+          <a href="resources.html">Resources</a>
+          <a href="faq.html">FAQ</a>
+          <a href="blog/index.html">Blog</a>
         </div>
         <div class="footer-section">
           <h3>Connect</h3>
           <a href="https://www.instagram.com/uimakerlab/" target="_blank">Instagram</a>
           <a href="https://www.facebook.com/uimakerlab/" target="_blank">Facebook</a>
-          <a href="/makerlab/contact.html">Contact Us</a>
+          <a href="contact.html">Contact Us</a>
         </div>
       </div>
       <div class="footer-bottom">
@@ -169,6 +164,6 @@
     <script src="//cdn.toolkit.illinois.edu/3/toolkit.js" type="module"></script>
 
 
-  <script src="/makerlab/js/main.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

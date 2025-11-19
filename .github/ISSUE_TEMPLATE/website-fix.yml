@@ -1,0 +1,74 @@
+name: 🔧 Website Fix Suggestion
+description: Suggest a fix or improvement for the MakerLab website
+title: "[Fix]: "
+labels: ["website-fix"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve the MakerLab website! Please provide details about the fix you're suggesting.
+  
+  - type: input
+    id: page-url
+    attributes:
+      label: Page URL
+      description: Which page needs to be fixed? (e.g., https://vishalsachdev.github.io/makerlab/index.html or just "index.html")
+      placeholder: "e.g., index.html or https://vishalsachdev.github.io/makerlab/courses.html"
+    validations:
+      required: true
+  
+  - type: textarea
+    id: problem-description
+    attributes:
+      label: What's the problem?
+      description: Describe the issue you've noticed on the website
+      placeholder: "e.g., The contact email is incorrect, there's a broken link, the image doesn't load, etc."
+    validations:
+      required: true
+  
+  - type: textarea
+    id: suggested-fix
+    attributes:
+      label: Suggested Fix
+      description: If you have a specific fix in mind, please describe it here (optional)
+      placeholder: "e.g., Update the email to makerlab@illinois.edu, fix the link to point to..., etc."
+    validations:
+      required: false
+  
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      description: What type of fix is this?
+      options:
+        - Content (text, information)
+        - Design (layout, styling)
+        - Functionality (links, navigation, features)
+        - Images (broken images, missing images)
+        - Contact Information
+        - Other
+    validations:
+      required: true
+  
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: How urgent is this fix?
+      options:
+        - Low (minor issue)
+        - Medium (noticeable issue)
+        - High (affects user experience)
+        - Critical (site broken or incorrect information)
+      default: 1
+    validations:
+      required: true
+  
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Add any other context, screenshots, or information about the fix
+      placeholder: "You can attach screenshots by dragging and dropping them here"
+    validations:
+      required: false

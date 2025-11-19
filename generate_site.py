@@ -13,24 +13,41 @@ site_info = data['site']
 pages = data['pages']
 posts = data['posts']
 
-# Navigation items (main pages)
-nav_items = [
-    {'title': 'Home', 'url': '/makerlab/index.html'},
-    {'title': 'About', 'url': '/makerlab/about-us.html'},
-    {'title': 'What We Offer', 'url': '/makerlab/pricingservices.html'},
-    {'title': 'Courses', 'url': '/makerlab/courses.html'},
-    {'title': 'Blog', 'url': '/makerlab/blog/index.html'},
-    {'title': 'Resources', 'url': '/makerlab/resources.html'},
-    {'title': 'Contact', 'url': '/makerlab/contact.html'}
+# Navigation items (main pages) - using relative paths from root
+nav_items_base = [
+    {'title': 'Home', 'url': 'index.html'},
+    {'title': 'About', 'url': 'about-us.html'},
+    {'title': 'What We Offer', 'url': 'pricingservices.html'},
+    {'title': 'Courses', 'url': 'courses.html'},
+    {'title': 'Blog', 'url': 'blog/index.html'},
+    {'title': 'Resources', 'url': 'resources.html'},
+    {'title': 'Contact', 'url': 'contact.html'}
 ]
 
-def create_html_template(title, content, current_page=''):
-    """Create full HTML page with navigation and footer"""
+def create_html_template(title, content, current_page='', file_path='index.html'):
+    """Create full HTML page with navigation and footer using relative paths"""
+    # Calculate relative paths for navigation
     nav_html = '<ul>\n'
-    for item in nav_items:
-        active_class = ' class="active"' if current_page in item['url'] else ''
-        nav_html += f'        <li><a href="{item["url"]}"{active_class}>{item["title"]}</a></li>\n'
+    for item in nav_items_base:
+        rel_url = get_relative_path(file_path, item['url'])
+        active_class = ' class="active"' if current_page and (current_page in item['url'] or item['url'] in current_page) else ''
+        nav_html += f'        <li><a href="{rel_url}"{active_class}>{item["title"]}</a></li>\n'
     nav_html += '      </ul>'
+    
+    # Calculate relative paths for assets
+    css_path = get_asset_path(file_path, 'css')
+    js_path = get_asset_path(file_path, 'js')
+    home_path = get_relative_path(file_path, 'index.html')
+    
+    # Calculate relative paths for footer links
+    footer_about = get_relative_path(file_path, 'about-us.html')
+    footer_services = get_relative_path(file_path, 'pricingservices.html')
+    footer_courses = get_relative_path(file_path, 'courses.html')
+    footer_hours = get_relative_path(file_path, 'lab-hours.html')
+    footer_resources = get_relative_path(file_path, 'resources.html')
+    footer_faq = get_relative_path(file_path, 'faq.html')
+    footer_blog = get_relative_path(file_path, 'blog/index.html')
+    footer_contact = get_relative_path(file_path, 'contact.html')
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -39,14 +56,14 @@ def create_html_template(title, content, current_page=''):
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="{site_info['description']}">
   <title>{title} - {site_info['title']}</title>
-  <link rel="stylesheet" href="/makerlab/css/style.css">
+  <link rel="stylesheet" href="{css_path}">
 </head>
 <body>
   <header class="site-header">
     <div class="container">
       <div class="header-content">
         <div class="site-branding">
-          <a href="/makerlab/index.html" class="site-logo">{site_info['title']}</a>
+          <a href="{home_path}" class="site-logo">{site_info['title']}</a>
           <div class="site-tagline">{site_info['description']}</div>
         </div>
         <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
@@ -73,22 +90,22 @@ def create_html_template(title, content, current_page=''):
         </div>
         <div class="footer-section">
           <h3>Quick Links</h3>
-          <a href="/makerlab/about-us.html">About Us</a>
-          <a href="/makerlab/pricingservices.html">What We Offer</a>
-          <a href="/makerlab/courses.html">Courses</a>
-          <a href="/makerlab/lab-hours.html">Lab Hours</a>
+          <a href="{footer_about}">About Us</a>
+          <a href="{footer_services}">What We Offer</a>
+          <a href="{footer_courses}">Courses</a>
+          <a href="{footer_hours}">Lab Hours</a>
         </div>
         <div class="footer-section">
           <h3>Resources</h3>
-          <a href="/makerlab/resources.html">Resources</a>
-          <a href="/makerlab/faq.html">FAQ</a>
-          <a href="/makerlab/blog/index.html">Blog</a>
+          <a href="{footer_resources}">Resources</a>
+          <a href="{footer_faq}">FAQ</a>
+          <a href="{footer_blog}">Blog</a>
         </div>
         <div class="footer-section">
           <h3>Connect</h3>
           <a href="https://www.instagram.com/uimakerlab/" target="_blank">Instagram</a>
           <a href="https://www.facebook.com/uimakerlab/" target="_blank">Facebook</a>
-          <a href="/makerlab/contact.html">Contact Us</a>
+          <a href="{footer_contact}">Contact Us</a>
         </div>
       </div>
       <div class="footer-bottom">
@@ -97,7 +114,7 @@ def create_html_template(title, content, current_page=''):
     </div>
   </footer>
 
-  <script src="/makerlab/js/main.js"></script>
+  <script src="{js_path}"></script>
 </body>
 </html>"""
 
@@ -113,6 +130,54 @@ def clean_content(content):
     # In production, you'd want to download these and host them locally
 
     return content
+
+def get_relative_path(from_path, to_path):
+    """Calculate relative path from one file to another"""
+    from_dir = os.path.dirname(from_path) if os.path.dirname(from_path) else '.'
+    to_dir = os.path.dirname(to_path) if os.path.dirname(to_path) else '.'
+    
+    # Normalize paths
+    from_parts = from_dir.split(os.sep) if from_dir != '.' else []
+    to_parts = to_dir.split(os.sep) if to_dir != '.' else []
+    
+    # Find common prefix
+    common_len = 0
+    for i in range(min(len(from_parts), len(to_parts))):
+        if from_parts[i] == to_parts[i]:
+            common_len += 1
+        else:
+            break
+    
+    # Calculate relative path
+    up_levels = len(from_parts) - common_len
+    down_path = os.sep.join(to_parts[common_len:])
+    
+    if up_levels == 0 and not down_path:
+        # Same directory
+        rel_path = os.path.basename(to_path)
+    else:
+        # Go up and then down
+        rel_path = os.sep.join(['..'] * up_levels + ([down_path] if down_path else []) + [os.path.basename(to_path)])
+    
+    # Normalize separators for web (use forward slashes)
+    return rel_path.replace(os.sep, '/')
+
+def get_asset_path(file_path, asset_type='css'):
+    """Get relative path to CSS or JS assets based on file location"""
+    if asset_type == 'css':
+        asset_path = 'css/style.css'
+    elif asset_type == 'js':
+        asset_path = 'js/main.js'
+    else:
+        return asset_path
+    
+    # If file is in root, use direct path
+    if os.path.dirname(file_path) == '' or os.path.dirname(file_path) == '.':
+        return asset_path
+    
+    # If file is in subdirectory, go up one level
+    depth = len(os.path.dirname(file_path).split(os.sep))
+    return '/'.join(['..'] * depth + [asset_path])
 
 def slugify(text):
     """Create URL-friendly slug from text"""
@@ -159,8 +224,8 @@ for page in pages:
     </div>
     """
 
-    html = create_html_template(title, page_content, link)
     filename = create_page_filename(link)
+    html = create_html_template(title, page_content, link, filename)
 
     with open(filename, 'w', encoding='utf-8') as f:
         f.write(html)
@@ -172,9 +237,11 @@ print("\nGenerating blog index...")
 Path('blog').mkdir(exist_ok=True)
 
 blog_list_html = '<div class="blog-posts">\n'
+blog_index_path = 'blog/index.html'
 for post in posts:
     post_slug = post['slug']
-    post_url = f"/makerlab/blog/{post_slug}.html"
+    post_filename = f"blog/{post_slug}.html"
+    post_url = get_relative_path(blog_index_path, post_filename)
 
     # Extract excerpt (first 200 chars of content without HTML)
     content_text = re.sub(r'<[^>]+>', '', post['content'] or '')
@@ -206,8 +273,8 @@ blog_index_content = f"""
     </div>
 """
 
-html = create_html_template('Blog', blog_index_content, '/blog/')
-with open('blog/index.html', 'w', encoding='utf-8') as f:
+html = create_html_template('Blog', blog_index_content, '/blog/', blog_index_path)
+with open(blog_index_path, 'w', encoding='utf-8') as f:
     f.write(html)
 
 print("  ✓ blog/index.html")
@@ -219,6 +286,9 @@ for post in posts:
     content = clean_content(post['content'])
     slug = post['slug']
 
+    filename = f"blog/{slug}.html"
+    blog_index_rel = get_relative_path(filename, 'blog/index.html')
+    
     post_content = f"""
     <div class="section">
       <div class="container">
@@ -231,7 +301,7 @@ for post in posts:
             </div>
             {content}
             <div class="mt-3">
-              <a href="/makerlab/blog/index.html" class="btn btn-secondary">← Back to Blog</a>
+              <a href="{blog_index_rel}" class="btn btn-secondary">← Back to Blog</a>
             </div>
           </article>
         </div>
@@ -239,8 +309,7 @@ for post in posts:
     </div>
     """
 
-    html = create_html_template(title, post_content, '/blog/')
-    filename = f"blog/{slug}.html"
+    html = create_html_template(title, post_content, '/blog/', filename)
 
     with open(filename, 'w', encoding='utf-8') as f:
         f.write(html)

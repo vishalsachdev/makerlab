@@ -66,7 +66,8 @@ makerlab/
 ├── Squarespace-Wordpress-Export-11-18-2025.xml  # Original content export
 ├── parse_export.py              # XML to JSON converter
 ├── extract_content.py           # Content extraction script
-├── generate_site.py             # Static site generator
+├── archive/
+│   └── generate_site.py         # Archived - one-time migration tool (no longer used)
 ├── README.md                    # User-facing documentation
 ├── DEPLOYMENT.md                # Deployment instructions
 ├── GITHUB_PAGES_SETUP.md        # GitHub Pages setup guide
@@ -129,9 +130,11 @@ makerlab/
 **Purpose:** Extract and process content from JSON
 **Note:** Appears to be a legacy/helper script
 
-#### `generate_site.py`
-**Purpose:** Generate complete static website from JSON data
-**Key Functions:**
+#### `generate_site.py` (ARCHIVED)
+**Status:** Archived to `archive/` directory - no longer used for day-to-day operations
+**Original Purpose:** Generate complete static website from JSON data
+**Note:** This was a one-time migration tool. All content is now edited directly in HTML files.
+**Key Functions (for reference):**
 - `create_html_template()`: Creates full page HTML with nav and footer
 - `clean_content()`: Sanitizes and prepares content HTML
 - `slugify()`: Creates URL-friendly slugs
@@ -664,19 +667,14 @@ docs: Update README with deployment instructions
 #### Adding a New Page
 
 ```bash
-# Option 1: Manual (recommended for simple pages)
+# Creating a new page (manual approach - recommended)
 1. Create HTML file: new-page.html
-2. Use existing page as template
-3. Update navigation in generate_site.py (nav_items)
-4. Regenerate all pages: python3 generate_site.py
-5. Test locally
-6. Commit and push
+2. Use existing page as template (copy structure from similar page)
+3. Update navigation in all pages manually (or use find/replace)
+4. Test locally
+5. Commit and push
 
-# Option 2: Add to content_data.json
-1. Add page object to "pages" array
-2. Run: python3 generate_site.py
-3. Test locally
-4. Commit and push
+# Note: generate_site.py is archived and no longer used
 ```
 
 #### Updating Styles
@@ -709,11 +707,12 @@ docs: Update README with deployment instructions
 3. Commit and push
 
 # For major content updates:
-1. Update content_data.json
-2. Run: python3 generate_site.py
-3. Test locally
-4. Commit all changed files
-5. Push
+1. Edit HTML files directly
+2. Test locally
+3. Commit all changed files
+4. Push
+
+# Note: generate_site.py is archived - all edits are done directly in HTML
 ```
 
 ### Troubleshooting Guide
@@ -818,11 +817,11 @@ docs: Update README with deployment instructions
 
 ### Python Commands
 ```bash
-# Parse XML to JSON
+# Parse XML to JSON (one-time migration - already done)
 python3 parse_export.py
 
-# Generate all HTML files
-python3 generate_site.py
+# Generate all HTML files (archived - no longer used)
+# python3 archive/generate_site.py  # Only for emergency restoration
 
 # Start local server
 python3 -m http.server 8000

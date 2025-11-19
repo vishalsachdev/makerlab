@@ -1,4 +1,28 @@
 #!/usr/bin/env python3
+"""
+Static Site Generator for Illinois MakerLab Website
+
+PURPOSE:
+  This script was created as a one-time migration tool to convert content from
+  Squarespace/WordPress XML export to static HTML files for GitHub Pages.
+
+IMPORTANT NOTES:
+  - content_data.json will NOT be updated going forward
+  - All content updates should be done directly in HTML files
+  - This script overwrites HTML files - use with caution!
+  - Pages with manual edits are automatically skipped (see skip_files list)
+  - Only run this script if you need to regenerate from content_data.json
+
+USAGE:
+  python3 generate_site.py
+
+  The script will:
+  1. Read content from content_data.json
+  2. Generate HTML pages with consistent header/footer
+  3. Generate blog index and individual blog posts
+  4. Skip pages that have been manually edited
+"""
+
 import json
 import os
 import re
@@ -269,7 +293,15 @@ def create_page_filename(link):
     return f"{link}.html"
 
 # Generate all pages
+# NOTE: This script was used for one-time migration from Squarespace to GitHub Pages.
+# content_data.json will NOT be updated going forward. All content updates should be
+# done directly in the HTML files. This script is kept for reference/historical purposes.
+# Most pages have been manually edited and should not be regenerated.
+
 print("Generating pages...")
+print("⚠️  WARNING: This script overwrites HTML files. Most pages have manual edits.")
+print("⚠️  Only run this if you need to regenerate from content_data.json.\n")
+
 for page in pages:
     title = page['title']
     content = clean_content(page['content'])
@@ -277,9 +309,42 @@ for page in pages:
 
     filename = create_page_filename(link)
     
-    # Skip index.html - it has a custom design and should not be regenerated
-    if filename == 'index.html':
-        print(f"  ⊘ {filename} (skipped - custom design)")
+    # Skip files with custom designs or manual edits that should not be regenerated
+    # These pages have been manually edited and should be preserved
+    # NOTE: Since content_data.json will never be updated, all content changes
+    # are done directly in HTML files. These pages should never be regenerated.
+    skip_files = [
+        # Custom designs
+        'index.html',                    # Custom homepage design (hero, CTA cards, news grid, Instagram)
+        
+        # Major redesigns
+        'pricingservices.html',          # Manual redesign with pricing tables, removed images
+        'online-ordering.html',          # Manual redesign with Podio form, improved layout
+        'lab-staff.html',                # Manual edits (Gurus section, removed Advisory Board)
+        
+        # Content updates
+        'courses.html',                  # Removed 3DPrintingProfs, marked Digital Making as discontinued, removed video/iframe
+        'about-us.html',                 # Updated links (Gies profiles, lab-hours), added lab-staff link
+        'lab-hours.html',                 # Updated content (removed specific dates, made generic)
+        'volunteer.html',                # Updated application dates to "rolling basis"
+        'faq.html',                      # Fixed free print days (Fridays → Wednesdays), updated links
+        'contact.html',                  # Updated lab-hours link
+        'online-ordering-1.html',        # Updated order form status message
+        'online-courses.html',           # Updated links (Gies profiles)
+        'hackillinois.html',             # Updated links
+        
+        # Archived pages (have archive notices)
+        'summer.html',                   # Archived with notice (2024 content)
+        'workshops.html',                # Archived with notice (outdated workshop info)
+        'online-summer-camps-2021.html', # Archived with notice (2021 content)
+        'makerlab-wrapped.html',         # Archived with notice (2020 content)
+        
+        # Course pages (may have manual edits)
+        'courses/digital-making.html',   # May reference discontinued course
+        'courses/making-things.html',    # Course-specific content
+    ]
+    if filename in skip_files:
+        print(f"  ⊘ {filename} (skipped - has manual edits)")
         continue
 
     # Wrap content in container

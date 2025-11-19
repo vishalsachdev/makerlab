@@ -69,8 +69,17 @@ makerlab/
 ├── archive/
 │   └── generate_site.py         # Archived - one-time migration tool (no longer used)
 ├── README.md                    # User-facing documentation
-├── DEPLOYMENT.md                # Deployment instructions
-├── GITHUB_PAGES_SETUP.md        # GitHub Pages setup guide
+├── docs/                         # Documentation directory
+│   ├── README.md                # Documentation index
+│   ├── CLAUDE.md                # This file - AI assistant guide
+│   ├── deployment/              # Deployment guides
+│   │   ├── DEPLOYMENT.md        # Deployment instructions
+│   │   └── GITHUB_PAGES_SETUP.md # GitHub Pages setup guide
+│   ├── integration/             # Integration guides
+│   │   ├── BRAND_TOOLKIT_INTEGRATION.md
+│   │   └── INSTAGRAM_API_SETUP.md
+│   └── development/             # Development plans
+│       └── CSS_FIXES_PLAN.md
 └── CLAUDE.md                    # This file - AI assistant guide
 ```
 
@@ -853,9 +862,10 @@ git push -u origin branch-name
 
 ## Additional Resources
 
-- [README.md](README.md) - User-facing documentation
-- [DEPLOYMENT.md](DEPLOYMENT.md) - Detailed deployment instructions
-- [GITHUB_PAGES_SETUP.md](GITHUB_PAGES_SETUP.md) - GitHub Pages configuration
+- [README.md](../README.md) - User-facing documentation
+- [docs/deployment/DEPLOYMENT.md](deployment/DEPLOYMENT.md) - Detailed deployment instructions
+- [docs/deployment/GITHUB_PAGES_SETUP.md](deployment/GITHUB_PAGES_SETUP.md) - GitHub Pages configuration
+- [docs/README.md](README.md) - Documentation index
 - [GitHub Actions Documentation](https://docs.github.com/en/actions)
 - [GitHub Pages Documentation](https://docs.github.com/en/pages)
 - [MDN Web Docs](https://developer.mozilla.org/) - HTML/CSS/JS reference

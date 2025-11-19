@@ -275,6 +275,13 @@ for page in pages:
     content = clean_content(page['content'])
     link = page['link']
 
+    filename = create_page_filename(link)
+    
+    # Skip index.html - it has a custom design and should not be regenerated
+    if filename == 'index.html':
+        print(f"  ⊘ {filename} (skipped - custom design)")
+        continue
+
     # Wrap content in container
     page_content = f"""
     <div class="section">
@@ -287,7 +294,6 @@ for page in pages:
     </div>
     """
 
-    filename = create_page_filename(link)
     html = create_html_template(title, page_content, link, filename)
 
     with open(filename, 'w', encoding='utf-8') as f:

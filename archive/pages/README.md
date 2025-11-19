@@ -22,6 +22,9 @@ This subdirectory (`archive/pages/`) contains HTML pages that are no longer acti
 - `internship-database.html` - Internship database page
 - `mijireh-secure-checkout.html` - Old checkout page (replaced by online-ordering)
 - `practicum.html` - Practicum program page
+- `give.html` - Donation page (not linked from navigation, may be accessed directly)
+- `past-gurus.html` - Historical list of past gurus (not linked from navigation)
+- `scholarships.html` - Scholarship application form (not linked from navigation, may be accessed directly)
 
 ## Notes
 

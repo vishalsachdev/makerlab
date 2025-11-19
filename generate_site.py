@@ -17,32 +17,50 @@ posts = data['posts']
 # Sort posts by date in descending order (newest first)
 # Handle various date formats and missing dates
 def parse_date(date_str):
-    """Parse date string and return datetime object for sorting"""
+    """Parse date string and return datetime object for sorting (timezone-naive)"""
     if not date_str:
         return None
     try:
-        # Try common date formats
+        # Try common date formats - try full string first, then truncated versions
         formats = [
-            '%a, %d %b %Y %H:%M:%S %z',  # Wed, 12 Nov 2020 10:00:00 +0000
+            '%a, %d %b %Y %H:%M:%S %z',  # Wed, 12 Nov 2020 10:00:00 +0000 (with timezone)
+            '%a, %d %b %Y %H:%M:%S',      # Wed, 12 Nov 2020 10:00:00 (without timezone)
             '%Y-%m-%d %H:%M:%S',          # 2020-11-12 10:00:00
             '%Y-%m-%d',                   # 2020-11-12
             '%d %b %Y',                    # 12 Nov 2020
             '%b %d, %Y',                   # Nov 12, 2020
+            '%a, %d %b %Y',                # Wed, 12 Nov 2020 (date only)
         ]
         for fmt in formats:
             try:
-                return datetime.strptime(date_str[:19], fmt)
+                parsed = datetime.strptime(date_str.strip(), fmt)
+                # Convert to timezone-naive for consistent comparison
+                if parsed.tzinfo is not None:
+                    parsed = parsed.replace(tzinfo=None)
+                return parsed
             except:
                 continue
-        # If no format works, try to extract year
+        # If no format works, try to extract year and month
         year_match = re.search(r'(\d{4})', date_str)
+        month_match = re.search(r'(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)', date_str, re.IGNORECASE)
+        day_match = re.search(r'\b(\d{1,2})\b', date_str)
         if year_match:
             year = int(year_match.group(1))
             # If year is clearly wrong (like 1461), return None to sort to end
             if year < 2000 or year > 2030:
                 return None
-            return datetime(year, 1, 1)
-    except:
+            month = 1
+            day = 1
+            if month_match:
+                month_names = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec']
+                month = month_names.index(month_match.group(1).lower()) + 1
+            if day_match:
+                try:
+                    day = int(day_match.group(1))
+                except:
+                    pass
+            return datetime(year, month, day)
+    except Exception as e:
         pass
     return None
 
@@ -88,6 +106,7 @@ def create_html_template(title, content, current_page='', file_path='index.html'
     footer_courses = get_relative_path(file_path, 'courses.html')
     footer_hours = get_relative_path(file_path, 'lab-hours.html')
     footer_resources = get_relative_path(file_path, 'resources.html')
+    footer_lab_staff = get_relative_path(file_path, 'lab-staff.html')
     footer_faq = get_relative_path(file_path, 'faq.html')
     footer_blog = get_relative_path(file_path, 'blog/index.html')
     footer_contact = get_relative_path(file_path, 'contact.html')
@@ -141,6 +160,7 @@ def create_html_template(title, content, current_page='', file_path='index.html'
         <div class="footer-section">
           <h3>Resources</h3>
           <a href="{footer_resources}">Resources</a>
+          <a href="{footer_lab_staff}">Lab Staff</a>
           <a href="{footer_faq}">FAQ</a>
           <a href="{footer_blog}">Blog</a>
         </div>

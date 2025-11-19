@@ -40,22 +40,35 @@ def replace_images_in_file(file_path, image_map):
         original_content = content
         replacements = 0
         
-        # Find all Squarespace CDN URLs
-        pattern = r'https://images\.squarespace-cdn\.com[^\s"\'<>]+'
-        urls = re.findall(pattern, content)
+        # Find all Squarespace CDN URLs (both http and https)
+        # Match URLs in src, href, and other attributes
+        patterns = [
+            r'https://images\.squarespace-cdn\.com[^\s"\'<>\)]+',
+            r'http://images\.squarespace-cdn\.com[^\s"\'<>\)]+',
+        ]
         
-        for url in urls:
+        all_urls = set()
+        for pattern in patterns:
+            urls = re.findall(pattern, content)
+            all_urls.update(urls)
+        
+        # Sort by length (longest first) to avoid partial replacements
+        for url in sorted(all_urls, key=len, reverse=True):
             filename = extract_filename_from_url(url)
+            local_path = None
+            
             # Try exact match first
             if filename in image_map:
                 local_path = image_map[filename]
-                content = content.replace(url, local_path)
-                replacements += 1
             # Try lowercase match
             elif filename.lower() in image_map:
                 local_path = image_map[filename.lower()]
+            
+            if local_path:
+                # Replace all occurrences of this URL
+                count = content.count(url)
                 content = content.replace(url, local_path)
-                replacements += 1
+                replacements += count
         
         if content != original_content:
             with open(file_path, 'w', encoding='utf-8') as f:
@@ -68,12 +81,20 @@ def replace_images_in_file(file_path, image_map):
         return 0
 
 def main():
+    import sys
+    
+    # Allow targeting specific directory (e.g., blog/)
+    target_dir = sys.argv[1] if len(sys.argv) > 1 else '.'
+    
     print("Building local image map...")
     image_map = get_local_image_map()
     print(f"Found {len(image_map)} local images")
     
-    print("\nScanning HTML files for Squarespace URLs...")
-    html_files = list(Path('.').rglob('*.html'))
+    print(f"\nScanning HTML files for Squarespace URLs in {target_dir}...")
+    if target_dir == '.':
+        html_files = list(Path('.').rglob('*.html'))
+    else:
+        html_files = list(Path(target_dir).rglob('*.html'))
     
     total_replacements = 0
     files_updated = 0

@@ -64,7 +64,13 @@ makerlab/
 ├── *.html                       # 45+ root-level page files
 ├── content_data.json            # Structured content data (1MB+)
 ├── Squarespace-Wordpress-Export-11-18-2025.xml  # Original content export
-├── parse_export.py              # XML to JSON converter
+├── scripts/                     # Utility scripts
+│   ├── README.md               # Scripts documentation
+│   ├── add_toolkit.py          # Add Brand Toolkit to HTML files
+│   ├── download_squarespace_images.py  # Download images from Squarespace CDN
+│   ├── fix_remaining_cdn_images.py    # Fix remaining CDN URLs
+│   ├── scripts/parse_export.py         # XML to JSON converter
+│   └── replace_squarespace_images.py    # Replace CDN URLs with local paths
 ├── extract_content.py           # Content extraction script
 ├── archive/
 │   └── generate_site.py         # Archived - one-time migration tool (no longer used)
@@ -125,7 +131,7 @@ makerlab/
 
 ### Python Scripts
 
-#### `parse_export.py`
+#### `scripts/parse_export.py`
 **Purpose:** Parse WordPress/Squarespace XML export and convert to JSON
 **Input:** `Squarespace-Wordpress-Export-11-18-2025.xml`
 **Output:** `content_data.json`
@@ -244,7 +250,7 @@ python3 -m http.server 8000
 
 ```bash
 # Step 1: Parse XML to JSON (if XML is updated)
-python3 parse_export.py
+python3 scripts/scripts/parse_export.py
 # Output: content_data.json
 
 # Step 2: Generate all HTML files
@@ -309,7 +315,7 @@ The site uses a static site generation approach where Python scripts convert XML
 ```
 Squarespace XML Export
     ↓
-parse_export.py
+scripts/parse_export.py
     ↓
 content_data.json (structured)
     ↓
@@ -827,7 +833,7 @@ docs: Update README with deployment instructions
 ### Python Commands
 ```bash
 # Parse XML to JSON (one-time migration - already done)
-python3 parse_export.py
+python3 scripts/scripts/parse_export.py
 
 # Generate all HTML files (archived - no longer used)
 # python3 archive/generate_site.py  # Only for emergency restoration

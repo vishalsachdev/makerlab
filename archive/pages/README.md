@@ -1,6 +1,10 @@
-# Archived Pages
+# Archive Directory
 
-This directory contains HTML pages that are no longer actively linked or used in the main website navigation.
+This directory contains archived files that are no longer actively used but preserved for historical reference.
+
+## Archived Pages
+
+This subdirectory (`archive/pages/`) contains HTML pages that are no longer actively linked or used in the main website navigation.
 
 ## Archived Pages
 

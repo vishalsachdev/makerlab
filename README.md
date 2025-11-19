@@ -77,7 +77,7 @@ The site integrates the official [University of Illinois Campus Brand Toolkit](h
 - ✅ Accessibility best practices
 - 📋 Typography update planned (Montserrat/Source Sans Pro)
 
-For detailed integration documentation, see [BRAND_TOOLKIT_INTEGRATION.md](BRAND_TOOLKIT_INTEGRATION.md)
+For detailed integration documentation, see [BRAND_TOOLKIT_INTEGRATION.md](BRAND_TOOLKIT_INTEGRATION.md). Run `python3 add_toolkit.py` whenever you regenerate or add HTML so every page continues to load the toolkit CSS/JS before the MakerLab assets.
 
 ## Pages Included
 

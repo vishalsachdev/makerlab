@@ -23,7 +23,7 @@ def update_html_file(file_path: Path) -> bool:
         # Insert toolkit CSS before the first stylesheet link so custom styles can override
         content = re.sub(
             r"(\s*)(<link rel=\"stylesheet\")",
-            r"\1" + TOOLKIT_CSS + r"\1\2",
+            r"\1" + TOOLKIT_CSS + r"\2",
             content,
             count=1,
         )
@@ -36,7 +36,7 @@ def update_html_file(file_path: Path) -> bool:
         # Insert toolkit JS before the first external script tag
         content = re.sub(
             r"(\s*)(<script src=)",
-            r"\1" + TOOLKIT_JS + r"\1\2",
+            r"\1" + TOOLKIT_JS + r"\2",
             content,
             count=1,
         )

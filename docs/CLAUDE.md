@@ -5,6 +5,7 @@ This document provides comprehensive guidance for AI assistants working with the
 ## Table of Contents
 
 - [Project Overview](#project-overview)
+- [Recent Changes (November 2025)](#recent-changes-november-2025)
 - [Repository Structure](#repository-structure)
 - [Technology Stack](#technology-stack)
 - [Key Files and Their Purpose](#key-files-and-their-purpose)
@@ -14,6 +15,8 @@ This document provides comprehensive guidance for AI assistants working with the
 - [Deployment](#deployment)
 - [Testing and Quality Assurance](#testing-and-quality-assurance)
 - [Git Workflow](#git-workflow)
+- [Archive Directory](#archive-directory)
+- [Illinois Campus Brand Toolkit Integration](#illinois-campus-brand-toolkit-integration)
 - [Important Guidelines for AI Assistants](#important-guidelines-for-ai-assistants)
 
 ---
@@ -26,10 +29,12 @@ This document provides comprehensive guidance for AI assistants working with the
 **Purpose:** Replica of the Illinois MakerLab website showcasing the world's first business school 3D printing lab at UIUC
 
 ### Key Features
-- 45+ complete pages covering all aspects of the MakerLab
+- 330+ total HTML pages (22 main pages + 291 blog posts + archived pages)
 - 291 blog posts from 2012-2025
 - Responsive design with mobile-first approach
-- Illinois branding (Orange: #FF5F05, Blue: #13294B)
+- Illinois branding (Orange: #FF5F05, Blue: #13294B) with Campus Brand Toolkit integration
+- Local image hosting (migrated from Squarespace CDN)
+- Organized scripts and archived legacy files
 - GitHub Pages deployment with automated CI/CD
 
 ### About Illinois MakerLab
@@ -38,6 +43,67 @@ This document provides comprehensive guidance for AI assistants working with the
 - **Focus:** 3D printing, digital making, courses, summer camps, and community engagement
 - **Director:** Dr. Vishal Sachdev
 - **Executive Director:** Dr. Aric Rindfleisch
+
+---
+
+## Recent Changes (November 2025)
+
+This section highlights significant organizational and infrastructure changes made to the repository in November 2025.
+
+### Repository Reorganization
+
+1. **Scripts Directory Created** (`scripts/`)
+   - All Python utility scripts moved to centralized location
+   - Added comprehensive `scripts/README.md` documentation
+   - Better organization for maintenance tools
+
+2. **Archive Directory Created** (`archive/`)
+   - Archived unused/unlinked HTML pages (13 pages) to `archive/pages/`
+   - Moved `generate_site.py` to archive (no longer used)
+   - Moved Squarespace export XML to archive
+   - Added archive documentation
+
+3. **Documentation Consolidated** (`docs/`)
+   - All documentation in centralized `docs/` directory
+   - Organized into subdirectories: deployment, integration, development
+   - Comprehensive guides for all aspects of the project
+
+### Image Migration Completed ✅
+
+- **737+ images** migrated from Squarespace CDN to local hosting
+- Images organized in `images/` directory by category (blog, events, general, staff, summer)
+- All HTML files updated to use local image paths
+- Benefits: Improved reliability, version control, offline development support
+
+### Brand Toolkit Integration ✅
+
+- Illinois Campus Brand Toolkit integrated into all HTML files
+- Toolkit CSS and JS loaded from Illinois CDN
+- `scripts/add_toolkit.py` for maintaining integration
+- Phase 1 complete; Phase 2 planned for typography updates
+
+### Key Stats (Current)
+
+- **330+ total HTML files** (22 main pages + 291 blog posts + archived pages)
+- **737+ local images** (migrated from CDN)
+- **6 utility scripts** in `scripts/` directory
+- **13 archived pages** in `archive/pages/`
+- **Comprehensive documentation** in `docs/` directory
+
+### What Changed in Workflows
+
+**Before (Pre-November 2025):**
+- Images hosted on Squarespace CDN (external dependency)
+- Scripts scattered in root directory
+- `generate_site.py` used for content generation
+- No Brand Toolkit integration
+
+**After (November 2025):**
+- All images hosted locally in organized `images/` directory
+- Scripts organized in `scripts/` directory with documentation
+- Direct HTML editing (generate_site.py archived)
+- Brand Toolkit integrated on all pages
+- Archive directory for historical files
 
 ---
 
@@ -61,42 +127,69 @@ makerlab/
 │   └── style.css               # Main stylesheet (~600+ lines)
 ├── js/
 │   └── main.js                 # Main JavaScript (~127 lines)
-├── *.html                       # 45+ root-level page files
+├── images/                      # Local image hosting (migrated from Squarespace CDN)
+│   ├── blog/                   # Blog post images (737+ images)
+│   ├── events/                 # Event and workshop images
+│   ├── general/                # General site images
+│   ├── staff/                  # Staff photos
+│   └── summer/                 # Summer camp images
+├── *.html                       # 22 root-level page files (active pages)
 ├── content_data.json            # Structured content data (1MB+)
-├── Squarespace-Wordpress-Export-11-18-2025.xml  # Original content export
-├── scripts/                     # Utility scripts
+├── download_log.txt             # Image download log from migration
+├── scripts/                     # Utility scripts (organized Nov 2025)
 │   ├── README.md               # Scripts documentation
 │   ├── add_toolkit.py          # Add Brand Toolkit to HTML files
 │   ├── download_squarespace_images.py  # Download images from Squarespace CDN
 │   ├── fix_remaining_cdn_images.py    # Fix remaining CDN URLs
-│   ├── scripts/parse_export.py         # XML to JSON converter
-│   └── replace_squarespace_images.py    # Replace CDN URLs with local paths
-├── extract_content.py           # Content extraction script
-├── archive/
-│   └── generate_site.py         # Archived - one-time migration tool (no longer used)
+│   ├── parse_export.py         # XML to JSON converter
+│   └── replace_squarespace_images.py  # Replace CDN URLs with local paths
+├── archive/                     # Archived files (Nov 2025)
+│   ├── README.md               # Archive documentation
+│   ├── MIGRATION_SUMMARY.md    # Image migration summary
+│   ├── Squarespace-Wordpress-Export-11-18-2025.xml  # Original content export
+│   ├── generate_site.py        # Archived - one-time migration tool (no longer used)
+│   ├── pages/                  # Archived HTML pages (13 pages)
+│   │   ├── README.md
+│   │   └── [archived pages]
+│   └── scripts/                # Legacy migration scripts
 ├── README.md                    # User-facing documentation
-├── docs/                         # Documentation directory
-│   ├── README.md                # Documentation index
-│   ├── CLAUDE.md                # This file - AI assistant guide
-│   ├── deployment/              # Deployment guides
-│   │   ├── DEPLOYMENT.md        # Deployment instructions
-│   │   └── GITHUB_PAGES_SETUP.md # GitHub Pages setup guide
-│   ├── integration/             # Integration guides
-│   │   ├── BRAND_TOOLKIT_INTEGRATION.md
-│   │   └── INSTAGRAM_API_SETUP.md
-│   └── development/             # Development plans
-│       └── CSS_FIXES_PLAN.md
-└── CLAUDE.md                    # This file - AI assistant guide
+└── docs/                        # Documentation directory
+    ├── README.md                # Documentation index
+    ├── CLAUDE.md                # This file - AI assistant guide
+    ├── deployment/              # Deployment guides
+    │   ├── DEPLOYMENT.md        # Deployment instructions
+    │   └── GITHUB_PAGES_SETUP.md # GitHub Pages setup guide
+    ├── integration/             # Integration guides
+    │   ├── BRAND_TOOLKIT_INTEGRATION.md
+    │   └── INSTAGRAM_API_SETUP.md
+    └── development/             # Development plans
+        └── CSS_FIXES_PLAN.md
 ```
 
 ### Important Directories
 
-- **`blog/`**: Contains 291+ generated blog post HTML files
+- **`blog/`**: Contains 291+ blog post HTML files
 - **`courses/`**: Course-specific content pages
 - **`summer/`**: Summer camp information pages
 - **`css/`**: Single stylesheet with CSS Grid, Flexbox, and CSS variables
 - **`js/`**: Single JavaScript file with vanilla JS (no dependencies)
-- **Root**: 45+ main website pages (about, contact, services, etc.)
+- **`images/`**: Local image hosting (migrated from Squarespace CDN in Nov 2025)
+  - `blog/` - 737+ blog post images
+  - `events/`, `general/`, `staff/`, `summer/` - Categorized images
+- **`scripts/`**: Utility scripts for site maintenance (organized Nov 2025)
+  - Image migration tools
+  - Content parsing scripts
+  - Brand Toolkit integration
+- **`archive/`**: Archived files (created Nov 2025)
+  - `pages/` - 13 archived HTML pages (unused/unlinked)
+  - Original Squarespace export XML
+  - Legacy migration scripts
+  - `generate_site.py` (no longer used)
+- **`docs/`**: Comprehensive documentation
+  - Deployment guides
+  - Integration guides (Brand Toolkit, Instagram API)
+  - Development plans
+- **Root**: 22 active main website pages (about, contact, services, etc.)
 
 ---
 
@@ -131,30 +224,67 @@ makerlab/
 
 ### Python Scripts
 
-#### `scripts/parse_export.py`
+**Location:** `scripts/` directory (organized November 2025)
+**Documentation:** See `scripts/README.md` for detailed usage
+
+#### Image Management Scripts
+
+##### `scripts/download_squarespace_images.py`
+**Purpose:** Download images from Squarespace CDN to local hosting
+**Status:** Migration completed in Nov 2025
+**Features:**
+- Scans HTML files for Squarespace CDN URLs
+- Downloads images to categorized folders (`images/blog/`, `images/events/`, etc.)
+- Skips existing files, handles duplicates
+- Logs all downloads to `download_log.txt`
+
+##### `scripts/replace_squarespace_images.py`
+**Purpose:** Replace Squarespace CDN URLs with local GitHub paths
+**Status:** Migration completed in Nov 2025
+**Features:**
+- Maps local images by filename
+- Updates HTML files with local paths
+- Handles URL-encoded filenames
+
+##### `scripts/fix_remaining_cdn_images.py`
+**Purpose:** Fix edge cases in image URLs (special characters, Chinese characters)
+**Status:** Migration completed in Nov 2025
+
+#### Content Processing Scripts
+
+##### `scripts/parse_export.py`
 **Purpose:** Parse WordPress/Squarespace XML export and convert to JSON
-**Input:** `Squarespace-Wordpress-Export-11-18-2025.xml`
+**Input:** `archive/Squarespace-Wordpress-Export-11-18-2025.xml`
 **Output:** `content_data.json`
+**Status:** One-time migration, completed
 **Functionality:**
 - Extracts site metadata (title, description)
 - Parses pages and blog posts
 - Categorizes content by URL structure
 - Sorts posts by date (newest first)
 
-#### `extract_content.py`
-**Purpose:** Extract and process content from JSON
-**Note:** Appears to be a legacy/helper script
+#### Integration Scripts
 
-#### `generate_site.py` (ARCHIVED)
-**Status:** Archived to `archive/` directory - no longer used for day-to-day operations
+##### `scripts/add_toolkit.py`
+**Purpose:** Add Illinois Campus Brand Toolkit to all HTML files
+**Status:** Active maintenance script
+**Usage:** Run after adding/regenerating HTML files
+**Features:**
+- Inserts toolkit CSS and JS into all HTML files
+- Skips files already containing toolkit resources
+- Ensures consistent branding across site
+
+#### Archived Scripts
+
+##### `archive/generate_site.py` (NO LONGER USED)
+**Status:** Archived - one-time migration tool
 **Original Purpose:** Generate complete static website from JSON data
-**Note:** This was a one-time migration tool. All content is now edited directly in HTML files.
+**Note:** All content is now edited directly in HTML files. This script is preserved for reference only.
 **Key Functions (for reference):**
 - `create_html_template()`: Creates full page HTML with nav and footer
 - `clean_content()`: Sanitizes and prepares content HTML
 - `slugify()`: Creates URL-friendly slugs
 - `create_page_filename()`: Converts links to proper file paths
-**Output:** All HTML files (pages, blog index, blog posts)
 
 ### HTML Files
 
@@ -246,26 +376,36 @@ python3 -m http.server 8000
 
 ### Content Regeneration Workflow
 
-**When to regenerate:** Only if the XML export is updated or content needs modification
+**Current Status:** Content regeneration scripts are ARCHIVED (November 2025)
+**Reason:** Site migration is complete. All content is now maintained directly in HTML files.
 
+**Historical Process (no longer used):**
 ```bash
-# Step 1: Parse XML to JSON (if XML is updated)
-python3 scripts/scripts/parse_export.py
+# Step 1: Parse XML to JSON (one-time migration, completed)
+python3 scripts/parse_export.py
 # Output: content_data.json
 
-# Step 2: Generate all HTML files
-python3 generate_site.py
-# Output: All HTML files (45 pages + 291 blog posts)
+# Step 2: Generate all HTML files (one-time migration, completed)
+python3 archive/generate_site.py  # ARCHIVED - DO NOT USE
+# Output: All HTML files (pages + blog posts)
 ```
 
-**Important:** Generated HTML files are committed to the repository for static hosting. The Python scripts are build tools, not runtime dependencies.
+**Current Workflow:**
+All content changes are now made by editing HTML files directly. The migration scripts are preserved in the `archive/` directory for historical reference only.
+
+**Important Notes:**
+- `generate_site.py` is in `archive/` and should NOT be used
+- All HTML files are committed to the repository for static hosting
+- Edit HTML files directly for content updates
+- Use `scripts/add_toolkit.py` when adding new HTML files to ensure Brand Toolkit integration
 
 ### Making Changes
 
 #### Content Changes
-1. **Minor text edits**: Edit HTML files directly
-2. **Major content changes**: Update `content_data.json` and regenerate
-3. **New pages**: Add to `content_data.json` or create HTML manually
+1. **Text edits**: Edit HTML files directly (all sizes of changes)
+2. **New pages**: Create HTML manually using existing page as template
+3. **After adding pages**: Run `python3 scripts/add_toolkit.py` to add Brand Toolkit resources
+4. **Images**: Place in appropriate `images/` subdirectory and use local paths
 
 #### Style Changes
 1. Edit `css/style.css`
@@ -386,9 +526,26 @@ All pages follow this structure:
 
 ### Image Handling
 
-**Current approach:** Images hosted on Squarespace CDN
-**URLs:** `https://images.squarespace-cdn.com/...`
-**Production consideration:** Download and host locally for reliability
+**Current Status:** ✅ All images migrated to local hosting (November 2025)
+**Location:** `images/` directory with organized subdirectories
+**Migration:** Completed using scripts in `scripts/` directory
+**Structure:**
+- `images/blog/` - 737+ blog post images
+- `images/events/` - Event and workshop images
+- `images/general/` - General site images
+- `images/staff/` - Staff photos
+- `images/summer/` - Summer camp images
+
+**Image Paths:**
+- Root pages: `/images/category/filename.jpg`
+- Blog posts: `../images/blog/filename.jpg`
+- All pages use GitHub Pages subdirectory prefix: `/makerlab/images/...` in production
+
+**Benefits:**
+- Improved reliability (no external CDN dependency)
+- Faster loading (GitHub CDN)
+- Version control for all assets
+- Offline development support
 
 ---
 
@@ -649,6 +806,113 @@ docs: Update README with deployment instructions
 
 ---
 
+## Archive Directory
+
+**Location:** `archive/`
+**Purpose:** Preserve historical files no longer used in active development
+**Created:** November 2025 during repository reorganization
+
+### Contents
+
+#### `archive/generate_site.py`
+- **Status:** ARCHIVED - DO NOT USE
+- **Original Purpose:** One-time static site generation from JSON
+- **Why Archived:** Site migration complete; all content now edited directly in HTML
+- **Use Case:** Historical reference only; emergency restoration if needed
+
+#### `archive/Squarespace-Wordpress-Export-11-18-2025.xml`
+- **Purpose:** Original Squarespace/WordPress export file
+- **Size:** ~1.8MB
+- **Use Case:** Source of truth for original content; reference for restoration
+
+#### `archive/pages/` (13 archived HTML pages)
+- **Contents:** Unused/unlinked HTML pages
+- **Examples:** 3d-printing-conference.html, certificate.html, give.html, etc.
+- **Reason:** Pages not linked from main navigation or other pages
+- **Documentation:** See `archive/pages/README.md`
+
+#### `archive/scripts/`
+- **Contents:** Legacy migration scripts
+- **Status:** Preserved for historical reference
+
+#### `archive/MIGRATION_SUMMARY.md`
+- **Purpose:** Summary of image migration process (Nov 2025)
+- **Contents:** Details of Squarespace CDN → local hosting migration
+
+### Important Notes
+
+⚠️ **DO NOT:**
+- Run `archive/generate_site.py` - it will overwrite current HTML files
+- Delete archive files - they're preserved for historical reference
+- Move files out of archive without understanding implications
+
+✅ **DO:**
+- Reference archived files for understanding historical decisions
+- Consult `archive/pages/README.md` to understand why pages were archived
+- Keep archive directory for potential future restoration needs
+
+---
+
+## Illinois Campus Brand Toolkit Integration
+
+**Status:** ✅ Phase 1 Complete (November 2025)
+**Documentation:** See `docs/integration/BRAND_TOOLKIT_INTEGRATION.md`
+
+### Overview
+
+All HTML files now integrate the official University of Illinois Campus Brand Toolkit to ensure campus-wide visual consistency and accessibility standards.
+
+### Implementation
+
+**Toolkit Resources Added:**
+- **CSS:** `//cdn.toolkit.illinois.edu/3/toolkit.css` (loaded before custom styles)
+- **JavaScript:** `//cdn.toolkit.illinois.edu/3/toolkit.js` (type="module")
+
+**Integration Script:**
+- `scripts/add_toolkit.py` - Automatically adds toolkit resources to all HTML files
+- Skips files that already have toolkit integration
+- Should be run whenever new HTML files are added
+
+### Brand Compliance
+
+✅ **Colors:** Already compliant
+- Illinois Orange: #FF5F05 (`--illinois-orange`)
+- Illinois Blue: #13294B (`--illinois-blue`)
+- Cloud: #E8E9EA (`--illinois-cloud`)
+
+⚠️ **Typography:** Planned for Phase 2
+- Will update to Montserrat (headlines) and Source Sans Pro (body)
+- Current: Helvetica Neue, Arial, sans-serif
+
+### Available Components
+
+The toolkit provides ready-to-use components:
+- Layout: Page, Columns, Grid, Hero, Header, Footer
+- Content: Cards, Quote, Statistic, Profile
+- Navigation: Breadcrumbs, Section Nav, Pagination, Tabs, Accordion
+- Interactive: Modal, Tooltip, Call to Action
+- Media: Video embeds, Icons
+- Utilities: Buttons, Image Cover, Screen Reader helpers
+
+### Usage Guidelines
+
+**When adding new HTML pages:**
+1. Create page using existing template
+2. Run `python3 scripts/add_toolkit.py` to add toolkit resources
+3. Test that toolkit CSS/JS load without conflicts
+
+**When updating styles:**
+- Custom styles in `css/style.css` override toolkit defaults
+- Use Illinois color variables for consistency
+- Maintain mobile-first responsive approach
+
+**Resources:**
+- Toolkit builder: https://builder3.toolkit.illinois.edu/
+- Brand guidelines: https://brand.illinois.edu/
+- Typography guide: https://marketing.illinois.edu/visual-identity/typography
+
+---
+
 ## Important Guidelines for AI Assistants
 
 ### What You Should Do
@@ -666,30 +930,51 @@ docs: Update README with deployment instructions
 
 ### What You Should NOT Do
 
-1. **Don't break existing functionality**: Test thoroughly
-2. **Don't introduce dependencies**: No npm packages, frameworks, etc.
-3. **Don't modify branding**: Illinois colors are fixed
-4. **Don't remove accessibility features**: ARIA labels, alt text, etc.
-5. **Don't change URL structure**: Would break existing links
-6. **Don't commit secrets**: API keys, credentials, etc.
-7. **Don't ignore mobile**: Always test responsive design
-8. **Don't skip testing**: Even for "small" changes
-9. **Don't modify Python scripts**: Unless regenerating content
+1. **Don't run archived scripts**: NEVER run `archive/generate_site.py` - it will overwrite HTML files
+2. **Don't break existing functionality**: Test thoroughly
+3. **Don't introduce dependencies**: No npm packages, frameworks, etc.
+4. **Don't modify branding**: Illinois colors are fixed; maintain Brand Toolkit integration
+5. **Don't remove accessibility features**: ARIA labels, alt text, etc.
+6. **Don't change URL structure**: Would break existing links
+7. **Don't commit secrets**: API keys, credentials, etc.
+8. **Don't ignore mobile**: Always test responsive design
+9. **Don't skip testing**: Even for "small" changes
 10. **Don't push directly to main**: Use feature branches
+11. **Don't delete archived files**: They're preserved for historical reference
+12. **Don't skip Brand Toolkit**: Run `scripts/add_toolkit.py` after adding new HTML pages
 
 ### Common Tasks
 
 #### Adding a New Page
 
 ```bash
-# Creating a new page (manual approach - recommended)
-1. Create HTML file: new-page.html
-2. Use existing page as template (copy structure from similar page)
-3. Update navigation in all pages manually (or use find/replace)
-4. Test locally
-5. Commit and push
+# Creating a new page (current recommended approach)
+1. Copy an existing page as template
+   cp about-us.html new-page.html
 
-# Note: generate_site.py is archived and no longer used
+2. Edit content in new-page.html
+   - Update title, meta tags
+   - Replace content in <main> section
+   - Keep header and footer structure
+
+3. Add Brand Toolkit integration
+   python3 scripts/add_toolkit.py
+   # Ensures toolkit CSS/JS are included
+
+4. Update navigation (if needed)
+   - Add link to new page in header navigation
+   - Update navigation in all pages (use find/replace or edit manually)
+
+5. Test locally
+   python3 -m http.server 8000
+   # Visit http://localhost:8000/new-page.html
+
+6. Commit and push
+   git add new-page.html
+   git commit -m "Add new page: [description]"
+   git push -u origin branch-name
+
+# IMPORTANT: Do NOT use archive/generate_site.py
 ```
 
 #### Updating Styles
@@ -716,18 +1001,25 @@ docs: Update README with deployment instructions
 #### Updating Content
 
 ```bash
-# For minor text changes:
+# All content updates (minor and major):
 1. Edit HTML file directly
-2. Test locally
+2. Test locally (python3 -m http.server 8000)
 3. Commit and push
 
-# For major content updates:
-1. Edit HTML files directly
-2. Test locally
-3. Commit all changed files
-4. Push
+# Adding new pages:
+1. Create new HTML file using existing page as template
+2. Add navigation links to other pages if needed
+3. Run: python3 scripts/add_toolkit.py  # Ensures Brand Toolkit integration
+4. Test locally
+5. Commit and push
 
-# Note: generate_site.py is archived - all edits are done directly in HTML
+# Adding new images:
+1. Place image in appropriate images/ subdirectory
+2. Reference with local path in HTML
+3. Test locally
+4. Commit and push
+
+# IMPORTANT: generate_site.py is archived - all edits are done directly in HTML
 ```
 
 ### Troubleshooting Guide
@@ -751,10 +1043,12 @@ docs: Update README with deployment instructions
 - Check console for JS errors
 
 #### Issue: Images not displaying
-- Verify CDN URLs are correct
-- Check network tab in dev tools
-- Consider hosting images locally
-- Verify image URLs in content
+- Verify image files exist in `images/` directory
+- Check image path is correct (relative vs absolute)
+- For blog posts, ensure path starts with `../images/`
+- For root pages, ensure path is `/makerlab/images/` (production) or `/images/` (local)
+- Check browser console for 404 errors
+- Verify file extension matches (case-sensitive)
 
 #### Issue: GitHub Pages not deploying
 - Check Actions tab for errors
@@ -764,11 +1058,15 @@ docs: Update README with deployment instructions
 
 ### Performance Considerations
 
-- **Images**: Currently using CDN, consider local hosting for production
+- **Images**: ✅ Hosted locally in `images/` directory (migrated Nov 2025)
+  - 737+ blog images organized by category
+  - Served via GitHub Pages CDN
+  - All images version controlled
 - **CSS**: Single file, could minify for production
 - **JS**: Single file, could minify for production
-- **HTML**: Generated files, already optimized
+- **HTML**: Static files, already optimized
 - **Caching**: GitHub Pages handles this automatically
+- **Brand Toolkit**: Loaded from Illinois CDN (//cdn.toolkit.illinois.edu/3/)
 
 ### Security Considerations
 
@@ -832,14 +1130,20 @@ docs: Update README with deployment instructions
 
 ### Python Commands
 ```bash
-# Parse XML to JSON (one-time migration - already done)
-python3 scripts/scripts/parse_export.py
+# Add Brand Toolkit to new/regenerated HTML files (active script)
+python3 scripts/add_toolkit.py
 
-# Generate all HTML files (archived - no longer used)
-# python3 archive/generate_site.py  # Only for emergency restoration
-
-# Start local server
+# Start local development server
 python3 -m http.server 8000
+
+# Image migration scripts (migration completed Nov 2025, preserved for reference)
+python3 scripts/download_squarespace_images.py  # Download images from CDN
+python3 scripts/replace_squarespace_images.py   # Replace CDN URLs with local
+python3 scripts/fix_remaining_cdn_images.py     # Fix edge cases
+
+# Content migration scripts (one-time use, completed, preserved for reference)
+python3 scripts/parse_export.py                 # Parse XML to JSON
+# python3 archive/generate_site.py  # ARCHIVED - DO NOT USE
 ```
 
 ### Git Commands
@@ -864,6 +1168,14 @@ git push -u origin branch-name
 - Comprehensive documentation for AI assistants
 - Based on repository state as of November 18, 2025
 
+**Version 1.1** (2025-11-19)
+- Updated repository structure (scripts reorganization, archive directory)
+- Documented image migration completion (Squarespace CDN → local hosting)
+- Updated file counts and locations
+- Added Brand Toolkit integration status
+- Enhanced archive directory documentation
+- Updated workflow processes for current state
+
 ---
 
 ## Additional Resources
@@ -871,7 +1183,10 @@ git push -u origin branch-name
 - [README.md](../README.md) - User-facing documentation
 - [docs/deployment/DEPLOYMENT.md](deployment/DEPLOYMENT.md) - Detailed deployment instructions
 - [docs/deployment/GITHUB_PAGES_SETUP.md](deployment/GITHUB_PAGES_SETUP.md) - GitHub Pages configuration
+- [docs/integration/BRAND_TOOLKIT_INTEGRATION.md](integration/BRAND_TOOLKIT_INTEGRATION.md) - Brand Toolkit integration guide
 - [docs/README.md](README.md) - Documentation index
+- [scripts/README.md](../scripts/README.md) - Scripts documentation
+- [archive/README.md](../archive/README.md) - Archive directory documentation
 - [GitHub Actions Documentation](https://docs.github.com/en/actions)
 - [GitHub Pages Documentation](https://docs.github.com/en/pages)
 - [MDN Web Docs](https://developer.mozilla.org/) - HTML/CSS/JS reference
@@ -879,6 +1194,6 @@ git push -u origin branch-name
 
 ---
 
-**Last Updated:** 2025-11-18
+**Last Updated:** 2025-11-19
 **Maintained By:** AI Assistants working with vishalsachdev/makerlab repository
 **Questions?** Refer to README.md or contact the repository maintainers

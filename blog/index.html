@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Learn. Make. Share">
+  <meta name="description" content="Read the latest news, projects, and updates from Illinois MakerLab. Stories about 3D printing, student projects, innovation, and maker education at UIUC.">
   <title>Blog - Illinois MakerLab</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
@@ -40,9 +40,20 @@
       </div>
     </section>
 
+    <!-- Blog Search -->
+    <div class="blog-search-section">
+      <div class="container">
+        <div class="blog-search-wrapper">
+          <input type="text" id="blog-search" class="blog-search-input" placeholder="Search blog posts..." aria-label="Search blog posts">
+          <span class="blog-search-icon">🔍</span>
+          <div id="search-results-count" class="search-results-count"></div>
+        </div>
+      </div>
+    </div>
+
     <div class="section">
       <div class="container">
-        <div class="blog-posts">
+        <div id="blog-posts-container" class="blog-posts">
 
   <article class="blog-post">
     <h2 class="blog-post-title"><a href="illinois-makerlab-collaboration-with-makers-for-covid-19.html">Illinois Makerlab Collaborates with Makers for Covid-19</a></h2>
@@ -3216,6 +3227,21 @@ Willing volunteers will...</p>
     <a href="5923.html" class="btn btn-outline">Read More →</a>
   </article>
 </div>
+
+        <!-- Pagination Controls -->
+        <div id="pagination-controls" class="pagination-controls">
+          <button id="prev-page" class="pagination-btn" aria-label="Previous page">← Previous</button>
+          <div id="page-numbers" class="page-numbers"></div>
+          <button id="next-page" class="pagination-btn" aria-label="Next page">Next →</button>
+        </div>
+        <div class="pagination-info">
+          <select id="posts-per-page" class="posts-per-page-select" aria-label="Posts per page">
+            <option value="10">10 per page</option>
+            <option value="20" selected>20 per page</option>
+            <option value="50">50 per page</option>
+            <option value="100">100 per page</option>
+          </select>
+        </div>
       </div>
     </div>
 

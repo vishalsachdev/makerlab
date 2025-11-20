@@ -54,6 +54,23 @@ makerlab/
 ✅ **Accessible Navigation** - Sticky header with mobile menu
 ✅ **Clean Modern Design** - Card layouts, smooth transitions
 ✅ **SEO Friendly** - Semantic HTML, meta tags
+✅ **LLM Agent-Friendly** - Structured APIs for AI assistants
+
+### 🤖 LLM Agent-Friendly Features (NEW!)
+
+This site is optimized for Large Language Model (LLM) agents like ChatGPT, Claude, and Perplexity:
+
+- **`/api/site-info.json`** - Complete site metadata, contact info, and services
+- **`/api/pages.json`** - Index of all 41+ pages with descriptions
+- **`/api/blog/posts.json`** - Searchable index of 291+ blog posts
+- **`/sitemap.xml`** - Full sitemap with 336+ URLs
+- **`/robots.txt`** - Agent-friendly crawler permissions
+- **`/agent-guide.json`** - Comprehensive guide for AI agents
+- **JSON-LD Structured Data** - Schema.org markup on homepage
+
+**Why this matters:** LLM agents can now accurately answer questions about MakerLab courses, hours, services, and blog content by accessing structured data instead of scraping HTML.
+
+📖 **Full Documentation:** See [LLM_AGENT_PLAN.md](LLM_AGENT_PLAN.md) for complete implementation details.
 
 ## Technologies Used
 

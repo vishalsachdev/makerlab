@@ -14,7 +14,7 @@ from html import unescape
 
 # Configuration
 BASE_URL = "https://vishalsachdev.github.io/makerlab"
-SITE_DIR = Path("/home/user/makerlab")
+SITE_DIR = Path(os.environ.get("MAKERLAB_SITE_DIR", "./makerlab"))
 API_DIR = SITE_DIR / "api"
 BLOG_DIR = SITE_DIR / "blog"
 

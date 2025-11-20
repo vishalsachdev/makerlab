@@ -4,7 +4,7 @@ A complete replica of the Illinois MakerLab website (https://makerlab.illinois.e
 
 **🚀 Live Site**: [https://vishalsachdev.github.io/makerlab/](https://vishalsachdev.github.io/makerlab/)
 
-> 📖 **New to GitHub Pages?** See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed step-by-step deployment instructions.
+> 📖 **New to GitHub Pages?** See [docs/deployment/DEPLOYMENT.md](docs/deployment/DEPLOYMENT.md) for detailed step-by-step deployment instructions.
 
 ## About
 
@@ -49,6 +49,7 @@ makerlab/
 ✅ **45 Complete Pages** - All content from original site
 ✅ **291 Blog Posts** - Full blog archive from 2012-2025
 ✅ **Responsive Design** - Mobile-friendly layout
+✅ **Illinois Brand Toolkit** - Integrated with official campus toolkit (v3.x)
 ✅ **Illinois Branding** - Official orange (#FF5F05) and blue (#13294B) colors
 ✅ **Accessible Navigation** - Sticky header with mobile menu
 ✅ **Clean Modern Design** - Card layouts, smooth transitions
@@ -77,6 +78,23 @@ This site is optimized for Large Language Model (LLM) agents like ChatGPT, Claud
 - **CSS3** - Modern styling with CSS Grid and Flexbox
 - **Vanilla JavaScript** - No dependencies
 - **Responsive Design** - Mobile-first approach
+- **Illinois Campus Brand Toolkit** - Official UI components and styling (v3.x)
+
+## Brand Toolkit Integration
+
+The site integrates the official [University of Illinois Campus Brand Toolkit](https://builder3.toolkit.illinois.edu/) to ensure campus-wide visual consistency and accessibility standards.
+
+**Integrated Resources:**
+- Toolkit CSS: `//cdn.toolkit.illinois.edu/3/toolkit.css`
+- Toolkit JS: `//cdn.toolkit.illinois.edu/3/toolkit.js`
+
+**Brand Compliance:**
+- ✅ Official Illinois Orange (#FF5F05) and Blue (#13294B)
+- ✅ Toolkit components available for future enhancements
+- ✅ Accessibility best practices
+- 📋 Typography update planned (Montserrat/Source Sans Pro)
+
+For detailed integration documentation, see [docs/integration/BRAND_TOOLKIT_INTEGRATION.md](docs/integration/BRAND_TOOLKIT_INTEGRATION.md). Run `python3 scripts/add_toolkit.py` whenever you regenerate or add HTML so every page continues to load the toolkit CSS/JS before the MakerLab assets.
 
 ## Pages Included
 
@@ -174,10 +192,14 @@ Content was exported from the original Squarespace site on 11/18/2025 using the 
 
 ## Images
 
-Images are currently hosted on Squarespace's CDN. For production use, you may want to:
-1. Download all images from the CDN
-2. Store them in the `/images` directory
-3. Update image paths in the HTML
+Images are now hosted locally in the `/images` directory, organized by category:
+- `images/blog/` - Blog post images (737 images)
+- `images/general/` - General site images
+- `images/summer/` - Summer camp images
+- `images/events/` - Event and workshop images
+- `images/staff/` - Staff photos
+
+All Squarespace CDN URLs have been replaced with local GitHub paths.
 
 ## Browser Support
 

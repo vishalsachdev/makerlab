@@ -5,26 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Learn. Make. Share">
   <title>What We Offer - Illinois MakerLab</title>
-  <link rel="stylesheet" href="/makerlab/css/style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header class="site-header">
     <div class="container">
       <div class="header-content">
         <div class="site-branding">
-          <a href="/makerlab/index.html" class="site-logo">Illinois MakerLab</a>
+          <a href="index.html" class="site-logo">Illinois MakerLab</a>
           <div class="site-tagline">Learn. Make. Share</div>
         </div>
         <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
         <nav class="main-nav">
           <ul>
-        <li><a href="/makerlab/index.html">Home</a></li>
-        <li><a href="/makerlab/about-us.html">About</a></li>
-        <li><a href="/makerlab/pricingservices.html" class="active">What We Offer</a></li>
-        <li><a href="/makerlab/courses.html">Courses</a></li>
-        <li><a href="/makerlab/blog/index.html">Blog</a></li>
-        <li><a href="/makerlab/resources.html">Resources</a></li>
-        <li><a href="/makerlab/contact.html">Contact</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about-us.html">About</a></li>
+        <li><a href="pricingservices.html">What We Offer</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="blog/index.html">Blog</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
         </nav>
       </div>
@@ -32,335 +32,132 @@
   </header>
 
   <main>
-    
+    <!-- Page Hero -->
+    <section class="hero">
+      <div class="container">
+        <h1>What We Offer</h1>
+        <p class="tagline">3D Printing, Design, Prototyping, and More</p>
+      </div>
+    </section>
+
     <div class="section">
       <div class="container">
         <div class="content-area">
-          <h1>What We Offer</h1>
-          <div class="image-gallery-wrapper">
+          
+          <!-- 3D Printing Section -->
+          <section class="service-section">
+            <h2>3D Printing</h2>
+            <p>We have <a href="https://ultimaker.com/en/products/ultimaker-2-plus">Ultimaker</a> 3D Printers that can be used to turn digital designs into physical objects. Specifications, build area and material options are listed on our <a href="faq.html">Frequently asked questions</a> page. Material costs are paid by credit cards in person or online. There will be a 20% surcharge for all prints setup and managed by our Guru's, as reflected in the online ordering rates below. Dual color or special filament prints have a 50% surcharge on base prices. Payments made with campus accounts require a minimum billing of $10, and will be charged at Illinois Faculty/Staff rates.</p>
+            <p><strong>All prints will have a base fee of $4 and then material costs per gram are added as given below.</strong></p>
+
+            <div class="pricing-table-wrapper pricing-table-single">
+              <h3>3D Printing Rates</h3>
+              <table class="pricing-table">
+                <thead>
+                  <tr>
+                    <th>User Type</th>
+                    <th>Walk-In Rate <span class="table-unit">(per gram)</span></th>
+                    <th>Online Ordering Rate <span class="table-unit">(per gram)</span></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Illinois Student</td>
+                    <td>10¢</td>
+                    <td>12¢</td>
+                  </tr>
+                  <tr>
+                    <td>Illinois Faculty/Staff/Alumni/Departments</td>
+                    <td>25¢</td>
+                    <td>30¢</td>
+                  </tr>
+                  <tr>
+                    <td>All Other Users</td>
+                    <td>35¢</td>
+                    <td>42¢</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="pricing-note-small text-center">20% surcharge for online orders over Walk-In rates</p>
+            </div>
+
+            <p><strong><em>Online 3D Printing</em></strong>: We now have an online 3D printing service as well. More details on our <a href="online-ordering.html">online ordering page</a>.</p>
+          </section>
+
+          <hr />
+
+          <!-- 3D Design & Prototyping Section -->
+          <section class="service-section">
+            <h2>3D Design & Prototyping</h2>
+            <p>If you need turnkey design services, our MakerLab Gurus are experts in 3D design and prototyping and are available to turn ideas into 3D designs and then into product prototypes. These services are available at the following rates (30 minute minimum + 30 minute increments + material costs). If you are interested in learning and designing things yourself, sign up for our <a href="resources.html">workshops</a>.</p>
+            <p><em>Read our <a href="blog/index.html?category=Design%20Stories"><strong>Design Stories</strong></a> to get an idea of our work.</em></p>
+
+            <div class="pricing-table-wrapper">
+              <h3>Design & Prototyping Rates</h3>
+              <table class="pricing-table">
+                <thead>
+                  <tr>
+                    <th>User Type</th>
+                    <th>Cost</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Illinois Student</td>
+                    <td>$20 per hour</td>
+                  </tr>
+                  <tr>
+                    <td>Illinois Faculty/Staff</td>
+                    <td>$30 per hour</td>
+                  </tr>
+                  <tr>
+                    <td>All Other Users (Or CFOAPL account payment)</td>
+                    <td>$50 per hour</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <hr />
+
+          <!-- Private Tutoring Section -->
+          <section class="service-section">
+            <h2>1-to-1 Private Tutoring for 3D Modeling</h2>
+            <p>Are you interested in improving your 3D Modeling skills or want to learn how to start? Individual tutoring sessions will be available for you to meet with one of our Gurus who have experience with diverse software. Online or in-person, our Gurus will ensure that you are effectively improving your skills after every lesson.</p>
+            <p><strong>Price:</strong> $25 for 30 minute session</p>
+            <p><strong>Software:</strong></p>
+            <ul>
+              <li>Tinkercad</li>
+              <li>Fusion 360</li>
+            </ul>
+            <p>Meet our <a href="lab-staff.html">Gurus</a> and their diverse set of skills and backgrounds!</p>
+            <p>If you are interested, <a href="contact.html">contact us</a>.</p>
+          </section>
+
+          <hr />
+
+          <!-- Private Sessions Section -->
+          <section class="service-section">
+            <h2>Reserving MakerLab for a <a href="private-events.html">Private Session</a></h2>
+            <p>In addition to our scheduled activities, the MakerLab may be reserved for private class sessions (up to 21 students at a time). These sessions can cover a variety of topics including 3D printing, 3D design, 3D scanning, product prototyping, and many others. <a href="contact.html">Drop us a line</a>.</p>
+          </section>
+
+          <hr />
+
+          <!-- Policies Section -->
+          <section class="service-section">
+            <h2>Our Printing Policies</h2>
+            <p>Illinois MakerLab's 3D printers may be used only for lawful purposes. Individuals who choose to use any of Illinois MakerLab's services will not create materials (digital or physical) that are:</p>
+            <ul>
+              <li>Prohibited by local, state or federal law</li>
+              <li>Unsafe, harmful, dangerous, or pose a potential threat to the well-being of others</li>
+              <li>Obscene, inappropriate, or offensive in a public university environment</li>
+              <li>In violation of another individual's intellectual property rights (i.e., reproducing copyrighted, patented, or trademark protected materials)</li>
+            </ul>
+            <p>The Illinois MakerLab reserves the right to refuse the printing of materials. If you have questions concerning the nature of something you would like to create in the lab, please <a href="contact.html">contact us</a>.</p>
+          </section>
 
-  
-   <img src="/makerlab/images/general/Carabiners.jpg" />
-  
-
-  
-   <img src="/makerlab/images/general/Ribs-2.jpg" />
-  
-
-  
-   <img src="https://images.squarespace-cdn.com/content/v1/59ebf554edaed825d0d8e200/1509732906289-NWP3ZF8BOVH9ZXO6KCYL/Build+Max-9.jpg?format=original" />
-  
-
-  
-   <img src="https://images.squarespace-cdn.com/content/v1/59ebf554edaed825d0d8e200/1509732910544-XOAXXWVXOVSF8Z9YNQHI/Dual+Printing.jpg?format=original" />
-  
-
-</div>
-
-
-<div class="sqs-html-content" data-sqsp-text-block-content>
-  <p class="" style="white-space:pre-wrap;"><strong><em>3D Printing</em></strong>: We have  <a href="https://ultimaker.com/en/products/ultimaker-2-plus">Ultimaker</a>&nbsp;3D Printers that can be used to turn digital designs into physical objects. Specifications, build area and material options are listed on our <a href="/faq">Frequently asked questions</a>&nbsp;page. . Material costs are paid by credit cards in person or online. &nbsp;There will be a 20% surcharge for all prints setup and managed by our Guru’s, as reflected in the online ordering rates below. Dual color or special filament prints have a 50% surcharge on base prices. Payments made with campus accounts require a minimum billing of $10, and will be charged at Illinois Faculty/Staff rates. <br><strong>All prints will have a base fee of $4 and then material costs per gram are added as given below. </strong></p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-
-
-
-
-
-<div class="sqs-html-content" data-sqsp-text-block-content>
-  <p class="" style="white-space:pre-wrap;"><strong>User</strong></p><p class="" style="white-space:pre-wrap;">Illinois Student</p><p class="" style="white-space:pre-wrap;">Illinois Faculty/Staff/Alumni/Departments</p><p class="" style="white-space:pre-wrap;">All Other Users</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-
-
-
-
-
-<div class="sqs-html-content" data-sqsp-text-block-content>
-  <p class="" style="white-space:pre-wrap;"><strong>Walk-In Rates</strong></p><p class="" style="white-space:pre-wrap;">10¢ per gram</p><p class="" style="white-space:pre-wrap;">25¢ per gram</p><p class="" style="white-space:pre-wrap;">35¢ per gram</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-
-
-
-
-
-<div class="sqs-html-content" data-sqsp-text-block-content>
-  <p class="" style="white-space:pre-wrap;"><strong>Online Ordering Rates (20 % surcharge over Walk In rates)</strong></p><p class="" style="white-space:pre-wrap;">12¢ per gram</p><p class="" style="white-space:pre-wrap;">30¢ per gram</p><p class="" style="white-space:pre-wrap;">42¢ per gram</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-
-
-
-
-
-<div class="sqs-html-content" data-sqsp-text-block-content>
-  <p class="" style="white-space:pre-wrap;"><strong><em>Online 3d Printing</em></strong>&nbsp;: We now have an online 3d printing service as well. More details on our <a href="/online-ordering">online ordering page</a>.</p><p class="" data-rte-preserve-empty="true" style="white-space:pre-wrap;"></p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-
-
-
-<hr />
-
-<div class="sqs-html-content" data-sqsp-text-block-content>
-  <p class="" style="white-space:pre-wrap;"><strong><em>3D Design &amp; Prototyping</em></strong>: If you need turnkey design services, our MakerLab Gurus are experts in 3D design and prototyping and are available to turn ideas into 3D designs and then into product prototypes. These services are available at the following rates (30 minute minimum + 30 minute increments + material costs). If you are interested in learning and designing things yourself, sign up for our <a href="/workshops">workshops</a>.</p><p class="" style="white-space:pre-wrap;"><em>Read our </em><a href="/blog?category=Design%20Stories"><strong><em>Design Stories</em></strong></a><strong><em>&nbsp;</em></strong><em>to get an idea of our work</em><strong><em>.&nbsp;</em></strong></p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-
-
-
-
-
-<div class="sqs-html-content" data-sqsp-text-block-content>
-  <p class="" style="white-space:pre-wrap;"><strong>User</strong></p><p class="" style="white-space:pre-wrap;">Illinois Student</p><p class="" style="white-space:pre-wrap;">Illinois Faculty/Staff</p><p class="" style="white-space:pre-wrap;">All Other Users (Or CFOAPL account payment)</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-
-
-
-
-
-<div class="sqs-html-content" data-sqsp-text-block-content>
-  <p class="" style="white-space:pre-wrap;"><strong>Cost</strong></p><p class="" style="white-space:pre-wrap;">$20 per hour</p><p class="" style="white-space:pre-wrap;">$30 per hour</p><p class="" style="white-space:pre-wrap;">$50 per hour</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-
-
-
-<hr />
-
-<div class="sqs-html-content" data-sqsp-text-block-content>
-  <p class="" style="white-space:pre-wrap;"><strong>1 to 1 Private Tutoring for 3D Modeling</strong></p><p class="" style="white-space:pre-wrap;">Are you interested in improving your 3D Modeling skills or want to learn how to start? Individual tutoring sessions will be available for you to meet with one of our Gurus who have experience with diverse software. Online or in-person, our Gurus will ensure that you are effectively improving your skills after every lesson</p><p class="" style="white-space:pre-wrap;"><strong>Price:</strong></p><p class="" style="white-space:pre-wrap;">$25 for 30 minute session</p><p class="" style="white-space:pre-wrap;"><strong>Software:</strong></p><ul data-rte-list="default"><li><p class="" style="white-space:pre-wrap;">Tinkercad</p></li><li><p class="" style="white-space:pre-wrap;">Fusion 360</p></li></ul><p class="" style="white-space:pre-wrap;">Meet our <a href="https://makerlab.illinois.edu/lab-staff#labstaff">Gurus</a> and their diverse set of skills and backgrounds!</p><p class="" style="white-space:pre-wrap;">If you are interested, <a href="https://makerlab.illinois.edu/contact">contact us</a>.</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-
-
-
-<hr />
-
-<div class="sqs-html-content" data-sqsp-text-block-content>
-  <p class="" style="white-space:pre-wrap;"><strong><em>Reserving MakerLab for a </em></strong><a href="/private-events"><strong><em>Private Session</em></strong></a> </p><p class="" style="white-space:pre-wrap;">In addition to our scheduled activities, the MakerLab may be reserved for private class sessions (up to 21 students at a time). These sessions can cover a variety of topics including 3D printing, 3D design, 3D scanning, product prototyping, and many others. <a href="/contact">Drop us a line</a>.</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-
-
-
-<hr />
-
-<div class="sqs-html-content" data-sqsp-text-block-content>
-  <p class="" style="white-space:pre-wrap;"><strong>Our Printing Policies</strong></p><p class="" style="white-space:pre-wrap;">Illinois MakerLab’s 3D printers may be used only for lawful purposes. Individuals who choose to use any of Illinois MakerLab’s services will not create materials (digital or physical)&nbsp;that are:</p><ul data-rte-list="default"><li><p class="" style="white-space:pre-wrap;">Prohibited by local, state or federal law</p></li><li><p class="" style="white-space:pre-wrap;">Unsafe, harmful, dangerous, or pose a potential threat to the well-being of others</p></li><li><p class="" style="white-space:pre-wrap;">Obscene, inappropriate, or offensive in a public university environment</p></li><li><p class="" style="white-space:pre-wrap;">In violation of another individual’s intellectual property rights (i.e., reproducing copyrighted, patented, or trademark protected materials)</p></li></ul><p class="" style="white-space:pre-wrap;">The Illinois MakerLab reserves the right to refuse the printing of materials. If you have questions concerning the nature of something you would like to create in the lab, please <a href="/contact">contact us</a>.</p>
-</div>
         </div>
       </div>
     </div>
@@ -379,22 +176,23 @@
         </div>
         <div class="footer-section">
           <h3>Quick Links</h3>
-          <a href="/makerlab/about-us.html">About Us</a>
-          <a href="/makerlab/pricingservices.html">What We Offer</a>
-          <a href="/makerlab/courses.html">Courses</a>
-          <a href="/makerlab/lab-hours.html">Lab Hours</a>
+          <a href="about-us.html">About Us</a>
+          <a href="pricingservices.html">What We Offer</a>
+          <a href="courses.html">Courses</a>
+          <a href="lab-hours.html">Lab Hours</a>
         </div>
         <div class="footer-section">
           <h3>Resources</h3>
-          <a href="/makerlab/resources.html">Resources</a>
-          <a href="/makerlab/faq.html">FAQ</a>
-          <a href="/makerlab/blog/index.html">Blog</a>
+          <a href="resources.html">Resources</a>
+          <a href="lab-staff.html">Lab Staff</a>
+          <a href="faq.html">FAQ</a>
+          <a href="blog/index.html">Blog</a>
         </div>
         <div class="footer-section">
           <h3>Connect</h3>
           <a href="https://www.instagram.com/uimakerlab/" target="_blank">Instagram</a>
           <a href="https://www.facebook.com/uimakerlab/" target="_blank">Facebook</a>
-          <a href="/makerlab/contact.html">Contact Us</a>
+          <a href="contact.html">Contact Us</a>
         </div>
       </div>
       <div class="footer-bottom">
@@ -403,6 +201,6 @@
     </div>
   </footer>
 
-  <script src="/makerlab/js/main.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

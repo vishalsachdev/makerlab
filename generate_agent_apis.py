@@ -161,7 +161,8 @@ def extract_blog_excerpt(html_path, max_length=200):
 
         return text
     except Exception as e:
-        return ""
+        print(f"Warning: Could not extract blog excerpt from {html_path}: {e}")
+        return "Content preview unavailable"
 
 def generate_blog_posts_json():
     """Generate blog/posts.json API file"""

@@ -3,10 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Learn. Make. Share">
+  <meta name="description" content="Illinois MakerLab is the world's first business school 3D printing lab at UIUC. Learn 3D design, printing, and digital making. Access equipment, workshops, and courses.">
   <title>Learn. Make. Share. - Illinois MakerLab</title>
   <link rel="stylesheet" href="css/style.css">
 
+  <!-- Google Analytics - Replace GA_MEASUREMENT_ID with your actual ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_MEASUREMENT_ID');
   <!-- JSON-LD Structured Data for LLM Agents and Search Engines -->
   <script type="application/ld+json">
   {
@@ -212,7 +219,7 @@
     <section class="instagram-section">
       <div class="container">
         <h2 class="section-title">Keep Up With our <a href="https://www.instagram.com/uimakerlab/?hl=en" target="_blank" rel="noopener noreferrer">Instagram</a>!</h2>
-        
+        <div id="instagram-feed" class="instagram-grid"></div>
       </div>
     </section>
   </main>

@@ -71,7 +71,7 @@ def get_file_modified_date(file_path):
     try:
         timestamp = os.path.getmtime(file_path)
         return datetime.fromtimestamp(timestamp).strftime('%Y-%m-%d')
-    except:
+    except OSError:
         return datetime.now().strftime('%Y-%m-%d')
 
 def slugify(text):

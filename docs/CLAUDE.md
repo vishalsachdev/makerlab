@@ -471,7 +471,7 @@ HTML Files (pages + blog)
   "site": {
     "title": "Illinois MakerLab",
     "description": "Learn. Make. Share.",
-    "link": "https://makerlab.illinois.edu"
+    "link": ""
   },
   "pages": [
     {
@@ -1102,7 +1102,7 @@ The toolkit provides ready-to-use components:
 ### Important URLs
 - **Production**: https://vishalsachdev.github.io/makerlab/
 - **GitHub Repo**: https://github.com/vishalsachdev/makerlab
-- **Original Site**: https://makerlab.illinois.edu/
+- **Original Site**: /
 
 ### Key Contacts
 - **Director**: Dr. Vishal Sachdev

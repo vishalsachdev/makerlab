@@ -1,6 +1,6 @@
 # Illinois MakerLab Website
 
-A complete replica of the Illinois MakerLab website (https://makerlab.illinois.edu/) built with static HTML, CSS, and JavaScript.
+A complete replica of the Illinois MakerLab website (/) built with static HTML, CSS, and JavaScript.
 
 **🚀 Live Site**: [https://vishalsachdev.github.io/makerlab/](https://vishalsachdev.github.io/makerlab/)
 

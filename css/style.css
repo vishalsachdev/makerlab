@@ -2629,3 +2629,55 @@ img {
   font-size: 0.9rem;
   color: #666666;
 }
+/* Reviews section */
+.reviews-section,
+#reviews {
+  padding: 3rem 0;
+}
+
+.reviews-rating {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.reviews-stars {
+  font-size: 2.2rem;
+  color: #ffb400;
+  letter-spacing: 0.1rem;
+}
+
+.reviews-rating-text {
+  margin-top: 0.25rem;
+  font-weight: 500;
+}
+
+.reviews-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .reviews-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.review-card {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 1rem 1.25rem;
+}
+
+.review-name {
+  font-weight: 600;
+}
+
+.review-stars {
+  color: #ffb400;
+  margin: 0.25rem 0 0.5rem;
+}
+
+.review-text {
+  margin: 0;
+}

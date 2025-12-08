@@ -2602,3 +2602,30 @@ img {
     padding: var(--spacing-sm);
   }
 }
+.reviews-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .reviews-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.review-card {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 1rem 1.25rem;
+}
+
+.review-text {
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+
+.review-meta {
+  font-size: 0.9rem;
+  color: #666666;
+}

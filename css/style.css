@@ -2742,3 +2742,65 @@ img {
   margin: 0.5rem 1rem 1.25rem;
   color: #444444;
 }
+/* Reviews section */
+.reviews-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .reviews-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Big 5.0 and stars at top */
+.reviews-rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.reviews-score-big {
+  font-size: 4.5rem;
+  font-weight: 700;
+  color: #ffb400;
+}
+
+.reviews-stars-big {
+  font-size: 4.5rem;
+  color: #ffb400;
+  letter-spacing: 0.15rem;
+}
+
+/* Card styling */
+.review-card {
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  text-align: center;
+  padding: 1.5rem 1rem;
+}
+
+/* Stars inside cards */
+.review-stars-icons {
+  margin-top: 0.5rem;
+  color: #ffb400;
+  font-size: 1.4rem;
+}
+
+/* Text styling */
+.review-name {
+  margin-top: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #001f3f;
+  text-transform: uppercase;
+}
+
+.review-text {
+  margin: 0.5rem 1rem;
+  color: #444444;
+}

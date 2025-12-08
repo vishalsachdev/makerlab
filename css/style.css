@@ -2681,3 +2681,64 @@ img {
 .review-text {
   margin: 0;
 }
+/* Reviews layout */
+.reviews-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .reviews-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Big gold stars at top */
+.reviews-rating {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.reviews-stars-big {
+  font-size: 3rem;
+  color: #ffb400;
+  letter-spacing: 0.12rem;
+}
+
+/* Card container styling */
+.review-card {
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Header image */
+.review-image img {
+  width: 100%;
+  display: block;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+/* Stars inside each card */
+.review-stars-icons {
+  margin-top: 0.75rem;
+  color: #ffb400;
+  font-size: 1.4rem;
+}
+
+/* Typography */
+.review-name {
+  margin-top: 0.3rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #001f3f;
+  text-transform: uppercase;
+}
+
+.review-text {
+  margin: 0.5rem 1rem 1.25rem;
+  color: #444444;
+}

@@ -6,6 +6,47 @@
   <meta name="description" content="Professional 3D printing services, design tutoring, workshops, and custom prototyping at Illinois MakerLab. Affordable pricing for students and businesses.">
   <title>What We Offer - Illinois MakerLab</title>
   <link rel="stylesheet" href="css/style.css">
+    <style>
+    .gallery-section {
+      margin: 2rem 0;
+      padding: 1rem;
+    }
+    
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 1.5rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    
+    .gallery-item {
+      width: 100%;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .gallery-item img,
+    .gallery-item video {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      display: block;
+    }
+    
+    .gallery-item:hover {
+      transform: scale(1.02);
+      transition: transform 0.3s ease;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    @media (max-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -142,6 +183,39 @@
             <h2>Reserving MakerLab for a <a href="private-events.html">Private Session</a></h2>
             <p>In addition to our scheduled activities, the MakerLab may be reserved for private class sessions (up to 21 students at a time). These sessions can cover a variety of topics including 3D printing, 3D design, 3D scanning, product prototyping, and many others. <a href="contact.html">Drop us a line</a>.</p>
           </section>
+
+            <!-- Gallery Section -->
+  <div class="gallery-section">
+    <div class="gallery-grid">
+      <!-- Autoplaying Video -->
+      <div class="gallery-item gallery-video">
+        <video autoplay muted loop playsinline>
+          <source src="images/makerlab-video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      
+      <!-- Image 1 -->
+      <div class="gallery-item">
+        <img src="images/private-session-1.jpg" alt="MakerLab Private Session 1">
+      </div>
+      
+      <!-- Image 2 -->
+      <div class="gallery-item">
+        <img src="images/private-session-2.jpg" alt="MakerLab Private Session 2">
+      </div>
+      
+      <!-- Image 3 -->
+      <div class="gallery-item">
+        <img src="images/private-session-3.jpg" alt="MakerLab Private Session 3">
+      </div>
+      
+      <!-- Image 4 -->
+      <div class="gallery-item">
+        <img src="images/private-session-4.jpg" alt="MakerLab Private Session 4">
+      </div>
+    </div>
+  </div>
 
           <hr />
 

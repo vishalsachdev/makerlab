@@ -5,8 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Illinois MakerLab is the world's first business school 3D printing lab at UIUC. Learn 3D design, printing, and digital making. Access equipment, workshops, and courses.">
   <title>Learn. Make. Share. - Illinois MakerLab</title>
+  
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* --- COLOR FIXES FOR ICONS --- */
+    
+    /* For the Navy/Blue boxes: Icon becomes Orange */
+    .cta-square-blue i {
+        color: #FF5500 !important; 
+        opacity: 1;
+    }
+
+    /* For the Orange boxes: Icon becomes Navy */
+    .cta-square-orange i {
+        color: #13294B !important; 
+        opacity: 1;
+    }
+    
+    /* Optional: Clean up text shadows for a modern look */
+    .cta-square-text {
+        text-shadow: none !important;
+    }
+  </style>
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
   <script>
@@ -15,20 +37,6 @@
     gtag('js', new Date());
     gtag('config', 'GA_MEASUREMENT_ID');
   </script>
-
-  <style>
-    /* This makes the text and icons stand out clearly */
-    .cta-square-content {
-      color: #ffffff !important; /* Forces text to be white */
-      text-shadow: 0 2px 5px rgba(0,0,0,0.6); /* Adds a shadow for readability */
-      font-weight: bold;
-    }
-    
-    .cta-square-content i {
-      color: #ffffff !important; /* Forces icons to be white */
-      filter: drop-shadow(0 2px 3px rgba(0,0,0,0.4));
-    }
-  </style>
 
   <script type="application/ld+json">
   {
@@ -157,7 +165,7 @@
             <a href="lab-hours.html" class="cta-block-link">
               <div class="cta-image-wrapper cta-square cta-square-orange">
                 <div class="cta-square-content">
-                  <i class="fas fa-clock fa-4x" style="display: block; margin-bottom: 20px;"></i>
+                   <i class="fas fa-clock fa-4x" style="display: block; margin-bottom: 20px;"></i>
                   <span class="cta-square-text">LAB<br>HOURS</span>
                 </div>
               </div>
@@ -171,7 +179,7 @@
             <a href="online-ordering.html" class="cta-block-link">
               <div class="cta-image-wrapper cta-square cta-square-blue">
                 <div class="cta-square-content">
-                  <i class="fas fa-cloud-arrow-up fa-4x" style="display: block; margin-bottom: 20px;"></i>
+                   <i class="fas fa-cube fa-4x" style="display: block; margin-bottom: 20px;"></i>
                   <span class="cta-square-text">ORDER<br>HERE</span>
                 </div>
               </div>
@@ -228,13 +236,29 @@
           <article class="news-card">
             <a href="blog/illinois-makerlab-collaboration-with-makers-for-covid-19.html">
               <div class="news-card-image">
-                <img src="images/general/IMG_8347.jpg" alt="Makers Collaboration">
+                <img src="images/general/IMG_8347.jpg" alt="Students working in the MakerLab">
+              </div>
+              <div class="news-card-content">
+                <h3>Collaboration with Makers for COVID-19</h3>
               </div>
             </a>
           </article>
-        </div>
+          </div>
       </div>
     </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <p>&copy; 2025 Illinois MakerLab. All rights reserved.</p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/uimakerlab/" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.instagram.com/uimakerlab/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>

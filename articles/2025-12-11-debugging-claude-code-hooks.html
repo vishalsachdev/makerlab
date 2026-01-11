@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Debugging a Silent Failure: How AI Diagnosed a Broken Claude Code Hook</title>
+  <style>
+    :root {
+      --bg: #fafafa;
+      --text: #1a1a1a;
+      --accent: #6366f1;
+      --code-bg: #f3f4f6;
+      --border: #e5e7eb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--bg);
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-top: 1.5rem;
+    }
+
+    .subtitle {
+      font-style: italic;
+      color: #666;
+      margin-bottom: 2rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2rem 0;
+    }
+
+    pre {
+      background: var(--code-bg);
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: 0.9rem;
+      border: 1px solid var(--border);
+    }
+
+    code {
+      font-family: 'SF Mono', Consolas, 'Liberation Mono', Menlo, monospace;
+      font-size: 0.9em;
+    }
+
+    p code {
+      background: var(--code-bg);
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+    }
+
+    blockquote {
+      border-left: 3px solid var(--accent);
+      margin: 1.5rem 0;
+      padding-left: 1rem;
+      color: #555;
+      font-style: italic;
+    }
+
+    ul, ol {
+      padding-left: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    strong {
+      font-weight: 600;
+    }
+
+    .highlight {
+      background: #fef3c7;
+      padding: 0.1em 0.3em;
+      border-radius: 3px;
+    }
+
+    .footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-style: italic;
+      color: #666;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <article>
+    <h1>Debugging a Silent Failure: How AI Diagnosed a Broken Claude Code Hook</h1>
+    <p class="subtitle">A case study in systematic debugging with an AI thought partner</p>
+
+    <hr>
+
+    <h2>The Problem: A Hook That Never Fired</h2>
+
+    <p>I had a <code>SessionEnd</code> hook configured in Claude Code that was supposed to export my chat sessions to markdown files for later reference. The script existed. The configuration existed. But the <code>/articles/chat-sessions/</code> directory remained stubbornly empty.</p>
+
+    <p>"Can you fix the session hook and troubleshoot as it does not work?"</p>
+
+    <p>This is the kind of problem that can eat hours. The hook runs silently in the background. There's no obvious error message. It either works or it doesn't, and when it doesn't, you're left staring at configuration files wondering what's wrong.</p>
+
+    <h2>Phase 1: Gathering Evidence</h2>
+
+    <p>Claude's first move was to examine the actual artifacts:</p>
+
+    <pre><code># Check the hook script
+cat /Users/vishal/.claude/hooks/export-session.py
+
+# Check the settings configuration
+cat /Users/vishal/.claude/settings.json</code></pre>
+
+    <p>The script looked fine - a well-structured Python file that reads transcript JSON, processes messages, and writes a markdown summary. The settings.json showed:</p>
+
+    <pre><code>{
+  "hooks": {
+    "SessionEnd": [
+      {
+        "matcher": {},
+        "hooks": [
+          {
+            "type": "command",
+            "exec": "/Users/vishal/.claude/hooks/export-session.py"
+          }
+        ]
+      }
+    ]
+  }
+}</code></pre>
+
+    <p>At first glance, this looks correct. The hook type is "command", the path exists, the script is executable. But something was wrong.</p>
+
+    <h2>Phase 2: Verifying the Feature Exists</h2>
+
+    <p>Before diving deeper into configuration debugging, Claude took a step back: <em>Does SessionEnd even exist as a hook type?</em></p>
+
+    <p>This is a crucial debugging principle - verify your assumptions about the platform before debugging your code.</p>
+
+    <pre><code>curl -s "https://api.github.com/repos/anthropics/claude-code/issues/4318"</code></pre>
+
+    <p>This revealed that <code>SessionEnd</code> was originally a <em>feature request</em>, not a built-in feature. The issue was closed and marked "resolved" - good sign. But when was it implemented?</p>
+
+    <p>The comments told the story:</p>
+
+    <blockquote>"The SessionEnd hook, has not been implemented in this release... This issue has been automatically locked since it was closed."</blockquote>
+
+    <p>But there was a follow-up issue (#4649) specifically requesting SessionEnd:</p>
+
+    <blockquote>"Was implemented today via v1.0.85"</blockquote>
+
+    <p>And my version? <code>2.0.65</code> - well past the implementation. The feature exists. The version supports it. The configuration <em>should</em> work.</p>
+
+    <h2>Phase 3: The Smoking Gun</h2>
+
+    <p>Claude searched for the official documentation on hook configuration. The search results revealed the correct format:</p>
+
+    <pre><code>{
+  "hooks": {
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            <span class="highlight">"command"</span>: "/path/to/session_cleanup.py"
+          }
+        ]
+      }
+    ]
+  }
+}</code></pre>
+
+    <p>There it was. The property should be <code>"command"</code>, not <code>"exec"</code>.</p>
+
+    <p><strong>My configuration:</strong></p>
+    <pre><code>{ "type": "command", "exec": "/path/to/script.py" }</code></pre>
+
+    <p><strong>Correct configuration:</strong></p>
+    <pre><code>{ "type": "command", "command": "/path/to/script.py" }</code></pre>
+
+    <p>A single word difference. Silent failure. No error message. The hook simply never ran.</p>
+
+    <h2>Phase 4: The Fix</h2>
+
+    <pre><code># Fix the configuration using jq
+cat settings.json | jq '.hooks.SessionEnd[0].hooks[0].command =
+    .hooks.SessionEnd[0].hooks[0].exec |
+    del(.hooks.SessionEnd[0].hooks[0].exec)' > fixed.json
+
+# Backup and apply
+cp settings.json settings.json.bak
+cp fixed.json settings.json</code></pre>
+
+    <p>The fix was trivial once identified. The debugging journey to find it was not.</p>
+
+    <h2>What Made This Debugging Effective</h2>
+
+    <h3>1. Systematic Evidence Gathering</h3>
+    <p>Instead of randomly changing configuration values, Claude methodically examined the script, configuration, platform features, and version compatibility.</p>
+
+    <h3>2. External Source Verification</h3>
+    <p>When documentation was unclear, Claude went to primary sources: GitHub issues for feature history, comments for implementation timeline, and web search for configuration examples.</p>
+
+    <h3>3. Testing Assumptions</h3>
+    <p>Before assuming the configuration was wrong, Claude verified that SessionEnd hooks are real, the current version supports them, and the expected format matches.</p>
+
+    <h3>4. No Guessing</h3>
+    <p>At no point did Claude suggest "try changing this to see if it works." Every change was backed by documentation or official examples.</p>
+
+    <h2>The Deeper Lesson</h2>
+
+    <p>This bug represents a class of errors increasingly common in modern development: <strong>configuration-level failures in tool ecosystems</strong>.</p>
+
+    <p>The Python script was correct. The logic was sound. The feature existed. But a single property name mismatch in a JSON configuration file caused complete silent failure.</p>
+
+    <p>These bugs are:</p>
+    <ul>
+      <li><strong>Hard to detect</strong>: No runtime error, no stack trace</li>
+      <li><strong>Hard to diagnose</strong>: The configuration "looks right"</li>
+      <li><strong>Easy to introduce</strong>: Copy-paste from outdated docs</li>
+      <li><strong>Easy to fix</strong>: Once found, it's a one-line change</li>
+    </ul>
+
+    <p>AI assistants excel at this type of debugging because they can rapidly search documentation, cross-reference official examples, trace feature history through issue trackers, and systematically verify each component.</p>
+
+    <h2>The Meta-Observation</h2>
+
+    <p>There's something recursive about this debugging session. I was trying to fix a hook that exports Claude Code sessions to markdown... while using Claude Code. The very tool I was debugging was helping me debug itself.</p>
+
+    <p>And now this debugging session will be captured by the (now working) hook, creating a record of how we fixed the system that creates the record.</p>
+
+    <p>This is the kind of self-referential loop that makes AI-assisted development feel different. The AI isn't just a code generator - it's a collaborator that can debug its own infrastructure alongside you.</p>
+
+    <hr>
+
+    <h2>Technical Reference</h2>
+
+    <p><strong>Correct SessionEnd Hook Configuration:</strong></p>
+    <pre><code>{
+  "hooks": {
+    "SessionEnd": [
+      {
+        "matcher": {},
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/path/to/your/script.py"
+          }
+        ]
+      }
+    ]
+  }
+}</code></pre>
+
+    <p><strong>SessionEnd Input (via stdin):</strong></p>
+    <pre><code>{
+  "session_id": "abc123",
+  "transcript_path": "~/.claude/projects/.../session.jsonl",
+  "cwd": "/current/working/directory",
+  "hook_event_name": "SessionEnd",
+  "reason": "exit"
+}</code></pre>
+
+    <p><strong>Triggers:</strong> <code>/exit</code> command, <code>Ctrl+D</code>, or closing the terminal</p>
+
+    <p><strong>Debugging:</strong> Run <code>claude --debug</code> to see hook execution logs</p>
+
+    <hr>
+
+    <p class="footer">This article was written by Claude (Opus 4.5) documenting a real debugging session. The Hybrid Builder chronicles AI-human collaborations in software development.</p>
+  </article>
+</body>
+</html>

@@ -9,6 +9,7 @@
 
 - [x] **Missing `</script>` tag in index.html** - Fixed broken HTML that could break page rendering
 - [x] **Lab hours updated** - Changed to Spring 2026 hours: Weekdays 2-7pm starting January 26
+- [x] **Sitemap cleaned** - Removed 19 orphaned page entries (now 317 valid URLs)
 
 ---
 
@@ -23,35 +24,6 @@
 <!-- Current (broken) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
 ```
-
-### 2. Sitemap Contains 19 Missing Pages (404 errors)
-**File:** `sitemap.xml`
-**Issue:** These pages are listed in sitemap but don't exist, causing SEO issues and broken crawls
-
-**Missing pages to remove from sitemap.xml:**
-- `2098.html`
-- `3d-printing-conference.html`
-- `5437.html`
-- `6268.html`
-- `certificate.html`
-- `gallery-1.html`
-- `give.html`
-- `hackillinois.html`
-- `home-five.html`
-- `internship-database.html`
-- `makerlab-wrapped.html`
-- `makerlab-x-makers-for-covid.html`
-- `mijireh-secure-checkout.html`
-- `online-ordering-1.html`
-- `past-gurus.html`
-- `practicum.html`
-- `scholarships.html`
-- `summer-2020-response.html`
-- `summer-jobs.html`
-
-**Action:** Either create these pages OR remove them from `sitemap.xml`
-
-**Note:** Some of these pages exist in `archive/pages/` - decide if they should be restored or left archived.
 
 ---
 
@@ -111,7 +83,7 @@ makerlab/
 ├── css/style.css       # Main stylesheet
 ├── js/main.js          # Main JavaScript
 ├── images/             # All images
-├── sitemap.xml         # Sitemap (needs cleanup)
+├── sitemap.xml         # Sitemap (317 URLs)
 └── robots.txt          # Bot instructions
 ```
 

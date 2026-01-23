@@ -51,7 +51,8 @@ makerlab/
 │   ├── site-info.json  # Site metadata
 │   ├── pages.json      # Page index
 │   └── blog/posts.json # Blog post index
-├── scripts/            # Python utilities (no external dependencies)
+├── scripts/            # Python utilities
+│   └── podio/          # Podio API integration for blog generation
 └── archive/            # Original Squarespace export XML
 ```
 
@@ -73,6 +74,18 @@ The site exposes structured data for AI assistants:
 - `/api/blog/posts.json` - Searchable blog index
 - `/agent-guide.json` - Agent usage instructions
 - `/sitemap.xml` - Complete URL inventory
+
+## Blog Generation (Monthly Workflow)
+
+Scripts in `scripts/podio/` extract orders from Podio to generate blog content. Run monthly:
+
+```bash
+cd scripts/podio
+python extract_orders.py      # Extract recent orders
+python fetch_images.py        # Download images for selected orders
+```
+
+See `scripts/podio/README.md` for full workflow. Requires `.env` with Podio credentials.
 
 ## Known Issues (WEBMASTER-TODO.md)
 

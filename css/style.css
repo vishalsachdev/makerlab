@@ -1875,6 +1875,35 @@ img {
   margin: 0;
 }
 
+/* Text-only news cards (no image) */
+.news-card-text-only {
+  background-color: var(--illinois-blue);
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.news-card-text-only .news-card-content {
+  text-align: center;
+}
+
+.news-card-text-only h3 {
+  color: var(--white);
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.news-card-text-only:hover {
+  background-color: var(--illinois-orange);
+}
+
+.news-card-date {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.85rem;
+  margin: 0;
+}
+
 /* ========== Homepage Instagram Section ========== */
 .instagram-section {
   padding: var(--spacing-xl) 0;

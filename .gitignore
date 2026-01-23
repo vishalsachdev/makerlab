@@ -27,6 +27,9 @@ Thumbs.db
 # Logs
 *.log
 
+# Podio credentials
+scripts/podio/.env
+
 # Temporary files
 tmp/
 temp/

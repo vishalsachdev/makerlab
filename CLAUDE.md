@@ -44,10 +44,24 @@ makerlab/
 │   ├── pages.json      # Page index
 │   └── blog/posts.json # Blog post index
 ├── scripts/            # Python utilities
-│   └── podio/          # Podio API integration for blog generation
+│   ├── podio/          # Podio API integration for blog generation
+│   └── update_nav.py   # Bulk update navigation across all HTML files
 └── archive/            # Archived content
     ├── pages/          # Archived HTML pages (newsletter, old camps, etc.)
     └── *.xml           # Original Squarespace export
+```
+
+## Navigation
+
+Dropdown navigation with two menus:
+- **About** → About Us, Lab Staff, Partners, FAQ
+- **What We Offer** → Services & Pricing, Summer Camps, Birthday Parties, Workshops, Courses, Resources
+
+Top-level links: Home, About▾, What We Offer▾, Order Online, Blog, Lab Hours, Contact
+
+To update navigation site-wide, edit the templates in `scripts/update_nav.py` (NAV_ROOT, NAV_SUBDIR, NAV_ARCHIVE for different path depths) and run:
+```bash
+python3 scripts/update_nav.py
 ```
 
 ## Branding

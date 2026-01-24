@@ -12,6 +12,8 @@
 - [x] **Sitemap cleaned** - Removed 19 orphaned page entries (now 317 valid URLs)
 - [x] **Custom domain verified** - makerlab.illinois.edu DNS verified with GitHub Pages
 - [x] **Footer years updated** - Main site pages updated to 2026 (blog posts remain 2025 as historical)
+- [x] **Squarespace CDN removed** - All external CDN dependencies removed; broken images noted as unavailable
+- [x] **Newsletter page archived** - No longer sending newsletters; links removed
 
 ---
 
@@ -24,14 +26,11 @@
 
 ## Medium Priority
 
-### 3. External Image References (Squarespace CDN)
-**Issue:** Some blog posts still reference images from Squarespace CDN
-**Example URLs:** `http://static1.squarespace.com/static/59ebf554edaed825d0d8e200/...`
-**Risk:** Images may break if Squarespace changes CDN policies
-**Action:** Download images locally and update references, or verify they still work
+### 3. ~~External Image References (Squarespace CDN)~~ FIXED
+**Status:** All Squarespace CDN references removed. Original images were unavailable (expired).
 
 ### 4. ~~Update Base URL for Custom Domain~~ DONE
-**Status:** DNS verified and working. Consider updating internal references if needed.
+**Status:** DNS verified and working.
 
 ---
 

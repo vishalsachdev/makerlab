@@ -14,15 +14,6 @@ python3 -m http.server 8000
 
 # Add Illinois Brand Toolkit to all HTML files (run after adding new pages)
 python3 scripts/add_toolkit.py
-
-# Download images from Squarespace CDN
-python3 scripts/download_squarespace_images.py blog/
-
-# Replace Squarespace CDN URLs with local paths
-python3 scripts/replace_squarespace_images.py blog/
-
-# Fix remaining CDN URLs with special characters
-python3 scripts/fix_remaining_cdn_images.py
 ```
 
 ## Deployment
@@ -54,7 +45,9 @@ makerlab/
 │   └── blog/posts.json # Blog post index
 ├── scripts/            # Python utilities
 │   └── podio/          # Podio API integration for blog generation
-└── archive/            # Original Squarespace export XML
+└── archive/            # Archived content
+    ├── pages/          # Archived HTML pages (newsletter, old camps, etc.)
+    └── *.xml           # Original Squarespace export
 ```
 
 ## Branding
@@ -104,8 +97,8 @@ Pricing: $250 regular, $225 early bird (until Feb 28). Schedule: 3 hrs/day, 5 da
 
 ## Known Issues (WEBMASTER-TODO.md)
 
-- Some blog posts may still reference Squarespace CDN images
 - Workshops page: no active workshops scheduled (Eventbrite links removed)
+- Some historical blog posts note "images no longer available" (Squarespace CDN expired)
 
 ## Key Contacts
 

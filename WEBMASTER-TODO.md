@@ -10,6 +10,8 @@
 - [x] **Missing `</script>` tag in index.html** - Fixed broken HTML that could break page rendering
 - [x] **Lab hours updated** - Changed to Spring 2026 hours: Weekdays 2-7pm starting January 26
 - [x] **Sitemap cleaned** - Removed 19 orphaned page entries (now 317 valid URLs)
+- [x] **Custom domain verified** - makerlab.illinois.edu DNS verified with GitHub Pages
+- [x] **Footer years updated** - Main site pages updated to 2026 (blog posts remain 2025 as historical)
 
 ---
 
@@ -28,38 +30,24 @@
 **Risk:** Images may break if Squarespace changes CDN policies
 **Action:** Download images locally and update references, or verify they still work
 
-### 4. Update Base URL for Custom Domain
-**Files:** `sitemap.xml`, `index.html` (JSON-LD), `api/*.json`
-**Issue:** URLs currently point to `vishalsachdev.github.io/makerlab/`
-**Action:** Once DNS is active, update to `makerlab.illinois.edu`
+### 4. ~~Update Base URL for Custom Domain~~ DONE
+**Status:** DNS verified and working. Consider updating internal references if needed.
 
 ---
 
 ## Low Priority / Nice to Have
 
-### 5. Footer Copyright Year
-**Files:** All HTML files
-**Issue:** Footer shows `2025` - consider updating to `2026` or making it dynamic
-
-### 6. Blog Post Dates
+### 5. Blog Post Dates
 **Issue:** Some blog posts have dates that don't match their content
 **Action:** Audit blog posts for date accuracy
 
 ---
 
-## DNS Setup (Pending IT)
+## DNS Setup - COMPLETE
 
-Provide IT services:
-| Field | Value |
-|-------|-------|
-| Record Type | CNAME |
-| Host | `makerlab` |
-| Target | `vishalsachdev.github.io` |
-
-After DNS propagates:
-1. GitHub will show green checkmark for DNS
-2. Enable "Enforce HTTPS" in GitHub Pages settings
-3. Update all internal URLs to use `https://makerlab.illinois.edu`
+Custom domain `makerlab.illinois.edu` is verified and active.
+- TXT record added for GitHub verification
+- HTTPS enforced via GitHub Pages
 
 ---
 

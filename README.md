@@ -1,233 +1,90 @@
 # Illinois MakerLab Website
 
-A complete replica of the Illinois MakerLab website (/) built with static HTML, CSS, and JavaScript.
+Webmaster guide for [makerlab.illinois.edu](https://makerlab.illinois.edu)
 
-**🚀 Live Site**: [https://vishalsachdev.github.io/makerlab/](https://vishalsachdev.github.io/makerlab/)
+## Quick Start
 
-> 📖 **New to GitHub Pages?** See [docs/deployment/DEPLOYMENT.md](docs/deployment/DEPLOYMENT.md) for detailed step-by-step deployment instructions.
-
-## About
-
-The Illinois MakerLab is the world's first business school 3D printing lab at the University of Illinois at Urbana-Champaign. This website showcases:
-
-- **Learn. Make. Share.** - Our core philosophy
-- Information about our 3D printing services and equipment
-- Course offerings (on-campus and online)
-- Summer camps for youth
-- Blog with 291+ posts from 2012-2025
-- Resources, workshops, and tutorials
-
-## Project Structure
-
-```
-makerlab/
-├── index.html              # Homepage
-├── about-us.html          # About page
-├── courses.html           # Courses overview
-├── pricingservices.html   # Services & pricing
-├── resources.html         # 3D printing resources
-├── contact.html           # Contact information
-├── lab-hours.html         # Lab hours
-├── [40+ more pages]       # Additional pages
-├── blog/
-│   ├── index.html        # Blog listing page
-│   └── [291 posts].html  # Individual blog posts
-├── courses/
-│   ├── digital-making.html
-│   └── making-things.html
-├── summer/
-│   └── [camp pages].html
-├── css/
-│   └── style.css         # Main stylesheet
-├── js/
-│   └── main.js          # JavaScript functionality
-└── images/              # Image assets
+```bash
+# Run locally
+python3 -m http.server 8000
+# Visit http://localhost:8000
 ```
 
-## Features
+## Making Changes
 
-✅ **45 Complete Pages** - All content from original site
-✅ **291 Blog Posts** - Full blog archive from 2012-2025
-✅ **Responsive Design** - Mobile-friendly layout
-✅ **Illinois Brand Toolkit** - Integrated with official campus toolkit (v3.x)
-✅ **Illinois Branding** - Official orange (#FF5F05) and blue (#13294B) colors
-✅ **Accessible Navigation** - Sticky header with mobile menu
-✅ **Clean Modern Design** - Card layouts, smooth transitions
-✅ **SEO Friendly** - Semantic HTML, meta tags
-✅ **LLM Agent-Friendly** - Structured APIs for AI assistants
+### Edit a Page
+1. Find the HTML file (e.g., `about-us.html`, `lab-hours.html`)
+2. Edit content directly in the HTML
+3. Commit and push - site auto-deploys
 
-### 🤖 LLM Agent-Friendly Features (NEW!)
+### Update Navigation
+Navigation uses dropdowns. To change site-wide:
+1. Edit templates in `scripts/update_nav.py`
+2. Run `python3 scripts/update_nav.py`
+3. Commit all changed files
 
-This site is optimized for Large Language Model (LLM) agents like ChatGPT, Claude, and Perplexity:
+### Add a New Page
+1. Copy an existing page as template
+2. Update content, title, meta description
+3. Run `python3 scripts/add_toolkit.py` to ensure brand toolkit is included
+4. Add to navigation if needed (see above)
 
-- **`/api/site-info.json`** - Complete site metadata, contact info, and services
-- **`/api/pages.json`** - Index of all 41+ pages with descriptions
-- **`/api/blog/posts.json`** - Searchable index of 291+ blog posts
-- **`/sitemap.xml`** - Full sitemap with 336+ URLs
-- **`/robots.txt`** - Agent-friendly crawler permissions
-- **`/agent-guide.json`** - Comprehensive guide for AI agents
-- **JSON-LD Structured Data** - Schema.org markup on homepage
+### Blog Posts
+- Posts are in `blog/` as individual HTML files
+- Use existing post as template
+- Monthly blog generation from Podio: see `scripts/podio/README.md`
 
-**Why this matters:** LLM agents can now accurately answer questions about MakerLab courses, hours, services, and blog content by accessing structured data instead of scraping HTML.
+### Summer Camps
+- Main page: `summer.html` (pricing, dates)
+- Individual camps: `summer/*.html`
+- Update annually before registration opens
 
-📖 **Full Documentation:** See [LLM_AGENT_PLAN.md](LLM_AGENT_PLAN.md) for complete implementation details.
+## Key Files
 
-## Technologies Used
-
-- **HTML5** - Semantic markup
-- **CSS3** - Modern styling with CSS Grid and Flexbox
-- **Vanilla JavaScript** - No dependencies
-- **Responsive Design** - Mobile-first approach
-- **Illinois Campus Brand Toolkit** - Official UI components and styling (v3.x)
-
-## Brand Toolkit Integration
-
-The site integrates the official [University of Illinois Campus Brand Toolkit](https://builder3.toolkit.illinois.edu/) to ensure campus-wide visual consistency and accessibility standards.
-
-**Integrated Resources:**
-- Toolkit CSS: `//cdn.toolkit.illinois.edu/3/toolkit.css`
-- Toolkit JS: `//cdn.toolkit.illinois.edu/3/toolkit.js`
-
-**Brand Compliance:**
-- ✅ Official Illinois Orange (#FF5F05) and Blue (#13294B)
-- ✅ Toolkit components available for future enhancements
-- ✅ Accessibility best practices
-- 📋 Typography update planned (Montserrat/Source Sans Pro)
-
-For detailed integration documentation, see [docs/integration/BRAND_TOOLKIT_INTEGRATION.md](docs/integration/BRAND_TOOLKIT_INTEGRATION.md). Run `python3 scripts/add_toolkit.py` whenever you regenerate or add HTML so every page continues to load the toolkit CSS/JS before the MakerLab assets.
-
-## Pages Included
-
-### Main Pages
-- Home
-- About Us
-- What We Offer
-- Courses (Digital Making, Making Things, Online Courses)
-- Summer Camps
-- Blog
-- Resources
-- Lab Hours
-- Contact
-- FAQ
-- Workshops
-- Gallery
-- Lab Staff
-- Partners
-
-### Additional Pages
-- Online Ordering
-- Birthday Parties
-- 3D Printing Conference
-- Free Print Wednesdays
-- Internship Database
-- Practicum
-- Certificate Program
-- Volunteer Information
-- Give to MakerLab
-- Summer Jobs
-- COVID-19 Response
-- And more...
+| File | Purpose |
+|------|---------|
+| `css/style.css` | All site styles |
+| `js/main.js` | Mobile menu, blog search, breadcrumbs |
+| `CLAUDE.md` | AI assistant instructions (for Claude Code) |
+| `WEBMASTER-TODO.md` | Known issues and tasks |
 
 ## Deployment
 
-### GitHub Pages (Recommended)
+Automatic via GitHub Actions on push to `main`. No build step needed.
 
-This site is configured for automatic deployment to GitHub Pages using GitHub Actions:
+- **Live**: https://makerlab.illinois.edu
+- **Backup**: https://vishalsachdev.github.io/makerlab/
 
-#### Setup Instructions:
+## File Structure
 
-1. **Push your changes** to the `main` branch
-2. **Enable GitHub Pages**:
-   - Go to your repository on GitHub
-   - Navigate to **Settings** → **Pages**
-   - Under "Build and deployment":
-     - Source: Select **"GitHub Actions"**
-   - Click **Save**
-3. **Automatic Deployment**:
-   - The GitHub Actions workflow (`.github/workflows/static.yml`) will automatically deploy your site
-   - Check the **Actions** tab to monitor deployment progress
-   - Once complete, your site will be live!
-
-Your site will be available at: `https://vishalsachdev.github.io/makerlab/`
-
-#### Manual Trigger:
-You can also manually trigger deployment from the **Actions** tab by running the "Deploy static content to Pages" workflow.
-
-#### Custom Domain (Optional):
-To use a custom domain:
-1. Add a `CNAME` file with your domain name to the repository root
-2. Configure your domain's DNS settings to point to GitHub Pages
-3. In GitHub Settings → Pages, enter your custom domain
-
-### Other Hosting
-
-This is a static site and can be hosted anywhere:
-- Netlify
-- Vercel
-- AWS S3
-- Any web server
-
-Simply upload all files maintaining the directory structure.
-
-## Local Development
-
-To view locally, you can use any static server:
-
-```bash
-# Python 3
-python3 -m http.server 8000
-
-# Node.js
-npx http-server
-
-# PHP
-php -S localhost:8000
+```
+makerlab/
+├── *.html           # Main pages (45+)
+├── blog/            # Blog posts (291)
+├── courses/         # Course pages
+├── summer/          # Summer camp pages
+├── css/style.css    # Stylesheet
+├── js/main.js       # JavaScript
+├── images/          # All images
+├── api/             # JSON APIs for LLM agents
+├── scripts/         # Utility scripts
+│   ├── podio/       # Blog generation from Podio
+│   └── update_nav.py
+└── archive/         # Old/archived content
 ```
 
-Then visit `http://localhost:8000` in your browser.
+## Branding
 
-## Content Source
+Illinois colors (in CSS variables):
+- Orange: `#FF5F05`
+- Blue: `#13294B`
 
-Content was exported from the original Squarespace site on 11/18/2025 using the WordPress export format (WXR). All content, including images, is preserved from the original site.
-
-## Images
-
-Images are now hosted locally in the `/images` directory, organized by category:
-- `images/blog/` - Blog post images (737 images)
-- `images/general/` - General site images
-- `images/summer/` - Summer camp images
-- `images/events/` - Event and workshop images
-- `images/staff/` - Staff photos
-
-All Squarespace CDN URLs have been replaced with local GitHub paths.
-
-## Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-- Mobile browsers (iOS Safari, Chrome Mobile)
-
-## Credits
-
-**Original Site:** Illinois MakerLab
-**Executive Director:** Dr. Aric Rindfleisch
-**Director:** Dr. Vishal Sachdev
-**Location:** Business Instructional Facility, Room 3030, UIUC
-
-## License
-
-Content © Illinois MakerLab. All rights reserved.
+Brand toolkit loaded from CDN - do not remove from `<head>`.
 
 ## Contact
 
-For questions about the MakerLab:
-- Email: uimakerlab@illinois.edu
-- Location: Room 3030, Business Instructional Facility, 515 East Gregory Drive, Champaign, IL 61820
-- Instagram: [@uimakerlab](https://www.instagram.com/uimakerlab/)
-- Facebook: [Illinois MakerLab](https://www.facebook.com/uimakerlab/)
+Questions? Email uimakerlab@illinois.edu
 
 ---
 
-**Built with ❤️ for the Maker Movement**
+*For detailed technical docs, see `CLAUDE.md`*

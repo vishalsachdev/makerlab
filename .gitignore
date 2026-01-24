@@ -1,4 +1,21 @@
+# ============================================
+# Secrets & Credentials (CRITICAL)
+# ============================================
+.env
+.env.*
+*.env
+.envrc
+secrets/
+credentials/
+*.pem
+*.key
+*_secret*
+*_token*
+*.credentials
+
+# ============================================
 # Python
+# ============================================
 __pycache__/
 *.py[cod]
 *$py.class
@@ -7,33 +24,40 @@ __pycache__/
 *.egg-info/
 dist/
 build/
-
-# Virtual environments
 venv/
 env/
 ENV/
+.venv/
 
-# IDE
+# ============================================
+# IDE & Editor
+# ============================================
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
+*.sublime-*
 
-# OS
+# ============================================
+# OS Files
+# ============================================
 .DS_Store
 Thumbs.db
+Desktop.ini
 
-# Logs
+# ============================================
+# Logs & Temp Files
+# ============================================
 *.log
-
-# Podio credentials
-scripts/podio/.env
-
-# Temporary files
+logs/
 tmp/
 temp/
 *.tmp
+*.bak
 
-# Node modules (if any JS tooling is added)
+# ============================================
+# Node (if JS tooling added)
+# ============================================
 node_modules/
+package-lock.json

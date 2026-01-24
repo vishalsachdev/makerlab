@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Static HTML/CSS/JS website for the Illinois MakerLab (makerlab.illinois.edu) - the world's first business school 3D printing lab at UIUC. Migrated from Squarespace in November 2025. Contains 45+ pages and 291+ blog posts.
+Static HTML/CSS/JS website for the Illinois MakerLab (makerlab.illinois.edu) - the world's first business school 3D printing lab at UIUC. Migrated from Squarespace in November 2025. Contains 45+ pages and 300+ blog posts.
 
 ## Development Commands
 
@@ -29,8 +29,9 @@ python3 scripts/fix_remaining_cdn_images.py
 
 Automatically deploys to GitHub Pages on push to `main` via `.github/workflows/static.yml`. No build step required - static files only.
 
-- **Live site**: https://makerlab.illinois.edu (custom domain)
+- **Live site**: https://makerlab.illinois.edu (custom domain, verified)
 - **GitHub Pages**: https://vishalsachdev.github.io/makerlab/
+- **Google Analytics**: G-R2GVFSKNPE
 
 ## Architecture
 
@@ -89,9 +90,9 @@ See `scripts/podio/README.md` for full workflow. Requires `.env` with Podio cred
 
 ## Known Issues (WEBMASTER-TODO.md)
 
-- Google Analytics ID is placeholder (`GA_MEASUREMENT_ID` in index.html)
 - Some blog posts may still reference Squarespace CDN images
 - Footer copyright year may need updating
+- Workshops page: no active workshops scheduled (Eventbrite links removed)
 
 ## Key Contacts
 

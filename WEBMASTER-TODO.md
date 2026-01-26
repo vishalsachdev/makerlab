@@ -1,7 +1,29 @@
 # MakerLab Website - Webmaster TODO
 
-**Generated:** January 20, 2026
+**Updated:** January 25, 2026
 **Site:** makerlab.illinois.edu
+
+---
+
+## Recently Completed (Jan 25, 2026)
+
+### AI Agent Readiness
+- [x] **Created llms.txt** - Plain text summary for AI agents at root
+- [x] **Updated all URLs to custom domain** - agent-guide.json, site-info.json, robots.txt, sitemap.xml now use makerlab.illinois.edu
+- [x] **Added meaningful descriptions to pages.json** - All 32 active pages now have unique, descriptive summaries
+- [x] **Added FAQPage schema to faq.html** - Schema.org structured data for search engines and AI
+- [x] **Expanded FAQ content** - Added 5 new common questions (ordering, summer camps, birthday parties, courses, contact)
+- [x] **Updated robots.txt** - Added llms.txt to allowed paths for agents
+- [x] **Updated agent-guide.json** - Added llms.txt endpoint documentation
+
+### Content & Data Accuracy
+- [x] **Fixed Digital Making course status** - Removed discontinued BADM 357 from active courses, updated to Making Things (BADM 331) only
+- [x] **Cleaned up pages.json** - Separated active (32), archived (4), and legacy (8) pages
+- [x] **Updated homepage structured data** - Fixed URL, corrected course info in JSON-LD
+- [x] **Added main.js to index.html** - Was missing script include
+
+### Code Quality
+- [x] **Consolidated CSS duplication** - Merged 4 duplicate .reviews-grid definitions into single clean section (~120 lines removed)
 
 ---
 

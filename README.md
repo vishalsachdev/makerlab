@@ -59,7 +59,7 @@ Automatic via GitHub Actions on push to `main`. No build step needed.
 
 ```
 makerlab/
-├── *.html           # Main pages (45+)
+├── *.html           # Main pages (32 active)
 ├── blog/            # Blog posts (291)
 ├── courses/         # Course pages
 ├── summer/          # Summer camp pages
@@ -72,6 +72,20 @@ makerlab/
 │   └── update_nav.py
 └── archive/         # Old/archived content
 ```
+
+## AI Agent Support
+
+The site is optimized for AI agents (ChatGPT, Claude, Perplexity, etc.):
+
+| Endpoint | Purpose |
+|----------|---------|
+| `/llms.txt` | Plain text summary for AI agents |
+| `/agent-guide.json` | Detailed agent usage instructions |
+| `/api/site-info.json` | Contact, hours, services |
+| `/api/pages.json` | Page index with descriptions |
+| `/api/blog/posts.json` | Searchable blog index |
+
+All LLM crawlers are explicitly allowed in `robots.txt`.
 
 ## Branding
 

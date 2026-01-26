@@ -1,5 +1,5 @@
 # Illinois MakerLab - LLM Agent Friendly
-# Updated: 2025-11-18
+# Updated: 2026-01-25
 # Learn. Make. Share.
 
 # Allow all robots by default
@@ -48,6 +48,7 @@ Crawl-delay: 1
 Allow: /sitemap.xml
 Allow: /api/
 Allow: /agent-guide.json
+Allow: /llms.txt
 
 # Sitemap location
-Sitemap: https://vishalsachdev.github.io/makerlab/sitemap.xml
+Sitemap: https://makerlab.illinois.edu/sitemap.xml

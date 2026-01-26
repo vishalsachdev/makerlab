@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Static HTML/CSS/JS website for the Illinois MakerLab (makerlab.illinois.edu) - the world's first business school 3D printing lab at UIUC. Migrated from Squarespace in November 2025. Contains 50+ pages and 300+ blog posts.
+Static HTML/CSS/JS website for the Illinois MakerLab (makerlab.illinois.edu) - the world's first business school 3D printing lab at UIUC. Migrated from Squarespace in November 2025. Contains 32 active pages and 291 blog posts.
 
 ## Development Commands
 
@@ -28,9 +28,9 @@ Automatically deploys to GitHub Pages on push to `main` via `.github/workflows/s
 
 ```
 makerlab/
-├── *.html              # 45+ static pages (about-us, courses, contact, etc.)
+├── *.html              # 32 active pages (about-us, courses, contact, etc.)
 ├── blog/               # 291 blog posts as individual HTML files
-├── courses/            # Course-specific pages (digital-making [discontinued], making-things)
+├── courses/            # Course-specific pages (making-things active)
 ├── summer/             # Summer 2026 camp pages (3 camps, pricing on main page)
 ├── css/style.css       # Single stylesheet with Illinois branding
 ├── js/main.js          # Vanilla JS (mobile menu, blog search/pagination, breadcrumbs)
@@ -40,9 +40,11 @@ makerlab/
 │   ├── birthday-parties/
 │   └── partners/
 ├── api/                # LLM-agent friendly JSON APIs
-│   ├── site-info.json  # Site metadata
-│   ├── pages.json      # Page index
+│   ├── site-info.json  # Site metadata, contact, services
+│   ├── pages.json      # Page index with descriptions
 │   └── blog/posts.json # Blog post index
+├── llms.txt            # Plain text summary for AI agents
+├── agent-guide.json    # Detailed AI agent instructions
 ├── scripts/            # Python utilities
 │   ├── podio/          # Podio API integration for blog generation
 │   └── update_nav.py   # Bulk update navigation across all HTML files
@@ -74,14 +76,23 @@ Uses Illinois Campus Brand Toolkit CDN:
 - CSS: `//cdn.toolkit.illinois.edu/3/toolkit.css`
 - JS: `//cdn.toolkit.illinois.edu/3/toolkit.js`
 
-## LLM Agent APIs
+## LLM Agent Support
 
-The site exposes structured data for AI assistants:
-- `/api/site-info.json` - Contact, hours, services
-- `/api/pages.json` - All pages with descriptions
-- `/api/blog/posts.json` - Searchable blog index
-- `/agent-guide.json` - Agent usage instructions
-- `/sitemap.xml` - Complete URL inventory
+The site is optimized for AI agents (ChatGPT, Claude, Perplexity, etc.):
+
+| Endpoint | Purpose |
+|----------|---------|
+| `/llms.txt` | Plain text summary - quick site overview for agents |
+| `/agent-guide.json` | Detailed usage instructions, common queries, response guidelines |
+| `/api/site-info.json` | Contact, hours, services, leadership |
+| `/api/pages.json` | 32 active pages with unique descriptions + archived pages list |
+| `/api/blog/posts.json` | Searchable blog index (291 posts, 2012-2025) |
+| `/sitemap.xml` | Complete URL inventory (317 URLs) |
+| `/robots.txt` | Explicitly allows all LLM crawlers (GPTBot, Claude-Web, PerplexityBot, etc.) |
+
+Key pages have Schema.org structured data:
+- Homepage: Organization schema with services
+- FAQ: FAQPage schema for rich results
 
 ## Blog Generation (Monthly Workflow)
 

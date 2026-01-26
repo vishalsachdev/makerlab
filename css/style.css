@@ -2720,55 +2720,15 @@ img {
     padding: var(--spacing-sm);
   }
 }
-.reviews-grid {
-  display: grid;
-  gap: 1.5rem;
-}
-
-@media (min-width: 768px) {
-  .reviews-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.review-card {
-  background-color: #ffffff;
-  border: 1px solid #e0e0e0;
-  border-radius: 4px;
-  padding: 1rem 1.25rem;
-}
-
-.review-text {
-  margin-bottom: 0.5rem;
-  font-style: italic;
-}
-
-.review-meta {
-  font-size: 0.9rem;
-  color: #666666;
-}
-/* Reviews section */
+/* ===========================================
+   Reviews Section (consolidated)
+   =========================================== */
 .reviews-section,
 #reviews {
   padding: 3rem 0;
 }
 
-.reviews-rating {
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
-
-.reviews-stars {
-  font-size: 2.2rem;
-  color: #ffb400;
-  letter-spacing: 0.1rem;
-}
-
-.reviews-rating-text {
-  margin-top: 0.25rem;
-  font-weight: 500;
-}
-
+/* Reviews grid layout */
 .reviews-grid {
   display: grid;
   gap: 1.5rem;
@@ -2780,99 +2740,7 @@ img {
   }
 }
 
-.review-card {
-  background-color: #ffffff;
-  border: 1px solid #e0e0e0;
-  border-radius: 4px;
-  padding: 1rem 1.25rem;
-}
-
-.review-name {
-  font-weight: 600;
-}
-
-.review-stars {
-  color: #ffb400;
-  margin: 0.25rem 0 0.5rem;
-}
-
-.review-text {
-  margin: 0;
-}
-/* Reviews layout */
-.reviews-grid {
-  display: grid;
-  gap: 1.5rem;
-}
-
-@media (min-width: 768px) {
-  .reviews-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-/* Big gold stars at top */
-.reviews-rating {
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
-
-.reviews-stars-big {
-  font-size: 3rem;
-  color: #ffb400;
-  letter-spacing: 0.12rem;
-}
-
-/* Card container styling */
-.review-card {
-  background-color: #ffffff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 12px;
-  overflow: hidden;
-  text-align: center;
-}
-
-/* Header image */
-.review-image img {
-  width: 100%;
-  display: block;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-}
-
-/* Stars inside each card */
-.review-stars-icons {
-  margin-top: 0.75rem;
-  color: #ffb400;
-  font-size: 1.4rem;
-}
-
-/* Typography */
-.review-name {
-  margin-top: 0.3rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  color: #001f3f;
-  text-transform: uppercase;
-}
-
-.review-text {
-  margin: 0.5rem 1rem 1.25rem;
-  color: #444444;
-}
-/* Reviews section */
-.reviews-grid {
-  display: grid;
-  gap: 1.5rem;
-}
-
-@media (min-width: 768px) {
-  .reviews-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-/* Big 5.0 and stars at top */
+/* Big 5.0 rating and stars at top */
 .reviews-rating {
   display: flex;
   align-items: center;
@@ -2893,7 +2761,18 @@ img {
   letter-spacing: 0.15rem;
 }
 
-/* Card styling */
+.reviews-stars {
+  font-size: 2.2rem;
+  color: #ffb400;
+  letter-spacing: 0.1rem;
+}
+
+.reviews-rating-text {
+  margin-top: 0.25rem;
+  font-weight: 500;
+}
+
+/* Review card styling */
 .review-card {
   background-color: #ffffff;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -2902,14 +2781,27 @@ img {
   padding: 1.5rem 1rem;
 }
 
-/* Stars inside cards */
+/* Header image in review cards */
+.review-image img {
+  width: 100%;
+  display: block;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+/* Stars inside each card */
 .review-stars-icons {
   margin-top: 0.5rem;
   color: #ffb400;
   font-size: 1.4rem;
 }
 
-/* Text styling */
+.review-stars {
+  color: #ffb400;
+  margin: 0.25rem 0 0.5rem;
+}
+
+/* Review text styling */
 .review-name {
   margin-top: 0.5rem;
   font-weight: 700;
@@ -2921,4 +2813,9 @@ img {
 .review-text {
   margin: 0.5rem 1rem;
   color: #444444;
+}
+
+.review-meta {
+  font-size: 0.9rem;
+  color: #666666;
 }

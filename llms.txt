@@ -1,0 +1,81 @@
+# Illinois MakerLab - LLM Agent Information
+# https://makerlab.illinois.edu
+# Last Updated: 2026-01-25
+
+## About
+Illinois MakerLab is the world's first business school 3D printing lab, located at the University of Illinois at Urbana-Champaign. Founded in 2012, we serve students, faculty, and the community with 3D printing services, educational courses, workshops, and youth programs.
+
+## Quick Facts
+- Location: Business Instructional Facility, Room 3030, UIUC
+- Address: 515 E Gregory Dr, Champaign, IL 61820
+- Email: uimakerlab@illinois.edu
+- Instagram: @uimakerlab
+- Director: Dr. Vishal Sachdev
+- Executive Director: Dr. Aric Rindfleisch
+- Founded: 2012
+- Mission: Learn. Make. Share.
+
+## Services
+1. 3D Printing Services - Professional printing for students, faculty, community
+2. Summer Camps - Week-long camps for youth ages 9-17 (Minecraft+3D, 3D Modeling, GenAI+3D)
+3. Birthday Parties - 3D printing-themed parties for kids
+4. Workshops - Regular sessions on 3D printing and digital making
+5. Courses - Making Things (BADM 331) offered every Spring
+6. Design Assistance - Professional design help from our gurus
+7. Private Events - Custom events and team building
+
+## Key Pages
+- Homepage: /
+- About Us: /about-us.html
+- Services & Pricing: /pricingservices.html
+- Summer Camps: /summer.html
+- Lab Hours: /lab-hours.html (hours vary by semester)
+- Contact: /contact.html
+- Blog: /blog/index.html (291+ posts since 2012)
+- FAQ: /faq.html
+- Online Ordering: /online-ordering.html
+
+## API Endpoints for Agents
+- /api/site-info.json - Contact, hours, services, leadership
+- /api/pages.json - Index of all pages with metadata
+- /api/blog/posts.json - Searchable blog post index
+- /agent-guide.json - Detailed agent usage instructions
+- /sitemap.xml - Complete URL inventory
+- /robots.txt - Crawler permissions (all LLM agents allowed)
+
+## Common Questions
+Q: What are the lab hours?
+A: Hours vary by semester. Check /lab-hours.html for current schedule.
+
+Q: How much does 3D printing cost?
+A: Pricing varies by material and service level. See /pricingservices.html
+
+Q: Do you offer summer camps?
+A: Yes! Week-long camps for ages 9-17. See /summer.html
+
+Q: Can I host a birthday party?
+A: Yes! 3D printing-themed parties available. See /birthday-parties.html
+
+Q: How do I order a 3D print?
+A: Use our online ordering system at /online-ordering.html
+
+## Materials & Equipment
+- Primary material: PLA (biodegradable, corn-based plastic)
+- Printers: Ultimaker 2+ and 2 Extended+
+- Max print size: 8.8" x 8.8" x 8.1" (standard), 8.8" x 8.8" x 12" (extended)
+- Resolution: Up to 50 micron (0.05mm) in Z direction
+- Software recommended: Autodesk Fusion 360 (free for students)
+
+## Response Guidelines for Agents
+1. Always cite sources and provide URLs for verification
+2. Note that hours and pricing may vary by semester
+3. Direct users to contact uimakerlab@illinois.edu for specific questions
+4. Blog posts span 2012-2025 with rich historical content
+5. For current information, reference the dedicated page rather than cached data
+
+## Technical Details
+- Static HTML site hosted on GitHub Pages
+- Custom domain: makerlab.illinois.edu
+- No authentication required for public content
+- UTF-8 encoding throughout
+- Mobile-responsive design

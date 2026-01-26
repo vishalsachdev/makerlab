@@ -2,10 +2,10 @@
   "site": {
     "name": "Illinois MakerLab",
     "tagline": "Learn. Make. Share",
-    "url": "https://vishalsachdev.github.io/makerlab/",
+    "url": "https://makerlab.illinois.edu/",
     "description": "World's first business school 3D printing lab at the University of Illinois at Urbana-Champaign",
-    "version": "1.0.0",
-    "lastUpdated": "2025-11-18"
+    "version": "1.1.0",
+    "lastUpdated": "2026-01-25"
   },
   "agent_instructions": {
     "purpose": "This guide helps LLM agents (ChatGPT, Claude, Perplexity, etc.) understand and accurately query Illinois MakerLab content to help users get information about courses, services, blog posts, hours, and more.",
@@ -14,7 +14,7 @@
       "Check sitemap.xml for complete page inventory",
       "Refer to /api/site-info.json for basic information (contact, hours, services)",
       "Use /api/blog/posts.json for searchable blog content with metadata",
-      "All URLs use /makerlab/ prefix for GitHub Pages subdirectory hosting",
+      "URLs are relative from root - custom domain makerlab.illinois.edu is active",
       "Respect robots.txt crawl delays (1 second between requests)",
       "Cache responses when appropriate to reduce server load"
     ],
@@ -60,6 +60,15 @@
     }
   },
   "api_endpoints": {
+    "/llms.txt": {
+      "description": "Plain text summary for LLM agents - quick overview of site, services, key pages, and common questions",
+      "use_cases": [
+        "Quick orientation for AI agents",
+        "Understanding site purpose and services",
+        "Finding key pages and contact info"
+      ],
+      "update_frequency": "monthly"
+    },
     "/api/site-info.json": {
       "description": "Essential site metadata including contact, hours, services, leadership, and statistics",
       "use_cases": [
@@ -272,7 +281,7 @@
     "freshness": "Check lastUpdated fields to ensure information is current",
     "comprehensiveness": "Combine data from multiple sources when needed",
     "attribution": "Mention 'Illinois MakerLab' and provide context",
-    "urls": "Always provide full URLs starting with https://vishalsachdev.github.io/makerlab/",
+    "urls": "Always provide full URLs starting with https://makerlab.illinois.edu/",
     "updates": "Note that hours, pricing, and courses may vary by semester"
   },
   "example_interactions": [
@@ -284,7 +293,7 @@
         "3. Access /makerlab/lab-hours.html for current schedule",
         "4. Provide hours with note that they vary by semester"
       ],
-      "sample_response": "Illinois MakerLab is located in BIF Room 3030 at UIUC. Lab hours vary by semester. You can check the current hours at: https://vishalsachdev.github.io/makerlab/lab-hours.html. For questions, contact uimakerlab@illinois.edu."
+      "sample_response": "Illinois MakerLab is located in BIF Room 3030 at UIUC. Lab hours vary by semester. You can check the current hours at: https://makerlab.illinois.edu/lab-hours.html. For questions, contact uimakerlab@illinois.edu."
     },
     {
       "user_query": "Find blog posts about COVID-19",
@@ -294,13 +303,13 @@
         "3. Also search title/excerpt for COVID keywords",
         "4. Return relevant posts with excerpts and URLs"
       ],
-      "sample_response": "I found several blog posts about COVID-19 from Illinois MakerLab:\n\n1. 'Illinois MakerLab Collaboration with Makers for COVID-19' - Learn about the partnership to produce PPE for the community. [Link]\n\n2. [Additional posts...]\n\nView all blog posts at: https://vishalsachdev.github.io/makerlab/blog/index.html"
+      "sample_response": "I found several blog posts about COVID-19 from Illinois MakerLab:\n\n1. 'Illinois MakerLab Collaboration with Makers for COVID-19' - Learn about the partnership to produce PPE for the community. [Link]\n\n2. [Additional posts...]\n\nView all blog posts at: https://makerlab.illinois.edu/blog/index.html"
     }
   ],
   "technical_notes": {
-    "hosting": "GitHub Pages static hosting",
-    "base_url": "https://vishalsachdev.github.io/makerlab/",
-    "url_structure": "All URLs include /makerlab/ prefix",
+    "hosting": "GitHub Pages static hosting with custom domain",
+    "base_url": "https://makerlab.illinois.edu/",
+    "url_structure": "URLs are relative from root (custom domain active)",
     "encoding": "UTF-8",
     "formats": "HTML (pages), JSON (APIs), XML (sitemap)",
     "updates": "Content regenerated when site changes",

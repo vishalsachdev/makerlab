@@ -109,6 +109,7 @@
   </script>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
   <header class="site-header">
     <div class="container">
       <div class="header-content">
@@ -117,27 +118,27 @@
           <div class="site-tagline">Learn. Make. Share</div>
         </div>
         <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
-                <nav class="main-nav">
+                        <nav class="main-nav">
           <ul>
             <li><a href="index.html">Home</a></li>
             <li class="nav-dropdown">
-              <a href="about-us.html">About</a>
-              <ul class="dropdown-menu">
-                <li><a href="about-us.html">About Us</a></li>
-                <li><a href="lab-staff.html">Lab Staff</a></li>
-                <li><a href="partners.html">Partners</a></li>
-                <li><a href="faq.html">FAQ</a></li>
+              <a href="about-us.html" aria-haspopup="true" aria-expanded="false">About</a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="about-us.html" role="menuitem">About Us</a></li>
+                <li><a href="lab-staff.html" role="menuitem">Lab Staff</a></li>
+                <li><a href="partners.html" role="menuitem">Partners</a></li>
+                <li><a href="faq.html" role="menuitem">FAQ</a></li>
               </ul>
             </li>
             <li class="nav-dropdown">
-              <a href="pricingservices.html">What We Offer</a>
-              <ul class="dropdown-menu">
-                <li><a href="pricingservices.html">Services &amp; Pricing</a></li>
-                <li><a href="summer.html">Summer Camps</a></li>
-                <li><a href="birthday-parties.html">Birthday Parties</a></li>
-                <li><a href="workshops.html">Workshops</a></li>
-                <li><a href="courses.html">Courses</a></li>
-                <li><a href="resources.html">Resources</a></li>
+              <a href="pricingservices.html" aria-haspopup="true" aria-expanded="false">What We Offer</a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="pricingservices.html" role="menuitem">Services &amp; Pricing</a></li>
+                <li><a href="summer.html" role="menuitem">Summer Camps</a></li>
+                <li><a href="birthday-parties.html" role="menuitem">Birthday Parties</a></li>
+                <li><a href="workshops.html" role="menuitem">Workshops</a></li>
+                <li><a href="courses.html" role="menuitem">Courses</a></li>
+                <li><a href="resources.html" role="menuitem">Resources</a></li>
               </ul>
             </li>
             <li><a href="online-ordering.html">Order Online</a></li>
@@ -150,7 +151,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <!-- Page Hero -->
     <section class="hero">
       <div class="container">
@@ -165,62 +166,62 @@
           <p>Have a question for us? Don't hesitate to send us an <a href="contact.html">email</a> and we'll get back to you!</p>
           
           <div class="faq-item">
-            <h3>Q: What are your hours?</h3>
+            <h2>Q: What are your hours?</h2>
             <p><a href="lab-hours.html">A: Check our lab hours page for current semester hours.</a></p>
           </div>
           
           <div class="faq-item">
-            <h3>Q: What day can you get 1 hour free prints?</h3>
+            <h2>Q: What day can you get 1 hour free prints?</h2>
             <p><a href="free-print-wednesday.html">A: Wednesdays</a> during the Fall and Spring Semester!</p>
           </div>
           
           <div class="faq-item">
-            <h3>Q: What is the maximum dimension (L x B x H) that you can print at a time?</h3>
+            <h2>Q: What is the maximum dimension (L x B x H) that you can print at a time?</h2>
             <p>A: Our maximum print volume for our <a href="https://ultimaker.com/" target="_blank" rel="noopener noreferrer">Ultimaker 2+ 3D printers</a> are 8.8″ x 8.8″ x 8.1″ (length x width x height). We also have one Ultimaker 2 Extended + that has an increased Z-height, with overall build dimensions of 8.8″ x 8.8″ x 12.0″. In mm that would be 223mm x 223mm x 305mm. The max resolution we can print with on our Ultimaker machines is roughly 50 micron, or 0.05mm in the Z direction.</p>
           </div>
           
           <div class="faq-item">
-            <h3>Q: What media is available to print with?</h3>
+            <h2>Q: What media is available to print with?</h2>
             <p>A: We print almost exclusively in <a href="https://www.shapeways.com/materials/pla" target="_blank" rel="noopener noreferrer">PLA</a>, which is a biodegradable plastic made from corn starch. We do have a PVA material which allows us to print water soluble supports.</p>
           </div>
           
           <div class="faq-item">
-            <h3>Q: What design software do you recommend to use?</h3>
+            <h2>Q: What design software do you recommend to use?</h2>
             <p>A: One of our favorite design software to use in the lab is <a href="https://www.autodesk.com/products/fusion-360/overview" target="_blank" rel="noopener noreferrer">Autodesk Fusion 360</a>. As student or staff of the university you can download this software for free. It is a very powerful tool and is relatively easy to learn. We do offer workshops on Fusion 360 if you'd like to learn some basics in the software to get you started.</p>
           </div>
           
           <div class="faq-item">
-            <h3>Q: If I wanted to talk to someone about designing a prototype how would I accomplish that?</h3>
+            <h2>Q: If I wanted to talk to someone about designing a prototype how would I accomplish that?</h2>
             <p>A: <a href="contact.html">Email us</a> or stop by the lab and we will help connect you with one of our design gurus! We offer design work at different <a href="pricingservices.html">rates</a> depending on your affiliation to the university.</p>
           </div>
           
           <div class="faq-item">
-            <h3>Q: Would it be feasible to scan something about 4-5cm big and print it?</h3>
+            <h2>Q: Would it be feasible to scan something about 4-5cm big and print it?</h2>
             <p>A: Our scanners are better for larger objects. Something in the scale described would be difficult to scan. However, we do have an alternative option, which uses software to combine hundreds of photos into a single 3D model. The process takes several minutes though and requires a perfectly still subject.</p>
           </div>
 
           <div class="faq-item">
-            <h3>Q: How do I order a 3D print?</h3>
+            <h2>Q: How do I order a 3D print?</h2>
             <p>A: Use our <a href="online-ordering.html">online ordering system</a>. Upload your STL file, select your options, and we'll print it for you. You can pick up your print at the lab during open hours.</p>
           </div>
 
           <div class="faq-item">
-            <h3>Q: Do you offer summer camps?</h3>
+            <h2>Q: Do you offer summer camps?</h2>
             <p>A: Yes! We offer week-long <a href="summer.html">summer camps</a> for youth ages 9-17, including Minecraft + 3D Printing, Adventures in 3D Modeling, and Generative AI + 3D Printing.</p>
           </div>
 
           <div class="faq-item">
-            <h3>Q: Can I host a birthday party at MakerLab?</h3>
+            <h2>Q: Can I host a birthday party at MakerLab?</h2>
             <p>A: Yes! We offer 3D printing-themed <a href="birthday-parties.html">birthday parties</a> for kids. Contact us at <a href="mailto:uimakerlab@illinois.edu">uimakerlab@illinois.edu</a> for details and availability.</p>
           </div>
 
           <div class="faq-item">
-            <h3>Q: What courses does MakerLab offer?</h3>
+            <h2>Q: What courses does MakerLab offer?</h2>
             <p>A: We offer <a href="courses/making-things.html">Making Things (BADM 331)</a>, a hands-on course exploring 3D printing, prototyping, and digital fabrication. It's offered every Spring semester at UIUC.</p>
           </div>
 
           <div class="faq-item">
-            <h3>Q: How do I contact MakerLab?</h3>
+            <h2>Q: How do I contact MakerLab?</h2>
             <p>A: Email us at <a href="mailto:uimakerlab@illinois.edu">uimakerlab@illinois.edu</a> or visit us at BIF Room 3030 at UIUC. Our address is 515 E Gregory Dr, Champaign, IL 61820.</p>
           </div>
         </div>

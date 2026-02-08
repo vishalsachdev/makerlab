@@ -24,12 +24,87 @@ document.addEventListener('DOMContentLoaded', function() {
       if (window.innerWidth <= 768) {
         e.preventDefault();
         const parent = this.parentElement;
-        parent.classList.toggle('active');
+        const isOpen = parent.classList.toggle('active');
+        this.setAttribute('aria-expanded', isOpen);
       }
     });
   });
 
-  // Active navigation link
+  // Keyboard navigation for dropdown menus
+  dropdownToggles.forEach(toggle => {
+    toggle.addEventListener('keydown', function(e) {
+      const parent = this.parentElement;
+      const menu = parent.querySelector('.dropdown-menu');
+      if (!menu) return;
+
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const isOpen = parent.classList.toggle('keyboard-open');
+        this.setAttribute('aria-expanded', isOpen);
+        if (isOpen) {
+          const firstItem = menu.querySelector('a');
+          if (firstItem) firstItem.focus();
+        }
+      } else if (e.key === 'Escape') {
+        parent.classList.remove('keyboard-open');
+        this.setAttribute('aria-expanded', 'false');
+        this.focus();
+      } else if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        parent.classList.add('keyboard-open');
+        this.setAttribute('aria-expanded', 'true');
+        const firstItem = menu.querySelector('a');
+        if (firstItem) firstItem.focus();
+      }
+    });
+
+    // Sync aria-expanded on hover
+    const parent = toggle.parentElement;
+    parent.addEventListener('mouseenter', function() {
+      toggle.setAttribute('aria-expanded', 'true');
+    });
+    parent.addEventListener('mouseleave', function() {
+      if (!parent.classList.contains('keyboard-open')) {
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+
+  // Keyboard navigation within dropdown menus
+  document.querySelectorAll('.dropdown-menu a').forEach(menuItem => {
+    menuItem.addEventListener('keydown', function(e) {
+      const dropdown = this.closest('.nav-dropdown');
+      const toggle = dropdown.querySelector(':scope > a');
+      const items = Array.from(dropdown.querySelectorAll('.dropdown-menu a'));
+      const index = items.indexOf(this);
+
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        if (index < items.length - 1) items[index + 1].focus();
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        if (index > 0) items[index - 1].focus();
+        else toggle.focus();
+      } else if (e.key === 'Escape') {
+        dropdown.classList.remove('keyboard-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.focus();
+      }
+    });
+  });
+
+  // Close keyboard-opened dropdowns when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.nav-dropdown')) {
+      document.querySelectorAll('.nav-dropdown.keyboard-open').forEach(dropdown => {
+        dropdown.classList.remove('keyboard-open');
+        const toggle = dropdown.querySelector(':scope > a');
+        if (toggle) toggle.setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
+
+  // Active navigation link with aria-current
   const currentPath = window.location.pathname;
   const navLinks = document.querySelectorAll('.main-nav a');
 
@@ -38,6 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (linkPath === currentPath ||
         (currentPath.includes('/blog/') && linkPath.includes('/blog'))) {
       link.classList.add('active');
+      link.setAttribute('aria-current', 'page');
     }
   });
 

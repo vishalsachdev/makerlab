@@ -1880,7 +1880,7 @@
   </url>
   <url>
     <loc>https://makerlab.illinois.edu/api/site-info.json</loc>
-    <lastmod>2026-01-25</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1892,13 +1892,19 @@
   </url>
   <url>
     <loc>https://makerlab.illinois.edu/api/blog/posts.json</loc>
-    <lastmod>2026-01-25</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://makerlab.illinois.edu/api/openapi.yaml</loc>
+    <lastmod>2026-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://makerlab.illinois.edu/agent-guide.json</loc>
-    <lastmod>2026-01-25</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

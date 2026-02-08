@@ -5,7 +5,7 @@
     "url": "https://makerlab.illinois.edu/",
     "description": "The world's first business school 3D printing lab at the University of Illinois at Urbana-Champaign",
     "established": "2012",
-    "lastUpdated": "2026-01-25",
+    "lastUpdated": "2026-02-08",
     "version": "1.1.0"
   },
   "contact": {
@@ -33,7 +33,7 @@
     "page": "lab-hours.html"
   },
   "statistics": {
-    "totalPages": 45,
+    "totalPages": 32,
     "totalBlogPosts": 291,
     "courses": 2,
     "blogYearRange": "2012-2025",
@@ -144,6 +144,7 @@
     "/api/site-info.json": "This file - basic site information and metadata",
     "/api/pages.json": "Index of all static pages with metadata",
     "/api/blog/posts.json": "Index of all blog posts with searchable metadata",
+    "/api/openapi.yaml": "OpenAPI 3.0 spec documenting all endpoints",
     "/sitemap.xml": "Complete sitemap for crawlers",
     "/agent-guide.json": "Guide for LLM agents on how to use this site"
   },
@@ -160,7 +161,7 @@
     },
     {
       "question": "What courses does MakerLab offer?",
-      "answer": "We offer two main courses: Digital Making (BADM 357) and Making Things. Both focus on hands-on digital fabrication and prototyping.",
+      "answer": "We offer Making Things (BADM 331), a hands-on course where students plan, design, make, and market a new product. Offered every Spring. Digital Making (BADM 357) was discontinued after Spring 2019.",
       "url": "/courses.html"
     },
     {

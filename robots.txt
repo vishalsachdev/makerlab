@@ -1,5 +1,5 @@
 # Illinois MakerLab - LLM Agent Friendly
-# Updated: 2026-01-25
+# Updated: 2026-02-08
 # Learn. Make. Share.
 
 # Allow all robots by default
@@ -40,6 +40,10 @@ Allow: /
 Crawl-delay: 1
 
 User-agent: Applebot-Extended
+Allow: /
+Crawl-delay: 1
+
+User-agent: OAI-SearchBot
 Allow: /
 Crawl-delay: 1
 

@@ -1,0 +1,262 @@
+openapi: 3.0.3
+info:
+  title: Illinois MakerLab API
+  description: >
+    Static JSON API endpoints for the Illinois MakerLab website.
+    All endpoints serve pre-generated JSON files — no authentication required.
+    These are designed for LLM agents, search engines, and developers.
+  version: 1.0.0
+  contact:
+    name: Illinois MakerLab
+    email: uimakerlab@illinois.edu
+    url: https://makerlab.illinois.edu/contact.html
+
+servers:
+  - url: https://makerlab.illinois.edu
+    description: Production (GitHub Pages)
+
+paths:
+  /api/site-info.json:
+    get:
+      summary: Site information and metadata
+      description: >
+        Essential site metadata including contact info, hours, services,
+        leadership, statistics, and common questions.
+      operationId: getSiteInfo
+      tags: [Site]
+      responses:
+        '200':
+          description: Site information
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SiteInfo'
+
+  /api/pages.json:
+    get:
+      summary: Page index
+      description: >
+        Index of all 32 active static pages with titles, URLs, descriptions,
+        and categories. Also lists archived pages.
+      operationId: getPages
+      tags: [Site]
+      responses:
+        '200':
+          description: Page index
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PageIndex'
+
+  /api/blog/posts.json:
+    get:
+      summary: Blog post index
+      description: >
+        Searchable index of all 291 blog posts with metadata, excerpts,
+        tags, and publication dates spanning 2012–2025.
+      operationId: getBlogPosts
+      tags: [Blog]
+      responses:
+        '200':
+          description: Blog post index
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BlogIndex'
+
+  /agent-guide.json:
+    get:
+      summary: LLM agent usage guide
+      description: >
+        Detailed instructions for LLM agents on how to query and present
+        Illinois MakerLab information, including common query patterns
+        and recommended data sources.
+      operationId: getAgentGuide
+      tags: [Agent]
+      responses:
+        '200':
+          description: Agent guide
+          content:
+            application/json:
+              schema:
+                type: object
+
+  /llms.txt:
+    get:
+      summary: Plain text site summary for LLM agents
+      description: >
+        Quick plain-text overview of the site, services, key pages,
+        and common questions — designed for fast LLM consumption.
+      operationId: getLlmsTxt
+      tags: [Agent]
+      responses:
+        '200':
+          description: Plain text summary
+          content:
+            text/plain:
+              schema:
+                type: string
+
+  /sitemap.xml:
+    get:
+      summary: XML sitemap
+      description: Complete sitemap with all page URLs, blog posts, and API endpoints.
+      operationId: getSitemap
+      tags: [Discovery]
+      responses:
+        '200':
+          description: XML sitemap
+          content:
+            application/xml:
+              schema:
+                type: string
+
+components:
+  schemas:
+    SiteInfo:
+      type: object
+      properties:
+        site:
+          type: object
+          properties:
+            name:
+              type: string
+              example: Illinois MakerLab
+            tagline:
+              type: string
+              example: Learn. Make. Share
+            url:
+              type: string
+              format: uri
+            description:
+              type: string
+            established:
+              type: string
+              example: "2012"
+            lastUpdated:
+              type: string
+              format: date
+        contact:
+          type: object
+          properties:
+            email:
+              type: string
+              format: email
+            location:
+              type: string
+            address:
+              type: string
+            university:
+              type: string
+        leadership:
+          type: object
+        hours:
+          type: object
+          properties:
+            note:
+              type: string
+            url:
+              type: string
+        statistics:
+          type: object
+          properties:
+            totalPages:
+              type: integer
+            totalBlogPosts:
+              type: integer
+        primaryServices:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              description:
+                type: string
+              url:
+                type: string
+        commonQuestions:
+          type: array
+          items:
+            type: object
+            properties:
+              question:
+                type: string
+              answer:
+                type: string
+              url:
+                type: string
+
+    PageIndex:
+      type: object
+      properties:
+        total:
+          type: integer
+        pages:
+          type: array
+          items:
+            $ref: '#/components/schemas/PageEntry'
+
+    PageEntry:
+      type: object
+      properties:
+        title:
+          type: string
+        slug:
+          type: string
+        url:
+          type: string
+        description:
+          type: string
+        category:
+          type: string
+        lastModified:
+          type: string
+          format: date
+
+    BlogIndex:
+      type: object
+      properties:
+        total:
+          type: integer
+          example: 291
+        lastUpdated:
+          type: string
+          format: date
+        posts:
+          type: array
+          items:
+            $ref: '#/components/schemas/BlogPost'
+
+    BlogPost:
+      type: object
+      properties:
+        title:
+          type: string
+          example: 3D Printed Wooden Objects!
+        slug:
+          type: string
+          example: 3d-printed-wooden-objects
+        url:
+          type: string
+          example: /blog/3d-printed-wooden-objects.html
+        excerpt:
+          type: string
+        description:
+          type: string
+        pubDate:
+          type: string
+          format: date
+          example: "2013-11-07"
+        year:
+          type: integer
+          nullable: true
+          example: 2013
+        tags:
+          type: array
+          items:
+            type: string
+          example: ["3D Printing"]
+        author:
+          type: string
+          example: MakerLab Team

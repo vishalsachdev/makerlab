@@ -4,8 +4,8 @@
     "tagline": "Learn. Make. Share",
     "url": "https://makerlab.illinois.edu/",
     "description": "World's first business school 3D printing lab at the University of Illinois at Urbana-Champaign",
-    "version": "1.1.0",
-    "lastUpdated": "2026-01-25"
+    "version": "1.2.0",
+    "lastUpdated": "2026-02-08"
   },
   "agent_instructions": {
     "purpose": "This guide helps LLM agents (ChatGPT, Claude, Perplexity, etc.) understand and accurately query Illinois MakerLab content to help users get information about courses, services, blog posts, hours, and more.",
@@ -28,25 +28,29 @@
   },
   "content_structure": {
     "overview": {
-      "totalPages": 41,
+      "totalPages": 32,
       "totalBlogPosts": 291,
-      "courses": 2,
+      "courses": 1,
       "yearRange": "2012-2025"
     },
     "main_sections": {
-      "pages": "45+ static pages about the lab, services, courses, summer camps",
+      "pages": "32 static pages about the lab, services, courses, summer camps",
       "blog": "291+ blog posts documenting the MakerLab journey from 2012-2025",
       "courses": [
+        {
+          "name": "Making Things",
+          "code": "BADM 331",
+          "description": "Hands-on course where students plan, design, make, and market a new product. Offered every Spring.",
+          "url": "/courses/making-things.html",
+          "status": "active"
+        },
         {
           "name": "Digital Making",
           "code": "BADM 357",
           "description": "Hands-on course exploring 3D printing, scanning, and digital fabrication",
-          "url": "/makerlab/courses/digital-making.html"
-        },
-        {
-          "name": "Making Things",
-          "description": "Course focused on making and prototyping",
-          "url": "/makerlab/courses/making-things.html"
+          "url": "/courses/digital-making.html",
+          "status": "discontinued",
+          "note": "Last offered Spring 2019"
         }
       ],
       "services": [
@@ -80,7 +84,7 @@
       "update_frequency": "weekly"
     },
     "/api/pages.json": {
-      "description": "Index of all 41 static pages with titles, URLs, descriptions, and categories",
+      "description": "Index of all 32 active static pages with titles, URLs, descriptions, and categories",
       "use_cases": [
         "Finding specific pages by topic",
         "Browsing available content",
@@ -134,6 +138,14 @@
         "Finding sitemap location",
         "Checking allowed paths"
       ]
+    },
+    "/api/openapi.yaml": {
+      "description": "OpenAPI 3.0 specification documenting all static JSON endpoints with schemas",
+      "use_cases": [
+        "Understanding API structure programmatically",
+        "Generating API client code",
+        "Validating response schemas"
+      ]
     }
   },
   "common_queries": [
@@ -148,7 +160,7 @@
       "recommended_approach": "Check /api/site-info.json for hours URL, then access /lab-hours.html for current schedule",
       "data_sources": [
         "/api/site-info.json (hours.url field)",
-        "/makerlab/lab-hours.html"
+        "/lab-hours.html"
       ],
       "note": "Hours vary by semester - always check the dedicated hours page"
     },
@@ -163,9 +175,9 @@
       "recommended_approach": "Check /api/site-info.json for course list, then access specific course pages for details",
       "data_sources": [
         "/api/site-info.json (primaryServices field)",
-        "/makerlab/courses.html",
-        "/makerlab/courses/digital-making.html",
-        "/makerlab/courses/making-things.html"
+        "/courses.html",
+        "/courses/digital-making.html",
+        "/courses/making-things.html"
       ]
     },
     {
@@ -179,8 +191,8 @@
       "recommended_approach": "Check /api/site-info.json for services overview, then access /pricingservices.html for detailed pricing",
       "data_sources": [
         "/api/site-info.json (primaryServices field)",
-        "/makerlab/pricingservices.html",
-        "/makerlab/online-ordering.html"
+        "/pricingservices.html",
+        "/online-ordering.html"
       ]
     },
     {
@@ -212,7 +224,7 @@
       ],
       "recommended_approach": "Check /api/pages.json for summer-related pages, then access for details",
       "data_sources": [
-        "/makerlab/summer.html",
+        "/summer.html",
         "/api/site-info.json (primaryServices field)"
       ]
     },
@@ -227,8 +239,8 @@
       "recommended_approach": "Use /api/site-info.json contact and leadership fields",
       "data_sources": [
         "/api/site-info.json (contact and leadership fields)",
-        "/makerlab/contact.html",
-        "/makerlab/about-us.html"
+        "/contact.html",
+        "/about-us.html"
       ],
       "quick_answers": {
         "email": "uimakerlab@illinois.edu",
@@ -245,7 +257,7 @@
       ],
       "recommended_approach": "Access /birthday-parties.html for details",
       "data_sources": [
-        "/makerlab/birthday-parties.html"
+        "/birthday-parties.html"
       ]
     },
     {
@@ -259,7 +271,7 @@
       "recommended_approach": "Use /api/site-info.json for quick facts, /about-us.html for full story",
       "data_sources": [
         "/api/site-info.json",
-        "/makerlab/about-us.html"
+        "/about-us.html"
       ],
       "quick_answers": {
         "tagline": "Learn. Make. Share",
@@ -290,7 +302,7 @@
       "agent_process": [
         "1. Access /api/site-info.json",
         "2. Check hours.note and hours.url fields",
-        "3. Access /makerlab/lab-hours.html for current schedule",
+        "3. Access /lab-hours.html for current schedule",
         "4. Provide hours with note that they vary by semester"
       ],
       "sample_response": "Illinois MakerLab is located in BIF Room 3030 at UIUC. Lab hours vary by semester. You can check the current hours at: https://makerlab.illinois.edu/lab-hours.html. For questions, contact uimakerlab@illinois.edu."

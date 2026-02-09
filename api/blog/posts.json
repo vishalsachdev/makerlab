@@ -178,7 +178,9 @@
       "description": "Earlier this Spring, the Illinois MakerLab nominated the Functionalhand by Thera-Solutions as the “Coolest Thing in Illinois” Makers Madness held by the Illinois Manufacturers’ Association....",
       "pubDate": "2020-08-09",
       "year": 2020,
-      "tags": [],
+      "tags": [
+        "Community"
+      ],
       "author": "Illinois MakerLab"
     },
     {
@@ -333,6 +335,7 @@
         "3D Printing",
         "Community",
         "Education",
+        "Lab Updates",
         "Volunteer"
       ],
       "author": "Illinois MakerLab"
@@ -623,7 +626,9 @@
       "description": "Untitled Published on Wed, 16 May 2018 by Illinois MakerLab Content coming soon. ← Back to Blog",
       "pubDate": "2018-05-16",
       "year": 2018,
-      "tags": [],
+      "tags": [
+        "3D Printing"
+      ],
       "author": "Illinois MakerLab"
     },
     {
@@ -781,6 +786,7 @@
       "year": 2017,
       "tags": [
         "3D Printing",
+        "News",
         "Volunteer"
       ],
       "author": "Illinois MakerLab"
@@ -797,7 +803,8 @@
         "3D Printing",
         "Community",
         "Education",
-        "Events"
+        "Events",
+        "News"
       ],
       "author": "Illinois MakerLab"
     },
@@ -810,7 +817,8 @@
       "pubDate": "2017-10-08",
       "year": 2017,
       "tags": [
-        "3D Printing"
+        "3D Printing",
+        "News"
       ],
       "author": "Illinois MakerLab"
     },
@@ -824,6 +832,7 @@
       "year": 2017,
       "tags": [
         "3D Printing",
+        "Community",
         "Design"
       ],
       "author": "Illinois MakerLab"
@@ -869,6 +878,7 @@
       "tags": [
         "3D Printing",
         "Design",
+        "Education",
         "Volunteer",
         "Workshop"
       ],
@@ -1073,6 +1083,7 @@
         "3D Printing",
         "Design",
         "Education",
+        "News",
         "Staff"
       ],
       "author": "Illinois MakerLab"
@@ -1119,6 +1130,8 @@
       "tags": [
         "3D Printing",
         "Design",
+        "Education",
+        "Lab Updates",
         "Workshop"
       ],
       "author": "Illinois MakerLab"
@@ -1134,6 +1147,7 @@
       "tags": [
         "3D Printing",
         "Design",
+        "Education",
         "Scanning",
         "Volunteer",
         "Workshop"
@@ -1152,6 +1166,7 @@
         "3D Printing",
         "Community",
         "Education",
+        "Things We Make",
         "Volunteer"
       ],
       "author": "Illinois MakerLab"
@@ -1392,6 +1407,7 @@
         "3D Printing",
         "Education",
         "Staff",
+        "Things We Make",
         "Workshop"
       ],
       "author": "Illinois MakerLab"
@@ -1521,6 +1537,7 @@
         "3D Printing",
         "Design",
         "Education",
+        "Lab Updates",
         "Staff",
         "Workshop"
       ],
@@ -1584,7 +1601,9 @@
         "Digital Making",
         "Education",
         "Making Things",
+        "News",
         "Scanning",
+        "Things We Make",
         "Workshop"
       ],
       "author": "IllinoisMakerLab"
@@ -1643,7 +1662,10 @@
       "description": "Join us and help the Makergirls reach for the stars. Kickstart their #3dprinting Mobile for Summer 2016 It gives us great pleasure to support the MakerGirls at the Lab. The video below says it all...",
       "pubDate": "2016-03-01",
       "year": 2016,
-      "tags": [],
+      "tags": [
+        "Community",
+        "News"
+      ],
       "author": "IllinoisMakerLab"
     },
     {
@@ -1684,7 +1706,8 @@
       "pubDate": "2016-01-27",
       "year": 2016,
       "tags": [
-        "3D Printing"
+        "3D Printing",
+        "Things We Make"
       ],
       "author": "IllinoisMakerLab"
     },
@@ -1767,6 +1790,7 @@
         "Digital Making",
         "Education",
         "Making Things",
+        "News",
         "Workshop"
       ],
       "author": "AricRindfleisch"
@@ -1865,6 +1889,7 @@
       "tags": [
         "3D Printing",
         "COVID-19",
+        "Community",
         "Design",
         "Education",
         "Workshop"
@@ -1897,6 +1922,7 @@
       "year": 2015,
       "tags": [
         "3D Printing",
+        "News",
         "Research",
         "Workshop"
       ],
@@ -1942,7 +1968,9 @@
       "tags": [
         "3D Printing",
         "Community",
+        "Education",
         "Events",
+        "Things We Make",
         "Workshop"
       ],
       "author": "IllinoisMakerLab"
@@ -2089,7 +2117,10 @@
       "description": "Last week, WCIA news featured our Lab's new Maker Certificate in its nightly broadcast. The Certificate program was founded about a month ago and has over 250 sign-ups! Listen to the story below, and...",
       "pubDate": "2015-04-20",
       "year": 2015,
-      "tags": [],
+      "tags": [
+        "Education",
+        "News"
+      ],
       "author": "AricRindfleisch"
     },
     {
@@ -2150,6 +2181,7 @@
       "tags": [
         "3D Printing",
         "COVID-19",
+        "Community",
         "Education"
       ],
       "author": "IllinoisMakerLab"
@@ -2504,6 +2536,7 @@
         "3D Printing",
         "Community",
         "Education",
+        "News",
         "Staff"
       ],
       "author": "AricRindfleisch"
@@ -2522,6 +2555,7 @@
         "Education",
         "Scanning",
         "Staff",
+        "Things We Make",
         "Workshop"
       ],
       "author": "AricRindfleisch"
@@ -2553,6 +2587,7 @@
       "year": 2014,
       "tags": [
         "3D Printing",
+        "Community",
         "Education"
       ],
       "author": "IllinoisMakerLab"
@@ -2578,7 +2613,9 @@
       "description": "Due to our expanding operations, our lab has been running a bit short on storage space. This new Craftsman Toolchest is just the answer. As shown here by Guru Winnie, this new toolchest is huge and...",
       "pubDate": "2014-12-09",
       "year": 2014,
-      "tags": [],
+      "tags": [
+        "Lab Updates"
+      ],
       "author": "AricRindfleisch"
     },
     {
@@ -2774,7 +2811,9 @@
       "description": "In response to popular demand, the MakerLab brings back Free Print Wednesdays! Every Wednesday from 1pm to 3pm, all prints (one hour or less) are free of charge! In less than an hour you could print...",
       "pubDate": "2014-09-15",
       "year": 2014,
-      "tags": [],
+      "tags": [
+        "Things We Make"
+      ],
       "author": "AricRindfleisch"
     },
     {
@@ -2787,6 +2826,7 @@
       "year": 2014,
       "tags": [
         "3D Printing",
+        "Community",
         "Design",
         "Staff"
       ],
@@ -2846,7 +2886,8 @@
       "pubDate": "2014-07-30",
       "year": 2014,
       "tags": [
-        "3D Printing"
+        "3D Printing",
+        "Things We Make"
       ],
       "author": "AricRindfleisch"
     },
@@ -2875,7 +2916,8 @@
       "pubDate": "2014-07-24",
       "year": 2014,
       "tags": [
-        "3D Printing"
+        "3D Printing",
+        "Things We Make"
       ],
       "author": "AricRindfleisch"
     },
@@ -2889,7 +2931,8 @@
       "year": 2014,
       "tags": [
         "3D Printing",
-        "Education"
+        "Education",
+        "News"
       ],
       "author": "IllinoisMakerLab"
     },
@@ -2932,7 +2975,8 @@
       "pubDate": "2014-06-14",
       "year": 2014,
       "tags": [
-        "3D Printing"
+        "3D Printing",
+        "News"
       ],
       "author": "AricRindfleisch"
     },
@@ -3053,6 +3097,7 @@
       "tags": [
         "3D Printing",
         "COVID-19",
+        "Community",
         "Design",
         "Education",
         "Making Things"
@@ -3240,7 +3285,9 @@
       "description": "In recent months, our Lab has received lots of requests to make things for various units across our campus. Most recently, the Illinois Geometry Lab asked us to print 20 copies (Orange & Blue) of...",
       "pubDate": "2014-02-12",
       "year": 2014,
-      "tags": [],
+      "tags": [
+        "Things We Make"
+      ],
       "author": "AricRindfleisch"
     },
     {
@@ -3254,7 +3301,8 @@
       "tags": [
         "3D Printing",
         "COVID-19",
-        "Education"
+        "Education",
+        "News"
       ],
       "author": "uimakerlab@illinois.edu"
     },
@@ -3288,6 +3336,7 @@
         "Community",
         "Design",
         "Education",
+        "Lab Updates",
         "Research"
       ],
       "author": "uimakerlab@illinois.edu"
@@ -3334,6 +3383,7 @@
       "pubDate": "2014-02-03",
       "year": 2014,
       "tags": [
+        "Community",
         "Education",
         "Making Things"
       ],
@@ -3350,7 +3400,8 @@
       "tags": [
         "3D Printing",
         "COVID-19",
-        "Education"
+        "Education",
+        "Lab Updates"
       ],
       "author": "AricRindfleisch"
     },
@@ -3380,7 +3431,9 @@
       "pubDate": "2014-01-13",
       "year": 2014,
       "tags": [
-        "3D Printing"
+        "3D Printing",
+        "Lab Updates",
+        "News"
       ],
       "author": "KatieKhau"
     },
@@ -3412,6 +3465,7 @@
         "COVID-19",
         "Design",
         "Education",
+        "Lab Updates",
         "Making Things",
         "Scanning",
         "Workshop"
@@ -3439,7 +3493,9 @@
       "description": "Come by the lab and make some programmable LED lit ornaments and pick up the block I ornaments to show your Illini spirit this christmas . Or you can pick any ornament from this list and make away...",
       "pubDate": "2013-12-16",
       "year": 2013,
-      "tags": [],
+      "tags": [
+        "3D Printing"
+      ],
       "author": "VishalSachdev"
     },
     {
@@ -3452,7 +3508,8 @@
       "year": 2013,
       "tags": [
         "Community",
-        "Education"
+        "Education",
+        "News"
       ],
       "author": "AricRindfleisch"
     },
@@ -3513,6 +3570,7 @@
         "Design",
         "Education",
         "Making Things",
+        "News",
         "Scanning"
       ],
       "author": "AricRindfleisch"
@@ -3526,7 +3584,8 @@
       "pubDate": "2013-11-18",
       "year": 2013,
       "tags": [
-        "3D Printing"
+        "3D Printing",
+        "Things We Make"
       ],
       "author": "AricRindfleisch"
     },
@@ -3539,7 +3598,8 @@
       "pubDate": "2013-11-16",
       "year": 2013,
       "tags": [
-        "3D Printing"
+        "3D Printing",
+        "Things We Make"
       ],
       "author": "AricRindfleisch"
     },
@@ -3570,6 +3630,7 @@
         "Design",
         "Education",
         "Making Things",
+        "News",
         "Scanning"
       ],
       "author": "AricRindfleisch"
@@ -3585,7 +3646,8 @@
       "tags": [
         "3D Printing",
         "Community",
-        "Education"
+        "Education",
+        "News"
       ],
       "author": "AricRindfleisch"
     },
@@ -3647,6 +3709,7 @@
         "3D Printing",
         "COVID-19",
         "Digital Making",
+        "Lab Updates",
         "Scanning"
       ],
       "author": "AricRindfleisch"
@@ -3687,7 +3750,8 @@
       "pubDate": "2013-09-28",
       "year": 2013,
       "tags": [
-        "3D Printing"
+        "3D Printing",
+        "Things We Make"
       ],
       "author": "AricRindfleisch"
     },
@@ -3728,7 +3792,8 @@
       "pubDate": "2013-09-16",
       "year": 2013,
       "tags": [
-        "3D Printing"
+        "3D Printing",
+        "Things We Make"
       ],
       "author": "AricRindfleisch"
     },
@@ -3757,7 +3822,9 @@
       "description": "The MakerLab is once again in the news. This time in Germany! The leading German Marketing Magazine, absatzwirtschaft published a recent story on the maker movement and prominently featured our lab....",
       "pubDate": "2013-08-29",
       "year": 2013,
-      "tags": [],
+      "tags": [
+        "News"
+      ],
       "author": "AricRindfleisch"
     },
     {
@@ -3769,7 +3836,8 @@
       "pubDate": "2013-08-28",
       "year": 2013,
       "tags": [
-        "3D Printing"
+        "3D Printing",
+        "Things We Make"
       ],
       "author": "AricRindfleisch"
     },
@@ -3784,7 +3852,8 @@
       "tags": [
         "3D Printing",
         "COVID-19",
-        "Design"
+        "Design",
+        "Things We Make"
       ],
       "author": "AricRindfleisch"
     },
@@ -3797,7 +3866,8 @@
       "pubDate": "2013-08-15",
       "year": 2013,
       "tags": [
-        "3D Printing"
+        "3D Printing",
+        "Lab Updates"
       ],
       "author": "AricRindfleisch"
     },
@@ -3812,7 +3882,8 @@
       "tags": [
         "3D Printing",
         "Education",
-        "Research"
+        "Research",
+        "Things We Make"
       ],
       "author": "AricRindfleisch"
     },
@@ -3825,7 +3896,8 @@
       "pubDate": "2013-08-01",
       "year": 2013,
       "tags": [
-        "3D Printing"
+        "3D Printing",
+        "Things We Make"
       ],
       "author": "AricRindfleisch"
     },
@@ -3837,7 +3909,9 @@
       "description": "Over the past few weeks, our new lab location in the Business Instructional Facility has made good progress. The drywall and electrical work has been completed. In addition, both the front and side...",
       "pubDate": "2013-07-30",
       "year": 2013,
-      "tags": [],
+      "tags": [
+        "Lab Updates"
+      ],
       "author": "AricRindfleisch"
     },
     {
@@ -3892,7 +3966,9 @@
       "description": "Construction of our new lab space in the Business Instructional Facility is progressing nicely. The drywalling has been completed and the electrical work is nearly done. The photo below was taken...",
       "pubDate": "2013-07-05",
       "year": 2013,
-      "tags": [],
+      "tags": [
+        "Lab Updates"
+      ],
       "author": "AricRindfleisch"
     },
     {
@@ -3904,6 +3980,7 @@
       "pubDate": "2013-07-01",
       "year": 2013,
       "tags": [
+        "News",
         "Staff"
       ],
       "author": "AricRindfleisch"
@@ -3932,7 +4009,8 @@
       "year": 2013,
       "tags": [
         "3D Printing",
-        "COVID-19"
+        "COVID-19",
+        "Things We Make"
       ],
       "author": "AricRindfleisch"
     },
@@ -3944,7 +4022,9 @@
       "description": "A quick update on the progress of our new home in the Business Instructional Facility : --The frames for both our front & side doors have been installed --Drywall is going up --Electrical lines and...",
       "pubDate": "2013-06-21",
       "year": 2013,
-      "tags": [],
+      "tags": [
+        "Lab Updates"
+      ],
       "author": "AricRindfleisch"
     },
     {
@@ -3955,7 +4035,9 @@
       "description": "Cuddling Owls (Thingiverse Thing 50212, Designed by Moses) Super cute. Makes a great gift for a close friend.",
       "pubDate": "2013-06-15",
       "year": 2013,
-      "tags": [],
+      "tags": [
+        "Things We Make"
+      ],
       "author": "AricRindfleisch"
     },
     {
@@ -3982,7 +4064,8 @@
       "year": 2013,
       "tags": [
         "3D Printing",
-        "Education"
+        "Education",
+        "Lab Updates"
       ],
       "author": "AricRindfleisch"
     },
@@ -4103,6 +4186,7 @@
         "3D Printing",
         "Community",
         "Education",
+        "News",
         "Research",
         "Staff"
       ],
@@ -4117,7 +4201,8 @@
       "pubDate": "2013-04-12",
       "year": 2013,
       "tags": [
-        "3D Printing"
+        "3D Printing",
+        "News"
       ],
       "author": "VishalSachdev"
     },
@@ -4175,6 +4260,7 @@
       "pubDate": "2013-03-27",
       "year": 2013,
       "tags": [
+        "News",
         "Research"
       ],
       "author": "uimakerlab@illinois.edu"
@@ -4200,7 +4286,10 @@
       "description": "Hot off the press! We are printing our own keychains. This keychain, which was adapted from a design by bradk2012, can be found on our Thingiverse webpage. Just go to:...",
       "pubDate": "2013-03-25",
       "year": 2013,
-      "tags": [],
+      "tags": [
+        "3D Printing",
+        "Things We Make"
+      ],
       "author": "AricRindfleisch"
     },
     {
@@ -4214,6 +4303,7 @@
       "tags": [
         "3D Printing",
         "Education",
+        "News",
         "Research",
         "Scanning",
         "Workshop"
@@ -4257,7 +4347,9 @@
       "description": "Our New Business Card",
       "pubDate": "2013-03-06",
       "year": 2013,
-      "tags": [],
+      "tags": [
+        "Lab Updates"
+      ],
       "author": "AricRindfleisch"
     },
     {
@@ -4283,7 +4375,9 @@
       "description": "The Daily Illini covered the MakerLab in the news today. Have a look.",
       "pubDate": "2013-02-26",
       "year": 2013,
-      "tags": [],
+      "tags": [
+        "News"
+      ],
       "author": "VishalSachdev"
     },
     {
@@ -4357,6 +4451,7 @@
         "3D Printing",
         "Design",
         "Education",
+        "News",
         "Research"
       ],
       "author": "VishalSachdev"
@@ -4458,7 +4553,8 @@
       "tags": [
         "3D Printing",
         "Community",
-        "Education"
+        "Education",
+        "News"
       ],
       "author": "VishalSachdev"
     },
@@ -4473,7 +4569,9 @@
       "tags": [
         "3D Printing",
         "Design",
-        "Education"
+        "Education",
+        "Lab Updates",
+        "News"
       ],
       "author": "VishalSachdev"
     },
@@ -4498,7 +4596,10 @@
       "description": "Human skull!",
       "pubDate": "1461-04-24",
       "year": 1461,
-      "tags": [],
+      "tags": [
+        "3D Printing",
+        "Things We Make"
+      ],
       "author": "AricRindfleisch"
     },
     {
@@ -4511,6 +4612,7 @@
       "year": 1461,
       "tags": [
         "3D Printing",
+        "News",
         "Research",
         "Staff"
       ],

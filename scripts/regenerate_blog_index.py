@@ -61,9 +61,9 @@ def clean_text(text, max_length=200):
 
 
 TAG_KEYWORDS = {
-    '3D Printing': [r'3d print', r'3d-print', r'printer', r'filament', r'PLA', r'ultimaker', r'makerbot'],
+    '3D Printing': [r'3d print', r'3d-print', r'printer', r'filament', r'PLA', r'ultimaker', r'makerbot', r'keychain', r'ornament', r'skull'],
     'COVID-19': [r'covid', r'pandemic', r'PPE', r'face shield', r'mask buckle'],
-    'Education': [r'course', r'class', r'student', r'learning', r'teaching', r'curriculum'],
+    'Education': [r'course', r'class', r'student', r'learning', r'teaching', r'curriculum', r'certificate'],
     'Making Things': [r'making things', r'BADM 331', r'badm331'],
     'Digital Making': [r'digital making', r'BADM 357', r'badm357'],
     'Summer Camp': [r'summer camp', r'summer program', r'youth camp'],
@@ -71,11 +71,14 @@ TAG_KEYWORDS = {
     'Workshop': [r'workshop'],
     'Design': [r'design think', r'prototype', r'prototyping', r'3d model', r'tinkercad', r'fusion 360', r'cad'],
     'Volunteer': [r'volunteer', r'guru spotlight', r'guru interview'],
-    'Community': [r'community', r'outreach', r'partnership', r'partner'],
+    'Community': [r'community', r'outreach', r'partnership', r'partner', r'makergirl', r'maker girl', r'kickstart'],
     'Research': [r'research', r'study', r'experiment'],
     'Events': [r'maker faire', r'makeathon', r'hackathon', r'hackillinois', r'open house'],
     'Staff': [r'meet the maker', r'employee spotlight', r'featured maker', r'staff'],
     'Scanning': [r'3d scan', r'scanning', r'digitizer'],
+    'News': [r'in the news', r'featured in', r'featured on', r'news station', r'daily illini', r'magazine', r'WCIA', r'absatzwirtschaft'],
+    'Lab Updates': [r'new lab', r'construction', r'drywall', r'new home', r'toolchest', r'new business card', r'completion'],
+    'Things We Make': [r'things we make', r'free print wednesday', r'free print'],
 }
 
 

@@ -32,6 +32,12 @@ python3 scripts/fix_missing_alt.py
 
 # Fix accessibility: add title attributes to iframes
 python3 scripts/fix_iframe_titles.py
+
+# Add Schema.org BlogPosting + BreadcrumbList to blog posts
+python3 scripts/add_blog_schema.py
+
+# Add Schema.org BreadcrumbList to static pages
+python3 scripts/add_breadcrumbs.py
 ```
 
 ## Deployment
@@ -71,7 +77,9 @@ makerlab/
 │   ├── add_skip_link.py          # Add skip-to-content links to all pages
 │   ├── fix_blog_alt_text.py      # Fix empty alt="" on blog images
 │   ├── fix_missing_alt.py        # Fix missing alt attributes on blog images
-│   └── fix_iframe_titles.py      # Add title attributes to iframes
+│   ├── fix_iframe_titles.py      # Add title attributes to iframes
+│   ├── add_blog_schema.py        # Add BlogPosting + BreadcrumbList JSON-LD to blog posts
+│   └── add_breadcrumbs.py        # Add BreadcrumbList JSON-LD to static pages
 └── archive/            # Archived content
     ├── pages/          # Archived HTML pages (newsletter, old camps, etc.)
     └── *.xml           # Original Squarespace export

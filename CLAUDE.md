@@ -149,12 +149,14 @@ See `scripts/podio/README.md` for full workflow. Requires `.env` with Podio cred
 
 ## Summer Camps (Summer 2026)
 
-Three camps available with pricing on `summer.html`:
-- **Minecraft + 3D Printing** (Ages 9+)
-- **Adventures in 3D Modeling** (Ages 10-17) - Uses Fusion 360
-- **Generative AI + 3D Printing** (Ages 12+)
+Five camps available across 8 weeks (Jun 1 – Jul 31, no camp week of Jun 29–Jul 3). Pricing on `summer.html`:
+- **Minecraft + 3D Printing** (Ages 10+) — flagship, 8 sessions
+- **Adventures in 3D Modeling** (Ages 10-17) - Uses Fusion 360, 2 sessions
+- **Generative AI + 3D Printing** (Ages 12+) — 2 sessions
+- **Build Your Own Robot Arm** (Ages 12+) — NEW, SO-ARM100, max 5 campers, 2 sessions
+- **AI Robotics with Reachy Mini** (Ages 12+) — NEW, Reachy Mini Lite, max 5 campers, 2 sessions
 
-Pricing: $250 regular, $225 early bird (until Feb 28). Schedule: 3 hrs/day, 5 days (9am-12pm or 1pm-4pm).
+Pricing: $250 regular, $225 early bird (until March 15). Schedule: 3 hrs/day, 5 days (9am-12pm or 1pm-4pm).
 
 ## Courses
 

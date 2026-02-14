@@ -158,6 +158,10 @@ Five camps available across 8 weeks (Jun 1 – Jul 31, no camp week of Jun 29–
 
 Pricing: $250 regular, $225 early bird (until March 15). Schedule: 3 hrs/day, 5 days (9am-12pm or 1pm-4pm).
 
+Registration: https://appserv7.admin.uillinois.edu/FormBuilderSurvey/Survey/gies_college_of_business/gies_fab_lab/summer_2026/
+
+Refund Policy: All camps have a $20 non-refundable deposit. Up to 21 days before camp: full refund minus deposit. 20-8 days before: half refund minus deposit. 7 days or less: no refund. Campers may switch sessions at no cost if seats available.
+
 ## Courses
 
 - **Making Things** (BADM 331) - Active, offered every Spring

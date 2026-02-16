@@ -163,7 +163,7 @@ Five camps available across 8 weeks (Jun 1 – Jul 31, no camp week of Jun 29–
 
 Pricing: $250 regular, $225 early bird (until March 15). Schedule: 3 hrs/day, 5 days (9am-12pm or 1pm-4pm).
 
-Registration: https://appserv7.admin.uillinois.edu/FormBuilderSurvey/Survey/gies_college_of_business/gies_fab_lab/summer_2026/
+Registration: https://appserv7.admin.uillinois.edu/FormBuilderSurvey/Survey/gies_college_of_business/illinois_makerlab/summer_2026/
 
 Add-ons: Lunch hour supervision (12:00–1:00 PM) $10/day, late pickup at 5:00 PM $10/day. Computers provided (MakerLab iMacs). Minecraft accounts provided for Minecraft camp.
 

@@ -1,0 +1,65 @@
+name: Update Staff Profile
+description: Add, update, or remove a staff member on the Lab Staff page
+title: "Staff update: "
+labels: ["staff-update"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to request a change to the [Lab Staff](https://makerlab.illinois.edu/lab-staff.html) page.
+
+  - type: dropdown
+    id: action
+    attributes:
+      label: What do you need?
+      options:
+        - Update my profile (photo, name, role, or link)
+        - Add a new staff member
+        - Remove a staff member (no longer at MakerLab)
+    validations:
+      required: true
+
+  - type: input
+    id: name
+    attributes:
+      label: Full name
+      placeholder: "e.g., Jane Smith"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: role
+    attributes:
+      label: Role
+      options:
+        - Guru
+        - Faculty
+        - Staff
+    validations:
+      required: true
+
+  - type: input
+    id: profile-link
+    attributes:
+      label: Profile link (LinkedIn, university page, or personal site)
+      placeholder: "https://www.linkedin.com/in/..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: photo
+    attributes:
+      label: Photo
+      description: "Drag and drop a headshot here (square crop preferred, min 300x300px). Leave blank to keep current photo or use initials placeholder."
+      placeholder: "Drag and drop your photo here"
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional notes
+      description: "Any other details (e.g., name change, new role title, graduation date for removal)"
+      placeholder: "Optional"
+    validations:
+      required: false

@@ -1,0 +1,62 @@
+name: New Blog Post
+description: Submit a blog post for the MakerLab website
+title: "Blog post: "
+labels: ["blog-post"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to submit a new blog post for [makerlab.illinois.edu/blog](https://makerlab.illinois.edu/blog/).
+
+  - type: input
+    id: title
+    attributes:
+      label: Post title
+      placeholder: "e.g., Custom 3D Printed Parts for Robotics Research"
+    validations:
+      required: true
+
+  - type: textarea
+    id: content
+    attributes:
+      label: Post content
+      description: "Write the blog post body. You can use basic formatting: **bold**, *italic*, and links. Aim for 200-400 words."
+      placeholder: "Tell the story — who needed what, why it matters, and what was made..."
+    validations:
+      required: true
+
+  - type: input
+    id: client
+    attributes:
+      label: Client or project name
+      description: "Who was this for? (e.g., Professor Smith, ECE 445 team, community member)"
+      placeholder: "e.g., Prof. Sayan Mitra, CS Department"
+    validations:
+      required: false
+
+  - type: textarea
+    id: images
+    attributes:
+      label: Images
+      description: "Drag and drop photos here. Include a brief caption for each image for alt text."
+      placeholder: "Drag and drop images here"
+    validations:
+      required: false
+
+  - type: input
+    id: publish-date
+    attributes:
+      label: Publish date
+      description: "When should this go live? Leave blank for ASAP."
+      placeholder: "e.g., 2026-03-01 or leave blank"
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional notes
+      description: "Anything else — tags, related links, special formatting requests"
+      placeholder: "Optional"
+    validations:
+      required: false

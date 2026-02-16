@@ -22,20 +22,20 @@
       "This is a static site hosted on GitHub Pages - no backend API calls needed",
       "All data is publicly accessible - no authentication required",
       "Content is updated periodically - check lastUpdated fields",
-      "Blog posts span 2012-2025 with 300 articles",
+      "Blog posts span 2012-2026 with 301 articles",
       "Site uses Illinois branding colors: Orange #FF5F05, Blue #13294B"
     ]
   },
   "content_structure": {
     "overview": {
       "totalPages": 32,
-      "totalBlogPosts": 300,
+      "totalBlogPosts": 301,
       "courses": 1,
-      "yearRange": "2012-2025"
+      "yearRange": "2012-2026"
     },
     "main_sections": {
       "pages": "32 static pages about the lab, services, courses, summer camps",
-      "blog": "300 blog posts documenting the MakerLab journey from 2012-2025",
+      "blog": "301 blog posts documenting the MakerLab journey from 2012-2026",
       "courses": [
         {
           "name": "Making Things",
@@ -102,7 +102,7 @@
       ]
     },
     "/api/blog/posts.json": {
-      "description": "Index of all 300 blog posts with metadata, excerpts, and tags",
+      "description": "Index of all 301 blog posts with metadata, excerpts, and tags",
       "use_cases": [
         "Searching blog posts by keyword",
         "Finding posts by year or date",
@@ -123,7 +123,7 @@
       ]
     },
     "/sitemap.xml": {
-      "description": "Complete XML sitemap with 318 URLs including all pages, blog posts, and API endpoints",
+      "description": "Complete XML sitemap with 319 URLs including all pages, blog posts, and API endpoints",
       "use_cases": [
         "Discovering all available content",
         "Understanding URL structure",

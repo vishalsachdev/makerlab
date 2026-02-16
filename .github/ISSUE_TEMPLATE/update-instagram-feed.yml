@@ -1,0 +1,39 @@
+name: Update Instagram Feed
+description: Update the 3 Instagram posts shown on the homepage
+title: "Update Instagram feed"
+labels: ["instagram-update"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Paste 3 Instagram post URLs below. These will replace the current posts on the homepage.
+
+        **How to get the URL:** Open the post on instagram.com, copy the URL from your browser's address bar (e.g., `https://www.instagram.com/p/ABC123/`).
+
+  - type: input
+    id: post-1
+    attributes:
+      label: Post 1 (left)
+      description: Instagram URL for the first (left) post
+      placeholder: "https://www.instagram.com/p/..."
+    validations:
+      required: true
+
+  - type: input
+    id: post-2
+    attributes:
+      label: Post 2 (center)
+      description: Instagram URL for the second (center) post
+      placeholder: "https://www.instagram.com/p/..."
+    validations:
+      required: true
+
+  - type: input
+    id: post-3
+    attributes:
+      label: Post 3 (right)
+      description: Instagram URL for the third (right) post
+      placeholder: "https://www.instagram.com/p/..."
+    validations:
+      required: true

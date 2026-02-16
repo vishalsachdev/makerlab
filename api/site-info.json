@@ -34,9 +34,9 @@
   },
   "statistics": {
     "totalPages": 32,
-    "totalBlogPosts": 300,
+    "totalBlogPosts": 301,
     "courses": 1,
-    "blogYearRange": "2012-2025",
+    "blogYearRange": "2012-2026",
     "printers": "Multiple 3D printers available",
     "studentsTrained": "Thousands since 2012"
   },
@@ -98,7 +98,7 @@
     {
       "title": "Blog",
       "url": "/blog/index.html",
-      "description": "300 blog posts from 2012-2025"
+      "description": "301 blog posts from 2012-2026"
     },
     {
       "title": "Resources",
@@ -183,7 +183,7 @@
   "achievements": [
     "World's first business school 3D printing lab",
     "Thousands of students trained since 2012",
-    "300 blog posts documenting the maker journey",
+    "301 blog posts documenting the maker journey",
     "Partnership with Makers for COVID-19 for PPE production",
     "Multiple award-winning student projects",
     "Active community engagement and outreach"

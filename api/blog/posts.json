@@ -1,7 +1,23 @@
 {
-  "total": 300,
-  "lastUpdated": "2026-02-08",
+  "total": 301,
+  "lastUpdated": "2026-02-16",
   "posts": [
+    {
+      "title": "Summer 2026 Camps — Registration Now Open!",
+      "slug": "summer-2026-camps-registration-open",
+      "url": "/blog/summer-2026-camps-registration-open.html",
+      "excerpt": "We're thrilled to announce that registration is officially open for Illinois MakerLab Summer 2026 Camps ! This summer we're offering five week-long programs for young makers ages 10-17, running from...",
+      "description": "We're thrilled to announce that registration is officially open for Illinois MakerLab Summer 2026 Camps ! This summer we're offering five week-long programs for young makers ages 10-17, running from...",
+      "pubDate": "2026-02-17",
+      "year": 2026,
+      "tags": [
+        "3D Printing",
+        "Design",
+        "Education",
+        "Summer Camp"
+      ],
+      "author": "Illinois MakerLab"
+    },
     {
       "title": "Senior Design Projects Come to Life at the MakerLab",
       "slug": "ece445-senior-design-enclosure",
@@ -178,9 +194,7 @@
       "description": "Earlier this Spring, the Illinois MakerLab nominated the Functionalhand by Thera-Solutions as the “Coolest Thing in Illinois” Makers Madness held by the Illinois Manufacturers’ Association....",
       "pubDate": "2020-08-09",
       "year": 2020,
-      "tags": [
-        "Community"
-      ],
+      "tags": [],
       "author": "Illinois MakerLab"
     },
     {
@@ -626,9 +640,7 @@
       "description": "Untitled Published on Wed, 16 May 2018 by Illinois MakerLab Content coming soon. ← Back to Blog",
       "pubDate": "2018-05-16",
       "year": 2018,
-      "tags": [
-        "3D Printing"
-      ],
+      "tags": [],
       "author": "Illinois MakerLab"
     },
     {

@@ -31,7 +31,7 @@ Illinois MakerLab is the world's first business school 3D printing lab, located 
 - Summer Camps: /summer.html
 - Lab Hours: /lab-hours.html (hours vary by semester)
 - Contact: /contact.html
-- Blog: /blog/index.html (300 posts since 2012)
+- Blog: /blog/index.html (301 posts since 2012)
 - FAQ: /faq.html
 - Online Ordering: /online-ordering.html
 
@@ -77,7 +77,7 @@ A: 1-to-1 tutoring for 3D modeling: $25/30min. Design services: $20-50/hr depend
 1. Always cite sources and provide URLs for verification
 2. Note that hours and pricing may vary by semester
 3. Direct users to contact uimakerlab@illinois.edu for specific questions
-4. Blog posts span 2012-2025 with 300 articles of rich historical content
+4. Blog posts span 2012-2026 with 301 articles of rich historical content
 5. For current information, reference the dedicated page rather than cached data
 
 ## Technical Details

@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Static HTML/CSS/JS website for the Illinois MakerLab (makerlab.illinois.edu) - the world's first business school 3D printing lab at UIUC. Migrated from Squarespace in November 2025. Contains 32 active pages and 300 blog posts.
+Static HTML/CSS/JS website for the Illinois MakerLab (makerlab.illinois.edu) - the world's first business school 3D printing lab at UIUC. Migrated from Squarespace in November 2025. Contains 32 active pages and 301 blog posts.
 
 ## Development Commands
 
@@ -56,9 +56,9 @@ Automatically deploys to GitHub Pages on push to `main` via `.github/workflows/s
 ```
 makerlab/
 ├── *.html              # 32 active pages (about-us, courses, contact, etc.)
-├── blog/               # 300 blog posts as individual HTML files
+├── blog/               # 301 blog posts as individual HTML files
 ├── courses/            # Course-specific pages (making-things active)
-├── summer/             # Summer 2026 camp pages (3 camps, pricing on main page)
+├── summer/             # Summer 2026 camp pages (5 camps, pricing on main page)
 ├── css/style.css       # Single stylesheet with Illinois branding
 ├── js/main.js          # Vanilla JS (mobile menu, blog search/pagination, keyboard nav, ARIA)
 ├── images/             # All images organized by category
@@ -92,15 +92,17 @@ makerlab/
 
 Dropdown navigation with two menus:
 - **About** → About Us, Lab Staff, Partners, FAQ
-- **What We Offer** → Services & Pricing, Summer Camps, Birthday Parties, Workshops, Courses, Resources
+- **Services** → Services & Pricing, Summer Camps, Birthday Parties, Workshops, Courses, Resources
 
-Top-level links: Home, About▾, What We Offer▾, Order Online, Blog, Lab Hours, Contact
+Top-level links: About▾, Services▾, Order, Summer Camps, Lab Hours, Contact
 
 To update navigation site-wide, edit the templates in `scripts/update_nav.py` (NAV_ROOT, NAV_SUBDIR, NAV_ARCHIVE for different path depths) and run:
 ```bash
 python3 scripts/update_nav.py
 ```
 Nav templates include ARIA attributes for accessibility. When editing, preserve `aria-haspopup`, `aria-expanded`, `role="menu"`, and `role="menuitem"` attributes.
+
+Footer has four sections: Illinois MakerLab (address), Services & Pricing (quick links including Summer Camps), Resources, Connect (social + contact). Footer links also updated by `update_nav.py`.
 
 ## Branding
 
@@ -122,9 +124,9 @@ The site is optimized for AI agents (ChatGPT, Claude, Perplexity, etc.):
 | `/agent-guide.json` | Detailed usage instructions, common queries, response guidelines |
 | `/api/site-info.json` | Contact, hours, services, leadership |
 | `/api/pages.json` | 32 active pages with unique descriptions + archived pages list |
-| `/api/blog/posts.json` | Searchable blog index (300 posts, 2012-2025) |
+| `/api/blog/posts.json` | Searchable blog index (301 posts, 2012-2026) |
 | `/api/openapi.yaml` | OpenAPI 3.0 spec for all JSON endpoints |
-| `/sitemap.xml` | Complete URL inventory (317 URLs) |
+| `/sitemap.xml` | Complete URL inventory (319 URLs) |
 | `/robots.txt` | Explicitly allows all LLM crawlers (GPTBot, Claude-Web, PerplexityBot, etc.) |
 
 Schema.org JSON-LD structured data on key pages:
@@ -163,6 +165,8 @@ Pricing: $250 regular, $225 early bird (until March 15). Schedule: 3 hrs/day, 5 
 
 Registration: https://appserv7.admin.uillinois.edu/FormBuilderSurvey/Survey/gies_college_of_business/gies_fab_lab/summer_2026/
 
+Add-ons: Lunch hour supervision (12:00–1:00 PM) $10/day, late pickup at 5:00 PM $10/day. Computers provided (MakerLab iMacs). Minecraft accounts provided for Minecraft camp.
+
 Refund Policy: All camps have a $20 non-refundable deposit. Up to 21 days before camp: full refund minus deposit. 20-8 days before: half refund minus deposit. 7 days or less: no refund. Campers may switch sessions at no cost if seats available.
 
 ## Courses
@@ -180,6 +184,15 @@ The site follows WCAG 2.1 AA practices:
 - All blog images have `alt` text (either original or generated from post title)
 - All iframes have `title` attributes
 - Proper heading hierarchy (h1 → h2, no gaps) on all pages
+
+## GitHub Issue Templates
+
+| Template | Purpose |
+|----------|---------|
+| `website-fix.yml` | General website bug reports and fixes |
+| `update-instagram-feed.yml` | Update Instagram embed on homepage |
+| `update-staff-profile.yml` | Add or update staff member profiles |
+| `new-blog-post.yml` | Employee-submitted blog posts (title, content, images, publish date) |
 
 ## Known Issues (WEBMASTER-TODO.md)
 

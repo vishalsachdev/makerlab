@@ -10,7 +10,6 @@ from pathlib import Path
 # Navigation templates
 NAV_ROOT = '''        <nav class="main-nav">
           <ul>
-            <li><a href="index.html">Home</a></li>
             <li class="nav-dropdown">
               <a href="about-us.html" aria-haspopup="true" aria-expanded="false">About</a>
               <ul class="dropdown-menu" role="menu">
@@ -21,7 +20,7 @@ NAV_ROOT = '''        <nav class="main-nav">
               </ul>
             </li>
             <li class="nav-dropdown">
-              <a href="pricingservices.html" aria-haspopup="true" aria-expanded="false">What We Offer</a>
+              <a href="pricingservices.html" aria-haspopup="true" aria-expanded="false">Services</a>
               <ul class="dropdown-menu" role="menu">
                 <li><a href="pricingservices.html" role="menuitem">Services &amp; Pricing</a></li>
                 <li><a href="summer.html" role="menuitem">Summer Camps</a></li>
@@ -31,7 +30,7 @@ NAV_ROOT = '''        <nav class="main-nav">
                 <li><a href="resources.html" role="menuitem">Resources</a></li>
               </ul>
             </li>
-            <li><a href="online-ordering.html">Order Online</a></li>
+            <li><a href="online-ordering.html">Order</a></li>
             <li><a href="summer.html">Summer Camps</a></li>
             <li><a href="lab-hours.html">Lab Hours</a></li>
             <li><a href="contact.html">Contact</a></li>
@@ -40,7 +39,6 @@ NAV_ROOT = '''        <nav class="main-nav">
 
 NAV_SUBDIR = '''        <nav class="main-nav">
           <ul>
-            <li><a href="../index.html">Home</a></li>
             <li class="nav-dropdown">
               <a href="../about-us.html" aria-haspopup="true" aria-expanded="false">About</a>
               <ul class="dropdown-menu" role="menu">
@@ -51,7 +49,7 @@ NAV_SUBDIR = '''        <nav class="main-nav">
               </ul>
             </li>
             <li class="nav-dropdown">
-              <a href="../pricingservices.html" aria-haspopup="true" aria-expanded="false">What We Offer</a>
+              <a href="../pricingservices.html" aria-haspopup="true" aria-expanded="false">Services</a>
               <ul class="dropdown-menu" role="menu">
                 <li><a href="../pricingservices.html" role="menuitem">Services &amp; Pricing</a></li>
                 <li><a href="../summer.html" role="menuitem">Summer Camps</a></li>
@@ -61,7 +59,7 @@ NAV_SUBDIR = '''        <nav class="main-nav">
                 <li><a href="../resources.html" role="menuitem">Resources</a></li>
               </ul>
             </li>
-            <li><a href="../online-ordering.html">Order Online</a></li>
+            <li><a href="../online-ordering.html">Order</a></li>
             <li><a href="../summer.html">Summer Camps</a></li>
             <li><a href="../lab-hours.html">Lab Hours</a></li>
             <li><a href="../contact.html">Contact</a></li>
@@ -70,7 +68,6 @@ NAV_SUBDIR = '''        <nav class="main-nav">
 
 NAV_ARCHIVE = '''        <nav class="main-nav">
           <ul>
-            <li><a href="../../index.html">Home</a></li>
             <li class="nav-dropdown">
               <a href="../../about-us.html" aria-haspopup="true" aria-expanded="false">About</a>
               <ul class="dropdown-menu" role="menu">
@@ -81,7 +78,7 @@ NAV_ARCHIVE = '''        <nav class="main-nav">
               </ul>
             </li>
             <li class="nav-dropdown">
-              <a href="../../pricingservices.html" aria-haspopup="true" aria-expanded="false">What We Offer</a>
+              <a href="../../pricingservices.html" aria-haspopup="true" aria-expanded="false">Services</a>
               <ul class="dropdown-menu" role="menu">
                 <li><a href="../../pricingservices.html" role="menuitem">Services &amp; Pricing</a></li>
                 <li><a href="../../summer.html" role="menuitem">Summer Camps</a></li>
@@ -91,7 +88,7 @@ NAV_ARCHIVE = '''        <nav class="main-nav">
                 <li><a href="../../resources.html" role="menuitem">Resources</a></li>
               </ul>
             </li>
-            <li><a href="../../online-ordering.html">Order Online</a></li>
+            <li><a href="../../online-ordering.html">Order</a></li>
             <li><a href="../../summer.html">Summer Camps</a></li>
             <li><a href="../../lab-hours.html">Lab Hours</a></li>
             <li><a href="../../contact.html">Contact</a></li>

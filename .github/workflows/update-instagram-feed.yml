@@ -1,0 +1,132 @@
+name: Update Instagram Feed
+
+on:
+  issues:
+    types: [opened, labeled]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  update-feed:
+    if: contains(github.event.issue.labels.*.name, 'instagram-update')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Parse URLs and update index.html
+        id: update
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const body = context.payload.issue.body;
+
+            // Issue form fields render as "### Label\n\nvalue" blocks
+            const extractField = (label) => {
+              const regex = new RegExp(`### ${label}\\n\\n([^\\n]+)`);
+              const match = body.match(regex);
+              return match ? match[1].trim() : '';
+            };
+
+            const post1 = extractField('Post 1 \\(left\\)');
+            const post2 = extractField('Post 2 \\(center\\)');
+            const post3 = extractField('Post 3 \\(right\\)');
+
+            // Check for empty values
+            if (!post1 || !post2 || !post3) {
+              core.setFailed('One or more post URLs are empty');
+              return;
+            }
+
+            // Validate URLs — anchored at both ends
+            const igRegex = /^https:\/\/(www\.)?instagram\.com\/(p|reel)\/[\w-]+\/?$/;
+            const urls = [post1, post2, post3];
+            const invalid = urls.filter(u => !igRegex.test(u));
+
+            if (invalid.length > 0) {
+              core.setFailed(`Invalid Instagram URL(s): ${invalid.join(', ')}`);
+              return;
+            }
+
+            // HTML-escape URLs for safe attribute insertion
+            const escapeHtml = (s) => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+            // Generate embed HTML
+            const embed = (url) => {
+              const u = url.endsWith('/') ? url : url + '/';
+              const safe = escapeHtml(u);
+              return `          <blockquote class="instagram-media" data-instgrm-permalink="${safe}" data-instgrm-version="14">\n            <a href="${safe}" target="_blank" rel="noopener noreferrer">View this post on Instagram</a>\n          </blockquote>`;
+            };
+
+            const replacement = [
+              '          <!-- INSTAGRAM-FEED-START -->',
+              embed(post1),
+              embed(post2),
+              embed(post3),
+              '          <!-- INSTAGRAM-FEED-END -->'
+            ].join('\n');
+
+            // Update index.html
+            let html = fs.readFileSync('index.html', 'utf8');
+            const marker = /<!-- INSTAGRAM-FEED-START -->[\s\S]*?<!-- INSTAGRAM-FEED-END -->/;
+
+            if (!marker.test(html)) {
+              core.setFailed('Could not find INSTAGRAM-FEED markers in index.html');
+              return;
+            }
+
+            html = html.replace(marker, replacement);
+            fs.writeFileSync('index.html', html);
+            core.info('Updated index.html with new Instagram embeds');
+
+            core.setOutput('post1', post1);
+            core.setOutput('post2', post2);
+            core.setOutput('post3', post3);
+
+      - name: Create pull request
+        uses: actions/github-script@v7
+        env:
+          POST1: ${{ steps.update.outputs.post1 }}
+          POST2: ${{ steps.update.outputs.post2 }}
+          POST3: ${{ steps.update.outputs.post3 }}
+        with:
+          script: |
+            const { execSync } = require('child_process');
+            const issue = context.payload.issue.number;
+            const branch = `instagram-update-${issue}`;
+
+            const post1 = process.env.POST1;
+            const post2 = process.env.POST2;
+            const post3 = process.env.POST3;
+
+            try {
+              execSync('git config user.name "github-actions[bot]"');
+              execSync('git config user.email "github-actions[bot]@users.noreply.github.com"');
+              execSync(`git checkout -b ${branch}`);
+              execSync('git add index.html');
+              execSync(`git commit -m "Update Instagram feed embeds\n\nCloses #${issue}"`);
+              execSync(`git push origin ${branch}`);
+            } catch (err) {
+              core.setFailed(`Git operations failed: ${err.message}`);
+              return;
+            }
+
+            const pr = await github.rest.pulls.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `Update Instagram feed (from #${issue})`,
+              body: `Updates the 3 Instagram embeds on the homepage.\n\nPosts:\n- ${post1}\n- ${post2}\n- ${post3}\n\nCloses #${issue}`,
+              head: branch,
+              base: 'main'
+            });
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issue,
+              body: `PR created: ${pr.data.html_url}\n\nThe Instagram feed will be updated once the PR is reviewed and merged.`
+            });

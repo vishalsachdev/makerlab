@@ -32,7 +32,7 @@ NAV_ROOT = '''        <nav class="main-nav">
               </ul>
             </li>
             <li><a href="online-ordering.html">Order Online</a></li>
-            <li><a href="blog/index.html">Blog</a></li>
+            <li><a href="summer.html">Summer Camps</a></li>
             <li><a href="lab-hours.html">Lab Hours</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
@@ -62,7 +62,7 @@ NAV_SUBDIR = '''        <nav class="main-nav">
               </ul>
             </li>
             <li><a href="../online-ordering.html">Order Online</a></li>
-            <li><a href="../blog/index.html">Blog</a></li>
+            <li><a href="../summer.html">Summer Camps</a></li>
             <li><a href="../lab-hours.html">Lab Hours</a></li>
             <li><a href="../contact.html">Contact</a></li>
           </ul>
@@ -92,7 +92,7 @@ NAV_ARCHIVE = '''        <nav class="main-nav">
               </ul>
             </li>
             <li><a href="../../online-ordering.html">Order Online</a></li>
-            <li><a href="../../blog/index.html">Blog</a></li>
+            <li><a href="../../summer.html">Summer Camps</a></li>
             <li><a href="../../lab-hours.html">Lab Hours</a></li>
             <li><a href="../../contact.html">Contact</a></li>
           </ul>

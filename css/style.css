@@ -977,10 +977,16 @@ img {
 
 .instagram-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-md);
   max-width: 1200px;
   margin: var(--spacing-lg) auto 0;
+}
+
+.instagram-grid .instagram-media {
+  min-width: 0 !important;
+  max-width: 100% !important;
+  margin: 0 !important;
 }
 
 .instagram-item {
@@ -2036,10 +2042,16 @@ img {
 
 .instagram-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-md);
   max-width: 1200px;
   margin: var(--spacing-lg) auto 0;
+}
+
+.instagram-grid .instagram-media {
+  min-width: 0 !important;
+  max-width: 100% !important;
+  margin: 0 !important;
 }
 
 /* ========== Responsive - CTA & News Sections ========== */

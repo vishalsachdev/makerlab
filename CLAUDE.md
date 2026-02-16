@@ -33,6 +33,9 @@ python3 scripts/fix_missing_alt.py
 # Fix accessibility: add title attributes to iframes
 python3 scripts/fix_iframe_titles.py
 
+# Validate AI agent files match actual site content (runs in CI on every push)
+python3 scripts/validate_agent_data.py
+
 # Add Schema.org BlogPosting + BreadcrumbList to blog posts
 python3 scripts/add_blog_schema.py
 
@@ -129,7 +132,7 @@ Schema.org JSON-LD structured data on key pages:
 - `faq.html`: FAQPage for rich results
 - `lab-hours.html`: LocalBusiness + OpeningHoursSpecification
 - `pricingservices.html`: Service @graph (3D Printing, Design, Tutoring) with Offer pricing
-- `summer.html`: EducationEvent @graph (3 camps) with Offer pricing
+- `summer.html`: EducationEvent @graph (5 camps) with Offer pricing
 - `contact.html`: LocalBusiness + ContactPoint
 - `courses/making-things.html`: Course + CourseInstance
 - All pages: BreadcrumbList

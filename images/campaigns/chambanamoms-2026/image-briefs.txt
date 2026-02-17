@@ -1,0 +1,111 @@
+IMAGE CREATION BRIEFS — ChambanaMoms Gold Package
+===================================================
+
+We need 4 images total. These can be photographed in the lab or
+designed as graphics using existing photos + branding.
+
+
+IMAGE 1: Social Post — "Meet Our 5 STEM Camps"
+------------------------------------------------
+Format: 1080x1080px (Instagram square) AND 1200x630px (Facebook)
+Style: Bright, energetic collage or grid layout
+
+Content:
+- Header text: "5 STEM CAMPS THIS SUMMER" in bold
+- Illinois MakerLab logo
+- 5 sections/panels showing each camp visually:
+  * Minecraft camp: screenshot of Minecraft build + 3D printed version
+  * 3D Modeling: kid at computer with Fusion 360 or finished 3D print
+  * GenAI: AI-generated design on screen + 3D printed result
+  * Robot Arm: SO-ARM100 robot arm (assembled, on desk)
+  * Reachy Mini: Reachy Mini Lite robot
+- Footer text: "Ages 10+ | June 1 – July 31 | makerlab.illinois.edu"
+- Colors: Illinois Orange (#FF5F05), Illinois Blue (#13294B), white
+
+Photography needed:
+  ☐ Wide shot of campers at 3D printers (from past camps or new)
+  ☐ Close-up of SO-ARM100 robot arm on desk
+  ☐ Close-up of Reachy Mini Lite robot
+  ☐ Screen showing Minecraft build or Fusion 360 design
+  ☐ Table of finished 3D printed projects
+
+Alternative approach: Use a Canva template with existing camp photos
+from images/summer/ and add the two new robot product shots.
+
+
+IMAGE 2: Social Post — "NEW Camps Spotlight"
+---------------------------------------------
+Format: 1080x1080px (Instagram square) AND 1200x630px (Facebook)
+Style: Bold, attention-grabbing, "NEW" emphasis
+
+Content:
+- Header text: "NEW THIS SUMMER" in large bold type
+- Two panels side by side:
+  LEFT: "Build Your Own Robot Arm"
+    - Photo of SO-ARM100 robot arm
+    - "Ages 12+ | Only 5 spots"
+  RIGHT: "AI Robotics with Reachy Mini"
+    - Photo of Reachy Mini Lite
+    - "Ages 12+ | Only 5 spots"
+- Footer: MakerLab logo + "makerlab.illinois.edu"
+- Colors: Illinois Orange (#FF5F05), Illinois Blue (#13294B)
+
+Photography needed:
+  ☐ SO-ARM100 robot arm — hero shot, clean background
+  ☐ Reachy Mini Lite — hero shot, clean background
+  ☐ Optional: kid interacting with either robot
+
+Design note: The scarcity angle ("Only 5 spots") is the key selling
+point. Make it prominent.
+
+
+IMAGE 3: Camp Round-Up Thumbnail
+---------------------------------
+Format: 1200x630px (landscape, Facebook-friendly)
+Style: Warm, authentic, action-oriented
+
+Content:
+- Single best action photo of kids in the MakerLab
+- Ideal: kids watching a 3D printer with finished prints on the table
+- Small MakerLab logo watermark in corner
+- Optional text overlay: "Illinois MakerLab Summer Camps"
+
+Photography needed:
+  ☐ Best existing camp action shot from images/summer/ or new photo
+  ☐ Should show KIDS (with photo release) engaged and happy
+
+
+IMAGE 4: Facebook Album Photo
+-------------------------------
+Format: Landscape, minimum 1200px wide, high resolution
+Style: Authentic, not staged — real camp vibes
+
+Content:
+- Action shot of campers working on projects
+- Should show: kids, 3D printers, finished prints, the lab space
+- MakerLab logo watermark in bottom corner
+- NO text overlay (this goes in a photo album, not a promo post)
+
+Photography needed:
+  ☐ Wide-angle shot of BIF 3030 with campers working
+  ☐ Must have photo releases for any kids shown
+  ☐ Ideally shows diversity and engagement
+
+
+LOGO FILES NEEDED
+------------------
+  ☐ MakerLab logo — PNG, transparent background, min 1000px wide
+  ☐ MakerLab logo — PDF vector for print materials (event sponsorship)
+
+
+PHOTOGRAPHY CHECKLIST (in priority order)
+------------------------------------------
+  ☐ SO-ARM100 robot arm — clean hero shot (for Image 2)
+  ☐ Reachy Mini Lite robot — clean hero shot (for Image 2)
+  ☐ Kids at 3D printers — action shot (for Images 1, 3, 4)
+  ☐ Finished 3D printed projects on table (for Images 1, 3)
+  ☐ Lab wide shot with people working (for Image 4)
+  ☐ Minecraft build on screen + printed version (for Image 1)
+
+TIP: Photos of the two NEW robots are the most critical — we likely
+already have usable Minecraft/3D printing photos from past camps.

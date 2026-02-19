@@ -65,6 +65,7 @@ makerlab/
 │   ├── blog/           # Blog post images
 │   ├── staff/          # Staff photos
 │   ├── birthday-parties/
+│   ├── campaigns/      # Marketing campaign assets (e.g., chambanamoms-2026/)
 │   └── partners/
 ├── api/                # LLM-agent friendly JSON APIs
 │   ├── site-info.json  # Site metadata, contact, services

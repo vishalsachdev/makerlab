@@ -84,14 +84,12 @@ def get_field_value(item, external_id):
 
 
 def has_reply(comments):
-    """Check if there's a real reply (not just GlobiMail activation)."""
+    """Check if there's a real reply or an existing auto-action."""
     for comment in comments:
         value = comment.get("value", "").strip()
-        if "GlobiMail Activated" in value:
-            continue
-        if "[AUTO-DRAFT]" in value:
-            continue
         if not value:
+            continue
+        if "GlobiMail Activated" in value:
             continue
         return True
     return False
@@ -225,25 +223,19 @@ Classify this email and draft a reply if ANSWERABLE. Respond in JSON format."""
 
 def log_to_podio(client, item_id, classification, reply_html, mode):
     """Log the auto-reply action as a Podio comment."""
-    if mode == "send":
+    if classification == "NEEDS_HUMAN":
+        comment = "[AUTO-FLAG] This email needs a human reply."
+    elif mode == "send":
         comment = f"[AUTO-SENT] Reply sent automatically.\n\n{reply_html}"
-        # Update status to resolved
-        try:
-            client.post(f"/comment/item/{item_id}/", {"value": comment})
-        except Exception as e:
-            print(f"  Warning: failed to add comment: {e}")
     elif mode == "draft":
         comment = f"[AUTO-DRAFT] Suggested reply (needs approval):\n\n{reply_html}"
-        try:
-            client.post(f"/comment/item/{item_id}/", {"value": comment})
-        except Exception as e:
-            print(f"  Warning: failed to add comment: {e}")
-    elif classification == "NEEDS_HUMAN":
-        comment = "[AUTO-FLAG] This email needs a human reply."
-        try:
-            client.post(f"/comment/item/{item_id}/", {"value": comment})
-        except Exception as e:
-            print(f"  Warning: failed to add comment: {e}")
+    else:
+        return
+
+    try:
+        client.post(f"/comment/item/{item_id}/", {"value": comment})
+    except Exception as e:
+        print(f"  Warning: failed to add comment: {e}")
 
 
 def main():

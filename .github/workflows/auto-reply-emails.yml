@@ -1,0 +1,63 @@
+name: Auto-reply to MakerLab emails
+
+on:
+  schedule:
+    # Run every 6 hours
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Run mode'
+        required: true
+        default: 'draft'
+        type: choice
+        options:
+          - draft
+          - send
+          - dry-run
+
+jobs:
+  auto-reply:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r scripts/podio/requirements.txt
+
+      - name: Run auto-reply (scheduled — draft mode)
+        if: github.event_name == 'schedule'
+        working-directory: scripts/podio
+        env:
+          PODIO_CLIENT_ID: ${{ secrets.PODIO_CLIENT_ID }}
+          PODIO_CLIENT_SECRET: ${{ secrets.PODIO_CLIENT_SECRET }}
+          PODIO_USERNAME: ${{ secrets.PODIO_USERNAME }}
+          PODIO_PASSWORD: ${{ secrets.PODIO_PASSWORD }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+        run: python auto_reply_emails.py
+
+      - name: Run auto-reply (manual trigger)
+        if: github.event_name == 'workflow_dispatch'
+        working-directory: scripts/podio
+        env:
+          PODIO_CLIENT_ID: ${{ secrets.PODIO_CLIENT_ID }}
+          PODIO_CLIENT_SECRET: ${{ secrets.PODIO_CLIENT_SECRET }}
+          PODIO_USERNAME: ${{ secrets.PODIO_USERNAME }}
+          PODIO_PASSWORD: ${{ secrets.PODIO_PASSWORD }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+        run: |
+          if [ "${{ inputs.mode }}" = "send" ]; then
+            python auto_reply_emails.py --send
+          elif [ "${{ inputs.mode }}" = "dry-run" ]; then
+            python auto_reply_emails.py --dry-run
+          else
+            python auto_reply_emails.py
+          fi

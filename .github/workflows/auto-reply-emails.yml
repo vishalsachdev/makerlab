@@ -15,6 +15,11 @@ on:
           - draft
           - send
           - dry-run
+      lookback:
+        description: 'Days to look back for unreplied emails'
+        required: false
+        default: '7'
+        type: string
 
 jobs:
   auto-reply:
@@ -54,10 +59,11 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
         run: |
+          LOOKBACK="${{ inputs.lookback || '7' }}"
           if [ "${{ inputs.mode }}" = "send" ]; then
-            python auto_reply_emails.py --send
+            python auto_reply_emails.py --send --lookback "$LOOKBACK"
           elif [ "${{ inputs.mode }}" = "dry-run" ]; then
-            python auto_reply_emails.py --dry-run
+            python auto_reply_emails.py --dry-run --lookback "$LOOKBACK"
           else
-            python auto_reply_emails.py
+            python auto_reply_emails.py --lookback "$LOOKBACK"
           fi

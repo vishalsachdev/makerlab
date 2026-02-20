@@ -206,3 +206,23 @@ The site follows WCAG 2.1 AA practices:
 - **Executive Director**: Dr. Aric Rindfleisch
 - **Email**: uimakerlab@illinois.edu
 - **Location**: BIF Room 3030, UIUC
+
+## Current Focus
+
+Summer 2026 camp promotion and Podio migration planning.
+
+## Roadmap
+
+- [x] Squarespace migration (Nov 2025)
+- [x] SEO: Schema.org JSON-LD on key pages, breadcrumbs, BlogPosting on all posts
+- [x] Accessibility: skip links, ARIA nav, keyboard nav, heading hierarchy, alt text, iframe titles
+- [x] LLM agent support: llms.txt, agent-guide.json, OpenAPI spec, posts.json with real dates/tags
+- [x] ChambanaMoms campaign text deliverables
+- [ ] ChambanaMoms campaign images (2 social posts, round-up thumbnail, Facebook album photo)
+- [ ] Podio migration: drop GlobiMail, evaluate full migration to Microsoft stack
+- [ ] Monthly blog generation workflow from Podio orders
+- [ ] Commit Podio audit/automation scripts (12 untracked files)
+
+## Session Log
+
+- **2026-02-20**: Session start. Added roadmap sections to CLAUDE.md.

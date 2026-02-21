@@ -209,7 +209,7 @@ The site follows WCAG 2.1 AA practices:
 
 ## Current Focus
 
-Summer 2026 camp promotion and Podio migration planning.
+Email auto-reply automation (monitoring draft runs, then enabling send mode).
 
 ## Roadmap
 
@@ -221,8 +221,12 @@ Summer 2026 camp promotion and Podio migration planning.
 - [ ] ChambanaMoms campaign images (2 social posts, round-up thumbnail, Facebook album photo)
 - [ ] Podio migration: drop GlobiMail, evaluate full migration to Microsoft stack
 - [ ] Monthly blog generation workflow from Podio orders
-- [ ] Commit Podio audit/automation scripts (12 untracked files)
+- [x] Commit Podio audit/automation scripts
+- [x] Email auto-reply GitHub Action (Podio → OpenAI → SendGrid pipeline)
+- [ ] Monitor draft runs, then enable send mode for auto-replies
+- [ ] Build approve-then-send flow (optional enhancement)
 
 ## Session Log
 
 - **2026-02-20**: Session start. Added roadmap sections to CLAUDE.md.
+- **2026-02-21**: Built and deployed email auto-reply automation. GitHub Action (every 6h, draft mode) with manual dispatch (send/dry-run + configurable lookback). Committed 13 files: workflow, auto_reply_emails.py, smtp_sender.py, website_context.py, Podio audit scripts. Set 6 GitHub secrets. Codex review caught 2 bugs (NEEDS_HUMAN mis-tagging, duplicate drafts) — fixed and pushed. Tested dry-run with 30-day lookback: 1 email classified correctly as NEEDS_HUMAN.

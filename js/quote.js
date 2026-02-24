@@ -481,8 +481,22 @@
 
     totalEl.textContent = '$' + totalCost.toFixed(2);
 
-    // Update infill display
+    // Update infill display + position the label over the thumb
     infillValue.textContent = infill + '%';
+    positionInfillLabel();
+  }
+
+  function positionInfillLabel() {
+    var track = document.querySelector('.quote-slider-track');
+    if (!track || !infillSlider) return;
+    var min = parseFloat(infillSlider.min);
+    var max = parseFloat(infillSlider.max);
+    var val = parseFloat(infillSlider.value);
+    var pct = (val - min) / (max - min);
+    // Offset by half the thumb width (~11px) to stay centred on the thumb
+    var trackWidth = track.offsetWidth;
+    var offset = 11 + (trackWidth - 22) * pct; // 22 = thumb diameter
+    infillValue.style.left = offset + 'px';
   }
 
   // ── File handling ─────────────────────────────────────────────────────
@@ -538,11 +552,11 @@
     volEl.textContent = (parsed.volume / 1000).toFixed(1) + ' cm\u00B3';
     triEl.textContent = parsed.triangleCount.toLocaleString();
 
-    displayModel(parsed);
-
-    // Show the interface
+    // Show the interface *before* rendering so the canvas gets a real size
     dropzone.hidden = true;
     iface.hidden = false;
+
+    displayModel(parsed);
 
     updatePrice();
   }
@@ -611,6 +625,9 @@
   });
 
   // Responsive resize
-  window.addEventListener('resize', resizeViewer);
+  window.addEventListener('resize', function () {
+    resizeViewer();
+    positionInfillLabel();
+  });
 
 })();

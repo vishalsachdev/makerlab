@@ -3095,8 +3095,24 @@ img {
   margin-top: 0.25rem;
 }
 
+.quote-order-note {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  margin-top: var(--spacing-xs);
+  font-style: italic;
+}
+
 /* Slider */
 .quote-slider-container {
+  width: 100%;
+}
+
+.quote-slider-track {
+  position: relative;
+  width: 100%;
+}
+
+.quote-slider-track input[type="range"] {
   width: 100%;
 }
 
@@ -3140,9 +3156,14 @@ img {
 }
 
 .quote-slider-current {
+  position: absolute;
+  bottom: -1.6rem;
+  transform: translateX(-50%);
   font-weight: 700;
   color: var(--illinois-orange);
   font-size: 1rem;
+  pointer-events: none;
+  white-space: nowrap;
 }
 
 .quote-slider-hint {

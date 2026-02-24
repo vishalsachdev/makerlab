@@ -166,19 +166,22 @@
                   <label class="quote-radio-card">
                     <input type="radio" name="orderType" value="online">
                     <span class="quote-radio-label">Online Order</span>
-                    <span class="quote-radio-desc">We print &amp; you pick up (+$4 base fee)</span>
+                    <span class="quote-radio-desc">We print &amp; you pick up (+20% surcharge)</span>
                   </label>
                 </div>
+                <p class="quote-order-note">All prints include a $4 base fee.</p>
               </fieldset>
 
               <!-- Infill -->
               <fieldset class="quote-fieldset">
                 <legend>Infill density</legend>
                 <div class="quote-slider-container">
-                  <input type="range" id="quote-infill" min="10" max="100" value="20" step="5" aria-label="Infill percentage">
+                  <div class="quote-slider-track">
+                    <input type="range" id="quote-infill" min="10" max="100" value="20" step="5" aria-label="Infill percentage">
+                    <span id="quote-infill-value" class="quote-slider-current">20%</span>
+                  </div>
                   <div class="quote-slider-labels">
                     <span>10%</span>
-                    <span id="quote-infill-value" class="quote-slider-current">20%</span>
                     <span>100%</span>
                   </div>
                   <p class="quote-slider-hint">MakerLab default is 20%. Higher infill = stronger but heavier.</p>

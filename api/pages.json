@@ -1,6 +1,6 @@
 {
-  "total": 32,
-  "lastUpdated": "2026-01-25",
+  "total": 33,
+  "lastUpdated": "2026-02-23",
   "pages": [
     {
       "title": "Home",
@@ -57,6 +57,14 @@
       "description": "Submit your 3D printing order online. Upload STL files, select materials, and pick up at MakerLab. Convenient ordering for UIUC community.",
       "category": "services",
       "lastModified": "2026-01-25"
+    },
+    {
+      "title": "Instant 3D Print Quote",
+      "slug": "quote",
+      "url": "/quote.html",
+      "description": "Upload an STL or OBJ file and get an instant 3D printing cost estimate. Interactive 3D preview with real-time pricing for students, faculty, and community.",
+      "category": "services",
+      "lastModified": "2026-02-23"
     },
     {
       "title": "Summer Camps",

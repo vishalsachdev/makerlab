@@ -10,7 +10,7 @@
  *
  * Pricing data (source: pricingservices.html / online-ordering.html):
  *   Walk-in: Student 10¢/g, Faculty 25¢/g, General 35¢/g
- *   Online:  Student 12¢/g, Faculty 30¢/g, General 42¢/g  (+$4 base fee)
+ *   Online:  Student 12¢/g, Faculty 30¢/g, General 42¢/g  (+20% surcharge)
  *   All prints: $4 base fee + material cost
  */
 
@@ -25,8 +25,7 @@
     walkin: { student: 0.10, faculty: 0.25, general: 0.35 },
     online: { student: 0.12, faculty: 0.30, general: 0.42 }
   };
-  var BASE_FEE_WALKIN = 4.00;
-  var BASE_FEE_ONLINE = 4.00;
+  var BASE_FEE = 4.00; // $4 base fee applies to all prints
   var PLA_DENSITY = 1.24; // g/cm³
 
   // ── DOM refs ──────────────────────────────────────────────────────────
@@ -55,7 +54,7 @@
   if (!dropzone) return; // not on quote page
 
   // ── State ─────────────────────────────────────────────────────────────
-  var modelVolumeCm3 = 0;   // outer-shell volume in cm³
+  var modelVolumeMm3 = 0;   // outer-shell volume in mm³ (parser outputs mm³)
   var modelTriangles = 0;
 
   // ── Three.js setup ────────────────────────────────────────────────────
@@ -108,6 +107,24 @@
     if (controls) controls.update();
     renderer.render(scene, camera);
   }
+
+  // Pause animation when tab is hidden; dispose GPU resources on page unload
+  document.addEventListener('visibilitychange', function () {
+    if (!renderer) return;
+    if (document.hidden) {
+      cancelAnimationFrame(animFrameId);
+    } else {
+      animate();
+    }
+  });
+
+  window.addEventListener('pagehide', function () {
+    cancelAnimationFrame(animFrameId);
+    if (renderer) {
+      renderer.dispose();
+      renderer.forceContextLoss();
+    }
+  });
 
   // ── Minimal orbit controls ────────────────────────────────────────────
   function createOrbitControls(cam, domEl) {
@@ -220,12 +237,18 @@
     var dv = new DataView(buffer);
     var numTriangles = dv.getUint32(80, true);
     var expectedSize = 84 + numTriangles * 50;
-    return Math.abs(buffer.byteLength - expectedSize) < 100;
+    // Tolerance of 256 bytes — some exporters (SolidWorks, Magics) pad/align
+    return Math.abs(buffer.byteLength - expectedSize) < 256;
   }
+
+  var MAX_TRIANGLES = 5000000; // ~240 MB — guard against malformed files
 
   function parseBinarySTL(buffer) {
     var dv = new DataView(buffer);
     var numTriangles = dv.getUint32(80, true);
+    if (numTriangles > MAX_TRIANGLES) {
+      throw new Error('File too large: ' + numTriangles.toLocaleString() + ' triangles (max ' + MAX_TRIANGLES.toLocaleString() + ')');
+    }
     var vertices = new Float32Array(numTriangles * 9);
     var offset = 84;
     var totalVolume = 0;
@@ -345,6 +368,9 @@
         var indices = fParts.map(function (f) { return parseInt(f.split('/')[0], 10) - 1; });
         for (var j = 1; j < indices.length - 1; j++) {
           var i0 = indices[0] * 3, i1 = indices[j] * 3, i2 = indices[j + 1] * 3;
+          // Skip faces with out-of-bounds vertex indices
+          if (i0 < 0 || i1 < 0 || i2 < 0 ||
+              i0 + 2 >= verts.length || i1 + 2 >= verts.length || i2 + 2 >= verts.length) continue;
           tris.push(
             verts[i0], verts[i0+1], verts[i0+2],
             verts[i1], verts[i1+1], verts[i1+2],
@@ -453,16 +479,16 @@
   }
 
   function updatePrice() {
-    if (modelVolumeCm3 <= 0) return;
+    if (modelVolumeMm3 <= 0) return;
 
     var userType    = getSelectedValue('userType');
     var orderType   = getSelectedValue('orderType');
     var infill      = parseInt(infillSlider.value, 10);
     var quantity    = Math.max(1, parseInt(qtyInput.value, 10) || 1);
 
-    var weight      = estimateWeight(modelVolumeCm3, infill);
+    var weight      = estimateWeight(modelVolumeMm3, infill);
     var rate        = PRICING[orderType][userType];
-    var baseFee     = (orderType === 'online') ? BASE_FEE_ONLINE : BASE_FEE_WALKIN;
+    var baseFee     = BASE_FEE;
     var unitCost    = baseFee + weight * rate;
     var totalCost   = unitCost * quantity;
 
@@ -540,7 +566,7 @@
   }
 
   function onModelParsed(parsed) {
-    modelVolumeCm3 = parsed.volume; // still in mm³ from parser — convert in estimateWeight
+    modelVolumeMm3 = parsed.volume;
     modelTriangles = parsed.triangleCount;
 
     var b = parsed.bounds;

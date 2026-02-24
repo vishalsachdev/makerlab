@@ -18,6 +18,9 @@
   'use strict';
 
   // ── Pricing table (cents per gram) ────────────────────────────────────
+  // Standard PLA rates. Dual-color or specialty filaments (PVA soluble
+  // supports, PETG, etc.) carry a 50% surcharge on these base prices.
+  // That surcharge is NOT calculated here — noted in the disclaimer instead.
   var PRICING = {
     walkin: { student: 0.10, faculty: 0.25, general: 0.35 },
     online: { student: 0.12, faculty: 0.30, general: 0.42 }

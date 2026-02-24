@@ -225,8 +225,10 @@ Email auto-reply automation (monitoring draft runs, then enabling send mode).
 - [x] Email auto-reply GitHub Action (Podio → OpenAI → SendGrid pipeline)
 - [ ] Monitor draft runs, then enable send mode for auto-replies
 - [ ] Build approve-then-send flow (optional enhancement)
+- [x] 3D Print Quote Calculator (STL/OBJ upload, Three.js preview, real-time pricing)
 
 ## Session Log
 
 - **2026-02-20**: Session start. Added roadmap sections to CLAUDE.md.
 - **2026-02-21**: Built and deployed email auto-reply automation. GitHub Action (every 6h, draft mode) with manual dispatch (send/dry-run + configurable lookback). Committed 13 files: workflow, auto_reply_emails.py, smtp_sender.py, website_context.py, Podio audit scripts. Set 6 GitHub secrets. Codex review caught 2 bugs (NEEDS_HUMAN mis-tagging, duplicate drafts) — fixed and pushed. Tested dry-run with 30-day lookback: 1 email classified correctly as NEEDS_HUMAN.
+- **2026-02-24**: Verified PR #32 merge (3D Print Quote Calculator). Applied 3 missing fixes: blank 3D preview (unhide before render), slider label tracking (absolute-positioned + JS repositioning), $4 base fee display (shared note, online desc → 20% surcharge). Ran full code audit — fixed all P1s (variable naming mm³ vs cm³, 5M triangle OOM cap, single BASE_FEE constant) and P2s (animation pause on tab hide, WebGL dispose on pagehide, OBJ bounds checking, STL heuristic tolerance 100→256, radio inputs visually-hidden for screen readers, aria-live on price total). Deleted merged branch.

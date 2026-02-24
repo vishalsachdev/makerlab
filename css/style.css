@@ -2866,3 +2866,488 @@ img {
   font-size: 0.9rem;
   color: #666666;
 }
+
+/* ========== Quote Calculator Page ========== */
+
+/* Drop zone */
+.quote-dropzone {
+  border: 3px dashed var(--medium-gray);
+  border-radius: 16px;
+  padding: var(--spacing-xl) var(--spacing-md);
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+  background-color: var(--light-gray);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.quote-dropzone:hover,
+.quote-dropzone:focus-visible {
+  border-color: var(--illinois-orange);
+  background-color: #fff8f4;
+}
+
+.quote-dropzone-active {
+  border-color: var(--illinois-orange);
+  background-color: #fff0e6;
+  border-style: solid;
+}
+
+.quote-dropzone-icon {
+  color: var(--medium-gray);
+  margin-bottom: var(--spacing-md);
+  transition: color 0.3s ease;
+}
+
+.quote-dropzone:hover .quote-dropzone-icon,
+.quote-dropzone-active .quote-dropzone-icon {
+  color: var(--illinois-orange);
+}
+
+.quote-dropzone-text {
+  font-size: 1.25rem;
+  color: var(--text-dark);
+  margin-bottom: var(--spacing-xs);
+}
+
+.quote-dropzone-subtext {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  margin: 0;
+}
+
+/* Main interface layout */
+.quote-interface {
+  margin-top: var(--spacing-lg);
+}
+
+.quote-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg);
+  align-items: start;
+}
+
+/* 3D viewer panel */
+.quote-viewer-panel {
+  position: sticky;
+  top: 80px;
+}
+
+.quote-viewer {
+  width: 100%;
+  height: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: var(--light-gray);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.quote-viewer canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+  border-radius: 12px;
+}
+
+.quote-viewer-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: var(--spacing-sm);
+  padding: 0 var(--spacing-xs);
+}
+
+.quote-btn-small {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
+}
+
+.quote-viewer-hint {
+  font-size: 0.8rem;
+  color: var(--text-light);
+}
+
+.quote-model-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-md);
+  background-color: var(--light-gray);
+  border-radius: 8px;
+}
+
+.quote-info-item {
+  text-align: center;
+}
+
+.quote-info-label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-light);
+  margin-bottom: 0.25rem;
+}
+
+.quote-info-value {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--illinois-blue);
+}
+
+/* Controls panel */
+.quote-controls-panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.quote-file-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--light-gray);
+  border-radius: 8px;
+}
+
+.quote-filename {
+  font-weight: 600;
+  color: var(--illinois-blue);
+  word-break: break-all;
+}
+
+.quote-change-file {
+  background: none;
+  border: none;
+  color: var(--illinois-orange);
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  margin-left: var(--spacing-sm);
+}
+
+.quote-change-file:hover {
+  text-decoration: underline;
+}
+
+/* Fieldsets */
+.quote-fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.quote-fieldset legend {
+  font-weight: 700;
+  color: var(--illinois-blue);
+  margin-bottom: var(--spacing-sm);
+  font-size: 1rem;
+}
+
+/* Radio cards */
+.quote-radio-group {
+  display: flex;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.quote-radio-card {
+  flex: 1;
+  min-width: 100px;
+  padding: var(--spacing-sm);
+  border: 2px solid var(--medium-gray);
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.quote-radio-card:hover {
+  border-color: var(--illinois-orange);
+}
+
+.quote-radio-card:has(input:checked) {
+  border-color: var(--illinois-orange);
+  background-color: #fff8f4;
+}
+
+.quote-radio-card input {
+  display: none;
+}
+
+.quote-radio-label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+}
+
+.quote-radio-desc {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-light);
+  margin-top: 0.25rem;
+}
+
+/* Slider */
+.quote-slider-container {
+  width: 100%;
+}
+
+.quote-slider-container input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background: linear-gradient(to right, var(--illinois-blue), var(--illinois-orange));
+  outline: none;
+}
+
+.quote-slider-container input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--illinois-orange);
+  cursor: pointer;
+  border: 3px solid var(--white);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.quote-slider-container input[type="range"]::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--illinois-orange);
+  cursor: pointer;
+  border: 3px solid var(--white);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.quote-slider-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--text-light);
+  margin-top: var(--spacing-xs);
+}
+
+.quote-slider-current {
+  font-weight: 700;
+  color: var(--illinois-orange);
+  font-size: 1rem;
+}
+
+.quote-slider-hint {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  margin-top: var(--spacing-xs);
+  margin-bottom: 0;
+}
+
+/* Quantity */
+.quote-quantity-control {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.quote-qty-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid var(--illinois-blue);
+  background: var(--white);
+  color: var(--illinois-blue);
+  font-size: 1.25rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  line-height: 1;
+}
+
+.quote-qty-btn:hover {
+  background-color: var(--illinois-blue);
+  color: var(--white);
+}
+
+.quote-quantity-control input[type="number"] {
+  width: 60px;
+  text-align: center;
+  border: 2px solid var(--medium-gray);
+  border-radius: 8px;
+  padding: var(--spacing-xs);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--illinois-blue);
+  -moz-appearance: textfield;
+}
+
+.quote-quantity-control input[type="number"]::-webkit-outer-spin-button,
+.quote-quantity-control input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Price display */
+.quote-price-display {
+  background-color: var(--light-gray);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.quote-price-breakdown {
+  padding: var(--spacing-md);
+}
+
+.quote-price-row {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--spacing-xs) 0;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+}
+
+.quote-price-row + .quote-price-row {
+  border-top: 1px solid var(--medium-gray);
+}
+
+.quote-price-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md);
+  background-color: var(--illinois-blue);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.quote-price-total span:last-child {
+  font-size: 2rem;
+  color: var(--illinois-orange);
+}
+
+/* CTA buttons */
+.quote-actions {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.quote-order-btn {
+  flex: 2;
+  font-size: 1.1rem;
+  padding: 0.9rem var(--spacing-md);
+  text-align: center;
+}
+
+.quote-pricing-btn {
+  flex: 1;
+  font-size: 0.9rem;
+  padding: 0.9rem var(--spacing-sm);
+  text-align: center;
+}
+
+.quote-disclaimer {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* How it works */
+.quote-how-it-works {
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-xl);
+  border-top: 2px solid var(--medium-gray);
+}
+
+.quote-how-it-works h2 {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.quote-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg);
+}
+
+.quote-step {
+  text-align: center;
+}
+
+.quote-step-number {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--illinois-orange);
+  color: var(--white);
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--spacing-sm);
+}
+
+.quote-step h3 {
+  margin-bottom: var(--spacing-xs);
+}
+
+.quote-step p {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* Responsive - Quote Page */
+@media (max-width: 768px) {
+  .quote-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .quote-viewer-panel {
+    position: static;
+  }
+
+  .quote-viewer {
+    height: 300px;
+  }
+
+  .quote-model-info {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xs);
+  }
+
+  .quote-radio-group {
+    flex-direction: column;
+  }
+
+  .quote-radio-card {
+    min-width: auto;
+  }
+
+  .quote-actions {
+    flex-direction: column;
+  }
+
+  .quote-steps-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .quote-price-total span:last-child {
+    font-size: 1.5rem;
+  }
+}

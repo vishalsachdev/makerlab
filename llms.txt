@@ -17,7 +17,7 @@ Illinois MakerLab is the world's first business school 3D printing lab, located 
 
 ## Services
 1. 3D Printing Services - Professional printing for students, faculty, community
-2. Summer Camps - Week-long camps for youth ages 10-17 (Minecraft+3D Printing, Adventures in 3D Modeling, Generative AI+3D Printing, Build Your Own Robot Arm, AI Robotics with Reachy Mini)
+2. Summer Camps - Five week-long camps for youth ages 10+ (Minecraft+3D Printing, Adventures in 3D Modeling, Generative AI+3D Printing, Build Your Own Robot Arm, AI Robotics with Reachy Mini). Robot camps are limited to 6 campers per session, and Reachy Mini includes a Jul 6-10 afternoon session.
 3. Birthday Parties - 3D printing-themed parties for kids
 4. Workshops - Regular sessions on 3D printing and digital making
 5. Courses - Making Things (BADM 331) offered every Spring
@@ -52,7 +52,7 @@ Q: How much does 3D printing cost?
 A: Pricing varies by material and service level. See /pricingservices.html
 
 Q: Do you offer summer camps?
-A: Yes! Five week-long camps for ages 10-17 including Minecraft+3D Printing, 3D Modeling, Generative AI, Robot Arm building, and AI Robotics. $250/week ($225 early bird). See /summer.html
+A: Yes! Five week-long camps for ages 10+ including Minecraft+3D Printing, 3D Modeling, Generative AI, Build Your Own Robot Arm, and AI Robotics with Reachy Mini. Robot camps are limited to 6 campers per session, and Reachy Mini includes a Jul 6-10 afternoon session. $250/week ($225 early bird). See /summer.html
 
 Q: Can I host a birthday party?
 A: Yes! 3D printing-themed parties available. See /birthday-parties.html

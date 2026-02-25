@@ -1,0 +1,89 @@
+{
+  "year": 2026,
+  "registration_url": "https://appserv7.admin.uillinois.edu/FormBuilderSurvey/Survey/gies_college_of_business/illinois_makerlab/summer_2026/",
+  "pricing": {
+    "early_bird_price": 225,
+    "regular_price": 250,
+    "early_bird_deadline_main": "March 15, 2026",
+    "early_bird_deadline_detail": "March 15"
+  },
+  "robot_max_capacity": 6,
+  "camps": [
+    {
+      "id": "minecraft",
+      "name": "Minecraft + 3D Printing",
+      "detail_file": "summer/minecraft-3d-printing.html",
+      "card_href": "summer/minecraft-3d-printing.html",
+      "age_summary": "10+",
+      "age_detail": "10 and up",
+      "max_campers": 8,
+      "sessions": [
+        { "dates": "Jun 1–5", "time": "9:00 AM – 12:00 PM" },
+        { "dates": "Jun 8–12", "time": "9:00 AM – 12:00 PM" },
+        { "dates": "Jun 15–19", "time": "9:00 AM – 12:00 PM" },
+        { "dates": "Jun 22–26", "time": "9:00 AM – 12:00 PM" },
+        { "dates": "Jul 13–17", "time": "1:00 PM – 4:00 PM" },
+        { "dates": "Jul 20–24", "time": "1:00 PM – 4:00 PM" },
+        { "dates": "Jul 27–31", "time": "1:00 PM – 4:00 PM" }
+      ],
+      "summary_sessions_line": "Jun 1–5, Jun 8–12, Jun 15–19, Jun 22–26, Jul 13–17, Jul 20–24, Jul 27–31"
+    },
+    {
+      "id": "adventures",
+      "name": "Adventures in 3D Modeling",
+      "detail_file": "summer/adventures-in-3d-modeling-and-printing.html",
+      "card_href": "summer/adventures-in-3d-modeling-and-printing.html",
+      "age_summary": "10–17",
+      "age_detail": "10–17",
+      "max_campers": 8,
+      "sessions": [
+        { "dates": "Jun 1–5", "time": "1:00 PM – 4:00 PM" },
+        { "dates": "Jul 6–10", "time": "9:00 AM – 12:00 PM" }
+      ],
+      "summary_sessions_line": "Jun 1–5 (PM), Jul 6–10 (AM)"
+    },
+    {
+      "id": "genai",
+      "name": "Generative AI + 3D Printing",
+      "detail_file": "summer/generative-ai-3d-printing.html",
+      "card_href": "summer/generative-ai-3d-printing.html",
+      "age_summary": "12+",
+      "age_detail": "12 and up",
+      "max_campers": 8,
+      "sessions": [
+        { "dates": "Jun 15–19", "time": "1:00 PM – 4:00 PM" },
+        { "dates": "Jul 20–24", "time": "9:00 AM – 12:00 PM" }
+      ],
+      "summary_sessions_line": "Jun 15–19 (PM), Jul 20–24 (AM)"
+    },
+    {
+      "id": "robot-arm",
+      "name": "Build Your Own Robot Arm",
+      "detail_file": "summer/build-your-own-robot-arm.html",
+      "card_href": "summer/build-your-own-robot-arm.html",
+      "age_summary": "12+",
+      "age_detail": "12 and up",
+      "max_campers": 6,
+      "sessions": [
+        { "dates": "Jun 8–12", "time": "1:00 PM – 4:00 PM" },
+        { "dates": "Jul 13–17", "time": "9:00 AM – 12:00 PM" }
+      ],
+      "summary_sessions_line": "Jun 8–12 (PM), Jul 13–17 (AM)"
+    },
+    {
+      "id": "reachy",
+      "name": "AI Robotics with Reachy Mini",
+      "detail_file": "summer/ai-robotics-reachy-mini.html",
+      "card_href": "summer/ai-robotics-reachy-mini.html",
+      "age_summary": "12+",
+      "age_detail": "12 and up",
+      "max_campers": 6,
+      "sessions": [
+        { "dates": "Jun 22–26", "time": "1:00 PM – 4:00 PM" },
+        { "dates": "Jul 6–10", "time": "1:00 PM – 4:00 PM" },
+        { "dates": "Jul 27–31", "time": "9:00 AM – 12:00 PM" }
+      ],
+      "summary_sessions_line": "Jun 22–26 (PM), Jul 6–10 (1:00 PM – 4:00 PM), Jul 27–31 (AM)"
+    }
+  ]
+}

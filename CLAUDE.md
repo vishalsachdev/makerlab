@@ -159,20 +159,36 @@ See `scripts/podio/README.md` for full workflow. Requires `.env` with Podio cred
 
 ## Summer Camps (Summer 2026)
 
-Five camps available across 8 weeks (Jun 1 – Jul 31, no camp week of Jun 29–Jul 3). Pricing on `summer.html`:
-- **Minecraft + 3D Printing** (Ages 10+) — flagship, 8 sessions
-- **Adventures in 3D Modeling** (Ages 10-17) - Uses Fusion 360, 2 sessions
-- **Generative AI + 3D Printing** (Ages 12+) — 2 sessions
-- **Build Your Own Robot Arm** (Ages 12+) — NEW, SO-ARM100, max 5 campers, 2 sessions
-- **AI Robotics with Reachy Mini** (Ages 12+) — NEW, Reachy Mini Lite, max 5 campers, 2 sessions
+Source of truth for camp operations data is:
 
-Pricing: $250 regular, $225 early bird (until March 15). Schedule: 3 hrs/day, 5 days (9am-12pm or 1pm-4pm).
+- `data/summer-camps-2026.json`
 
-Registration: https://appserv7.admin.uillinois.edu/FormBuilderSurvey/Survey/gies_college_of_business/illinois_makerlab/summer_2026/
+Do not hand-edit duplicated camp facts across pages. Use:
 
-Add-ons: Lunch hour supervision (12:00–1:00 PM) $10/day, late pickup at 5:00 PM $10/day. Computers provided (MakerLab iMacs). Minecraft accounts provided for Minecraft camp.
+```bash
+python3 scripts/sync_summer_data.py
+python3 scripts/validate_agent_data.py
+```
 
-Refund Policy: All camps have a $20 non-refundable deposit. Up to 21 days before camp: full refund minus deposit. 20-8 days before: half refund minus deposit. 7 days or less: no refund. Campers may switch sessions at no cost if seats available.
+`sync_summer_data.py` updates duplicated summer data in:
+- `summer.html` (pricing, robot-capacity guideline, camp card age/max/session summary)
+- `summer/*.html` camp detail blocks (ages, max campers, price line, session tables, register link)
+- `faq.html`
+- `api/site-info.json`
+- `api/pages.json`
+- `llms.txt`
+
+`validate_agent_data.py` now also checks:
+- no two camps share the same date/time slot
+- detail-page sessions and capacities match canonical JSON
+- registration URL consistency across summer detail pages
+
+Current 2026 snapshot:
+- 5 camps across Jun 1–Jul 31 (no camp week of Jun 29–Jul 3)
+- Robot camps (Build Your Own Robot Arm, Reachy Mini) max 6 campers/session
+- Reachy Mini has 3 sessions including Jul 6–10 (1:00 PM – 4:00 PM)
+- Pricing: $250 regular, $225 early bird (through March 15, 2026)
+- Registration URL: `https://appserv7.admin.uillinois.edu/FormBuilderSurvey/Survey/gies_college_of_business/illinois_makerlab/summer_2026/`
 
 ## Courses
 
@@ -213,7 +229,7 @@ The site follows WCAG 2.1 AA practices:
 
 ## Current Focus
 
-Email auto-reply automation (monitoring draft runs, then enabling send mode).
+MakerLab Teams Bot — Power Automate workflows as interim while bot app approval pending.
 
 ## Roadmap
 
@@ -230,9 +246,11 @@ Email auto-reply automation (monitoring draft runs, then enabling send mode).
 - [ ] Monitor draft runs, then enable send mode for auto-replies
 - [ ] Build approve-then-send flow (optional enhancement)
 - [x] 3D Print Quote Calculator (STL/OBJ upload, Three.js preview, real-time pricing)
+- [x] MakerLab Teams Bot POC — Power Automate "orders" keyword flow (SharePoint → Teams group chat)
 
 ## Session Log
 
 - **2026-02-20**: Session start. Added roadmap sections to CLAUDE.md.
 - **2026-02-21**: Built and deployed email auto-reply automation. GitHub Action (every 6h, draft mode) with manual dispatch (send/dry-run + configurable lookback). Committed 13 files: workflow, auto_reply_emails.py, smtp_sender.py, website_context.py, Podio audit scripts. Set 6 GitHub secrets. Codex review caught 2 bugs (NEEDS_HUMAN mis-tagging, duplicate drafts) — fixed and pushed. Tested dry-run with 30-day lookback: 1 email classified correctly as NEEDS_HUMAN.
 - **2026-02-24**: Verified PR #32 merge (3D Print Quote Calculator). Applied 3 missing fixes: blank 3D preview (unhide before render), slider label tracking (absolute-positioned + JS repositioning), $4 base fee display (shared note, online desc → 20% surcharge). Ran full code audit — fixed all P1s (variable naming mm³ vs cm³, 5M triangle OOM cap, single BASE_FEE constant) and P2s (animation pause on tab hide, WebGL dispose on pagehide, OBJ bounds checking, STL heuristic tolerance 100→256, radio inputs visually-hidden for screen readers, aria-live on price total). Deleted merged branch. Added GA tracking to all 331 active pages (329 were missing it). Added quote calculator event tracking (file upload, quote calculated w/ debounce, Place Order click, Full Pricing click). Created `scripts/add_ga_tracking.py` for future pages.
+- **2026-02-25**: Built and tested MakerLab Teams Bot POC via Power Automate. Created "MakerLab Chat Orders" flow (ID: 1b3853ae-762f-4bc8-9f1a-22a8213effa8) — triggers on "orders" keyword in "makerlab website" group chat, queries SharePoint Orders list (MakerLab Bot site), posts Title/ProjectName/Material/Status per order via Flow bot. Tested end-to-end: 5 distinct orders returned (John Smith, Sarah Johnson, Mike Chen, Emily Davis, Alex Rivera). Next: build Events lookup flow, aggregate orders into single message, submit bot app for tenant admin approval.

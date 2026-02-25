@@ -14,6 +14,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+SUMMER_DATA = ROOT / "data" / "summer-camps-2026.json"
 ERRORS = []
 WARNINGS = []
 
@@ -59,6 +60,13 @@ def count_summer_camps():
         return 0
     content = summer.read_text()
     return content.count('"EducationEvent"')
+
+
+def load_summer_data():
+    if not SUMMER_DATA.exists():
+        warn("Canonical summer data file not found: data/summer-camps-2026.json")
+        return None
+    return json.loads(SUMMER_DATA.read_text())
 
 
 def get_camp_names():
@@ -170,6 +178,83 @@ def validate_summer_camps():
         error("site-info.json has no Summer Camps service entry")
 
 
+def validate_summer_schedule_conflicts(data):
+    print("\n⏱️  Summer schedule conflicts:")
+    by_slot = {}
+    for camp in data.get("camps", []):
+        for session in camp.get("sessions", []):
+            key = (session["dates"], session["time"])
+            by_slot.setdefault(key, []).append(camp["name"])
+    conflicts = {k: v for k, v in by_slot.items() if len(v) > 1}
+    if conflicts:
+        for (dates, time), camps in sorted(conflicts.items()):
+            error(f"Time conflict {dates} | {time}: {', '.join(camps)}")
+    else:
+        ok("No same date/time conflicts across camps in canonical data")
+
+
+def validate_summer_page_consistency(data):
+    print("\n📄 Summer page consistency:")
+    registration_url = data.get("registration_url", "")
+    robot_cap = data.get("robot_max_capacity")
+
+    # Main summer page robot capacity guideline
+    summer_main = (ROOT / "summer.html").read_text()
+    expected_robot_line = f"robot camps (Robot Arm and Reachy Mini) are limited to {robot_cap}."
+    if expected_robot_line in summer_main:
+        ok("summer.html robot capacity guideline matches canonical data")
+    else:
+        error("summer.html robot capacity guideline is out of sync")
+
+    # Detail pages
+    for camp in data.get("camps", []):
+        detail_path = ROOT / camp["detail_file"]
+        if not detail_path.exists():
+            error(f"Missing detail page: {camp['detail_file']}")
+            continue
+        content = detail_path.read_text()
+
+        if f"<p><strong>Ages:</strong> {camp['age_detail']}</p>" in content:
+            ok(f"{detail_path.name}: ages match")
+        else:
+            error(f"{detail_path.name}: ages do not match canonical data")
+
+        if f"<p><strong>Max campers:</strong> {camp['max_campers']} per session" in content:
+            ok(f"{detail_path.name}: max campers match")
+        else:
+            error(f"{detail_path.name}: max campers do not match canonical data")
+
+        if registration_url in content:
+            ok(f"{detail_path.name}: registration URL matches")
+        else:
+            error(f"{detail_path.name}: registration URL missing or stale")
+
+        table_match = re.search(
+            r"<h3>Summer 2026 Dates</h3>\s*<table[^>]*>\s*<thead>.*?</thead>\s*<tbody>\s*(.*?)\s*</tbody>",
+            content,
+            re.DOTALL,
+        )
+        if not table_match:
+            error(f"{detail_path.name}: missing Summer 2026 dates table")
+            continue
+        tbody = table_match.group(1)
+        row_count = len(re.findall(r"<tr><td", tbody))
+        expected_count = len(camp["sessions"])
+        if row_count == expected_count:
+            ok(f"{detail_path.name}: session row count matches ({expected_count})")
+        else:
+            error(f"{detail_path.name}: session row count {row_count}, expected {expected_count}")
+
+        for idx, session in enumerate(camp["sessions"], start=1):
+            row_pattern = re.compile(
+                rf"<tr><td[^>]*>{idx}</td><td[^>]*>{re.escape(session['dates'])}</td><td[^>]*>{re.escape(session['time'])}</td></tr>"
+            )
+            if row_pattern.search(tbody):
+                ok(f"{detail_path.name}: session {idx} matches ({session['dates']} | {session['time']})")
+            else:
+                error(f"{detail_path.name}: session {idx} mismatch for {session['dates']} | {session['time']}")
+
+
 def validate_sitemap():
     print("\n🗺️  Sitemap:")
     actual = count_sitemap_urls()
@@ -250,6 +335,10 @@ def main():
     validate_json_parseable()
     validate_blog_count()
     validate_summer_camps()
+    summer_data = load_summer_data()
+    if summer_data:
+        validate_summer_schedule_conflicts(summer_data)
+        validate_summer_page_consistency(summer_data)
     validate_sitemap()
     validate_dates()
 

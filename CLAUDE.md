@@ -41,6 +41,9 @@ python3 scripts/add_blog_schema.py
 
 # Add Schema.org BreadcrumbList to static pages
 python3 scripts/add_breadcrumbs.py
+
+# Add Google Analytics tracking to all active pages (run after adding new pages)
+python3 scripts/add_ga_tracking.py
 ```
 
 ## Deployment
@@ -49,7 +52,7 @@ Automatically deploys to GitHub Pages on push to `main` via `.github/workflows/s
 
 - **Live site**: https://makerlab.illinois.edu (custom domain, verified)
 - **GitHub Pages**: https://vishalsachdev.github.io/makerlab/
-- **Google Analytics**: G-R2GVFSKNPE
+- **Google Analytics**: G-R2GVFSKNPE (all active pages — run `scripts/add_ga_tracking.py` after adding new pages)
 
 ## Architecture
 
@@ -61,6 +64,7 @@ makerlab/
 ├── summer/             # Summer 2026 camp pages (5 camps, pricing on main page)
 ├── css/style.css       # Single stylesheet with Illinois branding
 ├── js/main.js          # Vanilla JS (mobile menu, blog search/pagination, keyboard nav, ARIA)
+├── js/quote.js         # 3D Print Quote Calculator (STL/OBJ parsing, Three.js preview, pricing)
 ├── images/             # All images organized by category
 │   ├── blog/           # Blog post images
 │   ├── staff/          # Staff photos

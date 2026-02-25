@@ -28,6 +28,16 @@
   var BASE_FEE = 4.00; // $4 base fee applies to all prints
   var PLA_DENSITY = 1.24; // g/cm³
 
+  // ── Analytics helper ────────────────────────────────────────────────
+  function trackEvent(action, params) {
+    if (typeof gtag === 'function') gtag('event', action, params);
+  }
+  var quoteCalcTimer;
+  function trackQuoteDebounced(params) {
+    clearTimeout(quoteCalcTimer);
+    quoteCalcTimer = setTimeout(function () { trackEvent('quote_calculated', params); }, 1000);
+  }
+
   // ── DOM refs ──────────────────────────────────────────────────────────
   var dropzone     = document.getElementById('quote-dropzone');
   var fileInput    = document.getElementById('quote-file-input');
@@ -507,6 +517,15 @@
 
     totalEl.textContent = '$' + totalCost.toFixed(2);
 
+    trackQuoteDebounced({
+      event_category: 'quote_calculator',
+      user_type: userType,
+      order_type: orderType,
+      infill_pct: infill,
+      weight_g: Math.round(weight),
+      value: parseFloat(totalCost.toFixed(2))
+    });
+
     // Update infill display + position the label over the thumb
     infillValue.textContent = infill + '%';
     positionInfillLabel();
@@ -537,6 +556,11 @@
     }
 
     filenameEl.textContent = file.name;
+    trackEvent('quote_file_upload', {
+      event_category: 'quote_calculator',
+      event_label: ext.toUpperCase(),
+      file_size_kb: Math.round(file.size / 1024)
+    });
 
     var reader = new FileReader();
 
@@ -626,6 +650,25 @@
       controls.reset(new THREE.Vector3(0, 0, 0), Math.max(size.x, size.y, size.z) * 1.8);
     }
   });
+
+  // CTA tracking
+  var orderBtn = document.querySelector('.quote-order-btn');
+  if (orderBtn) {
+    orderBtn.addEventListener('click', function () {
+      trackEvent('quote_place_order', {
+        event_category: 'quote_calculator',
+        event_label: getSelectedValue('orderType'),
+        value: parseFloat(totalEl.textContent.replace('$', '')) || 0
+      });
+    });
+  }
+
+  var pricingBtn = document.querySelector('.quote-pricing-btn');
+  if (pricingBtn) {
+    pricingBtn.addEventListener('click', function () {
+      trackEvent('quote_view_pricing', { event_category: 'quote_calculator' });
+    });
+  }
 
   // Pricing controls
   infillSlider.addEventListener('input', updatePrice);

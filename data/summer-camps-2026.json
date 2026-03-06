@@ -26,7 +26,7 @@
         { "dates": "Jul 20–24", "time": "1:00 PM – 4:00 PM" },
         { "dates": "Jul 27–31", "time": "1:00 PM – 4:00 PM" }
       ],
-      "summary_sessions_line": "Jun 1–5, Jun 8–12, Jun 15–19, Jun 22–26, Jul 13–17, Jul 20–24, Jul 27–31"
+      "summary_sessions_line": "Jun 1–5 (AM), Jun 8–12 (AM), Jun 15–19 (AM), Jun 22–26 (AM), Jul 13–17 (PM), Jul 20–24 (PM), Jul 27–31 (PM)"
     },
     {
       "id": "adventures",
@@ -83,7 +83,7 @@
         { "dates": "Jul 6–10", "time": "1:00 PM – 4:00 PM" },
         { "dates": "Jul 27–31", "time": "9:00 AM – 12:00 PM" }
       ],
-      "summary_sessions_line": "Jun 22–26 (PM), Jul 6–10 (1:00 PM – 4:00 PM), Jul 27–31 (AM)"
+      "summary_sessions_line": "Jun 22–26 (PM), Jul 6–10 (PM), Jul 27–31 (AM)"
     }
   ]
 }

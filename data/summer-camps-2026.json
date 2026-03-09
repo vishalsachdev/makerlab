@@ -21,12 +21,11 @@
         { "dates": "Jun 1–5", "time": "9:00 AM – 12:00 PM" },
         { "dates": "Jun 8–12", "time": "9:00 AM – 12:00 PM" },
         { "dates": "Jun 15–19", "time": "9:00 AM – 12:00 PM" },
-        { "dates": "Jun 22–26", "time": "9:00 AM – 12:00 PM" },
         { "dates": "Jul 13–17", "time": "1:00 PM – 4:00 PM" },
         { "dates": "Jul 20–24", "time": "1:00 PM – 4:00 PM" },
         { "dates": "Jul 27–31", "time": "1:00 PM – 4:00 PM" }
       ],
-      "summary_sessions_line": "Jun 1–5 (AM), Jun 8–12 (AM), Jun 15–19 (AM), Jun 22–26 (AM), Jul 13–17 (PM), Jul 20–24 (PM), Jul 27–31 (PM)"
+      "summary_sessions_line": "Jun 1–5 (AM), Jun 8–12 (AM), Jun 15–19 (AM), Jul 13–17 (PM), Jul 20–24 (PM), Jul 27–31 (PM)"
     },
     {
       "id": "adventures",
@@ -66,9 +65,10 @@
       "max_campers": 6,
       "sessions": [
         { "dates": "Jun 8–12", "time": "1:00 PM – 4:00 PM" },
+        { "dates": "Jun 22–26", "time": "9:00 AM – 12:00 PM" },
         { "dates": "Jul 13–17", "time": "9:00 AM – 12:00 PM" }
       ],
-      "summary_sessions_line": "Jun 8–12 (PM), Jul 13–17 (AM)"
+      "summary_sessions_line": "Jun 8–12 (PM), Jun 22–26 (AM), Jul 13–17 (AM)"
     },
     {
       "id": "reachy",

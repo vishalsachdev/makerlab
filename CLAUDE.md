@@ -229,7 +229,7 @@ The site follows WCAG 2.1 AA practices:
 
 ## Current Focus
 
-Summer camp page fixes and deployment infrastructure.
+Gen AI + 3D Printing summer camp curriculum and testing.
 
 ## Roadmap
 
@@ -255,3 +255,4 @@ Summer camp page fixes and deployment infrastructure.
 - **2026-02-24**: Verified PR #32 merge (3D Print Quote Calculator). Applied 3 missing fixes: blank 3D preview (unhide before render), slider label tracking (absolute-positioned + JS repositioning), $4 base fee display (shared note, online desc → 20% surcharge). Ran full code audit — fixed all P1s (variable naming mm³ vs cm³, 5M triangle OOM cap, single BASE_FEE constant) and P2s (animation pause on tab hide, WebGL dispose on pagehide, OBJ bounds checking, STL heuristic tolerance 100→256, radio inputs visually-hidden for screen readers, aria-live on price total). Deleted merged branch. Added GA tracking to all 331 active pages (329 were missing it). Added quote calculator event tracking (file upload, quote calculated w/ debounce, Place Order click, Full Pricing click). Created `scripts/add_ga_tracking.py` for future pages.
 - **2026-02-25**: Built and tested MakerLab Teams Bot POC via Power Automate. Created "MakerLab Chat Orders" flow (ID: 1b3853ae-762f-4bc8-9f1a-22a8213effa8) — triggers on "orders" keyword in "makerlab website" group chat, queries SharePoint Orders list (MakerLab Bot site), posts Title/ProjectName/Material/Status per order via Flow bot. Tested end-to-end: 5 distinct orders returned (John Smith, Sarah Johnson, Mike Chen, Emily Davis, Alex Rivera). Next: build Events lookup flow, aggregate orders into single message, submit bot app for tenant admin approval.
 - **2026-03-05**: Fixed inconsistent time labels on summer camp cards (Minecraft missing AM/PM, Reachy using full time instead of PM shorthand). Updated canonical JSON + synced. Updated birthday party minimum $150→$250. Discovered GitHub Actions disabled on account — switched Pages deployment to legacy branch mode (no Actions needed). Verified live site deployed correctly.
+- **2026-03-08**: Built Gen AI + 3D Printing camp curriculum — main AGENTS.md conductor + 5 daily teaching scripts (course-in-a-box pattern with Say/STOP/ACTION blocks, OODA coaching loop, progressive handoff). Ran full pipeline test: Claude Code simulated a 12-year-old → agent-browser → Codex (GPT-5.4) → Blender MCP → 143KB chess king STL. Found 3 bugs (visual fidelity gaps, viewport framing, cylinder-only body) and patched scripts. Wrote "When One AI Puppeteers Another" article for The Hybrid Builder. Published drafts to Substack, LinkedIn, and Twitter/X (article + companion thread).

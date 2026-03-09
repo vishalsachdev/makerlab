@@ -71,16 +71,19 @@ def sync_summer_main(data: dict) -> None:
 
     for camp in data["camps"]:
         href = re.escape(camp["card_href"])
+        sessions_br = "<br>".join(
+            s.strip() for s in camp["summary_sessions_line"].split(", ")
+        )
         block_pattern = (
             rf"(<h3><a href=\"{href}\">.*?</a></h3>\s*"
             rf"<p>.*?</p>\s*"
             rf"<p><strong>Ages:</strong> )[^<]+"
             rf"(&nbsp;\|&nbsp; <strong>Max:</strong> )\d+( campers</p>\s*"
-            rf"<p style=\"font-size: 0\.9rem; color: #555;\"><strong>)\d+ (?:session|sessions):</strong> [^<]+(</p>)"
+            rf"<p style=\"font-size: 0\.9rem; color: #555;[^\"]*\"><strong>)\d+ (?:session|sessions):</strong>.+?(</p>)"
         )
         repl = (
             rf"\g<1>{camp['age_summary']} \g<2>{camp['max_campers']}\g<3>"
-            rf"{len(camp['sessions'])} {sessions_label(len(camp['sessions']))}:</strong> {camp['summary_sessions_line']}\4"
+            rf"{len(camp['sessions'])} {sessions_label(len(camp['sessions']))}:</strong><br>{sessions_br}\4"
         )
         content = replace_regex(content, block_pattern, repl, flags=re.S, count=1)
 

@@ -1,0 +1,10 @@
+# Session Archive
+
+Archived session log entries from CLAUDE.md (>30 days old).
+
+## 2026-02
+
+- **2026-02-20**: Session start. Added roadmap sections to CLAUDE.md.
+- **2026-02-21**: Built and deployed email auto-reply automation. GitHub Action (every 6h, draft mode) with manual dispatch (send/dry-run + configurable lookback). Committed 13 files: workflow, auto_reply_emails.py, smtp_sender.py, website_context.py, Podio audit scripts. Set 6 GitHub secrets. Codex review caught 2 bugs (NEEDS_HUMAN mis-tagging, duplicate drafts) — fixed and pushed. Tested dry-run with 30-day lookback: 1 email classified correctly as NEEDS_HUMAN.
+- **2026-02-24**: Verified PR #32 merge (3D Print Quote Calculator). Applied 3 missing fixes: blank 3D preview (unhide before render), slider label tracking (absolute-positioned + JS repositioning), $4 base fee display (shared note, online desc → 20% surcharge). Ran full code audit — fixed all P1s (variable naming mm³ vs cm³, 5M triangle OOM cap, single BASE_FEE constant) and P2s (animation pause on tab hide, WebGL dispose on pagehide, OBJ bounds checking, STL heuristic tolerance 100→256, radio inputs visually-hidden for screen readers, aria-live on price total). Deleted merged branch. Added GA tracking to all 331 active pages (329 were missing it). Added quote calculator event tracking (file upload, quote calculated w/ debounce, Place Order click, Full Pricing click). Created `scripts/add_ga_tracking.py` for future pages.
+- **2026-02-25**: Built and tested MakerLab Teams Bot POC via Power Automate. Created "MakerLab Chat Orders" flow (ID: 1b3853ae-762f-4bc8-9f1a-22a8213effa8) — triggers on "orders" keyword in "makerlab website" group chat, queries SharePoint Orders list (MakerLab Bot site), posts Title/ProjectName/Material/Status per order via Flow bot. Tested end-to-end: 5 distinct orders returned (John Smith, Sarah Johnson, Mike Chen, Emily Davis, Alex Rivera). Next: build Events lookup flow, aggregate orders into single message, submit bot app for tenant admin approval.

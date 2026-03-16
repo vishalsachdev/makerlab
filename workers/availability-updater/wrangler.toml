@@ -1,0 +1,11 @@
+name = "makerlab-availability-updater"
+main = "src/index.js"
+compatibility_date = "2024-09-23"
+
+[triggers]
+crons = ["0 12 * * *"]  # Daily at 12:00 UTC (7:00 AM CDT)
+
+[vars]
+ENDPOINT_ID = "d182387d-ce09-4fbd-b114-b40f011cdd90"
+GITHUB_REPO = "vishalsachdev/makerlab"
+GITHUB_BRANCH = "main"

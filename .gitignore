@@ -56,6 +56,8 @@ summer/gen-ai-3d-printing-camp/
 # ============================================
 data/registrations-snapshot.json
 data/session-availability.json
+data/registrations-*.csv
+data/.env
 
 # ============================================
 # Logs & Temp Files

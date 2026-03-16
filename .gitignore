@@ -52,6 +52,12 @@ Desktop.ini
 summer/gen-ai-3d-printing-camp/
 
 # ============================================
+# Registration Data (contains PII)
+# ============================================
+data/registrations-snapshot.json
+data/session-availability.json
+
+# ============================================
 # Logs & Temp Files
 # ============================================
 *.log

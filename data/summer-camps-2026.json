@@ -2,7 +2,7 @@
   "year": 2026,
   "registration_url": "https://appserv7.admin.uillinois.edu/FormBuilderSurvey/Survey/gies_college_of_business/illinois_makerlab/summer_2026/",
   "pricing": {
-    "early_bird_price": 225,
+    "early_bird_price": null,
     "regular_price": 250,
     "early_bird_deadline_main": "March 15, 2026",
     "early_bird_deadline_detail": "March 15"

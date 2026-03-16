@@ -42,6 +42,10 @@ python3 scripts/add_blog_schema.py
 # Add Schema.org BreadcrumbList to static pages
 python3 scripts/add_breadcrumbs.py
 
+# Fetch registration data and update session availability on website
+python3 scripts/update_availability.py          # fetch + update
+python3 scripts/update_availability.py --dry-run # show counts only
+
 # Add Google Analytics tracking to all active pages (run after adding new pages)
 python3 scripts/add_ga_tracking.py
 ```
@@ -187,7 +191,7 @@ Current 2026 snapshot:
 - 5 camps across Jun 1–Jul 31 (no camp week of Jun 29–Jul 3)
 - Robot camps (Build Your Own Robot Arm, Reachy Mini) max 6 campers/session
 - Reachy Mini has 3 sessions including Jul 6–10 (1:00 PM – 4:00 PM)
-- Pricing: $250 regular, $225 early bird (through March 15, 2026)
+- Pricing: $250/week (early bird $225 ended March 15, 2026)
 - Registration URL: `https://appserv7.admin.uillinois.edu/FormBuilderSurvey/Survey/gies_college_of_business/illinois_makerlab/summer_2026/`
 
 ## Courses
@@ -247,9 +251,12 @@ Gen AI + 3D Printing summer camp curriculum and testing.
 - [ ] Build approve-then-send flow (optional enhancement)
 - [x] 3D Print Quote Calculator (STL/OBJ upload, Three.js preview, real-time pricing)
 - [x] MakerLab Teams Bot POC — Power Automate "orders" keyword flow (SharePoint → Teams group chat)
+- [x] Registration data pipeline: FormBuilder API → availability badges on website
+- [x] Cloudflare Worker for daily automated availability updates
 
 ## Session Log
 
 - **2026-03-05**: Fixed inconsistent time labels on summer camp cards (Minecraft missing AM/PM, Reachy using full time instead of PM shorthand). Updated canonical JSON + synced. Updated birthday party minimum $150→$250. Discovered GitHub Actions disabled on account — switched Pages deployment to legacy branch mode (no Actions needed). Verified live site deployed correctly.
 - **2026-03-08**: Built Gen AI + 3D Printing camp curriculum — main AGENTS.md conductor + 5 daily teaching scripts (course-in-a-box pattern with Say/STOP/ACTION blocks, OODA coaching loop, progressive handoff). Ran full pipeline test: Claude Code simulated a 12-year-old → agent-browser → Codex (GPT-5.4) → Blender MCP → 143KB chess king STL. Found 3 bugs (visual fidelity gaps, viewport framing, cylinder-only body) and patched scripts. Wrote "When One AI Puppeteers Another" article for The Hybrid Builder. Published drafts to Substack, LinkedIn, and Twitter/X (article + companion thread). Ran coherence audit on camp curriculum — marked blender-ai-coach-spec.md as superseded by AGENTS.md, unified Blender concepts numbering across day plans, fixed misleading V1/V2 wording in Day 3.
 - **2026-03-09**: Moved Jun 22–26 AM session from Minecraft (7→6) to Build Your Own Robot Arm (2→3). Added `summer/index.html` redirect to fix Illinois Brand Toolkit breadcrumb 404 (`/summer/index.html`). Reformatted camp session lists on `summer.html` from comma-separated to one-per-line with `<br>` tags for readability. Updated sync script regex to match new format. Fixed Thursday lab hours back to 2–7 PM (Copilot had incorrectly narrowed to 5–7 PM on Feb 19).
+- **2026-03-16**: Connected FormBuilder registration API — added 5 camp fields to DataEndpoint, built `scripts/update_availability.py` to fetch and display per-session availability (91/116 spots filled, 5 sessions sold out). Removed early bird pricing ($225→$250 flat) across all pages, API, and llms.txt. Updated sync script to handle null early_bird_price. Deployed Cloudflare Worker (`makerlab-availability-updater`) with daily Cron Trigger (7 AM CDT) — fetches FormBuilder, updates HTML via GitHub API, auto-deploys. Gracefully handles token expiry after April 16. FormBuilder token: expires 2026-04-16.

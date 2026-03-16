@@ -247,7 +247,7 @@ def validate_summer_page_consistency(data):
 
         for idx, session in enumerate(camp["sessions"], start=1):
             row_pattern = re.compile(
-                rf"<tr><td[^>]*>{idx}</td><td[^>]*>{re.escape(session['dates'])}</td><td[^>]*>{re.escape(session['time'])}</td></tr>"
+                rf"<tr><td[^>]*>{idx}</td><td[^>]*>{re.escape(session['dates'])}</td><td[^>]*>{re.escape(session['time'])}</td>(?:<td[^>]*>.*?</td>)?</tr>"
             )
             if row_pattern.search(tbody):
                 ok(f"{detail_path.name}: session {idx} matches ({session['dates']} | {session['time']})")

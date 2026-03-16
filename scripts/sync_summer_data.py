@@ -50,18 +50,20 @@ def sync_summer_main(data: dict) -> None:
     content = path.read_text()
 
     pricing = data["pricing"]
-    content = replace_regex(
-        content,
-        r"<p style=\"font-size: 1\.2rem; margin: 0;\"><strong>Early Bird: \$\d+</strong> \(register by [^)]+\)</p>",
-        f"<p style=\"font-size: 1.2rem; margin: 0;\"><strong>Early Bird: ${pricing['early_bird_price']}</strong> (register by {pricing['early_bird_deadline_main']})</p>",
-        count=1,
-    )
-    content = replace_regex(
-        content,
-        r"<p style=\"font-size: 1\.2rem; margin: 0\.5rem 0 0 0;\"><strong>Regular: \$\d+</strong></p>",
-        f"<p style=\"font-size: 1.2rem; margin: 0.5rem 0 0 0;\"><strong>Regular: ${pricing['regular_price']}</strong></p>",
-        count=1,
-    )
+    if pricing["early_bird_price"] is not None:
+        content = replace_regex(
+            content,
+            r"<p style=\"font-size: 1\.2rem; margin: 0;?\">.*?</p>\s*(?:<p style=\"font-size: 1\.2rem; margin: 0\.5rem 0 0 0;\">.*?</p>)?",
+            f"<p style=\"font-size: 1.2rem; margin: 0;\"><strong>Early Bird: ${pricing['early_bird_price']}</strong> (register by {pricing['early_bird_deadline_main']})</p>\n              <p style=\"font-size: 1.2rem; margin: 0.5rem 0 0 0;\"><strong>Regular: ${pricing['regular_price']}</strong></p>",
+            count=1,
+        )
+    else:
+        content = replace_regex(
+            content,
+            r"<p style=\"font-size: 1\.2rem; margin: 0;?\">.*?</p>\s*(?:<p style=\"font-size: 1\.2rem; margin: 0\.5rem 0 0 0;\">.*?</p>)?",
+            f"<p style=\"font-size: 1.2rem; margin: 0;\"><strong>${pricing['regular_price']}/week</strong></p>",
+            count=1,
+        )
     content = replace_regex(
         content,
         r"robot camps \(Robot Arm and Reachy Mini\) are limited to \d+\.",
@@ -116,10 +118,14 @@ def sync_detail_pages(data: dict) -> None:
             f"<p><strong>Max campers:</strong> {camp['max_campers']} per session</p>" if camp["id"] in {"minecraft", "adventures", "genai"} else f"<p><strong>Max campers:</strong> {camp['max_campers']} per session (small group, maximum hands-on time)</p>",
             count=1,
         )
+        if pricing["early_bird_price"] is not None:
+            price_html = f"<p><strong>Price:</strong> ${pricing['regular_price']} (${pricing['early_bird_price']} early bird by {pricing['early_bird_deadline_detail']})</p>"
+        else:
+            price_html = f"<p><strong>Price:</strong> ${pricing['regular_price']}/week</p>"
         content = replace_regex(
             content,
-            r"<p><strong>Price:</strong> \$\d+ \(\$\d+ early bird by [^)]+\)</p>",
-            f"<p><strong>Price:</strong> ${pricing['regular_price']} (${pricing['early_bird_price']} early bird by {pricing['early_bird_deadline_detail']})</p>",
+            r"<p><strong>Price:</strong> .*?</p>",
+            price_html,
             count=1,
         )
 
@@ -204,17 +210,19 @@ def sync_api_and_llms(data: dict) -> None:
     site_info = json.loads(site_info_path.read_text())
     for svc in site_info["primaryServices"]:
         if svc.get("name") == "Summer Camps":
+            price_text = f"${pricing['regular_price']}/week (${pricing['early_bird_price']} early bird)" if pricing["early_bird_price"] else f"${pricing['regular_price']}/week"
             svc["description"] = (
                 f"Five week-long camps for ages 10+: {names_no_and}. "
                 f"Robot camps are limited to {robot_cap} campers per session. "
-                f"{reachy_note} ${pricing['regular_price']}/week (${pricing['early_bird_price']} early bird)."
+                f"{reachy_note} {price_text}."
             )
     for qa in site_info["commonQuestions"]:
         if qa.get("question") == "Do you offer summer camps?":
+            price_text2 = f"${pricing['regular_price']}/week (${pricing['early_bird_price']} early bird)" if pricing["early_bird_price"] else f"${pricing['regular_price']}/week"
             qa["answer"] = (
                 f"Yes! Five week-long camps for ages 10+: {names_with_and}. "
                 f"Robot camps are limited to {robot_cap} campers per session, and Reachy Mini includes a Jul 6-10 afternoon session. "
-                f"${pricing['regular_price']}/week (${pricing['early_bird_price']} early bird). See summer.html for schedule and registration."
+                f"{price_text2}. See summer.html for schedule and registration."
             )
     site_info_path.write_text(json.dumps(site_info, indent=2) + "\n")
 
@@ -240,13 +248,14 @@ def sync_api_and_llms(data: dict) -> None:
         ),
         count=1,
     )
+    price_text3 = f"${pricing['regular_price']}/week (${pricing['early_bird_price']} early bird)" if pricing["early_bird_price"] else f"${pricing['regular_price']}/week"
     llms = replace_regex(
         llms,
         r"A: Yes! Five week-long camps for ages 10\+.*",
         (
             f"A: Yes! Five week-long camps for ages 10+ including {names_no_and.replace(', AI Robotics with Reachy Mini', ', and AI Robotics with Reachy Mini')}. "
             f"Robot camps are limited to {robot_cap} campers per session, and Reachy Mini includes a Jul 6-10 afternoon session. "
-            f"${pricing['regular_price']}/week (${pricing['early_bird_price']} early bird). See /summer.html"
+            f"{price_text3}. See /summer.html"
         ),
         count=1,
     )

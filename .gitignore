@@ -57,6 +57,7 @@ summer/gen-ai-3d-printing-camp/
 data/registrations-snapshot.json
 data/session-availability.json
 data/registrations-*.csv
+data/registrations-*.xlsx
 data/.env
 
 # ============================================
@@ -74,4 +75,4 @@ temp/
 # ============================================
 node_modules/
 package-lock.json
-workers/availability-updater/.wrangler/
+.wrangler/

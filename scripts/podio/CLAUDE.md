@@ -99,6 +99,8 @@ Downloaded images go to `/Users/vishal/code/makerlab/images/blog/` for the Maker
 
 - Comments endpoint: `/comment/item/{item_id}/`
 - File download: `/file/{file_id}/raw` with OAuth2 header
+- **File location gotcha**: Uploaded files (STLs, 3MF, UFP, ZIPs) are in the top-level `item["files"]` array, NOT in field values. Field values only contain files for explicitly file-typed fields. Always check `item.get("files", [])` first.
+- Date filtering: `POST /item/app/{app_id}/filter/` with `{"filters": {"created_on": {"from": "YYYY-MM-DD HH:MM:SS"}}}`
 - GlobiMail integration adds email threads as comments (filter out "GlobiMail Activated" messages)
 - Item fields have varying structures - check for `value`, `file`, or `embed` keys
 - **Rate limits**: ~200 requests before 1-hour cooldown. Use `time.sleep(0.5-1)` between bulk operations. Rate limit is per-account, not per-token.

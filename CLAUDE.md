@@ -233,7 +233,7 @@ The site follows WCAG 2.1 AA practices:
 
 ## Current Focus
 
-Gen AI + 3D Printing summer camp curriculum and testing.
+Summer camp hiring (deadline April 5) and camp curriculum prep.
 
 ## Roadmap
 
@@ -253,6 +253,7 @@ Gen AI + 3D Printing summer camp curriculum and testing.
 - [x] MakerLab Teams Bot POC — Power Automate "orders" keyword flow (SharePoint → Teams group chat)
 - [x] Registration data pipeline: FormBuilder API → availability badges on website
 - [x] Cloudflare Worker for daily automated availability updates
+- [x] Summer camp instructor job postings + staff schedule + hiring landing page
 
 ## Session Log
 
@@ -262,3 +263,4 @@ Gen AI + 3D Printing summer camp curriculum and testing.
 - **2026-03-16**: Connected FormBuilder registration API — added 5 camp fields to DataEndpoint, built `scripts/update_availability.py` to fetch and display per-session availability (91/116 spots filled, 5 sessions sold out). Removed early bird pricing ($225→$250 flat) across all pages, API, and llms.txt. Updated sync script to handle null early_bird_price. Deployed Cloudflare Worker (`makerlab-availability-updater`) with daily Cron Trigger (7 AM CDT) — fetches FormBuilder, updates HTML via GitHub API, auto-deploys. Gracefully handles token expiry after April 16. FormBuilder token: expires 2026-04-16.
 - **2026-03-17**: Verified Cloudflare Worker automation — manual trigger confirmed Worker fetches 56 registrations (91/116 filled, 25 remaining), correctly skips commit when no changes detected. Fixed `.gitignore` to ignore root `.wrangler/` dir and `.xlsx` registration exports.
 - **2026-03-22**: Pulled BADM 525 (New Product Development) order files from Podio — 8 orders since Mar 9, 9 files downloaded (STLs, 3MFs, UFPs, ZIP). Discovered file location gotcha: uploaded files are in top-level `item["files"]`, not field values. Documented in `scripts/podio/CLAUDE.md`.
+- **2026-03-26**: Created summer camp instructor hiring package — two JDs (3D Printing & Modeling undergrad with Fall continuation, Robotics & AI), weekly staff schedule with cross-training plan for conflict weeks, and jobs landing page (`summer/jobs.html`). Added "Now Hiring" banner to `summer.html`. Set up Box folder for resume/cover letter uploads (File Request). Application deadline: April 5, 2026. Split: P1 leads Minecraft (6) + Adventures (2), P2 leads Robot Arm (3) + Reachy (3) + GenAI (2), with cross-training weeks 1 and 4.

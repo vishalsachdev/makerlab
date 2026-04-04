@@ -233,7 +233,7 @@ The site follows WCAG 2.1 AA practices:
 
 ## Current Focus
 
-Summer camp hiring (deadline April 5) and camp curriculum prep.
+Summer camp operations: availability automation, cancellation handling, FormBuilder token renewal (expires Apr 16).
 
 ## Roadmap
 
@@ -252,15 +252,13 @@ Summer camp hiring (deadline April 5) and camp curriculum prep.
 - [x] 3D Print Quote Calculator (STL/OBJ upload, Three.js preview, real-time pricing)
 - [x] MakerLab Teams Bot POC — Power Automate "orders" keyword flow (SharePoint → Teams group chat)
 - [x] Registration data pipeline: FormBuilder API → availability badges on website
-- [x] Cloudflare Worker for daily automated availability updates
+- [x] Cloudflare Worker for daily automated availability updates (replaced with local launchd cron)
 - [x] Summer camp instructor job postings + staff schedule + hiring landing page
+- [ ] Renew FormBuilder token before Apr 16 (availability script stops working)
 
 ## Session Log
 
-- **2026-03-05**: Fixed inconsistent time labels on summer camp cards (Minecraft missing AM/PM, Reachy using full time instead of PM shorthand). Updated canonical JSON + synced. Updated birthday party minimum $150→$250. Discovered GitHub Actions disabled on account — switched Pages deployment to legacy branch mode (no Actions needed). Verified live site deployed correctly.
-- **2026-03-08**: Built Gen AI + 3D Printing camp curriculum — main AGENTS.md conductor + 5 daily teaching scripts (course-in-a-box pattern with Say/STOP/ACTION blocks, OODA coaching loop, progressive handoff). Ran full pipeline test: Claude Code simulated a 12-year-old → agent-browser → Codex (GPT-5.4) → Blender MCP → 143KB chess king STL. Found 3 bugs (visual fidelity gaps, viewport framing, cylinder-only body) and patched scripts. Wrote "When One AI Puppeteers Another" article for The Hybrid Builder. Published drafts to Substack, LinkedIn, and Twitter/X (article + companion thread). Ran coherence audit on camp curriculum — marked blender-ai-coach-spec.md as superseded by AGENTS.md, unified Blender concepts numbering across day plans, fixed misleading V1/V2 wording in Day 3.
-- **2026-03-09**: Moved Jun 22–26 AM session from Minecraft (7→6) to Build Your Own Robot Arm (2→3). Added `summer/index.html` redirect to fix Illinois Brand Toolkit breadcrumb 404 (`/summer/index.html`). Reformatted camp session lists on `summer.html` from comma-separated to one-per-line with `<br>` tags for readability. Updated sync script regex to match new format. Fixed Thursday lab hours back to 2–7 PM (Copilot had incorrectly narrowed to 5–7 PM on Feb 19).
-- **2026-03-16**: Connected FormBuilder registration API — added 5 camp fields to DataEndpoint, built `scripts/update_availability.py` to fetch and display per-session availability (91/116 spots filled, 5 sessions sold out). Removed early bird pricing ($225→$250 flat) across all pages, API, and llms.txt. Updated sync script to handle null early_bird_price. Deployed Cloudflare Worker (`makerlab-availability-updater`) with daily Cron Trigger (7 AM CDT) — fetches FormBuilder, updates HTML via GitHub API, auto-deploys. Gracefully handles token expiry after April 16. FormBuilder token: expires 2026-04-16.
-- **2026-03-17**: Verified Cloudflare Worker automation — manual trigger confirmed Worker fetches 56 registrations (91/116 filled, 25 remaining), correctly skips commit when no changes detected. Fixed `.gitignore` to ignore root `.wrangler/` dir and `.xlsx` registration exports.
-- **2026-03-22**: Pulled BADM 525 (New Product Development) order files from Podio — 8 orders since Mar 9, 9 files downloaded (STLs, 3MFs, UFPs, ZIP). Discovered file location gotcha: uploaded files are in top-level `item["files"]`, not field values. Documented in `scripts/podio/CLAUDE.md`.
-- **2026-03-26**: Created summer camp instructor hiring package — two JDs (3D Printing & Modeling undergrad with Fall continuation, Robotics & AI), weekly staff schedule with cross-training plan for conflict weeks, and jobs landing page (`summer/jobs.html`). Added "Now Hiring" banner to `summer.html`. Set up Box folder for resume/cover letter uploads (File Request). Application deadline: April 5, 2026. Split: P1 leads Minecraft (6) + Adventures (2), P2 leads Robot Arm (3) + Reachy (3) + GenAI (2), with cross-training weeks 1 and 4.
+- **2026-03-16**: Connected FormBuilder registration API — built `scripts/update_availability.py`, deployed Cloudflare Worker with daily Cron Trigger. FormBuilder token expires 2026-04-16.
+- **2026-03-26**: Created summer camp instructor hiring package — two JDs, staff schedule, `summer/jobs.html`, "Now Hiring" banner. Application deadline: April 5, 2026.
+- **2026-04-04**: Camp availability operations session. Discovered Cloudflare Worker never successfully committed (secrets issue) — site was 19 days stale (56→69 registrations, 91→104 filled). Replaced Worker with local launchd cron (`scripts/daily_availability_cron.sh`, 9 AM daily). Updated availability: 103/116 filled, 13 spots remaining, 8 sessions sold out. Processed Mirica cancellation (Robot Arm Jun 8–12, ref y4on-*, $205 refund txn 6090939552768). Added "Join Waitlist" mailto links on all sold-out sessions. Created `data/cancellations.csv` tracking log and `data/early-bird-registrations.csv` (54 registrants at $225 with $1,900 false balance in FormBuilder — no action needed, no automated reminders). Investigated FormBuilder waitlist feature — session caps already set correctly but period-level waitlist not suitable for multi-camp form.
+- Next: Renew FormBuilder token before Apr 16. Review hiring applications (deadline Apr 5). Process any waitlist emails.

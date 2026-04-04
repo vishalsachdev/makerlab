@@ -100,10 +100,25 @@ def compute_availability(registrations: list[dict], camps: list[dict]) -> dict:
     return availability
 
 
-def badge_html(remaining: int) -> str:
+def waitlist_mailto(camp_name: str, session_summary: str) -> str:
+    """Generate a mailto link for waitlist requests."""
+    import urllib.parse
+    subject = urllib.parse.quote(f"Waitlist Request: {camp_name} — {session_summary}")
+    body = urllib.parse.quote(
+        f"Hi,\n\nI would like to join the waitlist for:\n\n"
+        f"Camp: {camp_name}\nSession: {session_summary}\n\n"
+        f"Camper Name: \nParent/Guardian Name: \nEmail: \nPhone: \n\nThank you!"
+    )
+    return f'<a href="mailto:uimakerlab@illinois.edu?subject={subject}&body={body}" style="color: #0455A4; text-decoration: underline;">Join Waitlist</a>'
+
+
+def badge_html(remaining: int, camp_name: str = "", session_summary: str = "") -> str:
     """Generate availability badge HTML."""
     if remaining <= 0:
-        return '<span style="color: #d32f2f; font-weight: bold;">SOLD OUT</span>'
+        sold_out = '<span style="color: #d32f2f; font-weight: bold;">SOLD OUT</span>'
+        if camp_name and session_summary:
+            return f'{sold_out} · {waitlist_mailto(camp_name, session_summary)}'
+        return sold_out
     elif remaining <= 2:
         return f'<span style="color: #e04e39; font-weight: bold;">{remaining} spot{"" if remaining == 1 else "s"} left</span>'
     else:
@@ -125,13 +140,13 @@ def update_summer_html(camps: list[dict], availability: dict) -> None:
         old_pattern_parts = []
         for part in parts:
             escaped = re.escape(part)
-            old_pattern_parts.append(escaped + r"(?:\s*—\s*(?:<span[^>]*>.*?</span>|\d+ spots? left))?")
+            old_pattern_parts.append(escaped + r"(?:\s*—\s*(?:<span[^>]*>.*?</span>(?:\s*·\s*<a[^>]*>.*?</a>)?|\d+ spots? left))?")
         old_pattern = r"<br>".join(old_pattern_parts)
 
         # Build new line with badges for ALL sessions
         new_parts = []
         for i, part in enumerate(parts):
-            new_parts.append(f'{part} — {badge_html(avail[i]["remaining"])}')
+            new_parts.append(f'{part} — {badge_html(avail[i]["remaining"], camp["name"], part)}')
         new_line = "<br>".join(new_parts)
 
         content = re.sub(old_pattern, new_line, content, count=1)
@@ -157,7 +172,8 @@ def update_detail_pages(camps: list[dict], availability: dict) -> None:
         # Update or add availability cell for each session row
         for i, session in enumerate(camp["sessions"]):
             remaining = avail[i]["remaining"]
-            badge = badge_html(remaining)
+            session_summary = f'{session["dates"]} ({session["time"]})'
+            badge = badge_html(remaining, camp["name"], session_summary)
             date_str = re.escape(session["dates"])
             time_str = re.escape(session["time"])
 

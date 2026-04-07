@@ -123,7 +123,7 @@
       ]
     },
     "/sitemap.xml": {
-      "description": "Complete XML sitemap with 319 URLs including all pages, blog posts, and API endpoints",
+      "description": "Complete XML sitemap with 318 URLs including all pages, blog posts, and API endpoints",
       "use_cases": [
         "Discovering all available content",
         "Understanding URL structure",

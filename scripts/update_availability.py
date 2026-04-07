@@ -14,6 +14,7 @@ import argparse
 import json
 import os
 import re
+import ssl
 import urllib.request
 from pathlib import Path
 
@@ -60,13 +61,22 @@ def get_token() -> str:
     raise RuntimeError("Set FORMBUILDER_TOKEN env var or add it to data/.env")
 
 
+def _ssl_context() -> ssl.SSLContext:
+    """Create SSL context, using certifi certs if available (fixes macOS system Python)."""
+    try:
+        import certifi
+        return ssl.create_default_context(cafile=certifi.where())
+    except ImportError:
+        return ssl.create_default_context()
+
+
 def fetch_registrations(token: str) -> list[dict]:
     """Fetch all registrations from FormBuilder API."""
     req = urllib.request.Request(API_URL, headers={
         "Accept": "application/json",
         "Authorization": f"Bearer {token}",
     })
-    with urllib.request.urlopen(req) as resp:
+    with urllib.request.urlopen(req, context=_ssl_context()) as resp:
         return json.loads(resp.read())
 
 

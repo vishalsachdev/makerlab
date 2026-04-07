@@ -163,14 +163,6 @@
       "lastModified": "2026-01-25"
     },
     {
-      "title": "Volunteer",
-      "slug": "volunteer",
-      "url": "/volunteer.html",
-      "description": "Volunteer opportunities at Illinois MakerLab. Help with events, assist visitors, and gain experience in the maker space.",
-      "category": "information",
-      "lastModified": "2026-01-25"
-    },
-    {
       "title": "Waiver Forms",
       "slug": "waiver-forms",
       "url": "/waiver-forms.html",
@@ -297,6 +289,14 @@
       "slug": "summer-2020-response",
       "url": "/summer-2020-response.html",
       "description": "MakerLab's response to COVID-19 for summer 2020 (historical)",
+      "category": "information",
+      "status": "archived"
+    },
+    {
+      "title": "Volunteer",
+      "slug": "volunteer",
+      "url": "/volunteer.html",
+      "description": "Volunteer application page (no longer active)",
       "category": "information",
       "status": "archived"
     }

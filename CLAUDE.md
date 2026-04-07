@@ -132,10 +132,10 @@ The site is optimized for AI agents (ChatGPT, Claude, Perplexity, etc.):
 | `/llms.txt` | Plain text summary - quick site overview for agents |
 | `/agent-guide.json` | Detailed usage instructions, common queries, response guidelines |
 | `/api/site-info.json` | Contact, hours, services, leadership |
-| `/api/pages.json` | 32 active pages with unique descriptions + archived pages list |
+| `/api/pages.json` | 31 active pages with unique descriptions + archived pages list |
 | `/api/blog/posts.json` | Searchable blog index (301 posts, 2012-2026) |
 | `/api/openapi.yaml` | OpenAPI 3.0 spec for all JSON endpoints |
-| `/sitemap.xml` | Complete URL inventory (319 URLs) |
+| `/sitemap.xml` | Complete URL inventory (318 URLs) |
 | `/robots.txt` | Explicitly allows all LLM crawlers (GPTBot, Claude-Web, PerplexityBot, etc.) |
 
 Schema.org JSON-LD structured data on key pages:
@@ -261,4 +261,5 @@ Summer camp operations: availability automation, cancellation handling, FormBuil
 - **2026-03-16**: Connected FormBuilder registration API — built `scripts/update_availability.py`, deployed Cloudflare Worker with daily Cron Trigger. FormBuilder token expires 2026-04-16.
 - **2026-03-26**: Created summer camp instructor hiring package — two JDs, staff schedule, `summer/jobs.html`, "Now Hiring" banner. Application deadline: April 5, 2026.
 - **2026-04-04**: Camp availability operations session. Discovered Cloudflare Worker never successfully committed (secrets issue) — site was 19 days stale (56→69 registrations, 91→104 filled). Replaced Worker with local launchd cron (`scripts/daily_availability_cron.sh`, 9 AM daily). Updated availability: 103/116 filled, 13 spots remaining, 8 sessions sold out. Processed Mirica cancellation (Robot Arm Jun 8–12, ref y4on-*, $205 refund txn 6090939552768). Added "Join Waitlist" mailto links on all sold-out sessions. Created `data/cancellations.csv` tracking log and `data/early-bird-registrations.csv` (54 registrants at $225 with $1,900 false balance in FormBuilder — no action needed, no automated reminders). Investigated FormBuilder waitlist feature — session caps already set correctly but period-level waitlist not suitable for multi-camp form.
-- Next: Renew FormBuilder token before Apr 16. Review hiring applications (deadline Apr 5). Process any waitlist emails.
+- **2026-04-07**: Website security audit and link cleanup. Full external link scan found 6 compromised domains (protoparadigm phishing, imgrum.net/org gambling/spam, ingeniummanufacturing script injection, motionbull parked, namii.org hijacked). Removed all dangerous links across 7 blog posts. Replaced 3dprintingprofs.com (defunct) with Coursera specialization on online-courses.html and 1 blog post. Modernized resources page learn-more section. P2 pass: removed 24 dead links across 19 blog posts (123dapp, storify, Google+, cubify, meshmixer, etc.). Archived volunteer.html (moved to archive/pages/, removed from sitemap/pages.json, updated lab-staff to link contact page). Replaced EntreCorps (dead) with Disruption Lab on partners page. Fixed SSL cert issue in update_availability.py (certifi fallback for macOS system Python). Investigated parent registration issue: Minecraft Jul 13–17 PM shows 1 spot left (7/8), FormBuilder admin confirms session active with correct cap — likely browser/cache issue on parent's end.
+- Next: Renew FormBuilder token before Apr 16. Follow up on parent registration issue. Monitor P2 blog links for any remaining dead domains flagged as "CHECK" status.

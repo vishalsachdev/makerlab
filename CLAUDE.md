@@ -233,7 +233,7 @@ The site follows WCAG 2.1 AA practices:
 
 ## Current Focus
 
-Summer camp operations: availability automation, cancellation handling, FormBuilder token renewal (expires Apr 16).
+Summer camp operations: availability automation, cancellation handling, FormBuilder token renewal, instructor hiring.
 
 ## Roadmap
 
@@ -258,8 +258,8 @@ Summer camp operations: availability automation, cancellation handling, FormBuil
 
 ## Session Log
 
-### 2026-04-13
-- Completed: Updated Monday lab hours to split schedule (1–3pm, 5–7pm) in `lab-hours.html` — both visible list and Schema.org JSON-LD (now two OpeningHoursSpecification entries for Monday). Updated Minecraft camp availability: Jun 15–19 AM now sold out (waitlist link added), Jul 27–31 PM down to 2 spots. Pushed as `b455a5a`.
-- Next: Renew FormBuilder token before Apr 16 (availability script stops working after). Follow up on parent registration issue flagged 2026-04-07.
+### 2026-04-16
+- Completed: Updated summer jobs page — extended application deadline to Apr 20 with "still accepting" note, added current UIUC student eligibility requirement. Updated Minecraft camp Jul 27–31 PM availability (2 → 1 spot). FormBuilder token renewal identified but not yet completed (user handling manually).
+- Next: Confirm FormBuilder token renewed and `update_availability.py --dry-run` works. Follow up on parent registration issue flagged 2026-04-07.
 
 *Older entries archived to `docs/session-archive.md`.*

@@ -16,3 +16,7 @@ Archived session log entries from CLAUDE.md (>30 days old).
 - **2026-04-04**: Camp availability operations session. Discovered Cloudflare Worker never successfully committed (secrets issue) — site was 19 days stale. Replaced Worker with local launchd cron (`scripts/daily_availability_cron.sh`, 9 AM daily). Processed Mirica cancellation (Robot Arm Jun 8–12, $205 refund). Added "Join Waitlist" mailto links on sold-out sessions. Created `data/cancellations.csv` and `data/early-bird-registrations.csv`.
 - **2026-04-07**: Website security audit and link cleanup. Removed 6 compromised domains across 7 blog posts. Replaced 3dprintingprofs.com with Coursera. P2 pass: removed 24 dead links across 19 blog posts. Archived volunteer.html. Fixed SSL cert issue in update_availability.py.
 - **2026-04-13**: Updated Monday lab hours to split schedule (1–3pm, 5–7pm) in `lab-hours.html` — both visible list and Schema.org JSON-LD. Updated Minecraft camp availability: Jun 15–19 AM sold out (waitlist link), Jul 27–31 PM down to 2 spots.
+
+### 2026-04-16
+- Completed: Updated summer jobs page — extended application deadline to Apr 20 with "still accepting" note, added current UIUC student eligibility requirement. Updated Minecraft camp Jul 27–31 PM availability (2 → 1 spot). FormBuilder token renewal identified but not yet completed (user handling manually).
+- Next: Confirm FormBuilder token renewed and `update_availability.py --dry-run` works. Follow up on parent registration issue flagged 2026-04-07.

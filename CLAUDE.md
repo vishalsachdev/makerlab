@@ -194,6 +194,16 @@ Current 2026 snapshot:
 - Pricing: $250/week (early bird $225 ended March 15, 2026)
 - Registration URL: `https://appserv7.admin.uillinois.edu/FormBuilderSurvey/Survey/gies_college_of_business/illinois_makerlab/summer_2026/`
 
+### Camp Operations (FormBuilder)
+
+**Refund policy** (per `summer.html`): 21+ days before camp = full minus $20 deposit; 8–20 days = half minus $20; ≤7 days = no refund.
+
+**Token renewal** (`FORMBUILDER_TOKEN` in `data/.env`, expires every 6mo). Test with `python3 scripts/update_availability.py --dry-run` — HTTP 403 = expired. To renew: FormBuilder Admin → Form Group → 2026 Summer Camp Registration → DataEndpoints → Edit `makerlab-summer-2026` → "Add Another Access Token" → 6 Months → click visibility icon to reveal → paste into `data/.env`. Endpoint UUID `d182387d-ce09-4fbd-b114-b40f011cdd90` (in script).
+
+**Cancellations**: In FormBuilder admin, Form Responses → DETAILS for the response → click **"Cancel Registration"** (NOT "Delete Form Response" — preserves payment record). Then append row to `data/cancellations.csv` and run `python3 scripts/update_availability.py` to refresh the badge. IPay refund is processed separately by the user — not through FormBuilder.
+
+**Critical: Data endpoint must filter cancelled responses.** Configured 2026-05-08 via "Additional Filtering" → Level 1 Condition Type = "Form Cancelled State" → "not cancelled". Without this filter, the API returns cancelled responses and the script overcounts. If a fresh data endpoint is created in future periods (e.g., Summer 2027), reapply this filter.
+
 ## Courses
 
 - **Making Things** (BADM 331) - Active, offered every Spring

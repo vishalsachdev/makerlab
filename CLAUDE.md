@@ -243,7 +243,7 @@ The site follows WCAG 2.1 AA practices:
 
 ## Current Focus
 
-Summer camp operations: availability automation, cancellation handling, FormBuilder token renewal, instructor hiring.
+Summer camp operations: cancellation/reschedule handling, waitlist tracking decision, summer order-form re-enable.
 
 ## Roadmap
 
@@ -264,12 +264,12 @@ Summer camp operations: availability automation, cancellation handling, FormBuil
 - [x] Registration data pipeline: FormBuilder API → availability badges on website
 - [x] Cloudflare Worker for daily automated availability updates (replaced with local launchd cron)
 - [x] Summer camp instructor job postings + staff schedule + hiring landing page
-- [ ] Renew FormBuilder token before Apr 16 (availability script stops working)
+- [x] Renew FormBuilder token (renewed 2026-05-08, expires 11/08/2026)
 
 ## Session Log
 
-### 2026-05-05
-- Completed: Spring semester closure rollout. Added closure banner + paused online orders on `lab-hours.html` and `online-ordering.html`: final open day is Wed May 6 (extended hours 2–7pm), online order intake stopped May 5, existing customers updated by email with pickup arranged via order email/contact form, will reopen for summer-camp season with limited online order capacity. Podio web form on online-ordering page commented out (easy re-enable). Committed AGENTS.md with agent ops rules. Commits: de0d2b0, e054f46, ab6b1b6, 93d8671.
-- Next: When summer camps start, re-enable Podio order form (uncomment in `online-ordering.html`) and update both pages with summer hours. Still pending from prior session: confirm FormBuilder token renewed + `update_availability.py --dry-run` works; follow up on parent registration issue from 2026-04-07.
+### 2026-05-08
+- Completed: Renewed FormBuilder token via Chrome (6mo, expires 11/08/2026). Processed Tracy Sulkin cancellation (Minecraft Jun 15-19 AM, ref ycqn-kyyy-yyyy-y, $230 refund per 21+ day policy) — cancelled in FormBuilder, logged to `data/cancellations.csv`, refund processed in IPay. **Discovered & fixed data endpoint bug**: API was returning cancelled responses (Sulkin's slot stayed SOLD OUT after cancellation). Configured "Additional Filtering" → Form Cancelled State = "not cancelled" on the data endpoint; endpoint dropped 79→78, badges correct. Processed Admal reschedule (Robot Arm Jun 22-26 AM → Jun 8-12 PM) via in-place answer edit in FormBuilder. Documented camp ops in CLAUDE.md (token renewal, cancellation flow, refund tiers, the cancelled-filter gotcha). Commits: 2ca22e4, 14180f5, aab26e5.
+- Next: Decide on a waitlist tracking approach (currently mailto-only → goes to inbox backlog). Still pending: ChambanaMoms campaign images, monthly Podio blog workflow, monitor draft email auto-replies. When summer camps start (Jun 1), re-enable Podio order form on `online-ordering.html` and update both order pages with summer hours.
 
 *Older entries archived to `docs/session-archive.md`.*

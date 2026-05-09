@@ -2,6 +2,12 @@
 
 Archived session log entries from CLAUDE.md (>30 days old).
 
+## 2026-05
+
+### 2026-05-05
+- Completed: Spring semester closure rollout. Added closure banner + paused online orders on `lab-hours.html` and `online-ordering.html`: final open day is Wed May 6 (extended hours 2–7pm), online order intake stopped May 5, existing customers updated by email with pickup arranged via order email/contact form, will reopen for summer-camp season with limited online order capacity. Podio web form on online-ordering page commented out (easy re-enable). Committed AGENTS.md with agent ops rules. Commits: de0d2b0, e054f46, ab6b1b6, 93d8671.
+- Next: When summer camps start, re-enable Podio order form (uncomment in `online-ordering.html`) and update both pages with summer hours. Still pending from prior session: confirm FormBuilder token renewed + `update_availability.py --dry-run` works; follow up on parent registration issue from 2026-04-07.
+
 ## 2026-02
 
 - **2026-02-20**: Session start. Added roadmap sections to CLAUDE.md.

@@ -256,13 +256,11 @@ Summer camp operations: cancellation/reschedule handling, waitlist tracking deci
 - [ ] Podio migration: drop GlobiMail, evaluate full migration to Microsoft stack
 - [ ] Monthly blog generation workflow from Podio orders
 - [x] Commit Podio audit/automation scripts
-- [x] Email auto-reply GitHub Action (Podio → OpenAI → SendGrid pipeline)
-- [ ] Monitor draft runs, then enable send mode for auto-replies
-- [ ] Build approve-then-send flow (optional enhancement)
+- [x] Email auto-reply GitHub Action (Podio → OpenAI → SendGrid pipeline) — **deactivated 2026-05-12** (workflow file removed; recover from git history if revisited)
 - [x] 3D Print Quote Calculator (STL/OBJ upload, Three.js preview, real-time pricing)
 - [x] MakerLab Teams Bot POC — Power Automate "orders" keyword flow (SharePoint → Teams group chat)
 - [x] Registration data pipeline: FormBuilder API → availability badges on website
-- [x] Cloudflare Worker for daily automated availability updates (replaced with local launchd cron)
+- [x] Daily availability updates — now a GitHub Actions cron (`.github/workflows/update-availability.yml`, 14:00 UTC); needs repo secret `FORMBUILDER_TOKEN`. (History: Cloudflare Worker → local launchd → GitHub Actions, 2026-05-12. Local launchd plist renamed `.disabled`; `scripts/daily_availability_cron.sh` kept as fallback.)
 - [x] Summer camp instructor job postings + staff schedule + hiring landing page
 - [x] Renew FormBuilder token (renewed 2026-05-08, expires 11/08/2026)
 

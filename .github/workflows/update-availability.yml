@@ -1,0 +1,51 @@
+name: Update camp availability
+
+# Replaces the local launchd cron (com.makerlab.availability-update).
+# Fetches registration counts from the FormBuilder API and commits the
+# updated spot counts in summer.html / summer/*.html if anything changed.
+# Runs server-side so it no longer depends on a Mac being awake at 9am.
+
+on:
+  schedule:
+    # 09:00 America/Chicago — 14:00 UTC (CDT). Adjust if you care about the
+    # CST half of the year; an hour of drift on a spot counter is harmless.
+    - cron: '0 14 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-availability
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Update availability from FormBuilder
+        env:
+          FORMBUILDER_TOKEN: ${{ secrets.FORMBUILDER_TOKEN }}
+        run: python3 scripts/update_availability.py
+
+      - name: Commit and push if changed
+        run: |
+          # Only the public HTML changes here. The data/*.json snapshots
+          # contain PII and are gitignored — never add them.
+          if git diff --quiet -- summer.html summer/; then
+            echo "No availability changes."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add summer.html summer/*.html
+          git commit -m "Update camp availability ($(date -u +%Y-%m-%d))"
+          git push

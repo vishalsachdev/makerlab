@@ -2,6 +2,11 @@
 # Daily camp availability updater — runs via launchd at 9 AM CDT
 # Updates summer camp spot counts from FormBuilder API, commits + pushes if changed.
 # Log: /tmp/makerlab-availability.log
+#
+# SUPERSEDED by .github/workflows/update-availability.yml (runs server-side, no
+# Mac-awake dependency). Once the FORMBUILDER_TOKEN repo secret is set and the
+# Action is verified, retire this job:
+#   launchctl unload ~/Library/LaunchAgents/com.makerlab.availability-update.plist
 
 set -euo pipefail
 
@@ -26,7 +31,8 @@ $PYTHON scripts/update_availability.py >> "$LOG" 2>&1
 if git diff --quiet; then
     echo "No changes detected" >> "$LOG"
 else
-    git add summer.html summer/*.html data/session-availability.json data/registrations-snapshot.json
+    # Only the public HTML — data/*.json snapshots contain PII and are gitignored.
+    git add summer.html summer/*.html
     git commit -m "Update camp availability ($(date +%Y-%m-%d))" >> "$LOG" 2>&1
     git push >> "$LOG" 2>&1
     echo "Committed and pushed" >> "$LOG"

@@ -195,14 +195,6 @@
       "lastModified": "2026-01-25"
     },
     {
-      "title": "Summer Jobs",
-      "slug": "summer-jobs",
-      "url": "/summer-jobs.html",
-      "description": "Summer employment opportunities at MakerLab. Work as a camp counselor or lab assistant.",
-      "category": "information",
-      "lastModified": "2026-01-25"
-    },
-    {
       "title": "Scholarships",
       "slug": "scholarships",
       "url": "/scholarships.html",
@@ -297,6 +289,14 @@
       "slug": "volunteer",
       "url": "/volunteer.html",
       "description": "Volunteer application page (no longer active)",
+      "category": "information",
+      "status": "archived"
+    },
+    {
+      "title": "Summer 2026 Camp Instructor Jobs",
+      "slug": "summer-2026-camp-instructor-jobs",
+      "url": "/archive/pages/jobs.html",
+      "description": "Summer 2026 camp instructor job postings (3D Printing and Robotics & AI) - positions filled",
       "category": "information",
       "status": "archived"
     }

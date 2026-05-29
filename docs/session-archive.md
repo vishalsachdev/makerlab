@@ -4,6 +4,10 @@ Archived session log entries from CLAUDE.md (>30 days old).
 
 ## 2026-05
 
+### 2026-05-27
+- Completed: Xin inquiry (Adventures Jun 1–5) — confirmed 3 real spots via cancellations.csv, reopened form (was closed due to date cutoff). Updated all 14 active FormBuilder session close dates from "1 week before" to "day before camp starts at 12:00 AM". Abandoned-cart investigation: PaymentProcessing responses were blocking spots — Vishal manually cleared them; shortened the stalled-PaymentProcessing alert trigger from 24h → 4h. Created `makerlab-camps` repo at `/Users/vishal/admin/makerlab-camps` for student worker curriculum. Added payment completion notice to `summer.html` (1-hour expectation, committed + pushed 05b5e76).
+- Next: FormBuilder form — manually add 4-hour payment notice to Welcome Page section (Add question → static text). Still pending: Summers FormBuilder edit (DETAILS view, uncheck Minecraft Jun 8–12 + Robot Arm Jun 8–12 for Landon), Johnson FormBuilder edit + Kip memo ($225), Connor Yao reply, ChambanaMoms campaign images, Jun 1 camp start: re-enable Podio order form.
+
 ### 2026-05-05
 - Completed: Spring semester closure rollout. Added closure banner + paused online orders on `lab-hours.html` and `online-ordering.html`: final open day is Wed May 6 (extended hours 2–7pm), online order intake stopped May 5, existing customers updated by email with pickup arranged via order email/contact form, will reopen for summer-camp season with limited online order capacity. Podio web form on online-ordering page commented out (easy re-enable). Committed AGENTS.md with agent ops rules. Commits: de0d2b0, e054f46, ab6b1b6, 93d8671.
 - Next: When summer camps start, re-enable Podio order form (uncomment in `online-ordering.html`) and update both pages with summer hours. Still pending from prior session: confirm FormBuilder token renewed + `update_availability.py --dry-run` works; follow up on parent registration issue from 2026-04-07.

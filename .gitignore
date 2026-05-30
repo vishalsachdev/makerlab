@@ -59,6 +59,17 @@ data/session-availability.json
 data/registrations-*.csv
 data/registrations-*.xlsx
 data/.env
+# FormBuilder report dumps (case/format-insensitive — contain PII + payment data)
+data/*[Rr]eport[Dd]ump*
+data/[Rr]egistrations_*
+data/*.xlsx
+# Parent recipient lists / camp email PII (never commit emails)
+data/parent-emails/recipients*
+data/*recipients*
+# Cancellation / refund / registrant records (parent emails + IPay payment data)
+data/cancellations.csv
+data/early-bird-registrations.csv
+data/refund-memo-*.md
 
 # ============================================
 # Logs & Temp Files

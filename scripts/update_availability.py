@@ -82,7 +82,14 @@ def fetch_registrations(token: str) -> list[dict]:
 
 def compute_availability(registrations: list[dict], camps: list[dict]) -> dict:
     """Compute per-session availability from registration data."""
-    # Count registrations per session code
+    # Count registrations per session code.
+    # NOTE: no status filtering here is intentional. The FormBuilder data
+    # endpoint is configured to exclude cancelled and unpaid responses
+    # ("not cancelled" + only "registered"), so `registrations` already
+    # contains live seats only. Do NOT add a Python-side status filter —
+    # see CLAUDE.md "Camp Operations (FormBuilder)" (data-endpoint filter,
+    # PaymentProcessing notes). Filtering twice (or filtering on a field the
+    # feed doesn't return) would silently undercount.
     camp_counts: dict[str, dict[str, int]] = {}
     for field, cid in FIELD_TO_CAMP.items():
         codes: dict[str, int] = {}

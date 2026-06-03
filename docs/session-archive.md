@@ -2,6 +2,12 @@
 
 Archived session log entries from CLAUDE.md (>30 days old).
 
+## 2026-06
+
+### 2026-06-02
+- Completed: **Robot Arm camp prep — solved the "only one arm" problem.** Reviewed the Build Your Own Robot Arm camp (SO-ARM100 + LeRobot; 3 sold-out sessions, first Jun 8–12). Discovered the **Kit Pro bought last year is a two-arm kit** (12× 12V servos + 2 boards = leader + follower); only one was ever assembled. So a true leader-follower pair can be built at **$0 hardware** by printing + assembling the second SO-100 arm from the spare 6 servos. Wrote a build+test checklist to `makerlab-camps/robot-arm/second-arm-build-and-test-checklist.md` (+ printable PDF, commits b38518a/8f197a7) covering verify→print(leader STLs)→assemble→power(buy 2nd 12V supply)→exact SO-100 LeRobot commands (find-port/setup-motors/calibrate/teleoperate)→dry-run, with a gamepad-teleop fallback. Reframed the public camp page (`summer/build-your-own-robot-arm.html`, 7581908): "have a working robot arm they trained" → "work as a team… trained together" (one station/group); leader-follower copy now accurate.
+- Next: **Lab worker (this week): print the leader skeleton + order a 12V 5A+ supply** — the two long-lead items; second arm needs to be assembled + dry-run tested by **Fri Jun 6** to run leader-follower on Jun 8 (else gamepad fallback for week 1, pair ready for Jun 22 + Jul 13). Optional later: one assembled SO-101 kit = 2nd station (6 kids → 2 groups of 3). Tighten `.gitignore` to ignore all of `data/parent-emails/` (currently only `recipients*`). Carry-forward: the two Jun 8–12 cancellation edits + Kip memos, revert 2 Max-Registrants bumps, ChambanaMoms images, re-enable Podio order form. Untracked: `scripts/podio/find_waitlist_requests.py` (waitlist-tracking WIP, uncommitted).
+
 ## 2026-05
 
 ### 2026-05-30

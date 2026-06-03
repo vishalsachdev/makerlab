@@ -71,6 +71,7 @@ data/cancellations.csv
 data/early-bird-registrations.csv
 data/refund-memo-*.md
 data/walkin-registrations.csv
+data/parent-emails/
 
 # ============================================
 # Logs & Temp Files

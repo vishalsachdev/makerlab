@@ -44,7 +44,11 @@ CODE_TO_SESSION = {
     "adventures": {"ADV3D_JUN1": 0, "ADV3D_JUL1": 1},
     "genai": {"GENAI3D_JUN1": 0, "GENAI3D_JUL1": 1},
     "robot-arm": {"ROBOTARM_JUN1": 0, "ROBOTARM_JUN2": 1, "ROBOTARM_JUL1": 2},
-    "reachy": {"AIROBOTICS_JUN1": 0, "AIROBOTICS_JUL1": 1, "AIROBOTICS_JUL2": 2},
+    # NOTE: FormBuilder's Reachy July codes are NOT chronological — JUL1 is the
+    # LATER week (Jul 27–31) and JUL2 is the earlier one (Jul 6–10). Verified
+    # empirically against the data-endpoint codes joined to ReportDump labels
+    # (2026-06-04). Do not "fix" this to look sequential.
+    "reachy": {"AIROBOTICS_JUN1": 0, "AIROBOTICS_JUL2": 1, "AIROBOTICS_JUL1": 2},
 }
 
 

@@ -72,6 +72,9 @@ data/early-bird-registrations.csv
 data/refund-memo-*.md
 data/walkin-registrations.csv
 data/parent-emails/
+# Podio scanner outputs (cancellation/waitlist scans — parent+camper names, emails)
+cancellation_requests.json
+waitlist_requests.json
 
 # ============================================
 # Logs & Temp Files

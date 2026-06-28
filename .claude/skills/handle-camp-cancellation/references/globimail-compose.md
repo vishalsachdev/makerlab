@@ -9,10 +9,13 @@ GlobiMail sends from `uimakerlab@illinois.edu` automatically via per-item compos
 Human-in-the-loop flow (browser, claude-in-chrome):
 1. Find the Podio email item (the parent's thread) — see `scripts/podio/find_waitlist_requests.py` / `find_unreplied_camp_emails.py` which extract the GlobiMail compose link from item comments (`http://www.globimail.com/l2/NEW.<token>`).
 2. Navigate to that compose link (opens the GlobiMail TinyMCE editor, From already set to uimakerlab).
-3. Inject the drafted HTML body into the editor body, set the subject — but **do NOT click send**. Mechanics to model on: `scripts/podio/auto_reply_emails.py` and the editor body `tinymce.editors[0].getBody().children[0].innerHTML`. The send button selector is one of `.gm-send-btn, #send-btn, button[onclick*="send"]` — leave it for the user.
-4. Tell the user the GlobiMail compose is ready and stop for their review + send.
+3. Inject the drafted HTML body into the editor, set the subject — but **do NOT click send**. The send button (top-right "Send") is left for the user. Mechanics confirmed 2026-06-28:
+   - **Body:** `tinymce.editors[0].setContent(html)` replaces the whole body; to keep the canned signature + quoted original below your text, prepend instead: `const ed=tinymce.editors[0]; ed.setContent(offerHtml + ed.getContent())`.
+   - **Subject:** `document.querySelector('input[name="subject"], #subject').value = "…"`.
+   - The compose link redirects to `secure.globimail.com/compose/<token>/` and may take ~2s to load — screenshot/`tabs_context_mcp` to confirm before injecting.
+   - Harmless gotcha: a `javascript_tool` call whose result string contains an IPay txn id / reference number comes back `[BLOCKED: Cookie/query string data]`. **The script still ran** — screenshot to verify rather than re-running.
 
-**Caveat — new emails vs replies:** GlobiMail compose links are tied to an existing Podio email item. The **Kip refund memo has no incoming thread** to reply to, so there may be no compose link for it. Options: (a) compose a fresh GlobiMail message from the Emails app if the integration supports new-compose, or (b) fall back to Outlook (below) for the Kip memo while using GlobiMail for the parent reply. Confirm with the user rather than guessing.
+**New emails vs replies — the Kip memo CAN go via GlobiMail (resolved 2026-06-28):** compose links are tied to an existing Podio email item, and the Kip refund memo has no incoming thread of its own. Don't fall back to Outlook for it — instead **open the reply-compose link on the parent's cancellation Podio item, then change the recipient to Kip**: click the **×** on the pre-filled To chip, click the To field, type `kmecu01s@illinois.edu`, press Enter. This sends from uimakerlab AND records the memo against the right cancellation thread. (Replying to a UI-MakerLab-sourced item pre-fills To with `uimakerlab@illinois.edu` — that's why the swap is needed.) Run the parent waitlist reply and the Kip memo as two tabs (`tabs_create_mcp`) so both stage at once.
 
 **Note:** GlobiMail ($15/mo) is slated to be dropped per the Podio-migration plan. If it's been removed, use Outlook.
 

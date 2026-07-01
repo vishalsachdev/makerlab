@@ -3338,6 +3338,63 @@ img {
   line-height: 1.6;
 }
 
+/* ============================================
+   Mobile Optimization
+   ============================================ */
+
+/* Prevent iOS from auto-resizing text on orientation change */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Keep embedded media from forcing the page wider than the screen */
+iframe,
+embed,
+object,
+video {
+  max-width: 100%;
+}
+
+/* Guaranteed accessible touch target for the hamburger button */
+.mobile-menu-toggle {
+  min-width: 44px;
+  min-height: 44px;
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  /* Larger, finger-friendly nav tap targets (~44px tall) */
+  .main-nav a {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+
+  /* Wide data tables scroll within their card instead of overflowing the page */
+  .pricing-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .pricing-table {
+    min-width: 460px;
+  }
+
+  /* Homepage reviews rating: shrink the big numerals and allow wrapping */
+  .reviews-rating {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .reviews-score-big {
+    font-size: 3.5rem;
+  }
+
+  .reviews-stars-big {
+    font-size: 2.5rem;
+  }
+}
+
 /* Responsive - Quote Page */
 @media (max-width: 768px) {
   .quote-layout {

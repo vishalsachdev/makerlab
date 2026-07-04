@@ -2,6 +2,12 @@
 
 Archived session log entries from CLAUDE.md (>30 days old).
 
+## 2026-07
+
+### 2026-07-02
+- Completed: **Closed out the Hutchens waitlist chain + Kip's July registration report + open-seat marketing.** (1) Burgener refused the Adventures Jul 6–10 waitlist offer; confirmed via live FormBuilder pull that the seat sold out independently before Frahm/Mirica needed contacting — chain closed in `data/cancellations.csv`. (2) Sent Kip a verified July registration count report (54 campers across 8 sessions), sourced from a **live FormBuilder API pull** (`scripts/update_availability.py`) rather than the stale 5/30 export — all 8 session counts cross-checked against live availability. (3) **PR #35 merged** (mobile horizontal-overflow fix + touch targets) — pulled into `main`. (4) Investigated the 4 open July seats (GenAI Jul 20–24 AM ×3, Robot Arm Jul 13–17 AM ×1): FormBuilder's native waitlist = 0, and 14 of 26 "unpaid" FormBuilder records were checked individually — all but one were already-cancelled duplicates (the list view's "Current Phase" column is stale and doesn't reflect actual cancellation). 🔵 **mailcorpus (Thunderbird-indexed) is NOT frozen like desktop Outlook** — surfaced 3 real waitlist-outreach threads from 6/22 (Harmon, Xing, Sievers) that Outlook's stuck cache had hidden; all three had already declined or aged out, confirming no live candidates existed for the open seats. Sent a marketing email (BCC, 36 unique parent addresses of already-registered July families) advertising the open seats — compose window opened via Outlook AppleScript with a placeholder To, user manually switched the From to the uimakerlab lab mailbox before sending. (5) Attempted to unfreeze desktop Outlook (quit/relaunch) — confirmed via direct AppleScript (bypassing the MCP) that the freeze is a **stuck account sync**, not an app-level cache; restart didn't fix it.
+- Next: ⚠️ **Desktop Outlook still frozen at 6/15** even after a full restart — needs manual re-auth or account re-add (not a scriptable fix); mailcorpus is the more current source for mail history right now. Watch for replies to today's open-seats marketing email. Carryover: GenAI silent-fallback form-UX fix; re-enable Podio order form; mailcorpus Phase 3 routing.
+
 ## 2026-06
 
 ### 2026-06-22

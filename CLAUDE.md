@@ -33,6 +33,8 @@ Automatically deploys to GitHub Pages on push to `main` (legacy branch mode — 
 Static site: `*.html` pages at root, `blog/` (301 posts), `courses/`, `summer/`, `css/`, `js/`, `images/`, `api/` (LLM-agent JSON), `scripts/` (Python utilities), `archive/`.
 **Full directory map**: [docs/development/architecture.md](docs/development/architecture.md).
 
+⚠️ **Never run `archive/generate_site.py`** — it's the archived one-time Squarespace migration generator and will overwrite current HTML files from stale JSON. All content is edited directly in HTML now.
+
 ## Navigation
 
 Dropdown navigation with two menus:

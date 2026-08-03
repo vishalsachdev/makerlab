@@ -147,7 +147,7 @@ The site follows WCAG 2.1 AA practices:
 
 ## Current Focus
 
-**Post-season (site flipped 2026-08-03; lab closed until week of Aug 31).** Active: parent feedback campaign for the leadership impact case (drafts in gitignored `data/parent-emails/` — needs Qualtrics survey via SSO, 3 parent-email lookups in FormBuilder, then send From=uimakerlab BCC); season-recap blog post (public gist draft out to Bayu/Ling for media, Aric CC'd); five site-review housekeeping decisions (see 8/03 session log). Ops runbook now lives in the private makerlab-camps repo; file cancellation/ops issues there. Mail status: mailcorpus/Thunderbird is the reading source (Outlook desktop still needs re-auth); refund confirmations split across vishal + uimakerlab mailboxes (see memory `feedback-refund-confirmation-mailbox-split`).
+**Post-season (site flipped 2026-08-03; lab closed until week of Aug 31).** Active: parent feedback campaign **LAUNCHED 2026-08-03** — email sent From vishal@illinois.edu to 65 families (BCC; 3 lookup-needed families skipped per Vishal), live Google Form survey (link + settings in gitignored `data/parent-emails/feedback-campaign-plan.md`); replies land in vishal's inbox (mailcorpus indexes them); reminder nudge ~Aug 10, leadership one-pager ~Aug 20; season-recap blog post (public gist draft out to Bayu/Ling for media, Aric CC'd); five site-review housekeeping decisions (see 8/03 session log). Ops runbook now lives in the private makerlab-camps repo; file cancellation/ops issues there. Mail status: mailcorpus/Thunderbird is the reading source (Outlook desktop still needs re-auth); refund confirmations split across vishal + uimakerlab mailboxes (see memory `feedback-refund-confirmation-mailbox-split`).
 
 ## Roadmap
 

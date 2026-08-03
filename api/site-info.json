@@ -5,7 +5,7 @@
     "url": "https://makerlab.illinois.edu/",
     "description": "The world's first business school 3D printing lab at the University of Illinois at Urbana-Champaign",
     "established": "2012",
-    "lastUpdated": "2026-02-16",
+    "lastUpdated": "2026-08-03",
     "version": "1.2.0"
   },
   "contact": {
@@ -29,11 +29,12 @@
   },
   "hours": {
     "note": "Lab hours vary by semester. Check the lab hours page for current schedule.",
+    "currentStatus": "Closed between semesters; reopening week of August 31, 2026",
     "url": "/lab-hours.html",
     "page": "lab-hours.html"
   },
   "statistics": {
-    "totalPages": 32,
+    "totalPages": 28,
     "totalBlogPosts": 301,
     "courses": 1,
     "blogYearRange": "2012-2026",
@@ -55,7 +56,7 @@
     },
     {
       "name": "Summer Camps",
-      "description": "Five week-long camps for ages 10+: Minecraft + 3D Printing, Adventures in 3D Modeling, Generative AI + 3D Printing, Build Your Own Robot Arm, AI Robotics with Reachy Mini. Robot camps are limited to 6 campers per session. Reachy Mini includes a Jul 6-10 afternoon session. $250/week.",
+      "description": "Five week-long camps for ages 10+ ran June-July 2026 and have concluded: Minecraft + 3D Printing, Adventures in 3D Modeling, Generative AI + 3D Printing, Build Your Own Robot Arm, AI Robotics with Reachy Mini. Summer 2027 dates will be announced in early 2027.",
       "url": "/summer.html"
     },
     {
@@ -166,7 +167,7 @@
     },
     {
       "question": "Do you offer summer camps?",
-      "answer": "Yes! Five week-long camps for ages 10+: Minecraft + 3D Printing, Adventures in 3D Modeling, Generative AI + 3D Printing, Build Your Own Robot Arm, and AI Robotics with Reachy Mini. Robot camps are limited to 6 campers per session, and Reachy Mini includes a Jul 6-10 afternoon session. $250/week. See summer.html for schedule and registration.",
+      "answer": "We run five week-long camps for ages 10+ each June-July: Minecraft + 3D Printing, Adventures in 3D Modeling, Generative AI + 3D Printing, Build Your Own Robot Arm, and AI Robotics with Reachy Mini. The Summer 2026 season has concluded; Summer 2027 dates will be announced in early 2027. See summer.html for details.",
       "url": "/summer.html"
     },
     {
@@ -191,7 +192,7 @@
   "metadata": {
     "generatedBy": "Illinois MakerLab Site Generator",
     "apiVersion": "1.0.0",
-    "lastGenerated": "2026-02-16",
+    "lastGenerated": "2026-08-03",
     "contentManagementSystem": "Custom Python Static Site Generator"
   }
 }

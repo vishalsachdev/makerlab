@@ -6,10 +6,11 @@ name: Update camp availability
 # Runs server-side so it no longer depends on a Mac being awake at 9am.
 
 on:
-  schedule:
-    # 09:00 America/Chicago — 14:00 UTC (CDT). Adjust if you care about the
-    # CST half of the year; an hour of drift on a spot counter is harmless.
-    - cron: '0 14 * * *'
+  # Season over 2026-08-03 — re-enable schedule for Summer 2027 registration season.
+  # schedule:
+  #   # 09:00 America/Chicago — 14:00 UTC (CDT). Adjust if you care about the
+  #   # CST half of the year; an hour of drift on a spot counter is harmless.
+  #   - cron: '0 14 * * *'
   workflow_dispatch:
 
 permissions:

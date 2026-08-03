@@ -36,7 +36,7 @@ paths:
     get:
       summary: Page index
       description: >
-        Index of all 32 active static pages with titles, URLs, descriptions,
+        Index of all 28 active static pages with titles, URLs, descriptions,
         and categories. Also lists archived pages.
       operationId: getPages
       tags: [Site]
@@ -52,7 +52,7 @@ paths:
     get:
       summary: Blog post index
       description: >
-        Searchable index of all 291 blog posts with metadata, excerpts,
+        Searchable index of all 301 blog posts with metadata, excerpts,
         tags, and publication dates spanning 2012–2025.
       operationId: getBlogPosts
       tags: [Blog]
@@ -219,7 +219,7 @@ components:
       properties:
         total:
           type: integer
-          example: 291
+          example: 301
         lastUpdated:
           type: string
           format: date

@@ -7,7 +7,7 @@ description: >-
   "process this cancellation", "cancel this camper's camp", "refund this family",
   "handle this withdrawal", or "who's on the waitlist for the freed seat".
   Covers: parsing the request, computing the refund tier by REQUEST DATE,
-  logging to data/cancellations.csv, drafting the Kip refund-authorization memo,
+  logging to data/cancellations.csv, drafting the business-office refund-authorization memo,
   the FormBuilder Cancel Registration (Chrome + SSO login handoff), refreshing
   the website availability badge, and offering the freed seat to a waitlister.
   Project-specific to the makerlab repo.
@@ -44,7 +44,7 @@ Measured from the cancellation **request** date to the camp **start** date:
 | **8–20** | **50% flat** of the camp fee (no deposit deduction) |
 | **≤7** | **None** |
 
-If a request arrived inside a better tier but is actioned later, the **request date** still governs — state this explicitly in the Kip memo. Confirm the exact request date with the user before finalizing dollar amounts.
+If a request arrived inside a better tier but is actioned later, the **request date** still governs — state this explicitly in the business-office memo. Confirm the exact request date with the user before finalizing dollar amounts.
 
 Note: a fully-paid early-bird response may show "Partially Paid / $25 due" in FormBuilder — that is just the $225→$250 price-raise gap, **not** a real balance and not a second camper. Refund is based on amount actually paid.
 
@@ -74,10 +74,10 @@ Confirm camper, camp/session, reference number, amount paid, IPay txn, and reque
 Apply the tier table above. Show the math (amount paid − $20, or ×0.5) and the total.
 
 ### 3. Log to `data/cancellations.csv` (gitignored)
-Append one row per cancelled camp. Columns: `date,reference,parent_name,parent_email,camper_name,camp,session,reason,refund_amount,refund_status`. In `refund_status`, record what's done and what's pending (memo sent? FormBuilder cancelled? IPay pending Kip?), and note any waitlist match for the freed seat.
+Append one row per cancelled camp. Columns: `date,reference,parent_name,parent_email,camper_name,camp,session,reason,refund_amount,refund_status`. In `refund_status`, record what's done and what's pending (memo sent? FormBuilder cancelled? IPay pending business office?), and note any waitlist match for the freed seat.
 
-### 4. Draft the Kip refund-authorization memo → review, then send
-Recipient: **Kip Mecum (kmecu01s@illinois.edu)**. Write `data/refund-memo-<lastname>.md` (gitignored) with: registrant, camper, cancelled camp(s) + per-camp refund, total, the IPay transaction to refund against, and the request-date justification for the tier. Then prepare it for sending — **from `uimakerlab@illinois.edu`**, human-in-the-loop — per [references/globimail-compose.md](references/globimail-compose.md). Stop for the user to review/send. (Kip replies with IPay txn IDs once processed; update the CSV when he does.)
+### 4. Draft the business-office refund-authorization memo → review, then send
+Recipient: **the Gies business office contact** (name/email in the private makerlab-camps repo runbook: `docs/operations/summer-camp-operations.md`). Write `data/refund-memo-<lastname>.md` (gitignored) with: registrant, camper, cancelled camp(s) + per-camp refund, total, the IPay transaction to refund against, and the request-date justification for the tier. Then prepare it for sending — **from `uimakerlab@illinois.edu`**, human-in-the-loop — per [references/globimail-compose.md](references/globimail-compose.md). Stop for the user to review/send. (The business office replies with IPay txn IDs once processed; update the CSV then.)
 
 ### 5. FormBuilder: Cancel Registration (Chrome, SSO handoff)
 Follow [references/formbuilder-chrome-steps.md](references/formbuilder-chrome-steps.md): go straight to the admin login, **wait for the user to complete SSO**, find the response by camper name, **verify the reference number matches**, view the answers to confirm the camp(s), then Cancel Registration (full) or answer-edit (partial). Confirm the status flips to "Cancelled" and the payment record is preserved.
@@ -93,4 +93,4 @@ Run `python3 scripts/podio/find_waitlist_requests.py` and match the freed sessio
 - [references/globimail-compose.md](references/globimail-compose.md) — human-in-the-loop email via Podio/GlobiMail (auto-from uimakerlab), with Outlook desktop as fallback.
 
 ## Closing
-Summarize what's done vs pending (memo sent, FormBuilder cancelled, refund IPay pending Kip, waitlist offer out + its deadline). Do not mark the loop closed until the waitlister registers or declines.
+Summarize what's done vs pending (memo sent, FormBuilder cancelled, refund IPay pending business office, waitlist offer out + its deadline). Do not mark the loop closed until the waitlister registers or declines.

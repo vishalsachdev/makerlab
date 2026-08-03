@@ -1,6 +1,6 @@
 # Illinois MakerLab - LLM Agent Information
 # https://makerlab.illinois.edu
-# Last Updated: 2026-02-16
+# Last Updated: 2026-08-03
 
 ## About
 Illinois MakerLab is the world's first business school 3D printing lab, located at the University of Illinois at Urbana-Champaign. Founded in 2012, we serve students, faculty, and the community with 3D printing services, educational courses, workshops, and youth programs.
@@ -17,7 +17,7 @@ Illinois MakerLab is the world's first business school 3D printing lab, located 
 
 ## Services
 1. 3D Printing Services - Professional printing for students, faculty, community
-2. Summer Camps - Five week-long camps for youth ages 10+ (Minecraft + 3D Printing, Adventures in 3D Modeling, Generative AI + 3D Printing, Build Your Own Robot Arm, AI Robotics with Reachy Mini). Robot camps are limited to 6 campers per session, and Reachy Mini includes a Jul 6-10 afternoon session.
+2. Summer Camps - Five week-long camps for youth ages 10+ (Minecraft + 3D Printing, Adventures in 3D Modeling, Generative AI + 3D Printing, Build Your Own Robot Arm, AI Robotics with Reachy Mini) ran June-July 2026 and have concluded. Summer 2027 dates will be announced in early 2027.
 3. Birthday Parties - 3D printing-themed parties for kids
 4. Workshops - Regular sessions on 3D printing and digital making
 5. Courses - Making Things (BADM 331) offered every Spring
@@ -29,7 +29,7 @@ Illinois MakerLab is the world's first business school 3D printing lab, located 
 - About Us: /about-us.html
 - Services & Pricing: /pricingservices.html
 - Summer Camps: /summer.html
-- Lab Hours: /lab-hours.html (hours vary by semester)
+- Lab Hours: /lab-hours.html (hours vary by semester; lab closed between semesters, reopening the week of Aug 31, 2026)
 - Contact: /contact.html
 - Blog: /blog/index.html (301 posts since 2012)
 - FAQ: /faq.html
@@ -46,13 +46,13 @@ Illinois MakerLab is the world's first business school 3D printing lab, located 
 
 ## Common Questions
 Q: What are the lab hours?
-A: Hours vary by semester. Check /lab-hours.html for current schedule.
+A: Hours vary by semester. The lab is currently closed between semesters and reopens the week of Aug 31, 2026. Check /lab-hours.html for current schedule.
 
 Q: How much does 3D printing cost?
 A: Pricing varies by material and service level. See /pricingservices.html
 
 Q: Do you offer summer camps?
-A: Yes! Five week-long camps for ages 10+ including Minecraft + 3D Printing, Adventures in 3D Modeling, Generative AI + 3D Printing, Build Your Own Robot Arm, and AI Robotics with Reachy Mini. Robot camps are limited to 6 campers per session, and Reachy Mini includes a Jul 6-10 afternoon session. $250/week. See /summer.html
+A: Five week-long camps for ages 10+ (Minecraft + 3D Printing, Adventures in 3D Modeling, Generative AI + 3D Printing, Build Your Own Robot Arm, and AI Robotics with Reachy Mini) ran June-July 2026 and have concluded. Summer 2027 dates will be announced in early 2027. See /summer.html
 
 Q: Can I host a birthday party?
 A: Yes! 3D printing-themed parties available. See /birthday-parties.html

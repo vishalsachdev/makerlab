@@ -1,6 +1,6 @@
 # Email with human-in-the-loop (Podio/GlobiMail, Outlook fallback)
 
-All cancellation emails — Kip refund memos and parent waitlist offers — go **from `uimakerlab@illinois.edu`** and are **reviewed by the user before sending**. Prepare the message, then stop. Never click the final send yourself.
+All cancellation emails — business-office refund memos and parent waitlist offers — go **from `uimakerlab@illinois.edu`** and are **reviewed by the user before sending**. Prepare the message, then stop. Never click the final send yourself.
 
 ## Preferred: Podio / GlobiMail compose (auto-from uimakerlab)
 
@@ -15,7 +15,7 @@ Human-in-the-loop flow (browser, claude-in-chrome):
    - The compose link redirects to `secure.globimail.com/compose/<token>/` and may take ~2s to load — screenshot/`tabs_context_mcp` to confirm before injecting.
    - Harmless gotcha: a `javascript_tool` call whose result string contains an IPay txn id / reference number comes back `[BLOCKED: Cookie/query string data]`. **The script still ran** — screenshot to verify rather than re-running.
 
-**New emails vs replies — the Kip memo CAN go via GlobiMail (resolved 2026-06-28):** compose links are tied to an existing Podio email item, and the Kip refund memo has no incoming thread of its own. Don't fall back to Outlook for it — instead **open the reply-compose link on the parent's cancellation Podio item, then change the recipient to Kip**: click the **×** on the pre-filled To chip, click the To field, type `kmecu01s@illinois.edu`, press Enter. This sends from uimakerlab AND records the memo against the right cancellation thread. (Replying to a UI-MakerLab-sourced item pre-fills To with `uimakerlab@illinois.edu` — that's why the swap is needed.) Run the parent waitlist reply and the Kip memo as two tabs (`tabs_create_mcp`) so both stage at once.
+**New emails vs replies — the business-office memo CAN go via GlobiMail (resolved 2026-06-28):** compose links are tied to an existing Podio email item, and the refund memo has no incoming thread of its own. Don't fall back to Outlook for it — instead **open the reply-compose link on the parent's cancellation Podio item, then change the recipient to the business-office contact** (address in the private makerlab-camps repo runbook, `docs/operations/summer-camp-operations.md`): click the **×** on the pre-filled To chip, click the To field, type the contact's address, press Enter. This sends from uimakerlab AND records the memo against the right cancellation thread. (Replying to a UI-MakerLab-sourced item pre-fills To with `uimakerlab@illinois.edu` — that's why the swap is needed.) Run the parent waitlist reply and the business-office memo as two tabs (`tabs_create_mcp`) so both stage at once.
 
 **Note:** GlobiMail ($15/mo) is slated to be dropped per the Podio-migration plan. If it's been removed, use Outlook.
 
@@ -26,7 +26,7 @@ Use the **`compose-outlook-email`** skill: it opens a pre-filled Outlook compose
 **Setting From does NOT work via AppleScript** — `set sender of newMsg to {...}` is silently ignored. So after opening the compose window, **tell the user to set the From to `uimakerlab@illinois.edu` manually** via the compose window's From dropdown before sending. Don't add the `sender` line to the AppleScript.
 
 ## Email content conventions
-- From: `uimakerlab@illinois.edu` (both Kip memos and parent emails).
-- Kip memo recipient: Kip Mecum, `kmecu01s@illinois.edu`.
+- From: `uimakerlab@illinois.edu` (both business-office memos and parent emails).
+- Refund-memo recipient: the Gies business office contact (name/email in the private makerlab-camps repo: `docs/operations/summer-camp-operations.md`).
 - Waitlist offer: state camper, exact session, **$250** (regular; early-bird ended 2026-03-15), the registration link, and **hold the seat until midnight the NEXT day** (verify the weekday against the actual date). Registration URL: `https://appserv7.admin.uillinois.edu/FormBuilderSurvey/Survey/gies_college_of_business/illinois_makerlab/summer_2026/`.
 - Plain, warm, concise. Sign as "Illinois MakerLab / uimakerlab@illinois.edu".

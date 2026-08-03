@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://makerlab.illinois.edu/index.html</loc>
-    <lastmod>2026-01-25</lastmod>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -32,13 +32,13 @@
   </url>
   <url>
     <loc>https://makerlab.illinois.edu/faq.html</loc>
-    <lastmod>2026-01-25</lastmod>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://makerlab.illinois.edu/free-print-wednesday.html</loc>
-    <lastmod>2026-01-25</lastmod>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -50,18 +50,12 @@
   </url>
   <url>
     <loc>https://makerlab.illinois.edu/lab-hours.html</loc>
-    <lastmod>2026-01-25</lastmod>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://makerlab.illinois.edu/lab-staff.html</loc>
-    <lastmod>2026-01-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://makerlab.illinois.edu/newsletter.html</loc>
     <lastmod>2026-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -74,13 +68,7 @@
   </url>
   <url>
     <loc>https://makerlab.illinois.edu/online-ordering.html</loc>
-    <lastmod>2026-01-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://makerlab.illinois.edu/online-summer-camps-2021.html</loc>
-    <lastmod>2026-01-25</lastmod>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -92,7 +80,7 @@
   </url>
   <url>
     <loc>https://makerlab.illinois.edu/pricingservices.html</loc>
-    <lastmod>2026-01-25</lastmod>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -110,7 +98,7 @@
   </url>
   <url>
     <loc>https://makerlab.illinois.edu/summer.html</loc>
-    <lastmod>2026-01-25</lastmod>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -125,6 +113,54 @@
     <lastmod>2026-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://makerlab.illinois.edu/quote.html</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://makerlab.illinois.edu/courses/making-things.html</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://makerlab.illinois.edu/summer/minecraft-3d-printing.html</loc>
+    <lastmod>2026-08-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://makerlab.illinois.edu/summer/adventures-in-3d-modeling-and-printing.html</loc>
+    <lastmod>2026-08-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://makerlab.illinois.edu/summer/generative-ai-3d-printing.html</loc>
+    <lastmod>2026-08-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://makerlab.illinois.edu/summer/build-your-own-robot-arm.html</loc>
+    <lastmod>2026-08-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://makerlab.illinois.edu/summer/ai-robotics-reachy-mini.html</loc>
+    <lastmod>2026-08-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://makerlab.illinois.edu/summer/camp-forms.html</loc>
+    <lastmod>2026-08-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://makerlab.illinois.edu/blog/0udu7ptpu6c5b7fdwlp1iseyovjnej.html</loc>

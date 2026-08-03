@@ -224,10 +224,18 @@ def validate_summer_page_consistency(data):
         else:
             error(f"{detail_path.name}: max campers do not match canonical data")
 
-        if registration_url in content:
-            ok(f"{detail_path.name}: registration URL matches")
+        # Season-aware: when registration is closed, detail pages must NOT
+        # link the FormBuilder survey; when open, they must.
+        if data.get("registration_open", True):
+            if registration_url in content:
+                ok(f"{detail_path.name}: registration URL matches")
+            else:
+                error(f"{detail_path.name}: registration URL missing or stale")
         else:
-            error(f"{detail_path.name}: registration URL missing or stale")
+            if registration_url and registration_url in content:
+                error(f"{detail_path.name}: registration URL present but registration is closed")
+            else:
+                ok(f"{detail_path.name}: no registration URL (registration closed)")
 
         table_match = re.search(
             r"<h3>Summer 2026 Dates</h3>\s*<table[^>]*>\s*<thead>.*?</thead>\s*<tbody>\s*(.*?)\s*</tbody>",

@@ -5,7 +5,7 @@
     "url": "https://makerlab.illinois.edu/",
     "description": "World's first business school 3D printing lab at the University of Illinois at Urbana-Champaign",
     "version": "1.2.0",
-    "lastUpdated": "2026-02-16"
+    "lastUpdated": "2026-08-03"
   },
   "agent_instructions": {
     "purpose": "This guide helps LLM agents (ChatGPT, Claude, Perplexity, etc.) understand and accurately query Illinois MakerLab content to help users get information about courses, services, blog posts, hours, and more.",
@@ -28,13 +28,13 @@
   },
   "content_structure": {
     "overview": {
-      "totalPages": 32,
+      "totalPages": 28,
       "totalBlogPosts": 301,
       "courses": 1,
       "yearRange": "2012-2026"
     },
     "main_sections": {
-      "pages": "32 static pages about the lab, services, courses, summer camps",
+      "pages": "28 static pages about the lab, services, courses, summer camps",
       "blog": "301 blog posts documenting the MakerLab journey from 2012-2026",
       "courses": [
         {
@@ -84,7 +84,7 @@
       "update_frequency": "weekly"
     },
     "/api/pages.json": {
-      "description": "Index of all 32 active static pages with titles, URLs, descriptions, and categories",
+      "description": "Index of all 28 active static pages with titles, URLs, descriptions, and categories",
       "use_cases": [
         "Finding specific pages by topic",
         "Browsing available content",
@@ -123,7 +123,7 @@
       ]
     },
     "/sitemap.xml": {
-      "description": "Complete XML sitemap with 318 URLs including all pages, blog posts, and API endpoints",
+      "description": "Complete XML sitemap with 324 URLs including all pages, blog posts, and API endpoints",
       "use_cases": [
         "Discovering all available content",
         "Understanding URL structure",
@@ -226,7 +226,8 @@
       "data_sources": [
         "/summer.html",
         "/api/site-info.json (primaryServices field)"
-      ]
+      ],
+      "note": "Summer 2026 season concluded Jul 31, 2026; Summer 2027 dates announced early 2027"
     },
     {
       "intent": "contact",

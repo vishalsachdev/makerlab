@@ -1,6 +1,6 @@
 {
-  "total": 33,
-  "lastUpdated": "2026-02-23",
+  "total": 28,
+  "lastUpdated": "2026-08-03",
   "pages": [
     {
       "title": "Home",
@@ -134,7 +134,7 @@
       "title": "Blog",
       "slug": "blog",
       "url": "/blog/index.html",
-      "description": "MakerLab blog with 291+ posts since 2012. Project highlights, maker stories, lab news, and 3D printing inspiration.",
+      "description": "MakerLab blog with 301 posts since 2012. Project highlights, maker stories, lab news, and 3D printing inspiration.",
       "category": "content",
       "lastModified": "2026-01-25"
     },
@@ -171,38 +171,6 @@
       "lastModified": "2026-01-25"
     },
     {
-      "title": "Give to MakerLab",
-      "slug": "give",
-      "url": "/give.html",
-      "description": "Support Illinois MakerLab through donations. Help fund equipment, scholarships, and maker education programs.",
-      "category": "information",
-      "lastModified": "2026-01-25"
-    },
-    {
-      "title": "Past Gurus",
-      "slug": "past-gurus",
-      "url": "/past-gurus.html",
-      "description": "Alumni of the MakerLab Guru program - former student staff who helped build our maker community.",
-      "category": "about",
-      "lastModified": "2026-01-25"
-    },
-    {
-      "title": "Practicum",
-      "slug": "practicum",
-      "url": "/practicum.html",
-      "description": "Information about the MakerLab practicum program for students interested in hands-on maker education experience.",
-      "category": "education",
-      "lastModified": "2026-01-25"
-    },
-    {
-      "title": "Scholarships",
-      "slug": "scholarships",
-      "url": "/scholarships.html",
-      "description": "Scholarship opportunities for MakerLab summer camps and programs. Financial assistance for maker education.",
-      "category": "programs",
-      "lastModified": "2026-01-25"
-    },
-    {
       "title": "Online Courses",
       "slug": "online-courses",
       "url": "/online-courses.html",
@@ -211,44 +179,52 @@
       "lastModified": "2026-01-25"
     },
     {
-      "title": "MakerLab x Makers4COVID19",
-      "slug": "makerlab-x-makers-for-covid",
-      "url": "/makerlab-x-makers-for-covid.html",
-      "description": "How MakerLab partnered with Makers4COVID19 to produce PPE and support the community during the pandemic.",
-      "category": "content",
-      "lastModified": "2026-01-25"
-    },
-    {
-      "title": "2020 Wrapped",
-      "slug": "makerlab-wrapped",
-      "url": "/makerlab-wrapped.html",
-      "description": "MakerLab year in review for 2020. Highlights, achievements, and community impact during a challenging year.",
-      "category": "content",
-      "lastModified": "2026-01-25"
-    },
-    {
-      "title": "HackIllinois",
-      "slug": "hackillinois",
-      "url": "/hackillinois.html",
-      "description": "MakerLab's involvement with HackIllinois, UIUC's premier hackathon. 3D printing support for hackers.",
+      "title": "Minecraft + 3D Printing Camp",
+      "slug": "minecraft-3d-printing",
+      "url": "/summer/minecraft-3d-printing.html",
+      "description": "Minecraft + 3D Printing summer camp details: campers design worlds in Minecraft and bring creations to life with 3D printing. Summer 2026 season has concluded.",
       "category": "programs",
-      "lastModified": "2026-01-25"
+      "lastModified": "2026-08-03"
     },
     {
-      "title": "3D Printing Conference",
-      "slug": "3d-printing-conference",
-      "url": "/3d-printing-conference.html",
-      "description": "Information about 3D printing conferences and events MakerLab participates in or hosts.",
-      "category": "content",
-      "lastModified": "2026-01-25"
+      "title": "Adventures in 3D Modeling and Printing Camp",
+      "slug": "adventures-in-3d-modeling-and-printing",
+      "url": "/summer/adventures-in-3d-modeling-and-printing.html",
+      "description": "Adventures in 3D Modeling and Printing summer camp details: hands-on 3D design and printing for youth. Summer 2026 season has concluded.",
+      "category": "programs",
+      "lastModified": "2026-08-03"
     },
     {
-      "title": "Internship Database",
-      "slug": "internship-database",
-      "url": "/internship-database.html",
-      "description": "Database of internship opportunities in maker spaces, 3D printing companies, and digital fabrication.",
-      "category": "resources",
-      "lastModified": "2026-01-25"
+      "title": "Generative AI + 3D Printing Camp",
+      "slug": "generative-ai-3d-printing",
+      "url": "/summer/generative-ai-3d-printing.html",
+      "description": "Generative AI + 3D Printing summer camp details: campers use AI tools to design and 3D print their creations. Summer 2026 season has concluded.",
+      "category": "programs",
+      "lastModified": "2026-08-03"
+    },
+    {
+      "title": "Build Your Own Robot Arm Camp",
+      "slug": "build-your-own-robot-arm",
+      "url": "/summer/build-your-own-robot-arm.html",
+      "description": "Build Your Own Robot Arm summer camp details: campers assemble, program, and customize a robot arm. Summer 2026 season has concluded.",
+      "category": "programs",
+      "lastModified": "2026-08-03"
+    },
+    {
+      "title": "AI Robotics with Reachy Mini Camp",
+      "slug": "ai-robotics-reachy-mini",
+      "url": "/summer/ai-robotics-reachy-mini.html",
+      "description": "AI Robotics with Reachy Mini summer camp details: campers program an open-source AI robot. Summer 2026 season has concluded.",
+      "category": "programs",
+      "lastModified": "2026-08-03"
+    },
+    {
+      "title": "Camp Forms",
+      "slug": "camp-forms",
+      "url": "/summer/camp-forms.html",
+      "description": "Required forms for MakerLab summer camp families: waivers, media release, and pickup authorization.",
+      "category": "programs",
+      "lastModified": "2026-08-03"
     }
   ],
   "archived": [
@@ -263,7 +239,7 @@
     {
       "title": "Newsletter",
       "slug": "newsletter",
-      "url": "/newsletter.html",
+      "url": "/archive/pages/newsletter.html",
       "description": "Newsletter subscription page (no longer active)",
       "category": "information",
       "status": "archived"
@@ -271,7 +247,7 @@
     {
       "title": "Online Summer Camps 2021",
       "slug": "online-summer-camps-2021",
-      "url": "/online-summer-camps-2021.html",
+      "url": "/archive/pages/online-summer-camps-2021.html",
       "description": "Virtual summer camps offered during COVID-19 (historical)",
       "category": "programs",
       "status": "archived"
@@ -279,7 +255,7 @@
     {
       "title": "Summer 2020 Response",
       "slug": "summer-2020-response",
-      "url": "/summer-2020-response.html",
+      "url": "/archive/pages/summer-2020-response.html",
       "description": "MakerLab's response to COVID-19 for summer 2020 (historical)",
       "category": "information",
       "status": "archived"
@@ -287,7 +263,7 @@
     {
       "title": "Volunteer",
       "slug": "volunteer",
-      "url": "/volunteer.html",
+      "url": "/archive/pages/volunteer.html",
       "description": "Volunteer application page (no longer active)",
       "category": "information",
       "status": "archived"
@@ -298,6 +274,78 @@
       "url": "/archive/pages/jobs.html",
       "description": "Summer 2026 camp instructor job postings (3D Printing and Robotics & AI) - positions filled",
       "category": "information",
+      "status": "archived"
+    },
+    {
+      "title": "Give to MakerLab",
+      "slug": "give",
+      "url": "/archive/pages/give.html",
+      "description": "Support Illinois MakerLab through donations. Help fund equipment, scholarships, and maker education programs.",
+      "category": "information",
+      "status": "archived"
+    },
+    {
+      "title": "Past Gurus",
+      "slug": "past-gurus",
+      "url": "/archive/pages/past-gurus.html",
+      "description": "Alumni of the MakerLab Guru program - former student staff who helped build our maker community.",
+      "category": "about",
+      "status": "archived"
+    },
+    {
+      "title": "Practicum",
+      "slug": "practicum",
+      "url": "/archive/pages/practicum.html",
+      "description": "Information about the MakerLab practicum program for students interested in hands-on maker education experience.",
+      "category": "education",
+      "status": "archived"
+    },
+    {
+      "title": "Scholarships",
+      "slug": "scholarships",
+      "url": "/archive/pages/scholarships.html",
+      "description": "Scholarship opportunities for MakerLab summer camps and programs. Financial assistance for maker education.",
+      "category": "programs",
+      "status": "archived"
+    },
+    {
+      "title": "MakerLab x Makers4COVID19",
+      "slug": "makerlab-x-makers-for-covid",
+      "url": "/archive/pages/makerlab-x-makers-for-covid.html",
+      "description": "How MakerLab partnered with Makers4COVID19 to produce PPE and support the community during the pandemic.",
+      "category": "content",
+      "status": "archived"
+    },
+    {
+      "title": "2020 Wrapped",
+      "slug": "makerlab-wrapped",
+      "url": "/archive/pages/makerlab-wrapped.html",
+      "description": "MakerLab year in review for 2020. Highlights, achievements, and community impact during a challenging year.",
+      "category": "content",
+      "status": "archived"
+    },
+    {
+      "title": "HackIllinois",
+      "slug": "hackillinois",
+      "url": "/archive/pages/hackillinois.html",
+      "description": "MakerLab's involvement with HackIllinois, UIUC's premier hackathon. 3D printing support for hackers.",
+      "category": "programs",
+      "status": "archived"
+    },
+    {
+      "title": "3D Printing Conference",
+      "slug": "3d-printing-conference",
+      "url": "/archive/pages/3d-printing-conference.html",
+      "description": "Information about 3D printing conferences and events MakerLab participates in or hosts.",
+      "category": "content",
+      "status": "archived"
+    },
+    {
+      "title": "Internship Database",
+      "slug": "internship-database",
+      "url": "/archive/pages/internship-database.html",
+      "description": "Database of internship opportunities in maker spaces, 3D printing companies, and digital fabrication.",
+      "category": "resources",
       "status": "archived"
     }
   ]

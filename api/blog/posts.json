@@ -1,7 +1,121 @@
 {
-  "total": 301,
-  "lastUpdated": "2026-02-16",
+  "total": 309,
+  "lastUpdated": "2026-08-04",
   "posts": [
+    {
+      "title": "Final Prototypes from Making Things",
+      "slug": "badm331-making-things-final-prototypes",
+      "url": "/blog/badm331-making-things-final-prototypes.html",
+      "excerpt": "Final Prototypes from Making Things Published on Fri, 01 May 2026 by Illinois MakerLab The last two weeks of the spring semester belong to BADM 331, Making Things , taught by Professor Aric...",
+      "description": "Final Prototypes from Making Things Published on Fri, 01 May 2026 by Illinois MakerLab The last two weeks of the spring semester belong to BADM 331, Making Things , taught by Professor Aric...",
+      "pubDate": "2026-05-01",
+      "year": 2026,
+      "tags": [
+        "3D Printing",
+        "Design",
+        "Education",
+        "Making Things"
+      ],
+      "author": "Illinois MakerLab"
+    },
+    {
+      "title": "Deadline Season: Architecture Models at the MakerLab",
+      "slug": "architecture-models-end-of-semester",
+      "url": "/blog/architecture-models-end-of-semester.html",
+      "excerpt": "Deadline Season: Architecture Models at the MakerLab Published on Thu, 30 Apr 2026 by Illinois MakerLab Every spring, the last two weeks of April look different at the MakerLab. Architecture juries...",
+      "description": "Deadline Season: Architecture Models at the MakerLab Published on Thu, 30 Apr 2026 by Illinois MakerLab Every spring, the last two weeks of April look different at the MakerLab. Architecture juries...",
+      "pubDate": "2026-04-30",
+      "year": 2026,
+      "tags": [
+        "3D Printing",
+        "Education"
+      ],
+      "author": "Illinois MakerLab"
+    },
+    {
+      "title": "Block I Keychains for Gies Supply Chain Graduates",
+      "slug": "supply-chain-grad-keychains",
+      "url": "/blog/supply-chain-grad-keychains.html",
+      "excerpt": "Block I Keychains for Gies Supply Chain Graduates Published on Fri, 10 Apr 2026 by Illinois MakerLab Following our keychain run for the MSBA cohort last fall, another Gies program came to us with the...",
+      "description": "Block I Keychains for Gies Supply Chain Graduates Published on Fri, 10 Apr 2026 by Illinois MakerLab Following our keychain run for the MSBA cohort last fall, another Gies program came to us with the...",
+      "pubDate": "2026-04-10",
+      "year": 2026,
+      "tags": [
+        "3D Printing",
+        "Education"
+      ],
+      "author": "Illinois MakerLab"
+    },
+    {
+      "title": "From Physical Sample to Printed Part: Custom Wheel Hub Caps",
+      "slug": "custom-wheel-hub-caps-sample-to-part",
+      "url": "/blog/custom-wheel-hub-caps-sample-to-part.html",
+      "excerpt": "From Physical Sample to Printed Part: Custom Wheel Hub Caps Published on Thu, 26 Mar 2026 by Illinois MakerLab A walk-in client stopped by the lab and left behind a single wheel hub cap, with a...",
+      "description": "From Physical Sample to Printed Part: Custom Wheel Hub Caps Published on Thu, 26 Mar 2026 by Illinois MakerLab A walk-in client stopped by the lab and left behind a single wheel hub cap, with a...",
+      "pubDate": "2026-03-26",
+      "year": 2026,
+      "tags": [
+        "3D Printing",
+        "Design"
+      ],
+      "author": "Illinois MakerLab"
+    },
+    {
+      "title": "240 Parts in Five Colors: A Large Batch Print",
+      "slug": "tau-beta-pi-large-batch-print",
+      "url": "/blog/tau-beta-pi-large-batch-print.html",
+      "excerpt": "240 Parts in Five Colors: A Large Batch Print Published on Mon, 23 Mar 2026 by Illinois MakerLab Most of our orders are one or two objects. Occasionally a group needs a couple of hundred, and the job...",
+      "description": "240 Parts in Five Colors: A Large Batch Print Published on Mon, 23 Mar 2026 by Illinois MakerLab Most of our orders are one or two objects. Occasionally a group needs a couple of hundred, and the job...",
+      "pubDate": "2026-03-23",
+      "year": 2026,
+      "tags": [
+        "3D Printing",
+        "Education"
+      ],
+      "author": "Illinois MakerLab"
+    },
+    {
+      "title": "New Product Development Teams Bring Prototypes to Life",
+      "slug": "badm525-new-product-development-prototypes",
+      "url": "/blog/badm525-new-product-development-prototypes.html",
+      "excerpt": "New Product Development Teams Bring Prototypes to Life Published on Mon, 09 Mar 2026 by Illinois MakerLab One of our busiest days this spring came courtesy of BADM 525, New Product Development ,...",
+      "description": "New Product Development Teams Bring Prototypes to Life Published on Mon, 09 Mar 2026 by Illinois MakerLab One of our busiest days this spring came courtesy of BADM 525, New Product Development ,...",
+      "pubDate": "2026-03-09",
+      "year": 2026,
+      "tags": [
+        "3D Printing",
+        "Design",
+        "Education"
+      ],
+      "author": "Illinois MakerLab"
+    },
+    {
+      "title": "Reverse Engineering a Watch, One Tiny Part at a Time",
+      "slug": "reverse-engineering-watch-parts-design-services",
+      "url": "/blog/reverse-engineering-watch-parts-design-services.html",
+      "excerpt": "Reverse Engineering a Watch, One Tiny Part at a Time Published on Fri, 06 Mar 2026 by Illinois MakerLab Most orders that come through the MakerLab arrive with a file attached. This one arrived as two...",
+      "description": "Reverse Engineering a Watch, One Tiny Part at a Time Published on Fri, 06 Mar 2026 by Illinois MakerLab Most orders that come through the MakerLab arrive with a file attached. This one arrived as two...",
+      "pubDate": "2026-03-06",
+      "year": 2026,
+      "tags": [
+        "3D Printing"
+      ],
+      "author": "Illinois MakerLab"
+    },
+    {
+      "title": "Testing 3D Printed Materials for CT Imaging",
+      "slug": "vetmed-ct-scan-material-samples",
+      "url": "/blog/vetmed-ct-scan-material-samples.html",
+      "excerpt": "Testing 3D Printed Materials for CT Imaging Published on Fri, 27 Feb 2026 by Illinois MakerLab Not every research collaboration starts with a finished part. Some of the best ones start with a cube. A...",
+      "description": "Testing 3D Printed Materials for CT Imaging Published on Fri, 27 Feb 2026 by Illinois MakerLab Not every research collaboration starts with a finished part. Some of the best ones start with a cube. A...",
+      "pubDate": "2026-02-27",
+      "year": 2026,
+      "tags": [
+        "3D Printing",
+        "Research"
+      ],
+      "author": "Illinois MakerLab"
+    },
     {
       "title": "Summer 2026 Camps — Registration Now Open!",
       "slug": "summer-2026-camps-registration-open",
@@ -150,7 +264,6 @@
       "year": 2025,
       "tags": [
         "3D Printing",
-        "COVID-19",
         "Design",
         "Education"
       ],
@@ -165,7 +278,6 @@
       "pubDate": "2020-11-12",
       "year": 2020,
       "tags": [
-        "3D Printing",
         "COVID-19",
         "Community",
         "Volunteer"
@@ -194,7 +306,9 @@
       "description": "Earlier this Spring, the Illinois MakerLab nominated the Functionalhand by Thera-Solutions as the “Coolest Thing in Illinois” Makers Madness held by the Illinois Manufacturers’ Association....",
       "pubDate": "2020-08-09",
       "year": 2020,
-      "tags": [],
+      "tags": [
+        "3D Printing"
+      ],
       "author": "Illinois MakerLab"
     },
     {
@@ -206,6 +320,7 @@
       "pubDate": "2020-07-26",
       "year": 2020,
       "tags": [
+        "3D Printing",
         "Community",
         "Education",
         "Research"
@@ -579,8 +694,6 @@
       "pubDate": "2018-09-29",
       "year": 2018,
       "tags": [
-        "3D Printing",
-        "COVID-19",
         "Design"
       ],
       "author": "Illinois MakerLab"
@@ -652,7 +765,6 @@
       "pubDate": "2018-03-14",
       "year": 2018,
       "tags": [
-        "3D Printing",
         "Staff"
       ],
       "author": "Illinois MakerLab"
@@ -696,7 +808,6 @@
       "year": 2018,
       "tags": [
         "3D Printing",
-        "COVID-19",
         "Design",
         "Digital Making",
         "Education",
@@ -714,7 +825,6 @@
       "year": 2018,
       "tags": [
         "3D Printing",
-        "COVID-19",
         "Community",
         "Research",
         "Volunteer",
@@ -748,7 +858,7 @@
       "pubDate": "2017-12-12",
       "year": 2017,
       "tags": [
-        "COVID-19",
+        "3D Printing",
         "Education",
         "Staff"
       ],
@@ -868,13 +978,12 @@
       "title": "3D Printed Pollen Grain Explains Changes in Landscape",
       "slug": "3d-printed-pollen-grain-explains-changes-in-landscape",
       "url": "/blog/3d-printed-pollen-grain-explains-changes-in-landscape.html",
-      "excerpt": "Recently, the MakerLab received a request from iSWOOP , a program that helps national park managers aid researchers in their quest to explain their studies to the public. This makes sure that the...",
-      "description": "Recently, the MakerLab received a request from iSWOOP , a program that helps national park managers aid researchers in their quest to explain their studies to the public. This makes sure that the...",
+      "excerpt": "Recently, the MakerLab received a request from iSWOOP, a program that helps national park managers aid researchers in their quest to explain their studies to the public. This makes sure that the...",
+      "description": "Recently, the MakerLab received a request from iSWOOP, a program that helps national park managers aid researchers in their quest to explain their studies to the public. This makes sure that the...",
       "pubDate": "2017-09-18",
       "year": 2017,
       "tags": [
         "3D Printing",
-        "Design",
         "Research"
       ],
       "author": "Illinois MakerLab"
@@ -968,7 +1077,6 @@
       "pubDate": "2017-05-06",
       "year": 2017,
       "tags": [
-        "3D Printing",
         "Digital Making",
         "Education"
       ],
@@ -1001,7 +1109,6 @@
       "year": 2017,
       "tags": [
         "3D Printing",
-        "COVID-19",
         "Community",
         "Digital Making",
         "Education"
@@ -1193,7 +1300,6 @@
       "year": 2017,
       "tags": [
         "3D Printing",
-        "COVID-19",
         "Design"
       ],
       "author": "Illinois MakerLab"
@@ -1249,7 +1355,6 @@
       "year": 2016,
       "tags": [
         "3D Printing",
-        "COVID-19",
         "Volunteer",
         "Workshop"
       ],
@@ -1353,6 +1458,7 @@
       "pubDate": "2016-10-31",
       "year": 2016,
       "tags": [
+        "3D Printing",
         "Design",
         "Education",
         "Research",
@@ -1452,7 +1558,6 @@
       "year": 2016,
       "tags": [
         "3D Printing",
-        "COVID-19",
         "Design",
         "Education",
         "Volunteer"
@@ -1469,7 +1574,6 @@
       "year": 2016,
       "tags": [
         "3D Printing",
-        "COVID-19",
         "Community",
         "Design"
       ],
@@ -1675,6 +1779,7 @@
       "pubDate": "2016-03-01",
       "year": 2016,
       "tags": [
+        "3D Printing",
         "Community",
         "News"
       ],
@@ -1798,7 +1903,6 @@
       "pubDate": "2015-10-26",
       "year": 2015,
       "tags": [
-        "3D Printing",
         "Digital Making",
         "Education",
         "Making Things",
@@ -1816,7 +1920,6 @@
       "pubDate": "2015-09-17",
       "year": 2015,
       "tags": [
-        "3D Printing",
         "Design",
         "Education",
         "Workshop"
@@ -1833,7 +1936,6 @@
       "year": 2015,
       "tags": [
         "3D Printing",
-        "COVID-19",
         "Design",
         "Education",
         "Scanning"
@@ -1900,7 +2002,6 @@
       "year": 2015,
       "tags": [
         "3D Printing",
-        "COVID-19",
         "Community",
         "Design",
         "Education",
@@ -1949,7 +2050,7 @@
       "pubDate": "2015-06-26",
       "year": 2015,
       "tags": [
-        "COVID-19"
+        "3D Printing"
       ],
       "author": "IllinoisMakerLab"
     },
@@ -2079,9 +2180,7 @@
       "year": 2015,
       "tags": [
         "3D Printing",
-        "COVID-19",
         "Community",
-        "Design",
         "Education"
       ],
       "author": "uimakerlab@illinois.edu"
@@ -2114,7 +2213,6 @@
       "year": 2015,
       "tags": [
         "3D Printing",
-        "COVID-19",
         "Design",
         "Education",
         "Making Things"
@@ -2145,7 +2243,6 @@
       "year": 2015,
       "tags": [
         "3D Printing",
-        "COVID-19",
         "Design",
         "Education",
         "Making Things"
@@ -2175,7 +2272,6 @@
       "year": 2015,
       "tags": [
         "3D Printing",
-        "COVID-19",
         "Design",
         "Education",
         "Making Things"
@@ -2192,7 +2288,6 @@
       "year": 2015,
       "tags": [
         "3D Printing",
-        "COVID-19",
         "Community",
         "Education"
       ],
@@ -2208,7 +2303,6 @@
       "year": 2015,
       "tags": [
         "3D Printing",
-        "COVID-19",
         "Design",
         "Education",
         "Making Things"
@@ -2225,7 +2319,6 @@
       "year": 2015,
       "tags": [
         "3D Printing",
-        "COVID-19",
         "Design",
         "Digital Making",
         "Education",
@@ -2242,7 +2335,6 @@
       "pubDate": "2015-03-19",
       "year": 2015,
       "tags": [
-        "COVID-19",
         "Design",
         "Education",
         "Making Things"
@@ -2277,7 +2369,6 @@
       "year": 2015,
       "tags": [
         "3D Printing",
-        "COVID-19",
         "Community",
         "Education",
         "Making Things"
@@ -2309,7 +2400,6 @@
       "year": 2015,
       "tags": [
         "3D Printing",
-        "COVID-19",
         "Design",
         "Education",
         "Making Things",
@@ -2357,8 +2447,7 @@
       "pubDate": "2015-02-26",
       "year": 2015,
       "tags": [
-        "3D Printing",
-        "COVID-19"
+        "3D Printing"
       ],
       "author": "AricRindfleisch"
     },
@@ -2371,7 +2460,7 @@
       "pubDate": "2015-02-24",
       "year": 2015,
       "tags": [
-        "COVID-19",
+        "3D Printing",
         "Design",
         "Digital Making",
         "Education",
@@ -2405,7 +2494,6 @@
       "year": 2015,
       "tags": [
         "3D Printing",
-        "COVID-19",
         "Design",
         "Education"
       ],
@@ -2436,7 +2524,6 @@
       "year": 2015,
       "tags": [
         "3D Printing",
-        "COVID-19",
         "Education",
         "Making Things"
       ],
@@ -2466,8 +2553,6 @@
       "pubDate": "2015-02-09",
       "year": 2015,
       "tags": [
-        "3D Printing",
-        "COVID-19",
         "Education",
         "Making Things"
       ],
@@ -2482,6 +2567,7 @@
       "pubDate": "2015-02-05",
       "year": 2015,
       "tags": [
+        "3D Printing",
         "Community"
       ],
       "author": "IllinoisMakerLab"
@@ -2638,9 +2724,7 @@
       "description": "Earlier this week, our friends from the sign shop at Facilities and Services (F&S) stopped by the Lab to install our new sign. This sign reads, \"What will you make?\" and is posted on our main east...",
       "pubDate": "2014-12-04",
       "year": 2014,
-      "tags": [
-        "COVID-19"
-      ],
+      "tags": [],
       "author": "AricRindfleisch"
     },
     {
@@ -2837,7 +2921,6 @@
       "pubDate": "2014-08-12",
       "year": 2014,
       "tags": [
-        "3D Printing",
         "Community",
         "Design",
         "Staff"
@@ -2862,11 +2945,12 @@
       "title": "Meet the Maker : Greg Damhorst",
       "slug": "meet-the-maker-greg-damhorst",
       "url": "/blog/meet-the-maker-greg-damhorst.html",
-      "excerpt": "Greg Damhorst( http://gregory.damhorst.net/ ) is a bio engineering student (we seem to be getting a lot of them!) who designed and printed a custom piece of equipment for his lab over a weekend,...",
-      "description": "Greg Damhorst( http://gregory.damhorst.net/ ) is a bio engineering student (we seem to be getting a lot of them!) who designed and printed a custom piece of equipment for his lab over a weekend,...",
+      "excerpt": "Greg Damhorst(http://gregory.damhorst.net/) is a bio engineering student (we seem to be getting a lot of them!) who designed and printed a custom piece of equipment for his lab over a weekend,...",
+      "description": "Greg Damhorst(http://gregory.damhorst.net/) is a bio engineering student (we seem to be getting a lot of them!) who designed and printed a custom piece of equipment for his lab over a weekend,...",
       "pubDate": "2014-08-05",
       "year": 2014,
       "tags": [
+        "3D Printing",
         "Education",
         "Staff"
       ],
@@ -2942,7 +3026,6 @@
       "pubDate": "2014-07-23",
       "year": 2014,
       "tags": [
-        "3D Printing",
         "Education",
         "News"
       ],
@@ -3014,7 +3097,6 @@
       "pubDate": "2014-04-29",
       "year": 2014,
       "tags": [
-        "3D Printing",
         "Education",
         "Making Things"
       ],
@@ -3108,7 +3190,6 @@
       "year": 2014,
       "tags": [
         "3D Printing",
-        "COVID-19",
         "Community",
         "Design",
         "Education",
@@ -3142,9 +3223,7 @@
       "year": 2014,
       "tags": [
         "3D Printing",
-        "COVID-19",
         "Community",
-        "Design",
         "Education",
         "Summer Camp",
         "Workshop"
@@ -3176,8 +3255,6 @@
       "pubDate": "2014-03-17",
       "year": 2014,
       "tags": [
-        "3D Printing",
-        "COVID-19",
         "Design",
         "Education",
         "Making Things"
@@ -3193,6 +3270,7 @@
       "pubDate": "2014-03-14",
       "year": 2014,
       "tags": [
+        "3D Printing",
         "Design",
         "Education",
         "Making Things"
@@ -3223,7 +3301,6 @@
       "pubDate": "2014-02-24",
       "year": 2014,
       "tags": [
-        "3D Printing",
         "Workshop"
       ],
       "author": "uimakerlab@illinois.edu"
@@ -3266,7 +3343,6 @@
       "pubDate": "2014-02-19",
       "year": 2014,
       "tags": [
-        "3D Printing",
         "Education",
         "Making Things",
         "Workshop"
@@ -3282,7 +3358,6 @@
       "pubDate": "2014-02-13",
       "year": 2014,
       "tags": [
-        "COVID-19",
         "Education",
         "Making Things",
         "Scanning"
@@ -3312,7 +3387,6 @@
       "year": 2014,
       "tags": [
         "3D Printing",
-        "COVID-19",
         "Education",
         "News"
       ],
@@ -3344,7 +3418,6 @@
       "year": 2014,
       "tags": [
         "3D Printing",
-        "COVID-19",
         "Community",
         "Design",
         "Education",
@@ -3379,7 +3452,6 @@
       "tags": [
         "3D Printing",
         "Community",
-        "Design",
         "Education",
         "Scanning",
         "Workshop"
@@ -3411,7 +3483,6 @@
       "year": 2014,
       "tags": [
         "3D Printing",
-        "COVID-19",
         "Education",
         "Lab Updates"
       ],
@@ -3427,7 +3498,6 @@
       "year": 2014,
       "tags": [
         "3D Printing",
-        "COVID-19",
         "Design",
         "Education",
         "Making Things"
@@ -3474,7 +3544,6 @@
       "year": 2014,
       "tags": [
         "3D Printing",
-        "COVID-19",
         "Design",
         "Education",
         "Lab Updates",
@@ -3535,7 +3604,6 @@
       "year": 2013,
       "tags": [
         "3D Printing",
-        "COVID-19",
         "Scanning"
       ],
       "author": "AricRindfleisch"
@@ -3690,7 +3758,6 @@
       "year": 2013,
       "tags": [
         "3D Printing",
-        "COVID-19",
         "Design"
       ],
       "author": "AricRindfleisch"
@@ -3719,7 +3786,6 @@
       "year": 2013,
       "tags": [
         "3D Printing",
-        "COVID-19",
         "Digital Making",
         "Lab Updates",
         "Scanning"
@@ -3863,7 +3929,6 @@
       "year": 2013,
       "tags": [
         "3D Printing",
-        "COVID-19",
         "Design",
         "Things We Make"
       ],
@@ -3878,7 +3943,6 @@
       "pubDate": "2013-08-15",
       "year": 2013,
       "tags": [
-        "3D Printing",
         "Lab Updates"
       ],
       "author": "AricRindfleisch"
@@ -4021,7 +4085,6 @@
       "year": 2013,
       "tags": [
         "3D Printing",
-        "COVID-19",
         "Things We Make"
       ],
       "author": "AricRindfleisch"
@@ -4075,7 +4138,6 @@
       "pubDate": "2013-06-04",
       "year": 2013,
       "tags": [
-        "3D Printing",
         "Education",
         "Lab Updates"
       ],
@@ -4150,7 +4212,6 @@
       "year": 2013,
       "tags": [
         "3D Printing",
-        "COVID-19",
         "Community",
         "Research",
         "Staff"
@@ -4228,7 +4289,6 @@
       "year": 2013,
       "tags": [
         "3D Printing",
-        "COVID-19",
         "Education"
       ],
       "author": "AricRindfleisch"
@@ -4286,6 +4346,7 @@
       "pubDate": "2013-03-26",
       "year": 2013,
       "tags": [
+        "3D Printing",
         "Scanning"
       ],
       "author": "VishalSachdev"
@@ -4331,8 +4392,7 @@
       "pubDate": "2013-03-12",
       "year": 2013,
       "tags": [
-        "3D Printing",
-        "Design"
+        "3D Printing"
       ],
       "author": "AricRindfleisch"
     },
@@ -4461,7 +4521,6 @@
       "year": 2013,
       "tags": [
         "3D Printing",
-        "Design",
         "Education",
         "News",
         "Research"

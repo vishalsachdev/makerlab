@@ -61,15 +61,15 @@ def clean_text(text, max_length=200):
 
 
 TAG_KEYWORDS = {
-    '3D Printing': [r'3d print', r'3d-print', r'printer', r'filament', r'PLA', r'ultimaker', r'makerbot', r'keychain', r'ornament', r'skull'],
-    'COVID-19': [r'covid', r'pandemic', r'PPE', r'face shield', r'mask buckle'],
+    '3D Printing': [r'3d print', r'3d-print', r'printer', r'printing', r'printed', r'filament', r'\bPLA\b', r'ultimaker', r'makerbot', r'keychain', r'ornament', r'skull'],
+    'COVID-19': [r'covid', r'pandemic', r'\bPPE\b', r'face shield', r'mask buckle'],
     'Education': [r'course', r'class', r'student', r'learning', r'teaching', r'curriculum', r'certificate'],
     'Making Things': [r'making things', r'BADM 331', r'badm331'],
     'Digital Making': [r'digital making', r'BADM 357', r'badm357'],
     'Summer Camp': [r'summer camp', r'summer program', r'youth camp'],
     'Birthday Party': [r'birthday part', r'birthday celebrat'],
     'Workshop': [r'workshop'],
-    'Design': [r'design think', r'prototype', r'prototyping', r'3d model', r'tinkercad', r'fusion 360', r'cad'],
+    'Design': [r'design think', r'prototype', r'prototyping', r'3d model', r'tinkercad', r'fusion 360', r'\bcad\b'],
     'Volunteer': [r'volunteer', r'guru spotlight', r'guru interview'],
     'Community': [r'community', r'outreach', r'partnership', r'partner', r'makergirl', r'maker girl', r'kickstart'],
     'Research': [r'research', r'study', r'experiment'],

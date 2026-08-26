@@ -1,6 +1,6 @@
 # Illinois MakerLab - LLM Agent Information
 # https://makerlab.illinois.edu
-# Last Updated: 2026-08-03
+# Last Updated: 2026-08-26
 
 ## About
 Illinois MakerLab is the world's first business school 3D printing lab, located at the University of Illinois at Urbana-Champaign. Founded in 2012, we serve students, faculty, and the community with 3D printing services, educational courses, workshops, and youth programs.
@@ -29,7 +29,7 @@ Illinois MakerLab is the world's first business school 3D printing lab, located 
 - About Us: /about-us.html
 - Services & Pricing: /pricingservices.html
 - Summer Camps: /summer.html
-- Lab Hours: /lab-hours.html (hours vary by semester; lab closed between semesters, reopening the week of Aug 31, 2026)
+- Lab Hours: /lab-hours.html (Fall 2026: Mon/Tue/Thu/Fri 1:00-7:00 PM; Wed 4:00-7:00 PM; effective Aug 31, 2026)
 - Contact: /contact.html
 - Blog: /blog/index.html (309 posts since 2012)
 - FAQ: /faq.html
@@ -46,7 +46,7 @@ Illinois MakerLab is the world's first business school 3D printing lab, located 
 
 ## Common Questions
 Q: What are the lab hours?
-A: Hours vary by semester. The lab is currently closed between semesters and reopens the week of Aug 31, 2026. Check /lab-hours.html for current schedule.
+A: Fall 2026 hours are Mon/Tue/Thu/Fri 1:00-7:00 PM and Wed 4:00-7:00 PM, effective Aug 31, 2026. Check /lab-hours.html for updates.
 
 Q: How much does 3D printing cost?
 A: Pricing varies by material and service level. See /pricingservices.html

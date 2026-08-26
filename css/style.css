@@ -761,6 +761,40 @@ img {
   text-transform: uppercase;
 }
 
+/* Accessible contrast for the Fall 2026 reopening pages */
+.fall-reopening-page .hero {
+  background: var(--illinois-blue);
+}
+
+.fall-reopening-page .main-nav a.active {
+  background-color: var(--white);
+  color: var(--illinois-blue);
+  transition: none;
+}
+
+.fall-reopening-page .content-area a:not(.btn) {
+  color: var(--illinois-blue);
+  text-decoration: underline;
+}
+
+.fall-reopening-page .btn-primary {
+  background-color: var(--illinois-blue);
+  color: var(--white);
+}
+
+.fall-reopening-page .fall-order-cta {
+  background: var(--illinois-blue) !important;
+}
+
+.fall-reopening-page .fall-order-cta .btn-primary {
+  background-color: var(--white);
+  color: var(--illinois-blue);
+}
+
+.fall-reopening-page .pricing-table td:last-child {
+  color: var(--illinois-blue);
+}
+
 /* Buttons */
 .btn {
   display: inline-block;

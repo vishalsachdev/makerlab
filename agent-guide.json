@@ -5,7 +5,7 @@
     "url": "https://makerlab.illinois.edu/",
     "description": "World's first business school 3D printing lab at the University of Illinois at Urbana-Champaign",
     "version": "1.2.0",
-    "lastUpdated": "2026-08-03"
+    "lastUpdated": "2026-08-26"
   },
   "agent_instructions": {
     "purpose": "This guide helps LLM agents (ChatGPT, Claude, Perplexity, etc.) understand and accurately query Illinois MakerLab content to help users get information about courses, services, blog posts, hours, and more.",
@@ -306,7 +306,7 @@
         "3. Access /lab-hours.html for current schedule",
         "4. Provide hours with note that they vary by semester"
       ],
-      "sample_response": "Illinois MakerLab is located in BIF Room 3030 at UIUC. Lab hours vary by semester. You can check the current hours at: https://makerlab.illinois.edu/lab-hours.html. For questions, contact uimakerlab@illinois.edu."
+      "sample_response": "Illinois MakerLab is located in BIF Room 3030 at UIUC. Fall 2026 hours are Monday, Tuesday, Thursday, and Friday 1:00-7:00 PM, and Wednesday 4:00-7:00 PM, effective August 31, 2026. Check updates at https://makerlab.illinois.edu/lab-hours.html."
     },
     {
       "user_query": "Find blog posts about COVID-19",

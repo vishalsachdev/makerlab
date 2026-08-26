@@ -5,7 +5,7 @@
     "url": "https://makerlab.illinois.edu/",
     "description": "The world's first business school 3D printing lab at the University of Illinois at Urbana-Champaign",
     "established": "2012",
-    "lastUpdated": "2026-08-03",
+    "lastUpdated": "2026-08-26",
     "version": "1.2.0"
   },
   "contact": {
@@ -28,8 +28,8 @@
     }
   },
   "hours": {
-    "note": "Lab hours vary by semester. Check the lab hours page for current schedule.",
-    "currentStatus": "Closed between semesters; reopening week of August 31, 2026",
+    "note": "Fall 2026 hours effective Monday, August 31, 2026: Monday, Tuesday, Thursday, and Friday 1:00-7:00 PM; Wednesday 4:00-7:00 PM.",
+    "currentStatus": "Fall 2026 hours posted",
     "url": "/lab-hours.html",
     "page": "lab-hours.html"
   },
@@ -152,7 +152,7 @@
   "commonQuestions": [
     {
       "question": "What are the lab hours?",
-      "answer": "Lab hours vary by semester. Check /lab-hours.html for current schedule.",
+      "answer": "Fall 2026 hours are Monday, Tuesday, Thursday, and Friday 1:00-7:00 PM, and Wednesday 4:00-7:00 PM, effective August 31, 2026. See /lab-hours.html for updates.",
       "url": "/lab-hours.html"
     },
     {
@@ -192,7 +192,7 @@
   "metadata": {
     "generatedBy": "Illinois MakerLab Site Generator",
     "apiVersion": "1.0.0",
-    "lastGenerated": "2026-08-03",
+    "lastGenerated": "2026-08-26",
     "contentManagementSystem": "Custom Python Static Site Generator"
   }
 }

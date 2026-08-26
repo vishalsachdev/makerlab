@@ -1,6 +1,6 @@
 {
   "total": 28,
-  "lastUpdated": "2026-08-03",
+  "lastUpdated": "2026-08-26",
   "pages": [
     {
       "title": "Home",
@@ -24,7 +24,7 @@
       "url": "/lab-staff.html",
       "description": "Meet the MakerLab team including our director, design gurus, and student staff who help with 3D printing and digital making.",
       "category": "about",
-      "lastModified": "2026-01-25"
+      "lastModified": "2026-08-26"
     },
     {
       "title": "Partners",
@@ -56,7 +56,7 @@
       "url": "/online-ordering.html",
       "description": "Submit your 3D printing order online. Upload STL files, select materials, and pick up at MakerLab. Convenient ordering for UIUC community.",
       "category": "services",
-      "lastModified": "2026-01-25"
+      "lastModified": "2026-08-26"
     },
     {
       "title": "Instant 3D Print Quote",
@@ -120,7 +120,7 @@
       "url": "/lab-hours.html",
       "description": "Current MakerLab operating hours. Hours vary by semester - check this page for the latest schedule and special closures.",
       "category": "information",
-      "lastModified": "2026-01-25"
+      "lastModified": "2026-08-26"
     },
     {
       "title": "Contact",

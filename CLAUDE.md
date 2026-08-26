@@ -149,6 +149,8 @@ The site follows WCAG 2.1 AA practices:
 
 **Post-season (site flipped 2026-08-03; lab closed until week of Aug 31).** Active: parent feedback campaign **LAUNCHED 2026-08-03** — email sent From vishal@illinois.edu to 65 families (BCC; 3 lookup-needed families skipped per Vishal), live Google Form survey (link + settings in gitignored `data/parent-emails/feedback-campaign-plan.md`); replies land in vishal's inbox (mailcorpus indexes them); reminder nudge ~Aug 10, leadership one-pager ~Aug 20; season-recap blog post (public gist draft out to Bayu/Ling for media, Aric CC'd); five site-review housekeeping decisions (see 8/03 session log archive). **PRIORITY: executive summary for Associate Dean Mark Peecher, due EOD Friday 2026-08-07** — he will use it to decide whether to reappoint the ML director roles. Draft complete (~1,794 words, Word doc in session scratchpad) and sent in-thread to Aric for his BADM 331 section plus a full read; assemble and send once he responds. **Fall staffing schedule 2026-08-04** — three gurus (Bayu, Aldo Villanueva, Sahib Bedi) for the Aug 31 reopen; HTML confirmation email opened for review, grid needs verifying before send. Ops runbook now lives in the private makerlab-camps repo; file cancellation/ops issues there. Mail status: mailcorpus/Thunderbird is the reading source (Outlook desktop still needs re-auth); refund confirmations split across vishal + uimakerlab mailboxes (see memory `feedback-refund-confirmation-mailbox-split`).
 
+- **Sun 2026-08-30:** re-link the Podio order form on `online-ordering.html` (Vishal); the contact-form fallback added 08-26 is temporary.
+
 ## Roadmap
 
 - [x] Squarespace migration (Nov 2025)

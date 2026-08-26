@@ -55,13 +55,84 @@ class PageParser(HTMLParser):
             self._buffer = []
 
 
+class LinkParser(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.in_nav = False
+        self.current_link = None
+        self.links = []
+
+    def handle_starttag(self, tag, attrs):
+        if tag == "nav":
+            self.in_nav = True
+        elif tag == "br" and self.current_link:
+            self.current_link["text"].append(" ")
+        elif tag == "a":
+            self.current_link = {
+                "attributes": dict(attrs),
+                "in_nav": self.in_nav,
+                "text": [],
+            }
+
+    def handle_data(self, data):
+        if self.current_link:
+            self.current_link["text"].append(data)
+
+    def handle_endtag(self, tag):
+        if tag == "a" and self.current_link:
+            self.current_link["text"] = " ".join(
+                "".join(self.current_link["text"]).split()
+            )
+            self.links.append(self.current_link)
+            self.current_link = None
+        elif tag == "nav":
+            self.in_nav = False
+
+
 def parse_page(name):
     parser = PageParser()
     parser.feed((ROOT / name).read_text())
     return parser
 
 
+def parse_links(name):
+    parser = LinkParser()
+    parser.feed((ROOT / name).read_text())
+    return parser.links
+
+
 class FallReopeningTests(unittest.TestCase):
+    def test_page_index_marks_homepage_reopening_update(self):
+        pages = json.loads((ROOT / "api/pages.json").read_text())["pages"]
+        homepage = next(page for page in pages if page["slug"] == "index")
+
+        self.assertEqual(homepage["lastModified"], "2026-08-26")
+
+    def test_homepage_primary_cta_promotes_fall_hours(self):
+        ctas = [
+            link
+            for link in parse_links("index.html")
+            if "cta-block-link" in link["attributes"].get("class", "").split()
+        ]
+
+        self.assertEqual(ctas[0]["attributes"]["href"], "lab-hours.html")
+        self.assertEqual(
+            ctas[0]["text"],
+            "FALL 2026 OPEN MON, AUG 31 · SEE HOURS →",
+        )
+
+    def test_homepage_keeps_both_summer_camps_navigation_links(self):
+        summer_nav_links = [
+            link
+            for link in parse_links("index.html")
+            if link["in_nav"] and link["text"] == "Summer Camps"
+        ]
+
+        self.assertEqual(
+            [link["attributes"]["href"] for link in summer_nav_links],
+            ["summer.html", "summer.html"],
+        )
+
     def test_hours_page_presents_effective_date_and_weekday_schedule(self):
         page = parse_page("lab-hours.html")
         text = (ROOT / "lab-hours.html").read_text()

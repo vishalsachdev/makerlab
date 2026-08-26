@@ -336,6 +336,28 @@ img {
   z-index: 1;
 }
 
+/* Homepage contrast for Fall 2026 reopening */
+.fall-home-page .hero-section.hero-home::before {
+  background: rgba(19, 41, 75, 0.82);
+}
+
+.fall-home-page .hero-content {
+  background-color: var(--illinois-blue);
+  border-radius: 8px;
+}
+
+.fall-home-page .section-title a,
+.fall-home-page #instagram p a {
+  color: var(--illinois-blue);
+  text-decoration: underline;
+}
+
+.fall-home-page .reviews-score-big,
+.fall-home-page .reviews-stars-big,
+.fall-home-page .review-stars-icons {
+  color: var(--illinois-blue);
+}
+
 .hero-content {
   position: relative;
   z-index: 2;

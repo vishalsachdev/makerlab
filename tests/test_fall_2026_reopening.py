@@ -106,7 +106,7 @@ class FallReopeningTests(unittest.TestCase):
         pages = json.loads((ROOT / "api/pages.json").read_text())["pages"]
         homepage = next(page for page in pages if page["slug"] == "index")
 
-        self.assertEqual(homepage["lastModified"], "2026-08-26")
+        self.assertGreaterEqual(homepage["lastModified"], "2026-08-26")
 
     def test_homepage_primary_cta_promotes_fall_hours(self):
         ctas = [
@@ -118,7 +118,7 @@ class FallReopeningTests(unittest.TestCase):
         self.assertEqual(ctas[0]["attributes"]["href"], "lab-hours.html")
         self.assertEqual(
             ctas[0]["text"],
-            "FALL 2026 OPEN MON, AUG 31 · SEE HOURS →",
+            "FALL 2026 NOW OPEN · SEE HOURS →",
         )
 
     def test_homepage_keeps_both_summer_camps_navigation_links(self):

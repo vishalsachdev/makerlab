@@ -1,6 +1,6 @@
 {
   "total": 28,
-  "lastUpdated": "2026-08-26",
+  "lastUpdated": "2026-09-01",
   "pages": [
     {
       "title": "Home",
@@ -8,7 +8,7 @@
       "url": "/index.html",
       "description": "Illinois MakerLab homepage featuring quick links to services, latest blog posts, and customer reviews of our 3D printing services.",
       "category": "main",
-      "lastModified": "2026-08-26"
+      "lastModified": "2026-09-01"
     },
     {
       "title": "About Us",
@@ -120,7 +120,7 @@
       "url": "/lab-hours.html",
       "description": "Current MakerLab operating hours. Hours vary by semester - check this page for the latest schedule and special closures.",
       "category": "information",
-      "lastModified": "2026-08-26"
+      "lastModified": "2026-09-01"
     },
     {
       "title": "Contact",

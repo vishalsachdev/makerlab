@@ -5,7 +5,7 @@
     "url": "https://makerlab.illinois.edu/",
     "description": "World's first business school 3D printing lab at the University of Illinois at Urbana-Champaign",
     "version": "1.2.0",
-    "lastUpdated": "2026-08-26"
+    "lastUpdated": "2026-09-01"
   },
   "agent_instructions": {
     "purpose": "This guide helps LLM agents (ChatGPT, Claude, Perplexity, etc.) understand and accurately query Illinois MakerLab content to help users get information about courses, services, blog posts, hours, and more.",

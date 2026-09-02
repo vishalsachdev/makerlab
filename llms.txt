@@ -29,7 +29,7 @@ Illinois MakerLab is the world's first business school 3D printing lab, located 
 - About Us: /about-us.html
 - Services & Pricing: /pricingservices.html
 - Summer Camps: /summer.html
-- Lab Hours: /lab-hours.html (Fall 2026: Mon/Tue/Thu/Fri 1:00-7:00 PM; Wed 4:00-7:00 PM; effective Aug 31, 2026. Notices: Thu Sep 3 opens late at 4:00 PM; closed Mon Sep 7 for Labor Day)
+- Lab Hours: /lab-hours.html (Fall 2026: Mon/Fri 1:00-7:00 PM; Tue/Thu 2:00-7:00 PM; Wed 4:00-7:00 PM; effective Aug 31, 2026. Notices: Thu Sep 3 opens late at 4:00 PM; closed Mon Sep 7 for Labor Day)
 - Contact: /contact.html
 - Blog: /blog/index.html (309 posts since 2012)
 - FAQ: /faq.html
@@ -46,7 +46,7 @@ Illinois MakerLab is the world's first business school 3D printing lab, located 
 
 ## Common Questions
 Q: What are the lab hours?
-A: Fall 2026 hours are Mon/Tue/Thu/Fri 1:00-7:00 PM and Wed 4:00-7:00 PM, effective Aug 31, 2026. Thu Sep 3 opens late at 4:00 PM; closed Mon Sep 7 for Labor Day. Check /lab-hours.html for updates.
+A: Fall 2026 hours are Mon/Fri 1:00-7:00 PM, Tue/Thu 2:00-7:00 PM, and Wed 4:00-7:00 PM, effective Aug 31, 2026. Thu Sep 3 opens late at 4:00 PM; closed Mon Sep 7 for Labor Day. Check /lab-hours.html for updates.
 
 Q: How much does 3D printing cost?
 A: Pricing varies by material and service level. See /pricingservices.html

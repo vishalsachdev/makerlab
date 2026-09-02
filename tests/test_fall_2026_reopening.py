@@ -144,9 +144,9 @@ class FallReopeningTests(unittest.TestCase):
             [cell for tag, cell in page.cells if tag == "td"],
             [
                 "Monday", "1:00–7:00 PM",
-                "Tuesday", "1:00–7:00 PM",
+                "Tuesday", "2:00–7:00 PM",
                 "Wednesday", "4:00–7:00 PM",
-                "Thursday", "1:00–7:00 PM",
+                "Thursday", "2:00–7:00 PM",
                 "Friday", "1:00–7:00 PM",
             ],
         )
@@ -160,8 +160,15 @@ class FallReopeningTests(unittest.TestCase):
             [
                 {
                     "@type": "OpeningHoursSpecification",
-                    "dayOfWeek": ["Monday", "Tuesday", "Thursday", "Friday"],
+                    "dayOfWeek": ["Monday", "Friday"],
                     "opens": "13:00",
+                    "closes": "19:00",
+                    "validFrom": "2026-08-31",
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Tuesday", "Thursday"],
+                    "opens": "14:00",
                     "closes": "19:00",
                     "validFrom": "2026-08-31",
                 },

@@ -92,3 +92,6 @@ temp/
 node_modules/
 package-lock.json
 .wrangler/
+
+# Local MCP config (machine-specific credential paths)
+.mcp.json

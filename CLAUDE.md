@@ -164,7 +164,7 @@ The site follows WCAG 2.1 AA practices:
 - [x] 3D Print Quote Calculator (STL/OBJ upload, Three.js preview, real-time pricing)
 - [x] MakerLab Teams Bot POC — Power Automate "orders" keyword flow (SharePoint → Teams group chat)
 - [x] Registration data pipeline: FormBuilder API → availability badges on website
-- [x] Daily availability updates — now a GitHub Actions cron (`.github/workflows/update-availability.yml`, 14:00 UTC); needs repo secret `FORMBUILDER_TOKEN`. (History: Cloudflare Worker → local launchd → GitHub Actions, 2026-05-12. Local launchd plist renamed `.disabled`; `scripts/daily_availability_cron.sh` kept as fallback.)
+- [x] Daily availability updates — GitHub Actions workflow (`.github/workflows/update-availability.yml`, 14:00 UTC when scheduled); needs repo secret `FORMBUILDER_TOKEN`. **Off-season:** schedule commented out 2026-08-03 and the workflow disabled in GitHub 2026-09-14 (`gh workflow enable 275662132` plus uncomment the cron to restore). (History: Cloudflare Worker → local launchd → GitHub Actions, 2026-05-12. Local launchd plist renamed `.disabled`; `scripts/daily_availability_cron.sh` kept as fallback.)
 - [x] Summer camp instructor job postings + staff schedule + hiring landing page
 - [x] Renew FormBuilder token (renewed 2026-05-08, expires 11/08/2026)
 - [ ] **Jan 2027: restore summer camp tooling** before registration opens: `git mv` the two skills back from `.claude/skills-disabled/` (see its README) and move the camp memories back from `memory/archive/`. Reconcile the `summer.html` refund wording with the 50%-flat tier first.

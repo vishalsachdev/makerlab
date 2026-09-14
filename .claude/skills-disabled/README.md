@@ -13,6 +13,15 @@ Nothing is deleted.
     git mv .claude/skills-disabled/camp-welcome-emails .claude/skills/camp-welcome-emails
     git mv .claude/skills-disabled/handle-camp-cancellation .claude/skills/handle-camp-cancellation
 
+Also re-enable the availability workflow (disabled in GitHub 2026-09-14, schedule
+commented out since 2026-08-03), after renewing `FORMBUILDER_TOKEN` (expires 11/08/2026):
+
+    gh workflow enable 275662132 -R vishalsachdev/makerlab
+    # then uncomment the schedule block in .github/workflows/update-availability.yml
+
+The makerlab-camps "Generate weekly camp rosters" workflow has been disabled since the
+2026 season ended; enable it there too if rosters are needed.
+
 Restore before running either skill. `camp-welcome-emails/SKILL.md` calls its scripts
 by the `.claude/skills/camp-welcome-emails/scripts/...` path.
 

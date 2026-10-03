@@ -5,7 +5,7 @@
     "url": "https://makerlab.illinois.edu/",
     "description": "The world's first business school 3D printing lab at the University of Illinois at Urbana-Champaign",
     "established": "2012",
-    "lastUpdated": "2026-09-01",
+    "lastUpdated": "2026-10-02",
     "version": "1.2.0"
   },
   "contact": {
@@ -28,21 +28,15 @@
     }
   },
   "hours": {
-    "note": "Fall 2026 hours effective Monday, August 31, 2026: Monday and Friday 1:00-7:00 PM; Tuesday and Thursday 2:00-7:00 PM; Wednesday 4:00-7:00 PM. Notices: Thursday, September 3, 2026 opens late at 4:00 PM (4:00-7:00 PM); closed Monday, September 7, 2026 for Labor Day.",
+    "note": "Fall 2026 hours effective Monday, August 31, 2026: Monday and Friday 1:00-7:00 PM; Tuesday and Thursday 2:00-7:00 PM; Wednesday 4:00-7:00 PM. Notice: Monday, October 5, 2026 opens late at 4:00 PM (4:00-7:00 PM).",
     "currentStatus": "Open for Fall 2026",
     "url": "/lab-hours.html",
     "page": "lab-hours.html",
     "notices": [
       {
-        "date": "2026-09-03",
+        "date": "2026-10-05",
         "status": "late opening",
-        "hours": "4:00-7:00 PM",
-        "reason": "staffing"
-      },
-      {
-        "date": "2026-09-07",
-        "status": "closed",
-        "reason": "Labor Day"
+        "hours": "4:00-7:00 PM"
       }
     ]
   },
@@ -165,7 +159,7 @@
   "commonQuestions": [
     {
       "question": "What are the lab hours?",
-      "answer": "Fall 2026 hours are Monday and Friday 1:00-7:00 PM, Tuesday and Thursday 2:00-7:00 PM, and Wednesday 4:00-7:00 PM, effective August 31, 2026. See /lab-hours.html for updates.",
+      "answer": "Fall 2026 hours are Monday and Friday 1:00-7:00 PM, Tuesday and Thursday 2:00-7:00 PM, and Wednesday 4:00-7:00 PM, effective August 31, 2026. On Monday, October 5, 2026, the lab opens late at 4:00 PM (4:00-7:00 PM). See /lab-hours.html for updates.",
       "url": "/lab-hours.html"
     },
     {

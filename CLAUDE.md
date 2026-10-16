@@ -171,6 +171,11 @@ The site follows WCAG 2.1 AA practices:
 
 ## Session Log
 
+### 2026-10-16
+- Pulled #36 and #37 (fast-forward to `fa0571c`, Oct 5 late-opening notice added then removed).
+- **Repo access:** Sahib (`sahibbedi`) has **write** on this repo, intended (Vishal via control, 10-16). His makerlab-camps invite (write, sent 2026-09-28 23:45 UTC) shows `expired=true` in the API; do not resend unless Vishal asks. Bayu is a collaborator on both repos.
+- **Email and Podio review** (read-only investigation): lives in the private makerlab-camps repo, `docs/email-podio-review-2026-10-16.md`, with the app inventory, options, archive plan and decisions table. It was briefly in this public repo (`26b47a6`, removed in `b0c08a8`); history purge awaits Vishal's yes. Decided: keep GlobiMail (Option 1), Vishal changes the uimakerlab forward to a redirect; unused Podio apps get archived as a knowledge base; Podio MCP declined.
+
 ### 2026-09-28
 - **FSA receipt for a camp parent** (a parent asked uimakerlab for proof of 2026 camp payment for a Dependent Care FSA claim). The record was in the local, gitignored FormBuilder dump and `data/cancellations.csv`. Built a one-page Gies-color receipt PDF (EIN 37-6000511, from the registration-confirmation email footer; no Kip email has it), kept in `~/Documents/MakerLab/fsa-receipts/` (never this repo); Vishal sent it from uimakerlab.
 - **Receipt template** committed to the private camps repo: `makerlab-camps/docs/operations/fsa-receipt/` (`aa401fc`; JSON in, PDF out, one-page guard, replay-identical to the sent receipt; `.gitignore` keeps family JSON/PDFs out).

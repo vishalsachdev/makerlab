@@ -177,7 +177,7 @@
                     <span class="quote-radio-desc">Staff-managed &middot; we print &amp; you pick up</span>
                   </label>
                 </div>
-                <p class="quote-order-note">All prints include a $4 base fee. Online rates already include the 20% staff-managed surcharge.</p>
+                <p class="quote-order-note">The order total is the combined material cost for all copies, with a $4 minimum per order. Online rates already include the 20% staff-managed surcharge.</p>
               </fieldset>
 
               <!-- Infill -->
@@ -210,20 +210,24 @@
               <div class="quote-price-display">
                 <div class="quote-price-breakdown">
                   <div class="quote-price-row">
-                    <span>Estimated weight</span>
+                    <span>Estimated weight per copy</span>
                     <span id="quote-weight">-- g</span>
                   </div>
                   <div class="quote-price-row">
                     <span>Rate</span>
                     <span id="quote-rate">--/g</span>
                   </div>
-                  <div id="quote-base-fee-row" class="quote-price-row" hidden>
-                    <span>Base fee</span>
-                    <span>$4.00</span>
-                  </div>
                   <div id="quote-qty-row" class="quote-price-row" hidden>
                     <span>Quantity</span>
                     <span id="quote-qty-display">&times; 1</span>
+                  </div>
+                  <div class="quote-price-row">
+                    <span>Material subtotal</span>
+                    <span id="quote-material-subtotal">$0.00</span>
+                  </div>
+                  <div id="quote-minimum-row" class="quote-price-row" hidden>
+                    <span>Adjustment to $4 minimum</span>
+                    <span id="quote-minimum-adjustment">+$0.00</span>
                   </div>
                 </div>
                 <div class="quote-price-total" aria-live="polite" aria-atomic="true">

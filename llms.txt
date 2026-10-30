@@ -1,6 +1,6 @@
 # Illinois MakerLab - LLM Agent Information
 # https://makerlab.illinois.edu
-# Last Updated: 2026-10-02
+# Last Updated: 2026-10-30
 
 ## About
 Illinois MakerLab is the world's first business school 3D printing lab, located at the University of Illinois at Urbana-Champaign. Founded in 2012, we serve students, faculty, and the community with 3D printing services, educational courses, workshops, and youth programs.
@@ -61,7 +61,7 @@ Q: How do I order a 3D print?
 A: Use our online ordering system at /online-ordering.html
 
 Q: What does 3D printing cost?
-A: Base fee of $4 plus material costs per gram: Students 10¢ walk-in / 12¢ online, Faculty/Staff 25¢/30¢, Others 35¢/42¢. See /pricingservices.html
+A: The total is the combined material cost for all pieces, with a $4 minimum per order. Rates per gram: Students 10¢ walk-in / 12¢ online, Faculty/Staff 25¢/30¢, Others 35¢/42¢. See /pricingservices.html
 
 Q: What about design help?
 A: 1-to-1 tutoring for 3D modeling: $25/30min. Design services: $20-50/hr depending on affiliation. See /pricingservices.html

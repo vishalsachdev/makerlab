@@ -11,7 +11,7 @@
  * Pricing data (source: pricingservices.html / online-ordering.html):
  *   Walk-in: Student 10¢/g, Faculty 25¢/g, General 35¢/g
  *   Online:  Student 12¢/g, Faculty 30¢/g, General 42¢/g  (+20% surcharge)
- *   All prints: $4 base fee + material cost
+ *   All orders: combined material cost, with a $4 minimum per order
  */
 
 (function () {
@@ -25,7 +25,7 @@
     walkin: { student: 0.10, faculty: 0.25, general: 0.35 },
     online: { student: 0.12, faculty: 0.30, general: 0.42 }
   };
-  var BASE_FEE = 4.00; // $4 base fee applies to all prints
+  var ORDER_MINIMUM = 4.00; // Applied once to the combined cost of all copies
   var PLA_DENSITY = 1.24; // g/cm³
 
   // ── Analytics helper ────────────────────────────────────────────────
@@ -56,7 +56,9 @@
   var triEl        = document.getElementById('quote-triangles');
   var weightEl     = document.getElementById('quote-weight');
   var rateEl       = document.getElementById('quote-rate');
-  var baseFeeRow   = document.getElementById('quote-base-fee-row');
+  var materialEl   = document.getElementById('quote-material-subtotal');
+  var minimumRow   = document.getElementById('quote-minimum-row');
+  var minimumEl    = document.getElementById('quote-minimum-adjustment');
   var qtyRow       = document.getElementById('quote-qty-row');
   var qtyDisplay   = document.getElementById('quote-qty-display');
   var totalEl      = document.getElementById('quote-total-price');
@@ -498,15 +500,18 @@
 
     var weight      = estimateWeight(modelVolumeMm3, infill);
     var rate        = PRICING[orderType][userType];
-    var baseFee     = BASE_FEE;
-    var unitCost    = baseFee + weight * rate;
-    var totalCost   = unitCost * quantity;
+    // Combine all copies before rounding to cents and applying the order minimum.
+    var materialCost = Math.round(weight * rate * quantity * 100) / 100;
+    var minimumAdjustment = Math.max(0, ORDER_MINIMUM - materialCost);
+    var totalCost   = Math.max(ORDER_MINIMUM, materialCost);
 
     // Update display
     weightEl.textContent = weight.toFixed(1) + ' g';
     rateEl.textContent = (rate * 100).toFixed(0) + '\u00A2/g';
 
-    baseFeeRow.hidden = false;
+    materialEl.textContent = '$' + materialCost.toFixed(2);
+    minimumRow.hidden = minimumAdjustment === 0;
+    minimumEl.textContent = '+$' + minimumAdjustment.toFixed(2);
 
     if (quantity > 1) {
       qtyRow.hidden = false;

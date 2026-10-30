@@ -3301,6 +3301,10 @@ img {
   color: var(--text-dark);
 }
 
+.quote-price-row[hidden] {
+  display: none;
+}
+
 .quote-price-row + .quote-price-row {
   border-top: 1px solid var(--medium-gray);
 }

@@ -11,7 +11,7 @@
  * Pricing data (source: pricingservices.html / online-ordering.html):
  *   Walk-in: Student 10¢/g, Faculty 25¢/g, General 35¢/g
  *   Online:  Student 12¢/g, Faculty 30¢/g, General 42¢/g  (+20% surcharge)
- *   All prints: $4 base fee + material cost
+ *   Each order: $4 base fee + material cost for all copies
  */
 
 (function () {
@@ -22,10 +22,10 @@
   // supports, PETG, etc.) carry a 50% surcharge on these base prices.
   // That surcharge is NOT calculated here — noted in the disclaimer instead.
   var PRICING = {
-    walkin: { student: 0.10, faculty: 0.25, general: 0.35 },
-    online: { student: 0.12, faculty: 0.30, general: 0.42 }
+    walkin: { student: 0.10, faculty: 0.25, campus: 0.25, general: 0.35 },
+    online: { student: 0.12, faculty: 0.30, campus: 0.30, general: 0.42 }
   };
-  var BASE_FEE = 4.00; // $4 base fee applies to all prints
+  var BASE_FEE = 4.00; // $4 base fee applies once per order
   var PLA_DENSITY = 1.24; // g/cm³
 
   // ── Analytics helper ────────────────────────────────────────────────
@@ -499,8 +499,9 @@
     var weight      = estimateWeight(modelVolumeMm3, infill);
     var rate        = PRICING[orderType][userType];
     var baseFee     = BASE_FEE;
-    var unitCost    = baseFee + weight * rate;
-    var totalCost   = unitCost * quantity;
+    var materialCost = weight * rate * quantity;
+    // Campus-account payments use faculty/staff rates and a $10 order minimum.
+    var totalCost   = Math.max(userType === 'campus' ? 10 : 0, baseFee + materialCost);
 
     // Update display
     weightEl.textContent = weight.toFixed(1) + ' g';

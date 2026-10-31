@@ -34,7 +34,7 @@
   }
   </script>
 </head>
-<body>
+<body class="task-page">
   <a href="#main-content" class="skip-link">Skip to main content</a>
   <header class="site-header">
     <div class="container">
@@ -88,7 +88,7 @@
       <div class="container">
 
         <!-- Drop Zone -->
-        <div id="quote-dropzone" class="quote-dropzone" role="button" tabindex="0" aria-label="Upload STL file for 3D print quote">
+        <div id="quote-dropzone" class="quote-dropzone" role="button" tabindex="0" aria-label="Choose an STL or OBJ file for a 3D print quote">
           <div class="quote-dropzone-content">
             <div class="quote-dropzone-icon" aria-hidden="true">
               <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -98,7 +98,7 @@
               </svg>
             </div>
             <p class="quote-dropzone-text">Drag &amp; drop your <strong>.STL</strong> or <strong>.OBJ</strong> file here</p>
-            <p class="quote-dropzone-subtext">or click to browse</p>
+            <p class="quote-dropzone-subtext">or tap to choose a file</p>
             <input type="file" id="quote-file-input" accept=".stl,.obj" aria-label="Select STL or OBJ file" hidden>
           </div>
         </div>
@@ -153,7 +153,12 @@
                   </label>
                   <label class="quote-radio-card">
                     <input type="radio" name="userType" value="faculty">
-                    <span class="quote-radio-label">Faculty / Staff</span>
+                    <span class="quote-radio-label">Faculty / Staff / Alumni</span>
+                  </label>
+                  <label class="quote-radio-card">
+                    <input type="radio" name="userType" value="campus">
+                    <span class="quote-radio-label">Campus account / Department</span>
+                    <span class="quote-radio-desc">CFOAPAL payment, including student orders</span>
                   </label>
                   <label class="quote-radio-card">
                     <input type="radio" name="userType" value="general">
@@ -177,7 +182,7 @@
                     <span class="quote-radio-desc">Staff-managed &middot; we print &amp; you pick up</span>
                   </label>
                 </div>
-                <p class="quote-order-note">All prints include a $4 base fee. Online rates already include the 20% staff-managed surcharge.</p>
+                <p class="quote-order-note">Each order includes one $4 base fee, plus material costs for all copies. Online rates already include the 20% staff-managed surcharge. Campus-account payments use faculty/staff rates with a $10 minimum per order.</p>
               </fieldset>
 
               <!-- Infill -->
@@ -210,7 +215,7 @@
               <div class="quote-price-display">
                 <div class="quote-price-breakdown">
                   <div class="quote-price-row">
-                    <span>Estimated weight</span>
+                    <span>Estimated weight per copy</span>
                     <span id="quote-weight">-- g</span>
                   </div>
                   <div class="quote-price-row">
@@ -218,27 +223,28 @@
                     <span id="quote-rate">--/g</span>
                   </div>
                   <div id="quote-base-fee-row" class="quote-price-row" hidden>
-                    <span>Base fee</span>
+                    <span>Base fee (once per order)</span>
                     <span>$4.00</span>
                   </div>
                   <div id="quote-qty-row" class="quote-price-row" hidden>
-                    <span>Quantity</span>
+                    <span>Copies (material only)</span>
                     <span id="quote-qty-display">&times; 1</span>
                   </div>
                 </div>
                 <div class="quote-price-total" aria-live="polite" aria-atomic="true">
-                  <span>Estimated Total</span>
+                  <span>Estimated print total</span>
                   <span id="quote-total-price">$0.00</span>
                 </div>
               </div>
 
               <!-- CTA Buttons -->
               <div class="quote-actions">
-                <a href="online-ordering.html" class="btn btn-primary quote-order-btn">Place Order</a>
+                <a href="online-ordering.html#order-form" class="btn btn-primary quote-order-btn">Continue to order form</a>
                 <a href="pricingservices.html" class="btn btn-outline quote-pricing-btn">Full Pricing Details</a>
               </div>
 
-              <p class="quote-disclaimer">Estimates are approximate. Actual weight is determined after slicing in <a href="https://ultimaker.com/software/ultimaker-cura" target="_blank" rel="noopener noreferrer">Cura</a>. Dual-color or specialty filament prints have a 50% surcharge.</p>
+              <p class="quote-disclaimer">Your file and quote options are not transferred to the order form. Attach your file again and include your preferred settings there.</p>
+              <p class="quote-disclaimer">Standard PLA printing estimate only. Shipping, design services, and the 50% dual-color or specialty-filament surcharge are not included. Actual weight is determined after slicing in <a href="https://ultimaker.com/software/ultimaker-cura" target="_blank" rel="noopener noreferrer">Cura</a>. We will confirm the final price before printing.</p>
 
             </div>
           </div>

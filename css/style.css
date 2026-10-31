@@ -243,7 +243,7 @@ img {
   transition: transform 0.3s ease;
 }
 
-.nav-dropdown:hover > a::after {
+.nav-dropdown.is-open > a::after {
   transform: rotate(180deg);
 }
 
@@ -261,11 +261,11 @@ img {
   transition: all 0.3s ease;
   z-index: 1000;
   padding: 0.5rem 0;
-  margin-top: 0.25rem;
+  margin-top: 0;
 }
 
-.nav-dropdown:hover .dropdown-menu,
-.nav-dropdown.keyboard-open .dropdown-menu {
+.main-nav:not(.nav-enhanced) .nav-dropdown:hover .dropdown-menu,
+.nav-dropdown.is-open .dropdown-menu {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
@@ -1400,13 +1400,9 @@ img {
     margin-top: var(--spacing-sm);
   }
 
-  .main-nav ul {
+  .main-nav > ul {
     flex-direction: column;
     gap: 0;
-    display: none;
-  }
-
-  .main-nav.active ul {
     display: flex;
   }
 
@@ -1425,13 +1421,8 @@ img {
     background-color: rgba(0, 0, 0, 0.2);
     margin: 0;
     padding: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-  }
-
-  .nav-dropdown.active .dropdown-menu {
-    max-height: 500px;
+    max-height: none;
+    min-width: 0;
   }
 
   .nav-dropdown > a::after {
@@ -1532,7 +1523,7 @@ img {
 
 @media (max-width: 480px) {
   html {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .hero {
@@ -3426,14 +3417,16 @@ video {
     padding-bottom: 0.75rem;
   }
 
-  /* Wide data tables scroll within their card instead of overflowing the page */
+  /* Pricing columns wrap within the viewport rather than requiring sideways scrolling. */
   .pricing-table-wrapper {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
 
   .pricing-table {
-    min-width: 460px;
+    min-width: 0;
+    table-layout: fixed;
+    width: 100%;
   }
 
   /* Homepage reviews rating: shrink the big numerals and allow wrapping */
@@ -3491,3 +3484,96 @@ video {
     font-size: 1.5rem;
   }
 }
+
+/* Navigation visibility must also remove collapsed links from the tab order. */
+.main-nav[hidden], .main-nav .dropdown-menu[hidden] { display: none !important; }
+.main-nav .dropdown-menu { display: block; }
+.main-nav .dropdown-menu a { white-space: normal; }
+.main-nav a[role="button"] { cursor: pointer; }
+.mobile-menu-toggle:focus-visible, summary:focus-visible {
+  outline: 3px solid var(--illinois-orange);
+  outline-offset: 3px;
+}
+.header-content { gap: 1rem; }
+.main-nav > ul { gap: 0.25rem; }
+
+/* Put visitor tasks before decorative space. */
+.fall-home-page .hero-section.hero-home {
+  height: auto;
+  min-height: 0;
+  padding: 2.5rem 1rem;
+}
+.fall-home-page .hero-content { width: 100%; max-width: 850px; }
+.fall-home-page .hero-title { font-size: clamp(2rem, 5vw, 3.5rem); }
+.hero-intro { font-size: 1.125rem; margin: 1rem auto; max-width: 40rem; }
+.action-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.hero-content .action-links { justify-content: center; }
+.hero-content .btn { background: white; color: var(--illinois-blue); }
+.hero-content .btn:hover { background: var(--illinois-cloud); }
+.hero-content .btn-primary { background: var(--illinois-orange); color: var(--illinois-blue); }
+.hero-content .btn-primary:hover { background: white; }
+.hero-content a:focus-visible { outline: 3px solid white; outline-offset: 4px; }
+.task-page .hero { padding: 1.5rem 1rem; }
+.task-page .hero .tagline { margin-bottom: 0; }
+.task-page .section { padding-top: 1.5rem; }
+.task-note { background: #fff8f4; border-left: 4px solid var(--illinois-orange); padding: 1rem; margin-bottom: 1.5rem; }
+.task-note h2 { margin-top: 0; }
+.task-note p:last-child { margin-bottom: 0; }
+.preparation-details { border: 1px solid var(--medium-gray); padding: 1rem; margin: 1.5rem 0; border-radius: 8px; }
+.preparation-details summary { cursor: pointer; font-weight: 700; color: var(--illinois-blue); }
+.preparation-details[open] summary { margin-bottom: 1rem; }
+.preparation-details ol { padding-left: 1.5rem; }
+.form-fallback { margin-bottom: 1rem; }
+#order-form { scroll-margin-top: 8rem; }
+.contact-email { overflow-wrap: anywhere; }
+.merchandise-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 2rem; margin-top: 2rem; }
+
+@media (max-width: 768px) {
+  .container { padding-inline: 1rem; }
+  .site-branding { padding-right: 3rem; }
+  .site-logo { font-size: 1.25rem; }
+  .main-nav > ul { align-items: stretch; gap: 0; }
+  .main-nav { max-height: calc(100dvh - 6rem); overflow-y: auto; }
+  .main-nav .dropdown-menu { min-width: 0; }
+  .main-nav a { min-height: 44px; }
+  .main-nav > ul > li > a { width: 100%; }
+  .dropdown-menu a { min-height: 44px; }
+  .fall-home-page .hero-section.hero-home { padding: 1rem; }
+  .fall-home-page .hero-content { padding: 1.25rem; }
+  .hero-subtitle { letter-spacing: 0.03em; }
+  .action-links { flex-direction: column; }
+  .action-links .btn { width: 100%; text-align: center; }
+  .fall-home-page .cta-section { padding: 1.5rem 0; }
+  .fall-home-page .cta-grid { gap: 1rem; }
+  .fall-home-page .cta-image-wrapper { min-height: 0; padding: 1rem; aspect-ratio: auto; }
+  .fall-home-page .cta-square-content { display: flex; align-items: center; justify-content: center; gap: 1rem; }
+  .fall-home-page .cta-square-content i { font-size: 2rem; margin-bottom: 0 !important; }
+  .fall-home-page .cta-square-text { font-size: 1.5rem; }
+  .pricing-table-wrapper { padding: 0.75rem; min-width: 0; }
+  .pricing-table th, .pricing-table td { padding: 0.5rem; overflow-wrap: anywhere; }
+  .pricing-table { font-size: 1rem; }
+  .tutoring-info { padding: 1rem; }
+  .quote-dropzone { padding: 1.5rem 1rem; }
+  .quote-dropzone-text, .quote-dropzone-subtext { font-size: 1rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+/* Fixed table layout also prevents long labels overflowing on tablets/desktops. */
+.pricing-table { table-layout: fixed; }
+.pricing-table th, .pricing-table td { overflow-wrap: anywhere; }
+
+@media (max-width: 768px) {
+  .task-page .content-area { padding: 0; }
+  .task-page .service-section { margin: 1.5rem 0; }
+  .task-page .service-section:first-child { margin-top: 0; }
+  .task-page .service-section h2 { margin-bottom: 1rem; }
+  .task-page .pricing-table-wrapper { margin-block: 1.5rem; }
+  .task-page .hero .tagline { font-size: 1.125rem; letter-spacing: 0.03em; }
+}
+.task-page .btn-outline { color: var(--illinois-blue); border-color: var(--illinois-blue); }
+.task-page .btn-outline:hover { background-color: var(--illinois-blue); color: white; }
+.task-page .btn-primary { background-color: var(--illinois-blue); color: white; }
+.task-page .content-area a:not(.btn) { color: var(--illinois-blue); text-decoration: underline; }
+.task-note .action-links { margin-bottom: 1rem; }

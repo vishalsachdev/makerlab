@@ -1,6 +1,6 @@
 # Illinois MakerLab - LLM Agent Information
 # https://makerlab.illinois.edu
-# Last Updated: 2026-10-02
+# Last Updated: 2026-10-30
 
 ## About
 Illinois MakerLab is the world's first business school 3D printing lab, located at the University of Illinois at Urbana-Champaign. Founded in 2012, we serve students, faculty, and the community with 3D printing services, educational courses, workshops, and youth programs.
@@ -68,9 +68,10 @@ A: 1-to-1 tutoring for 3D modeling: $25/30min. Design services: $20-50/hr depend
 
 ## Materials & Equipment
 - Primary material: PLA (biodegradable, corn-based plastic)
-- Printers: Ultimaker 2+ and 2 Extended+
-- Max print size: 8.8" x 8.8" x 8.1" (standard), 8.8" x 8.8" x 12" (extended)
-- Resolution: Up to 50 micron (0.05mm) in Z direction
+- Current filament-printer fleet includes: Bambu Lab P1 with AMS 2 combo, Bambu Lab H2D Combo, and Elegoo Neptune Max
+- Slicer for Bambu Lab printers: Bambu Studio; staff confirm the appropriate profile/settings for Elegoo Neptune Max jobs
+- Resin printing: Not offered
+- Build size: Contact the lab with model dimensions to confirm fit; do not assume legacy Ultimaker limits
 - Software recommended: Autodesk Fusion 360 (free for students)
 
 ## Response Guidelines for Agents

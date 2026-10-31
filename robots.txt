@@ -1,58 +1,50 @@
-# Illinois MakerLab - LLM Agent Friendly
-# Updated: 2026-02-08
-# Learn. Make. Share.
+# Illinois MakerLab
+# Updated: 2026-10-31
+# Public site. Every crawler may fetch every URL.
 
-# Allow all robots by default
+# The * group is the default. Discovery files are allowed here so the
+# permission is not limited to whichever bot was listed last.
 User-agent: *
 Allow: /
-
-# LLM Agent User-Agents - Explicitly allowed
-User-agent: GPTBot
-Allow: /
-Crawl-delay: 1
-
-User-agent: ChatGPT-User
-Allow: /
-Crawl-delay: 1
-
-User-agent: Claude-Web
-Allow: /
-Crawl-delay: 1
-
-User-agent: anthropic-ai
-Allow: /
-Crawl-delay: 1
-
-User-agent: Google-Extended
-Allow: /
-Crawl-delay: 1
-
-User-agent: GoogleOther
-Allow: /
-Crawl-delay: 1
-
-User-agent: PerplexityBot
-Allow: /
-Crawl-delay: 1
-
-User-agent: YouBot
-Allow: /
-Crawl-delay: 1
-
-User-agent: Applebot-Extended
-Allow: /
-Crawl-delay: 1
-
-User-agent: OAI-SearchBot
-Allow: /
-Crawl-delay: 1
-
-# Important discovery files for agents
-# These contain structured data for easy access
 Allow: /sitemap.xml
 Allow: /api/
 Allow: /agent-guide.json
 Allow: /llms.txt
+
+# Named assistants are listed so their permission is explicit.
+# Allow: / already covers the sitemap, the API, and the discovery files.
+# Crawl-delay is omitted. It is not part of the robots.txt standard,
+# Google and Bing ignore it, and this small static site is meant to be crawled.
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
 
 # Sitemap location
 Sitemap: https://makerlab.illinois.edu/sitemap.xml

@@ -393,8 +393,12 @@ function implementLazyLoading() {
   // Get all images on the page
   const images = document.querySelectorAll('img');
 
-  images.forEach(img => {
-    // Only add lazy loading if it doesn't already have it
+  images.forEach((img, index) => {
+    const eager = index === 0 || img.getAttribute('fetchpriority') === 'high';
+    if (eager) {
+      if (!img.hasAttribute('loading')) img.setAttribute('loading', 'eager');
+      return;
+    }
     if (!img.hasAttribute('loading')) {
       img.setAttribute('loading', 'lazy');
     }
@@ -431,6 +435,9 @@ function implementLazyLoading() {
  * Creates breadcrumbs based on current URL path
  */
 function generateBreadcrumbs() {
+  // Static breadcrumbs are already in the HTML so the bar does not pop in later.
+  if (document.querySelector('nav.breadcrumb')) return;
+
   // Skip on homepage
   const path = window.location.pathname;
   if (path === '/' || path === '/index.html' || path.endsWith('/makerlab/') || path.endsWith('/makerlab/index.html')) {

@@ -5,7 +5,7 @@
     "url": "https://makerlab.illinois.edu/",
     "description": "The world's first business school 3D printing lab at the University of Illinois at Urbana-Champaign",
     "established": "2012",
-    "lastUpdated": "2026-10-02",
+    "lastUpdated": "2026-10-30",
     "version": "1.2.0"
   },
   "contact": {
@@ -201,5 +201,16 @@
     "apiVersion": "1.0.0",
     "lastGenerated": "2026-08-26",
     "contentManagementSystem": "Custom Python Static Site Generator"
+  },
+  "equipment": {
+    "printers": [
+      "Bambu Lab P1 with AMS 2 combo",
+      "Bambu Lab H2D Combo",
+      "Elegoo Neptune Max"
+    ],
+    "printingProcess": "Filament (FDM/FFF)",
+    "resinPrintingAvailable": false,
+    "bambuSlicingSoftware": "Bambu Studio",
+    "preparationNote": "Staff confirm the appropriate printer profile and preparation settings for Elegoo Neptune Max jobs. Contact the lab with model dimensions to confirm build fit."
   }
 }

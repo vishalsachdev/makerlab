@@ -1,6 +1,6 @@
 {
   "total": 28,
-  "lastUpdated": "2026-09-01",
+  "lastUpdated": "2026-10-30",
   "pages": [
     {
       "title": "Home",
@@ -16,7 +16,7 @@
       "url": "/about-us.html",
       "description": "Learn about Illinois MakerLab - the world's first business school 3D printing lab, our mission, history since 2012, and impact at UIUC.",
       "category": "about",
-      "lastModified": "2026-09-01"
+      "lastModified": "2026-10-30"
     },
     {
       "title": "Lab Staff",
@@ -32,7 +32,7 @@
       "url": "/partners.html",
       "description": "Organizations and companies that partner with Illinois MakerLab for 3D printing services, research, and educational initiatives.",
       "category": "about",
-      "lastModified": "2026-01-25"
+      "lastModified": "2026-10-30"
     },
     {
       "title": "FAQ",
@@ -40,7 +40,7 @@
       "url": "/faq.html",
       "description": "Frequently asked questions about 3D printing at MakerLab: hours, pricing, materials, print sizes, software recommendations, and services.",
       "category": "about",
-      "lastModified": "2026-01-25"
+      "lastModified": "2026-10-30"
     },
     {
       "title": "Services & Pricing",
@@ -48,7 +48,7 @@
       "url": "/pricingservices.html",
       "description": "Complete pricing guide for MakerLab 3D printing services. Rates for students, faculty, staff, and community members. Design assistance pricing included.",
       "category": "services",
-      "lastModified": "2026-01-25"
+      "lastModified": "2026-10-30"
     },
     {
       "title": "Online Ordering",
@@ -56,7 +56,7 @@
       "url": "/online-ordering.html",
       "description": "Submit your 3D printing order online. Upload STL files, select materials, and pick up at MakerLab. Convenient ordering for UIUC community.",
       "category": "services",
-      "lastModified": "2026-09-01"
+      "lastModified": "2026-10-30"
     },
     {
       "title": "Instant 3D Print Quote",
@@ -64,7 +64,7 @@
       "url": "/quote.html",
       "description": "Upload an STL or OBJ file and get an instant 3D printing cost estimate. Interactive 3D preview with real-time pricing for students, faculty, and community.",
       "category": "services",
-      "lastModified": "2026-02-23"
+      "lastModified": "2026-10-30"
     },
     {
       "title": "Summer Camps",
@@ -112,7 +112,7 @@
       "url": "/resources.html",
       "description": "Learning resources for 3D printing and digital making. Software downloads, tutorials, and helpful links for makers.",
       "category": "resources",
-      "lastModified": "2026-01-25"
+      "lastModified": "2026-10-30"
     },
     {
       "title": "Lab Hours",
@@ -152,7 +152,7 @@
       "url": "/free-print-wednesday.html",
       "description": "Get 1 hour of free 3D printing every Wednesday during Fall and Spring semesters. Learn about this popular MakerLab program.",
       "category": "programs",
-      "lastModified": "2026-01-25"
+      "lastModified": "2026-10-30"
     },
     {
       "title": "Private Events",

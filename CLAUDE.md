@@ -145,6 +145,16 @@ The site follows WCAG 2.1 AA practices:
 - **Email**: uimakerlab@illinois.edu
 - **Location**: BIF Room 3030, UIUC
 
+## Current Equipment (confirmed October 30, 2026)
+
+The current filament-printer fleet includes Bambu Lab P1 with AMS 2 combo,
+Bambu Lab H2D Combo, and Elegoo Neptune Max. No resin printing is offered.
+Staff use Bambu Studio for Bambu Lab printers. Do not infer a P1 variant,
+Neptune generation, build dimensions, nozzle sizes, or installed options from
+these names. Confirm job-specific fit and profiles with staff. Published rates,
+the once-per-order $4 fee, and the campus-account minimum are unchanged.
+Historical Ultimaker partnership/course/blog references are historical records.
+
 ## Current Focus
 
 **Fall 2026, lab open since Mon Aug 31.** Hours Mon/Fri 1–7, Tue/Thu 2–7, Wed 4–7 PM; gurus Bayu (ops lead, Mon–Thu 4–7, Fri 1–7), Aldo Villanueva (Tue/Thu 2–5), Sahib Bedi (Mon 1–5). Hours are hand-edited in five places (see 2026-09-01 log) and carry dated notices via `specialOpeningHoursSpecification` + `hours.notices[]`; update all five together and bump the freshness stamps. Open operational items: the **Thera-Solutions client job** (25 Originals shipped and invoiced by Bayu 09-25, paid online by the client the same day; next order pending; details in the private PEOPLE notes), and several Aug 4 threads (exec summary, feedback campaign, recap post) have not been re-verified since. Ops runbook lives in the private makerlab-camps repo; file cancellation/ops issues there.

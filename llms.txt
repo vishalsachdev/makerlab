@@ -61,7 +61,7 @@ Q: How do I order a 3D print?
 A: Use our online ordering system at /online-ordering.html
 
 Q: What does 3D printing cost?
-A: Base fee of $4 plus material costs per gram: Students 10¢ walk-in / 12¢ online, Faculty/Staff 25¢/30¢, Others 35¢/42¢. See /pricingservices.html
+A: One base fee of $4 per order plus material costs per gram: Students 10¢ walk-in / 12¢ online, Faculty/Staff 25¢/30¢, Others 35¢/42¢. See /pricingservices.html
 
 Q: What about design help?
 A: 1-to-1 tutoring for 3D modeling: $25/30min. Design services: $20-50/hr depending on affiliation. See /pricingservices.html

@@ -95,3 +95,6 @@ package-lock.json
 
 # Local MCP config (machine-specific credential paths)
 .mcp.json
+
+# Pin browser-test dependencies for repeatable PR checks
+!tests/package-lock.json

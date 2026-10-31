@@ -4,105 +4,151 @@
 
 // Mobile Menu Toggle
 document.addEventListener('DOMContentLoaded', function() {
+  // Enhance the existing links so they remain usable destinations without JS.
+  // One state controls visibility, focusability and aria-expanded for all inputs.
   const menuToggle = document.querySelector('.mobile-menu-toggle');
   const mainNav = document.querySelector('.main-nav');
+  const mobileLayout = window.matchMedia('(max-width: 768px)');
+  const hoverPointer = window.matchMedia('(hover: hover) and (pointer: fine)');
+  const dropdowns = mainNav ? Array.from(mainNav.querySelectorAll('.nav-dropdown')) : [];
 
-  if (menuToggle && mainNav) {
-    menuToggle.addEventListener('click', function() {
-      mainNav.classList.toggle('active');
-      const isOpen = mainNav.classList.contains('active');
-      menuToggle.setAttribute('aria-expanded', isOpen);
-      menuToggle.innerHTML = isOpen ? '&times;' : '&#9776;';
+  function setDropdown(dropdown, open) {
+    const toggle = dropdown.querySelector(':scope > a');
+    const menu = dropdown.querySelector('.dropdown-menu');
+    dropdown.classList.toggle('is-open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    menu.hidden = !open;
+    if (!open) delete dropdown.dataset.openedByHover;
+  }
+
+  function closeDropdowns(except) {
+    dropdowns.forEach(dropdown => {
+      if (dropdown !== except) setDropdown(dropdown, false);
     });
   }
 
-  // Mobile dropdown toggle
-  const dropdownToggles = document.querySelectorAll('.nav-dropdown > a');
-  dropdownToggles.forEach(toggle => {
-    toggle.addEventListener('click', function(e) {
-      // Only prevent default on mobile
-      if (window.innerWidth <= 768) {
-        e.preventDefault();
-        const parent = this.parentElement;
-        const isOpen = parent.classList.toggle('active');
-        this.setAttribute('aria-expanded', isOpen);
-      }
-    });
-  });
+  function setMobileMenu(open) {
+    closeDropdowns();
+    mainNav.classList.toggle('active', open);
+    mainNav.hidden = mobileLayout.matches && !open;
+    menuToggle.setAttribute('aria-expanded', String(open));
+    menuToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    menuToggle.textContent = open ? '×' : '☰';
+  }
 
-  // Keyboard navigation for dropdown menus
-  dropdownToggles.forEach(toggle => {
-    toggle.addEventListener('keydown', function(e) {
-      const parent = this.parentElement;
-      const menu = parent.querySelector('.dropdown-menu');
-      if (!menu) return;
-
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        const isOpen = parent.classList.toggle('keyboard-open');
-        this.setAttribute('aria-expanded', isOpen);
-        if (isOpen) {
-          const firstItem = menu.querySelector('a');
-          if (firstItem) firstItem.focus();
-        }
-      } else if (e.key === 'Escape') {
-        parent.classList.remove('keyboard-open');
-        this.setAttribute('aria-expanded', 'false');
-        this.focus();
-      } else if (e.key === 'ArrowDown') {
-        e.preventDefault();
-        parent.classList.add('keyboard-open');
-        this.setAttribute('aria-expanded', 'true');
-        const firstItem = menu.querySelector('a');
-        if (firstItem) firstItem.focus();
-      }
+  if (mainNav && menuToggle) {
+    mainNav.id = mainNav.id || 'main-navigation';
+    mainNav.classList.add('nav-enhanced');
+    mainNav.setAttribute('aria-label', 'Main navigation');
+    menuToggle.setAttribute('aria-controls', mainNav.id);
+    menuToggle.addEventListener('click', () => {
+      setMobileMenu(menuToggle.getAttribute('aria-expanded') !== 'true');
     });
 
-    // Sync aria-expanded on hover
-    const parent = toggle.parentElement;
-    parent.addEventListener('mouseenter', function() {
-      toggle.setAttribute('aria-expanded', 'true');
-    });
-    parent.addEventListener('mouseleave', function() {
-      if (!parent.classList.contains('keyboard-open')) {
-        toggle.setAttribute('aria-expanded', 'false');
-      }
-    });
-  });
-
-  // Keyboard navigation within dropdown menus
-  document.querySelectorAll('.dropdown-menu a').forEach(menuItem => {
-    menuItem.addEventListener('keydown', function(e) {
-      const dropdown = this.closest('.nav-dropdown');
+    dropdowns.forEach((dropdown, index) => {
       const toggle = dropdown.querySelector(':scope > a');
-      const items = Array.from(dropdown.querySelectorAll('.dropdown-menu a'));
-      const index = items.indexOf(this);
+      const menu = dropdown.querySelector('.dropdown-menu');
+      const items = Array.from(menu.querySelectorAll('a'));
+      menu.id = menu.id || `navigation-submenu-${index}`;
+      toggle.setAttribute('role', 'button');
+      toggle.setAttribute('aria-controls', menu.id);
+      setDropdown(dropdown, false);
 
-      if (e.key === 'ArrowDown') {
-        e.preventDefault();
-        if (index < items.length - 1) items[index + 1].focus();
-      } else if (e.key === 'ArrowUp') {
-        e.preventDefault();
-        if (index > 0) items[index - 1].focus();
-        else toggle.focus();
-      } else if (e.key === 'Escape') {
-        dropdown.classList.remove('keyboard-open');
-        toggle.setAttribute('aria-expanded', 'false');
-        toggle.focus();
+      function openMenu(focusIndex) {
+        closeDropdowns(dropdown);
+        setDropdown(dropdown, true);
+        if (focusIndex !== undefined) items[focusIndex]?.focus();
+      }
+
+      toggle.addEventListener('click', event => {
+        event.preventDefault();
+        const open = toggle.getAttribute('aria-expanded') !== 'true' ||
+          (event.detail > 0 && dropdown.dataset.openedByHover === 'true');
+        closeDropdowns();
+        if (open) setDropdown(dropdown, true);
+      });
+      toggle.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          toggle.click();
+        } else if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+          event.preventDefault();
+          openMenu(event.key === 'ArrowDown' ? 0 : items.length - 1);
+        }
+      });
+      dropdown.addEventListener('pointerenter', () => {
+        if (!mobileLayout.matches && hoverPointer.matches && menu.hidden) {
+          openMenu();
+          dropdown.dataset.openedByHover = 'true';
+        }
+      });
+      dropdown.addEventListener('pointerleave', () => {
+        if (!mobileLayout.matches && !dropdown.contains(document.activeElement)) {
+          setDropdown(dropdown, false);
+        }
+      });
+      dropdown.addEventListener('focusout', event => {
+        // On touch, collapsing the previous menu during pointer-down moves the
+        // next trigger before pointer-up. Let the click handler close it instead.
+        if (!dropdown.contains(event.relatedTarget) && !mobileLayout.matches) {
+          setDropdown(dropdown, false);
+        }
+      });
+      menu.addEventListener('keydown', event => {
+        const index = items.indexOf(document.activeElement);
+        let next;
+        if (event.key === 'ArrowDown') next = (index + 1) % items.length;
+        if (event.key === 'ArrowUp') next = (index - 1 + items.length) % items.length;
+        if (event.key === 'Home') next = 0;
+        if (event.key === 'End') next = items.length - 1;
+        if (next !== undefined) {
+          event.preventDefault();
+          items[next].focus();
+        }
+      });
+    });
+
+    document.addEventListener('keyup', event => {
+      if (event.key === 'Tab') {
+        dropdowns.forEach(dropdown => {
+          if (!dropdown.contains(document.activeElement)) setDropdown(dropdown, false);
+        });
       }
     });
-  });
-
-  // Close keyboard-opened dropdowns when clicking outside
-  document.addEventListener('click', function(e) {
-    if (!e.target.closest('.nav-dropdown')) {
-      document.querySelectorAll('.nav-dropdown.keyboard-open').forEach(dropdown => {
-        dropdown.classList.remove('keyboard-open');
-        const toggle = dropdown.querySelector(':scope > a');
-        if (toggle) toggle.setAttribute('aria-expanded', 'false');
-      });
-    }
-  });
+    mainNav.addEventListener('keydown', event => {
+      if (event.key !== 'Escape') return;
+      event.preventDefault();
+      const openDropdown = dropdowns.find(dropdown => dropdown.classList.contains('is-open'));
+      if (openDropdown) {
+        setDropdown(openDropdown, false);
+        openDropdown.querySelector(':scope > a').focus();
+      } else if (mobileLayout.matches) {
+        setMobileMenu(false);
+        menuToggle.focus();
+      }
+    });
+    mainNav.addEventListener('focusout', event => {
+      if (mobileLayout.matches && !mainNav.contains(event.relatedTarget) && event.relatedTarget !== menuToggle) {
+        setMobileMenu(false);
+      }
+    });
+    document.addEventListener('click', event => {
+      if (!mainNav.contains(event.target) && !menuToggle.contains(event.target)) {
+        if (mobileLayout.matches) setMobileMenu(false);
+        else closeDropdowns();
+      }
+    });
+    mobileLayout.addEventListener('change', () => {
+      const focusWasInNav = mainNav.contains(document.activeElement);
+      const focusWasToggle = document.activeElement === menuToggle;
+      const focusedDropdownTrigger = document.activeElement.closest('.nav-dropdown')?.querySelector(':scope > a');
+      setMobileMenu(false);
+      if (mobileLayout.matches && focusWasInNav) menuToggle.focus();
+      else if (!mobileLayout.matches && focusedDropdownTrigger) focusedDropdownTrigger.focus();
+      else if (!mobileLayout.matches && focusWasToggle) mainNav.querySelector('a')?.focus();
+    });
+    setMobileMenu(false);
+  }
 
   // Active navigation link with aria-current
   const currentPath = window.location.pathname;
@@ -117,22 +163,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  // Smooth scroll for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      const href = this.getAttribute('href');
-      if (href !== '#') {
-        e.preventDefault();
-        const target = document.querySelector(href);
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      }
-    });
-  });
+  // Native anchors preserve the URL hash and move focus to the destination.
+  // Smooth scrolling and reduced-motion preferences are handled in CSS.
 
   // Gallery lightbox (simple implementation)
   const galleryItems = document.querySelectorAll('.gallery-item img');

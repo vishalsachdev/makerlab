@@ -45,3 +45,26 @@ python3 scripts/update_availability.py --dry-run # show counts only
 # Add Google Analytics tracking to all active pages (run after adding new pages)
 python3 scripts/add_ga_tracking.py
 ```
+
+## Mobile UX and quote-calculator regressions
+
+Browser tests are development-only; the site still has no build step.
+
+```bash
+cd tests
+npm ci
+npx playwright install chromium
+npm test
+```
+
+Requires Node.js 22+ and Python 3. Tests start an ephemeral local HTTP server,
+block third-party requests, and serve the pinned Three.js dependency locally for
+an OBJ-upload/pricing test. No order or contact form is submitted. To use an
+existing Chromium executable, set `CHROMIUM_EXECUTABLE_PATH`.
+
+Coverage: touch dropdowns at 360/390/430px; desktop hover/click/keyboard;
+Escape, outside dismissal, hidden submenu tab order, breakpoint focus; nested
+relative links and JavaScript-disabled navigation; 320–1366px page/table reflow;
+quote totals across all published rates, 1/2/10/99 copies, 20%/100% infill,
+and the $10 campus-account minimum. This is Chromium emulation, not a physical
+Safari/Android or live Podio form acceptance test.

@@ -34,7 +34,7 @@
     gtag('config', 'G-R2GVFSKNPE');
   </script>
 </head>
-<body class="fall-reopening-page">
+<body class="fall-reopening-page task-page">
   <a href="#main-content" class="skip-link">Skip to main content</a>
   <header class="site-header">
     <div class="container">
@@ -89,24 +89,20 @@
       <div class="container">
         <div class="content-area">
 
-          <div style="background-color: #fff8f4; border-left: 4px solid var(--illinois-orange); padding: var(--spacing-lg); margin-bottom: var(--spacing-lg); border-radius: 4px;" role="note" aria-label="Online ordering status">
-            <h2 style="margin-top: 0; color: var(--illinois-blue);">Fall 2026 Online Orders</h2>
-            <p>The online order form is open. Submit your files below and we will follow up by email with an estimate.</p>
-            <p style="margin-bottom: 0;">Pickup is during our <a href="lab-hours.html">Fall 2026 lab hours</a>. Questions? <a href="contact.html">Contact us</a> or email <a href="mailto:uimakerlab@illinois.edu">uimakerlab@illinois.edu</a>.</p>
-          </div>
-
-          <!-- Quote Calculator CTA -->
-          <div class="fall-order-cta" style="background: linear-gradient(135deg, var(--illinois-blue) 0%, #1a3a5c 100%); color: white; padding: var(--spacing-lg); border-radius: 12px; text-align: center; margin-bottom: var(--spacing-lg);">
-            <h2 style="color: white; margin-bottom: var(--spacing-sm);">Plan ahead with an instant quote</h2>
-            <p style="font-size: 1.1rem; margin-bottom: var(--spacing-md); opacity: 0.95;">Upload an STL file to get an instant price estimate and 3D preview before submitting your order.</p>
-            <a href="quote.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 0.9rem 2rem;">Get Instant Quote &rarr;</a>
+          <div class="task-note" role="note" aria-label="Online ordering status">
+            <h2>Fall 2026 Online Orders</h2>
+            <p>The online order form is open. Submit an STL or OBJ file, your contact details, color preference, and deadline. We will follow up by email with an estimate.</p>
+            <div class="action-links">
+              <a href="#order-form" class="btn btn-primary">Start your order</a>
+              <a href="quote.html" class="btn btn-outline">Get an instant quote</a>
+            </div>
+            <p>Pickup is during our <a href="lab-hours.html">Fall 2026 lab hours</a>. Need your print in less than two business days? Visit the lab to discuss feasibility.</p>
           </div>
 
           <!-- Instructions Section -->
-          <section class="service-section">
-            <img src="images/general/IMG_8347.jpg" alt="Online Ordering" style="max-width: 100%; height: auto; border-radius: 8px; margin-bottom: var(--spacing-lg);" />
+          <details class="preparation-details">
+            <summary>Preparing your file, payment, and delivery details</summary>
             
-            <h2>Instructions</h2>
             <ol style="line-height: 1.8;">
               <li>You must include your name, contact information, define the color, layer height, and size of the object when submitting your file (we only accept .stl or .obj files for 3D printing). You may also specify the nozzle size used (if applicable). We keep a limited selection of colors and will do our best to honor your request.</li>
               <li>Please specify the timeline or urgency of your order (i.e. when you expect your object to be completed). We will try to accommodate all requests, however, if you require that your print be completed in less than 2 (two) business days, we suggest that you come in during our <a href="lab-hours.html">open lab hours</a> to meet and discuss the feasibility of your print with a Guru.</li>
@@ -119,22 +115,22 @@
             <div style="background-color: #fff3cd; border-left: 4px solid #ffc107; padding: var(--spacing-md); margin: var(--spacing-lg) 0; border-radius: 4px;">
               <p style="margin: 0;"><strong><em>Before you submit your print please check your file in our slicing software </em></strong><a href="https://ultimaker.com/software/ultimaker-cura"><strong><em>Cura</em></strong></a><strong><em>. Ensure that you check the </em></strong><a href="https://community.ultimaker.com/topic/40663-cura-5-how-to-see-layers-in-preview/"><strong><em>layer view</em></strong></a><strong><em> option in the drop down menu on the top right and confirm that your whole model is being printed. The layer view in Cura shows exactly what the printer will print so if a portion of your model is missing it will not print! Extra charges may be applied to orders that the MakerLab will have to evaluate.</em></strong></p>
             </div>
-          </section>
+          </details>
 
           <hr />
 
           <!-- Pricing Section -->
           <section class="service-section">
             <h2>Online Ordering Rates</h2>
-            <p><strong>All prints will have a base fee of $4 and then material costs per gram are added as given below.</strong></p>
+            <p><strong>Each order has one $4 base fee, plus material costs per gram for all pieces as given below.</strong></p>
 
             <div class="pricing-table-wrapper pricing-table-single">
               <h3>Online Ordering Rates</h3>
               <table class="pricing-table">
                 <thead>
                   <tr>
-                    <th>User Type</th>
-                    <th>Rate <span class="table-unit">(per gram)</span></th>
+                    <th scope="col">User Type</th>
+                    <th scope="col">Rate <span class="table-unit">(per gram)</span></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -152,7 +148,7 @@
                   </tr>
                 </tbody>
               </table>
-              <p class="pricing-note-small text-center">Base $4 charge + weight based pricing</p>
+              <p class="pricing-note-small text-center">One $4 charge per order + material costs for all pieces</p>
             </div>
 
             <p>We will send an estimate and send you an email once the order is ready. Have a question? <a href="contact.html">Drop us a line</a>.</p>
@@ -161,9 +157,10 @@
           <hr />
 
           <!-- Order Form Section -->
-          <section class="service-section">
+          <section class="service-section" id="order-form" tabindex="-1">
             <h2>Submit Your Order</h2>
-            <p>Please fill out the form below to submit your 3D printing order.</p>
+            <p>Please fill out the form below to submit your 3D printing order. Attach your STL or OBJ file here even if you already used the quote calculator.</p>
+            <p class="form-fallback">Form not loading or difficult to use on your phone? <a href="https://podio.com/webforms/6976602/537064" target="_blank" rel="noopener noreferrer">Open order form separately</a>, or email <a href="mailto:uimakerlab&#64;illinois.edu">uimakerlab&#64;illinois.edu</a>.</p>
             <script src="https://podio.com/webforms/6976602/537064.js"></script>
             <script type="text/javascript">
               _podioWebForm.render("537064")
@@ -183,7 +180,7 @@
             <h2>Illinois Merchandise</h2>
             <p>Come to the MakerLab for all your UIUC gadgets! We are now selling Illinois merchandise! Simply <a href="contact.html">email us</a> with your request and we will print it for you! See below for options and prices.</p>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--spacing-lg); margin-top: var(--spacing-lg);">
+            <div class="merchandise-grid">
               
               <!-- #Illinois150 Keychain -->
               <div style="background-color: var(--white); border-radius: 8px; padding: var(--spacing-md); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">

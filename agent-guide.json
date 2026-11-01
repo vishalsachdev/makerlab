@@ -15,7 +15,7 @@
       "Refer to /api/site-info.json for basic information (contact, hours, services)",
       "Use /api/blog/posts.json for searchable blog content with metadata",
       "URLs are relative from root - custom domain makerlab.illinois.edu is active",
-      "Respect robots.txt crawl delays (1 second between requests)",
+      "Follow robots.txt. Search and answer bots may crawl the site. Some scrapers are blocked. There is no crawl delay.",
       "Cache responses when appropriate to reduce server load"
     ],
     "important_notes": [
@@ -123,7 +123,7 @@
       ]
     },
     "/sitemap.xml": {
-      "description": "Complete XML sitemap with 332 URLs including all pages, blog posts, and API endpoints",
+      "description": "Complete XML sitemap with 340 canonical HTML URLs",
       "use_cases": [
         "Discovering all available content",
         "Understanding URL structure",
@@ -132,7 +132,7 @@
       "update_frequency": "daily"
     },
     "/robots.txt": {
-      "description": "Crawler instructions with explicit LLM agent permissions",
+      "description": "Crawler permissions. Search and answer bots, training crawlers GPTBot and ClaudeBot, and link preview bots may crawl. Some scrapers are blocked.",
       "use_cases": [
         "Understanding crawl policies",
         "Finding sitemap location",

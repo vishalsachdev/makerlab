@@ -44,6 +44,14 @@ python3 scripts/update_availability.py --dry-run # show counts only
 
 # Add Google Analytics tracking to all active pages (run after adding new pages)
 python3 scripts/add_ga_tracking.py
+
+# SEO maintenance (idempotent; run after adding pages)
+python3 scripts/fix_internal_links.py --write
+python3 scripts/add_canonical.py
+python3 scripts/add_static_breadcrumbs.py
+python3 scripts/add_meta_descriptions.py
+python3 scripts/add_image_attributes.py
+python3 -c "from generate_agent_apis import generate_sitemap_xml; generate_sitemap_xml()"
 ```
 
 ## Mobile UX and quote-calculator regressions

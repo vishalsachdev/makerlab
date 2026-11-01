@@ -177,6 +177,12 @@ img {
   user-select: none;
 }
 
+.breadcrumb-item + .breadcrumb-item::before {
+  content: "›";
+  color: var(--text-light);
+  margin-right: 0.5rem;
+}
+
 .header-content {
   display: flex;
   justify-content: space-between;
@@ -318,11 +324,30 @@ img {
 .hero-section.hero-home {
   height: 70vh;
   min-height: 500px;
-  background-image: url('../images/general/329EC2D6-4605-4429-9C75-272A42347FF5.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-color: var(--illinois-blue);
+  background-image: none;
   padding: 0;
+}
+
+/* The photo is an img so the browser can fetch it with the HTML.
+   It is absolutely positioned, so the section size does not change. */
+.hero-section.hero-home .hero-media,
+.hero-section.hero-home > .hero-photo {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: block;
+  margin: 0;
+  pointer-events: none;
+}
+
+.hero-section.hero-home .hero-photo,
+.hero-section.hero-home .hero-media img {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center;
 }
 
 .hero-section.hero-home::before {
@@ -3572,6 +3597,15 @@ video {
   .task-page .pricing-table-wrapper { margin-block: 1.5rem; }
   .task-page .hero .tagline { font-size: 1.125rem; letter-spacing: 0.03em; }
 }
+/* Hide the closed mobile menu before main.js runs so the first paint
+   matches the menu-closed layout. The open menu has .active. A noscript
+   style in each page shows the menu when JavaScript is unavailable. */
+@media (max-width: 768px) {
+  .main-nav:not(.active) {
+    display: none;
+  }
+}
+
 .task-page .btn-outline { color: var(--illinois-blue); border-color: var(--illinois-blue); }
 .task-page .btn-outline:hover { background-color: var(--illinois-blue); color: white; }
 .task-page .btn-primary { background-color: var(--illinois-blue); color: white; }

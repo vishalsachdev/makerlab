@@ -14,6 +14,7 @@ from html import unescape
 
 # Configuration
 BASE_URL = "https://vishalsachdev.github.io/makerlab"
+CANONICAL_ORIGIN = "https://makerlab.illinois.edu"
 SITE_DIR = Path(os.environ.get("MAKERLAB_SITE_DIR", "./makerlab"))
 API_DIR = SITE_DIR / "api"
 BLOG_DIR = SITE_DIR / "blog"
@@ -234,104 +235,108 @@ def generate_blog_posts_json():
     print(f"✓ Generated blog/posts.json with {len(posts)} posts")
     return len(posts)
 
-def generate_sitemap_xml(num_pages, num_posts):
-    """Generate sitemap.xml"""
+def canonical_page_files(site_dir):
+    """HTML pages that belong in the sitemap. One canonical URL each."""
+    files = []
+    for pattern in ("*.html", "blog/*.html", "courses/*.html", "summer/*.html"):
+        files.extend(site_dir.glob(pattern))
+    unique = []
+    seen = set()
+    for path in files:
+        if path.name.startswith("."):
+            continue
+        key = path.resolve()
+        if key in seen:
+            continue
+        seen.add(key)
+        unique.append(path)
+    return sorted(unique, key=lambda path: path.relative_to(site_dir).as_posix())
+
+
+def canonical_loc(site_dir, path):
+    rel = path.relative_to(site_dir).as_posix()
+    if rel == "index.html":
+        return f"{CANONICAL_ORIGIN}/"
+    return f"{CANONICAL_ORIGIN}/{rel}"
+
+
+def git_lastmod_dates(site_dir):
+    """Newest commit date for each file, from git history rather than mtime."""
+    import subprocess
+    dates = {}
+    try:
+        output = subprocess.check_output(
+            ["git", "log", "--name-only", "--pretty=format:COMMIT %cs"],
+            cwd=site_dir,
+            text=True,
+            errors="replace",
+        )
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        return dates
+    current = None
+    for line in output.splitlines():
+        if line.startswith("COMMIT "):
+            current = line.split(" ", 1)[1].strip()
+        elif line.strip() and current:
+            dates.setdefault(line.strip(), current)
+    return dates
+
+
+def page_priority(rel):
+    if rel == "index.html":
+        return "weekly", "1.0"
+    if rel == "blog/index.html":
+        return "weekly", "0.9"
+    if rel.startswith("blog/"):
+        return "yearly", "0.7"
+    if rel.startswith("summer/") or rel.startswith("courses/"):
+        return "monthly", "0.8"
+    if any(token in rel for token in ("about", "contact", "course", "pricing", "lab-hours", "summer")):
+        return "monthly", "0.9"
+    return "monthly", "0.8"
+
+
+def generate_sitemap_xml(num_pages=0, num_posts=0):
+    """Generate sitemap.xml with one canonical URL per HTML page."""
     print("Generating sitemap.xml...")
+    site_dir = Path(__file__).resolve().parent
+    dates = git_lastmod_dates(site_dir)
+    today = datetime.now().strftime("%Y-%m-%d")
+    pages = canonical_page_files(site_dir)
 
     sitemap_lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
     ]
-
-    # Add homepage
-    sitemap_lines.extend([
-        '  <url>',
-        f'    <loc>{BASE_URL}/index.html</loc>',
-        f'    <lastmod>{datetime.now().strftime("%Y-%m-%d")}</lastmod>',
-        '    <changefreq>weekly</changefreq>',
-        '    <priority>1.0</priority>',
-        '  </url>'
-    ])
-
-    # Add all pages
-    html_files = [f for f in SITE_DIR.glob("*.html")]
-    for html_file in sorted(html_files):
-        filename = html_file.name
-        if filename == 'index.html' or filename.startswith('.'):
-            continue
-
-        # Determine change frequency and priority
-        changefreq = 'monthly'
-        priority = '0.8'
-
-        if 'blog' in filename:
-            changefreq = 'weekly'
-            priority = '0.9'
-        elif any(x in filename for x in ['about', 'contact', 'course']):
-            priority = '0.9'
-
+    for html_file in pages:
+        rel = html_file.relative_to(site_dir).as_posix()
+        changefreq, priority = page_priority(rel)
+        lastmod = dates.get(rel, today)
         sitemap_lines.extend([
             '  <url>',
-            f'    <loc>{BASE_URL}/{filename}</loc>',
-            f'    <lastmod>{get_file_modified_date(html_file)}</lastmod>',
+            f'    <loc>{canonical_loc(site_dir, html_file)}</loc>',
+            f'    <lastmod>{lastmod}</lastmod>',
             f'    <changefreq>{changefreq}</changefreq>',
             f'    <priority>{priority}</priority>',
             '  </url>'
         ])
-
-    # Add blog posts
-    if BLOG_DIR.exists():
-        blog_files = [f for f in BLOG_DIR.glob("*.html")]
-        for blog_file in sorted(blog_files):
-            filename = blog_file.name
-            if filename == 'index.html':
-                continue
-
-            sitemap_lines.extend([
-                '  <url>',
-                f'    <loc>{BASE_URL}/blog/{filename}</loc>',
-                f'    <lastmod>{get_file_modified_date(blog_file)}</lastmod>',
-                '    <changefreq>yearly</changefreq>',
-                '    <priority>0.7</priority>',
-                '  </url>'
-            ])
-
-    # Add API endpoints for agents
-    sitemap_lines.extend([
-        '  <url>',
-        f'    <loc>{BASE_URL}/api/site-info.json</loc>',
-        f'    <lastmod>{datetime.now().strftime("%Y-%m-%d")}</lastmod>',
-        '    <changefreq>weekly</changefreq>',
-        '    <priority>0.8</priority>',
-        '  </url>',
-        '  <url>',
-        f'    <loc>{BASE_URL}/api/pages.json</loc>',
-        f'    <lastmod>{datetime.now().strftime("%Y-%m-%d")}</lastmod>',
-        '    <changefreq>weekly</changefreq>',
-        '    <priority>0.8</priority>',
-        '  </url>',
-        '  <url>',
-        f'    <loc>{BASE_URL}/api/blog/posts.json</loc>',
-        f'    <lastmod>{datetime.now().strftime("%Y-%m-%d")}</lastmod>',
-        '    <changefreq>daily</changefreq>',
-        '    <priority>0.8</priority>',
-        '  </url>',
-        '  <url>',
-        f'    <loc>{BASE_URL}/agent-guide.json</loc>',
-        f'    <lastmod>{datetime.now().strftime("%Y-%m-%d")}</lastmod>',
-        '    <changefreq>monthly</changefreq>',
-        '    <priority>0.8</priority>',
-        '  </url>'
-    ])
-
     sitemap_lines.append('</urlset>')
 
-    # Write sitemap
-    sitemap_file = SITE_DIR / "sitemap.xml"
-    with open(sitemap_file, 'w', encoding='utf-8') as f:
-        f.write('\n'.join(sitemap_lines))
+    sitemap_file = site_dir / "sitemap.xml"
+    sitemap_file.write_text("\n".join(sitemap_lines) + "\n", encoding="utf-8")
+    print(f"✓ Generated sitemap.xml with {len(pages)} canonical URLs")
 
-    print(f"✓ Generated sitemap.xml with {num_pages + num_posts + 4} URLs")
+    guide = site_dir / "agent-guide.json"
+    if guide.exists():
+        text = guide.read_text(encoding="utf-8")
+        updated = re.sub(
+            r"Complete XML sitemap with \d+ URLs[^\"]*",
+            f"Complete XML sitemap with {len(pages)} canonical HTML URLs",
+            text,
+        )
+        if updated != text:
+            guide.write_text(updated, encoding="utf-8")
+    return len(pages)
 
 def main():
     """Main execution"""
@@ -343,7 +348,7 @@ def main():
     # Generate API files
     num_pages = generate_pages_json()
     num_posts = generate_blog_posts_json()
-    generate_sitemap_xml(num_pages, num_posts)
+    num_urls = generate_sitemap_xml(num_pages, num_posts)
 
     print()
     print("=" * 60)
@@ -354,7 +359,7 @@ def main():
     print(f"  - /api/site-info.json (site metadata)")
     print(f"  - /api/pages.json ({num_pages} pages)")
     print(f"  - /api/blog/posts.json ({num_posts} posts)")
-    print(f"  - /sitemap.xml ({num_pages + num_posts + 4} URLs)")
+    print(f"  - /sitemap.xml ({num_urls} canonical URLs)")
     print()
 
 if __name__ == "__main__":

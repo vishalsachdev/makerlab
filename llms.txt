@@ -42,7 +42,7 @@ Illinois MakerLab is the world's first business school 3D printing lab, located 
 - /api/openapi.yaml - OpenAPI 3.0 spec for all endpoints
 - /agent-guide.json - Detailed agent usage instructions
 - /sitemap.xml - Complete URL inventory
-- /robots.txt - Crawler permissions (all LLM agents allowed)
+- /robots.txt - Crawler permissions. Search and answer bots may crawl. Some scrapers are blocked.
 
 ## Common Questions
 Q: What are the lab hours?

@@ -167,7 +167,7 @@ Historical Ultimaker partnership/course/blog references are historical records.
 - [x] LLM agent support: llms.txt, agent-guide.json, OpenAPI spec, posts.json with real dates/tags
 - [x] ChambanaMoms campaign text deliverables
 - [x] ChambanaMoms campaign images (2 social posts, round-up thumbnail, Facebook album photo)
-- [ ] Podio: archive the 38 unused apps as a knowledge base; decide in Jan 2027 whether the 5 in-use apps move to Microsoft 365 (GlobiMail kept, decided 2026-10-16; see makerlab-camps review)
+- [ ] Podio: archive the 38 unused apps as a knowledge base; decide in Jan 2027 whether the 5 in-use apps move to Microsoft 365 (GlobiMail kept, decided 2026-10-16; now $25/mo Plus from 2026-11-05, options review assigned to Sahib, Podio Projects item 120; see makerlab-camps review)
 - [ ] Monthly blog generation workflow from Podio orders
 - [x] Commit Podio audit/automation scripts
 - [x] Email auto-reply GitHub Action (Podio → OpenAI → SendGrid pipeline) — **deactivated 2026-05-12** (workflow file removed; recover from git history if revisited)
@@ -181,8 +181,8 @@ Historical Ultimaker partnership/course/blog references are historical records.
 
 ## Session Log
 
-### 2026-11-04 → 11-05
-- Completed: Pulled #39 (order-level quote pricing, mobile UX, nav), #40 (printer fleet, Bambu Studio) and #41 (SEO, robots.txt). Pricing rule confirmed by Vishal: **$4 base fee once per order plus material for all copies; campus accounts at Faculty/Staff rates with a $10 minimum** (what `js/quote.js` does now). Bayu's alternative ($4 minimum, PR #38, closed unmerged 10-31) branch `bayu/order-minimum-fee` deleted; commit kept under PR #38. Note to Bayu on the rule staged in Thunderbird Drafts (not sent). Client job: answered University Contracts questions for the IEEE PELS lab-kit agreement (Vishal sent 11-04 6:27 PM CST; details and figures in private PEOPLE/THREADS, working CSV in ~/Documents/MakerLab, never this repo).
-- Next: (1) Vishal sends the Bayu draft. (2) Watch for Contracts' answer on the lab-kit agreement (resubmitted 11-05). (3) FormBuilder token expires Sun 11/08/2026; renew with the Jan 2027 restore. (4) `.claude/settings.local.json` still tracked with a local change; untrack? (5) From 10-16, unanswered: check first uimakerlab items keep the real sender; 8 website policy questions; Podio archive location; purge `26b47a6`?; Thera next order. (6) Carried, unverified since Aug 4: exec summary to Peecher, parent feedback nudge, recap post, watch-cleaner post.
+### 2026-11-05
+- Completed: GlobiMail options reviewed. GlobiMail retired the $15 Core plan; the business office re-subscribed on **GlobiMail Plus, $25/month** (Nov 5 to Dec 5) after daily payment errors from 10-28. Recommendation: keep it until the Jan 2027 Microsoft 365 decision, and check whether our Podio tier includes Workflow Automation. Research assigned to Sahib as Podio Projects item 120 "GlobiMail options review" plus task 319718039, due Fri 11-20 (research only). Options background: private makerlab-camps `docs/email-podio-review-2026-10-16.md` §3, §5.
+- Next: (1) Vishal: change the GlobiMail account password today. (2) Read Sahib's comparison on Podio item 120 (due 11-20, before the ~Dec 5 renewal); add the Nov 5 plan change to the review doc's decision log. (3) Carried from 11-04: send the Bayu draft; watch for Contracts' answer on the lab-kit agreement; FormBuilder token expires Sun 11/08/2026 (renew with the Jan 2027 restore); `.claude/settings.local.json` tracked with a local change, untrack? (4) From 10-16, unanswered: check first uimakerlab items keep the real sender; 8 website policy questions; Podio archive location; purge `26b47a6`?; Thera next order. (5) Carried, unverified since Aug 4: exec summary to Peecher, parent feedback nudge, recap post, watch-cleaner post. Sahib's makerlab-camps GitHub invite is still pending (not resent).
 
 *Older entries archived to `docs/session-archive.md`.*
